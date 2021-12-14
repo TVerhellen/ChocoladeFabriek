@@ -14,7 +14,7 @@ namespace Chocolade
 
         public ChocoladeBatch(string gegevens) : base(gegevens)
         {
-
+            stock.Add(this);
         }
 
         public List<ChocoladeBatch> Stock
@@ -74,5 +74,9 @@ namespace Chocolade
             }
         }
         #endregion
+        public static void Sorteer()
+        {
+            stock = stock.OrderBy(o => o.Naam).ThenBy(o => o.Houdbaarheid).ToList();
+        }
     }
 }

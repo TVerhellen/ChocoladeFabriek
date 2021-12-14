@@ -16,11 +16,11 @@ namespace Chocolade
         {
             Naam = naam;
             Hoeveelheid = hoeveelheid;
+
         }
 
         public Grondstof(string gegevens) : base(gegevens)
         {
-
         }
 
         public List<Grondstof> Stock
@@ -72,11 +72,14 @@ namespace Chocolade
                 {
                     foreach (var item in stock)
                     {
-                        MessageBox.Show(item.Naam);
-                        writer.WriteLine($"{item.Naam}|{item.ID}|{item.Hoeveelheid}|{item.Houdbaarheid}");
+                        writer.WriteLine($"{item.Naam}|{item.ID}|{item.Hoeveelheid}|{item.Houdbaarheid.ToString("dd/MM/yyyy")}");
                     }
                 }
             }
+        }
+        public static void Sorteer()
+        {
+            stock = stock.OrderBy(o => o.Naam).ThenBy(o => o.Houdbaarheid).ToList();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace Chocolade
         public void Produceer(double hoeveelheid)
         {
             ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelheid}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}");
-            ChocoladeBatch.stock.Add(nieuweBatch);
+            // ChocoladeBatch.stock.Add(nieuweBatch);
             //Moet nog gewijzigd worden
             foreach (Grondstof benodigdheid in Ingredienten)
             {
