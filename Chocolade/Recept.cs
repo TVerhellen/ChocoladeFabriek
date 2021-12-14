@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,6 @@ namespace Chocolade
     class Recept
     {
         private List<Grondstof> _ingredienten = new List<Grondstof>();
-        private List<Grondstof> stockGrondstof = new List<Grondstof>();
-        private List<ChocoladeBatch> stockChocolade = new List<ChocoladeBatch>();
 
         public Recept() { }
 
@@ -30,6 +29,21 @@ namespace Chocolade
         public void Produceer(double hoeveelheid)
         {
             ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelheid}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}");
+            ChocoladeBatch.stock.Add(nieuweBatch);
+            //Moet nog gewijzigd worden
+            foreach (Grondstof benodigdheid in Ingredienten)
+            {
+                double totaalNodig = benodigdheid.Hoeveelheid;
+                foreach (Grondstof grondstof in Grondstof.stock)
+                {
+                    if (grondstof.Naam == benodigdheid.Naam)
+                    {
+                        grondstof.Hoeveelheid -= totaalNodig;
+                    }
+                }
+            }
+            Grondstof.SlaLijstOp();
+            ChocoladeBatch.SlaLijstOp();
         }
 
         private int GenereerID()
