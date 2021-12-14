@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\Chocolade\\Chocolade.csproj",
+      "projectUniqueName": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
       "projectName": "Chocolade",
-      "projectPath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\Chocolade\\Chocolade.csproj",
+      "projectPath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
       "packagesPath": "C:\\Users\\tijsv\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\Chocolade\\obj\\",
+      "outputPath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

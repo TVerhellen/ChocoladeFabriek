@@ -24,5 +24,11 @@ namespace Chocolade
         {
 
         }
+
+        private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopCatalogus catalogus = new FrmVerkoopCatalogus();
+            catalogus.ShowDialog();
+        }
     }
 }
