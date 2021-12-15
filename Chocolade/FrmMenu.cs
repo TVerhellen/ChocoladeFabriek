@@ -20,22 +20,11 @@ namespace Chocolade
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Text bestanden worden ingelezen
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
-            Debug.WriteLine(Recept.receptenLijst.Count);
-
             Recept.LaadLijst();
-            Debug.WriteLine(Recept.receptenLijst.Count);
-            foreach (var recept in Recept.receptenLijst)
-            {
-                if (recept.Naam == "Ruby Chocolade")
-                {
-                    recept.Produceer(20);
-                }
-            }
 
-
-            Grondstof.SlaLijstOp();
         }
     }
 }

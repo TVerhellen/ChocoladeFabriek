@@ -33,7 +33,6 @@ namespace Chocolade
             }
             else
             {
-                //stock edit
                 for (int i = 0; i < Stock.Count; i++)
                 {
                     if (this.Equals(Stock[i]))
@@ -68,10 +67,11 @@ namespace Chocolade
         {
             SlaLijstOp("Stock/chocolade.txt", stock);
         }
-        #endregion
         public static void SorteerStockLijst()
         {
             stock = stock.OrderBy(o => o.Naam).ThenBy(o => o.Houdbaarheid).ToList();
         }
+        #endregion
+
     }
 }
