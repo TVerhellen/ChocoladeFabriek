@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +15,14 @@ namespace Chocolade
         {
             string[] arrGegevens = gegevens.Split('|');
             Naam = arrGegevens[0];
-            ID = Convert.ToInt32(arrGegevens[1]);
+            ID = Convert.ToInt64(arrGegevens[1]);
             Hoeveelheid = Convert.ToDouble(arrGegevens[2]);
             Houdbaarheid = Convert.ToDateTime(arrGegevens[3]);
         }
 
         public string Naam { get; set; }
 
-        public int ID { get; set; }
+        public long ID { get; set; }
 
         public double Hoeveelheid { get; set; }
 
@@ -48,6 +49,20 @@ namespace Chocolade
         public virtual void Verwijder(double hoeveelheid = -1)
         {
 
+        }
+
+        public static void SlaLijstOp(string fileName, List<Artikel> thisList)
+        {
+            if (File.Exists(fileName))
+            {
+                using (StreamWriter writer = new StreamWriter(fileName))
+                {
+                    foreach (var item in thisList)
+                    {
+                        writer.WriteLine($"{item.Naam}|{item.ID}|{item.Hoeveelheid}|{item.Houdbaarheid.ToString("dd/MM/yyyy")}");
+                    }
+                }
+            }
         }
     }
 }

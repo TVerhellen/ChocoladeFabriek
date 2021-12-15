@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,14 @@ namespace Chocolade
     class ChocoladeBatch : Artikel
     {
 
-        public static List<ChocoladeBatch> stock = new List<ChocoladeBatch>();
+        public static List<Artikel> stock = new List<Artikel>();
 
         public ChocoladeBatch(string gegevens) : base(gegevens)
         {
             stock.Add(this);
         }
 
-        public List<ChocoladeBatch> Stock
+        public List<Artikel> Stock
         {
             get { return stock; }
             set { stock = value; }
@@ -51,10 +52,13 @@ namespace Chocolade
                 using (StreamReader reader = new StreamReader("Stock/chocolade.txt"))
                 {
                     stock.Clear();
-                    ChocoladeBatch Temp = null;
                     while (!reader.EndOfStream)
                     {
-                        stock.Add(new ChocoladeBatch(reader.ReadLine()));
+                        string thisLine = reader.ReadLine();
+                        if (!String.IsNullOrWhiteSpace(thisLine))
+                        {
+                            ChocoladeBatch newBatch = new ChocoladeBatch(thisLine);
+                        }
                     }
                 }
             }
@@ -62,19 +66,10 @@ namespace Chocolade
 
         public static void SlaLijstOp()
         {
-            if (File.Exists("Stock/chocolade.txt"))
-            {
-                using (StreamWriter writer = new StreamWriter("Stock/chocolade.txt"))
-                {
-                    foreach (var item in stock)
-                    {
-                        writer.WriteLine($"{item.Naam}|{item.ID}|{item.Hoeveelheid}|{item.Houdbaarheid}");
-                    }
-                }
-            }
+            SlaLijstOp("Stock/chocolade.txt", stock);
         }
         #endregion
-        public static void Sorteer()
+        public static void SorteerStockLijst()
         {
             stock = stock.OrderBy(o => o.Naam).ThenBy(o => o.Houdbaarheid).ToList();
         }

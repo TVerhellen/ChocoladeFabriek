@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,19 @@ namespace Chocolade
         {
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
-            Grondstof.Sorteer();
+            Debug.WriteLine(Recept.receptenLijst.Count);
+
+            Recept.LaadLijst();
+            Debug.WriteLine(Recept.receptenLijst.Count);
+            foreach (var recept in Recept.receptenLijst)
+            {
+                if (recept.Naam == "Ruby Chocolade")
+                {
+                    recept.Produceer(20);
+                }
+            }
+
+
             Grondstof.SlaLijstOp();
         }
     }

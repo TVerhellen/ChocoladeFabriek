@@ -10,25 +10,23 @@ namespace Chocolade
 {
     class Grondstof : Artikel
     {
-        public static List<Grondstof> stock = new List<Grondstof>();
+        public static List<Artikel> stock = new List<Artikel>();
 
         public Grondstof(string naam, double hoeveelheid)
         {
             Naam = naam;
             Hoeveelheid = hoeveelheid;
-
         }
 
         public Grondstof(string gegevens) : base(gegevens)
         {
         }
 
-        public List<Grondstof> Stock
+        public List<Artikel> Stock
         {
             get { return stock; }
             set { stock = value; }
         }
-
 
         public override void Verwijder(double hoeveelheid = -1)
         {
@@ -56,28 +54,22 @@ namespace Chocolade
                 stock.Clear();
                 using (StreamReader reader = new StreamReader("Stock/grondstoffen.txt"))
                 {
-                    ChocoladeBatch Temp = null;
                     while (!reader.EndOfStream)
                     {
-                        stock.Add(new Grondstof(reader.ReadLine()));
+                        string thisLine = reader.ReadLine();
+                        if (!String.IsNullOrEmpty(thisLine))
+                        {
+                            stock.Add(new Grondstof(thisLine));
+                        }
                     }
                 }
             }
         }
         public static void SlaLijstOp()
         {
-            if (File.Exists("Stock/grondstoffen.txt"))
-            {
-                using (StreamWriter writer = new StreamWriter("Stock/grondstoffen.txt"))
-                {
-                    foreach (var item in stock)
-                    {
-                        writer.WriteLine($"{item.Naam}|{item.ID}|{item.Hoeveelheid}|{item.Houdbaarheid.ToString("dd/MM/yyyy")}");
-                    }
-                }
-            }
+            SlaLijstOp("Stock/grondstoffen.txt", stock);
         }
-        public static void Sorteer()
+        public static void SorteerStockLijst()
         {
             stock = stock.OrderBy(o => o.Naam).ThenBy(o => o.Houdbaarheid).ToList();
         }
