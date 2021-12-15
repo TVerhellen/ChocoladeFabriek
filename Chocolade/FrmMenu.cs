@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,12 +18,24 @@ namespace Chocolade
             InitializeComponent();
         }
 
-        List<Grondstof> stockGrondstof = new List<Grondstof>();
-        List<ChocoladeBatch> stockChocolade = new List<ChocoladeBatch>();
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Text bestanden worden ingelezen
+            Grondstof.LaadLijst();
+            ChocoladeBatch.LaadLijst();
+            Recept.LaadLijst();
+        }
 
+        private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopCatalogus catalogus = new FrmVerkoopCatalogus();
+            catalogus.ShowDialog();
+        }
+
+        private void bestellingVerwerkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBestellingVerwerken verwerken = new FrmBestellingVerwerken();
+            verwerken.ShowDialog();
         }
 
         private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
