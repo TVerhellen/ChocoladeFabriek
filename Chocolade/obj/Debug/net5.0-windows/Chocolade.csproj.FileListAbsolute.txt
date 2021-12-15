@@ -34,3 +34,5 @@ C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\ref\Chocolade.dll
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.pdb
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
+C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
+C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources

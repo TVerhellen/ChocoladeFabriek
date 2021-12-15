@@ -18,6 +18,11 @@ namespace Chocolade
             stock.Add(this);
         }
 
+        public ChocoladeBatch(string naam, double hoeveelheid)
+        {
+            Naam = naam;
+            Hoeveelheid = hoeveelheid;
+        }
         public List<Artikel> Stock
         {
             get { return stock; }
