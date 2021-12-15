@@ -18,7 +18,6 @@ D:\Visual Studios Projects\2e project C#\chocolade\Chocolade\obj\Debug\net5.0-wi
 D:\Visual Studios Projects\2e project C#\chocolade\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
 <<<<<<< HEAD
 =======
-<<<<<<< HEAD
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.exe
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.deps.json
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.runtimeconfig.json
@@ -37,7 +36,6 @@ C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\ref\Chocolade.dll
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.pdb
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
-=======
 >>>>>>> master
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.exe
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.deps.json
@@ -58,7 +56,5 @@ D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\ob
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\ref\Chocolade.dll
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.pdb
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
-<<<<<<< HEAD
-=======
 >>>>>>> Verkoop
->>>>>>> master
+D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmBestellingVerwerken.resources

@@ -38,16 +38,6 @@ namespace Chocolade
             verwerken.ShowDialog();
         }
 
-        private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmVerkoopCatalogus catalogus = new FrmVerkoopCatalogus();
-            catalogus.ShowDialog();
-        }
 
-        private void bestellingVerwerkenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmBestellingVerwerken verwerken = new FrmBestellingVerwerken();
-            verwerken.ShowDialog();
-        }
     }
 }
