@@ -173,9 +173,9 @@ namespace Chocolade
             }
             return aanmakenMogelijk;
         }
-        private int GenereerID()
+        private long GenereerID()
         {
-            return Convert.ToInt32(DateTime.Now.ToString("yyyyMMdd"));
+            return Convert.ToInt64(DateTime.Now.ToString("yyyyMMddhhmmssfff"));
         }
     }
 }
