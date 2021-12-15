@@ -15,7 +15,7 @@ namespace Chocolade
 
         public VerkoopOrder()
         {
-
+            GenereerID();
         }
 
         public List<ChocoladeBatch> Lijst { get { return _verkooplijst; } set { _verkooplijst = value; } }
@@ -39,13 +39,12 @@ namespace Chocolade
             }
         }
 
-        public void GenereerID()
+        private void GenereerID()
         {
-            string id = DateTime.Now.ToString("dd-MM-yy").Replace("-", "");
+            string id = DateTime.Now.ToString("dd/MM/yy").Replace("/", "");
             id += IDCounter.ToString().PadLeft(4, '0');
             MessageBox.Show(id);
             ID = Convert.ToDouble(id);
-            IDCounter++;
         }
 
     }

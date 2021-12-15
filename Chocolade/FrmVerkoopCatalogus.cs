@@ -56,7 +56,6 @@ namespace Chocolade
         {
             if (lbCatalogus.SelectedIndex != -1)
             {
-                
                 order.VoegToe((ChocoladeBatch)lbCatalogus.SelectedItem, Convert.ToDouble(txtHoeveelheid.Text));
                 lbOrder.DataSource = null;
                 lbOrder.DataSource = order.Lijst;
@@ -66,16 +65,18 @@ namespace Chocolade
 
         private void btnAfwerken_Click(object sender, EventArgs e)
         {
-            order.GenereerID();
-            using (StreamWriter opslag = new StreamWriter($"order{order.ID}.txt"))
+            if (order.Lijst.Count != 0)
             {
-                opslag.WriteLine(order.ID);
-                foreach (ChocoladeBatch batch in order.Lijst)
+                using (StreamWriter opslag = new StreamWriter($"order{order.ID}.txt"))
                 {
-                    opslag.WriteLine(batch.ToString());
+                    opslag.WriteLine(order.ID);
+                    foreach (ChocoladeBatch batch in order.Lijst)
+                    {
+                        opslag.WriteLine(batch.ToString());
+                    }
                 }
+                VerkoopOrder.IDCounter++;
             }
-
         }
     }
 }

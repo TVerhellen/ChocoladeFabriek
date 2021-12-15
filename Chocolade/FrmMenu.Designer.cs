@@ -148,6 +148,7 @@ namespace Chocolade
             this.bestellingVerwerkenToolStripMenuItem.Name = "bestellingVerwerkenToolStripMenuItem";
             this.bestellingVerwerkenToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.bestellingVerwerkenToolStripMenuItem.Text = "Bestelling verwerken";
+            this.bestellingVerwerkenToolStripMenuItem.Click += new System.EventHandler(this.bestellingVerwerkenToolStripMenuItem_Click);
             // 
             // historiekToolStripMenuItem1
             // 
