@@ -1,8 +1,20 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "p9aAt3JwCknRVkJiG7WdyOSDzF+Lsx8iifsivNVf6OzslSGTJLrINvcPKExJqxfvnsAzmBXNs4bcDPw4f5kdfQ==",
   "success": true,
   "projectFilePath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "A5mrClpf8hcjqj2SXNLXnDGOajGY2KDmGBfxzMuQOkBnTxWBNLFrQLXywG/1BueXYC3iE1k+dYRYzExEtTe5Kw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+=======
+  "dgSpecHash": "Cp+TOvBjNcq3psAcKci1s93tPeXUjBHnwqq3z6zo7LRT1nVhwIdefOJL6jd8Tves2oPNoLv8CFyWkntWNAAIzw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kristof\\source\\Project 2 Chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+>>>>>>> master
+>>>>>>> 8859ed67bb624f133e82f4edc173f61576b120bb
   "expectedPackageFiles": [],
   "logs": []
 }

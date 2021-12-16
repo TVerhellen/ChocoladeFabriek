@@ -7,7 +7,21 @@
     <Compile Update="FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="FrmVerkoopCatalogus.cs">
+=======
+<<<<<<< HEAD
+    <Compile Update="FrmGegevensLeveranciers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmOrderAanmaken.cs">
+=======
+    <Compile Update="FrmStockChocolade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmStockGrondstof.cs">
+>>>>>>> master
+>>>>>>> 8859ed67bb624f133e82f4edc173f61576b120bb
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
