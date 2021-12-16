@@ -18,48 +18,34 @@ namespace Chocolade
             InitializeComponent();
         }
 
-        private List<ChocoladeBatch> stockLijst = new List<ChocoladeBatch>();
         VerkoopOrder order = new VerkoopOrder();
 
         private void FrmVerkoopCatalogus_Load(object sender, EventArgs e)
         {
             VerkoopOrder.IDCounter = 0000;
 
-            ChocoladeBatch batch = new ChocoladeBatch("a");
-            batch.Naam = "Zwart 80%";
-            batch.ID = 123456798;
-            batch.Hoeveelheid = 100;
-            batch.Houdbaarheid = DateTime.Now.AddDays(5);
-            stockLijst.Add(batch);
-            ChocoladeBatch batch2 = new ChocoladeBatch("a");
-            batch2.Naam = "melk 40%";
-            batch2.ID = 48354;
-            batch2.Hoeveelheid = 20;
-            batch2.Houdbaarheid = DateTime.Now.AddDays(5);
-            stockLijst.Add(batch2);
-            ChocoladeBatch batch3 = new ChocoladeBatch("a");
-            batch3.Naam = "Wit";
-            batch3.ID = 951;
-            batch3.Hoeveelheid = 500;
-            batch3.Houdbaarheid = DateTime.Now.AddDays(5);
-            stockLijst.Add(batch3);
-
-            lbOrder.DataSource = order.Lijst;
-            lbOrder.SelectedIndex = -1;
-
-            lbCatalogus.DataSource = stockLijst;
-            lbCatalogus.SelectedIndex = -1;
+            RefreshBoxes();
 
         }
 
         private void btnToevoegen_Click(object sender, EventArgs e)
         {
-            if (lbCatalogus.SelectedIndex != -1)
+            if (lbCatalogus.SelectedIndex != -1 && double.TryParse(txtHoeveelheid.Text, out double hoeveelheid))
             {
-                order.VoegToe((ChocoladeBatch)lbCatalogus.SelectedItem, Convert.ToDouble(txtHoeveelheid.Text));
-                lbOrder.DataSource = null;
-                lbOrder.DataSource = order.Lijst;
-                lbOrder.SelectedIndex = -1;
+                if (((ChocoladeBatch)lbCatalogus.SelectedItem).Hoeveelheid >= hoeveelheid)
+                {
+                    order.VoegToe((ChocoladeBatch)lbCatalogus.SelectedItem, hoeveelheid);
+                    RefreshBoxes();
+                    txtHoeveelheid.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Foute hoeveelheid");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Foute ingave");
             }
         }
 
@@ -67,7 +53,7 @@ namespace Chocolade
         {
             if (order.Lijst.Count != 0)
             {
-                using (StreamWriter opslag = new StreamWriter($"order{order.ID}.txt"))
+                using (StreamWriter opslag = new StreamWriter($"Verkoop/Lopend/{order}.txt"))
                 {
                     opslag.WriteLine(order.ID);
                     foreach (ChocoladeBatch batch in order.Lijst)
@@ -77,6 +63,46 @@ namespace Chocolade
                 }
                 VerkoopOrder.IDCounter++;
             }
+        }
+
+        private void btnAnnuleren_Click(object sender, EventArgs e)
+        {
+            foreach(ChocoladeBatch batch in order.Lijst)
+            {
+                if (!ChocoladeBatch.stock.Contains(batch))
+                {
+                    ChocoladeBatch.stock.Add(batch);
+                    ChocoladeBatch.SorteerStockLijst();
+                }
+                else
+                {
+                    for (int i = 0; i < ChocoladeBatch.stock.Count; i++)
+                    {
+                        if (batch.Equals(ChocoladeBatch.stock[i]))
+                        {
+                            ChocoladeBatch.stock[i].Hoeveelheid += batch.Hoeveelheid;
+                            break;
+                        }
+                    }
+                }
+
+            }
+            order = new VerkoopOrder();
+            RefreshBoxes();
+        }
+
+        private void RefreshBoxes()
+        {
+            lbOrder.DataSource = null;
+            lbOrder.DataSource = order.Lijst;
+            lbCatalogus.DataSource = null;
+            lbCatalogus.DataSource = ChocoladeBatch.stock;
+            lbOrder.SelectedIndex = -1;
+        }
+
+        private void btnSluiten_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

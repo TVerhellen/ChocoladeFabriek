@@ -37,6 +37,8 @@ namespace Chocolade
             this.label3 = new System.Windows.Forms.Label();
             this.btnToevoegen = new System.Windows.Forms.Button();
             this.btnAfwerken = new System.Windows.Forms.Button();
+            this.btnAnnuleren = new System.Windows.Forms.Button();
+            this.btnSluiten = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -112,11 +114,33 @@ namespace Chocolade
             this.btnAfwerken.UseVisualStyleBackColor = true;
             this.btnAfwerken.Click += new System.EventHandler(this.btnAfwerken_Click);
             // 
+            // btnAnnuleren
+            // 
+            this.btnAnnuleren.Location = new System.Drawing.Point(477, 408);
+            this.btnAnnuleren.Name = "btnAnnuleren";
+            this.btnAnnuleren.Size = new System.Drawing.Size(101, 23);
+            this.btnAnnuleren.TabIndex = 8;
+            this.btnAnnuleren.Text = "Annuleren";
+            this.btnAnnuleren.UseVisualStyleBackColor = true;
+            this.btnAnnuleren.Click += new System.EventHandler(this.btnAnnuleren_Click);
+            // 
+            // btnSluiten
+            // 
+            this.btnSluiten.Location = new System.Drawing.Point(584, 437);
+            this.btnSluiten.Name = "btnSluiten";
+            this.btnSluiten.Size = new System.Drawing.Size(101, 23);
+            this.btnSluiten.TabIndex = 9;
+            this.btnSluiten.Text = "Sluiten";
+            this.btnSluiten.UseVisualStyleBackColor = true;
+            this.btnSluiten.Click += new System.EventHandler(this.btnSluiten_Click);
+            // 
             // FrmVerkoopCatalogus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 478);
+            this.Controls.Add(this.btnSluiten);
+            this.Controls.Add(this.btnAnnuleren);
             this.Controls.Add(this.btnAfwerken);
             this.Controls.Add(this.btnToevoegen);
             this.Controls.Add(this.label3);
@@ -143,5 +167,7 @@ namespace Chocolade
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnToevoegen;
         private System.Windows.Forms.Button btnAfwerken;
+        private System.Windows.Forms.Button btnAnnuleren;
+        private System.Windows.Forms.Button btnSluiten;
     }
 }
