@@ -8,35 +8,13 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\tijsv\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\Student\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\kristof\\.nuget\\packages\\": {}
->>>>>>> master
->>>>>>> 8859ed67bb624f133e82f4edc173f61576b120bb
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
-=======
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
-      "projectName": "Chocolade",
-      "projectPath": "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
-      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\kristof\\source\\Project 2 Chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
->>>>>>> 8859ed67bb624f133e82f4edc173f61576b120bb
       "projectName": "Chocolade",
       "projectPath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
       "packagesPath": "C:\\Users\\tijsv\\.nuget\\packages\\",
@@ -46,13 +24,8 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\tijsv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-        "C:\\Users\\kristof\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> master
->>>>>>> 8859ed67bb624f133e82f4edc173f61576b120bb
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -98,5 +71,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
