@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chocolade
@@ -23,6 +17,18 @@ namespace Chocolade
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void gegevensLeverancierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGegevensLeveranciers NieuweGegevensLeveranciers = new FrmGegevensLeveranciers();
+            NieuweGegevensLeveranciers.Show();
+        }
+
+        private void orderPlaatsenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrderAanmaken nieuweOrder = new FrmOrderAanmaken();
+            nieuweOrder.Show();
         }
     }
 }

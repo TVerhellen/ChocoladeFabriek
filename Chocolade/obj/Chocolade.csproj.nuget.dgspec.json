@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual Studios Projects\\2e project C#\\chocolade\\Chocolade\\Chocolade.csproj": {}
+    "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {}
   },
   "projects": {
-    "D:\\Visual Studios Projects\\2e project C#\\chocolade\\Chocolade\\Chocolade.csproj": {
+    "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\Chocolade\\Chocolade.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
         "projectName": "Chocolade",
-        "projectPath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\Chocolade\\Chocolade.csproj",
-        "packagesPath": "C:\\Users\\tijsv\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\Chocolade\\obj\\",
+        "projectPath": "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\tijsv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
