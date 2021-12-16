@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
@@ -7,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+>>>>>>> master
 using System.Windows.Forms;
 
 namespace Chocolade
@@ -26,6 +29,7 @@ namespace Chocolade
             Recept.LaadLijst();
         }
 
+<<<<<<< HEAD
         private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmVerkoopCatalogus catalogus = new FrmVerkoopCatalogus();
@@ -39,5 +43,30 @@ namespace Chocolade
         }
 
 
+=======
+        private void productenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmStockChocolade chocoladeStockOverview = new FrmStockChocolade();
+            chocoladeStockOverview.Show();
+        }
+
+        private void grondstoffenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmStockGrondstof grondstoffenOverview = new FrmStockGrondstof();
+            grondstoffenOverview.Show();
+        }
+
+        private void gegevensLeverancierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGegevensLeveranciers NieuweGegevensLeveranciers = new FrmGegevensLeveranciers();
+            NieuweGegevensLeveranciers.Show();
+        }
+
+        private void orderPlaatsenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrderAanmaken nieuweOrder = new FrmOrderAanmaken();
+            nieuweOrder.Show();
+        }
+>>>>>>> 8859ed67bb624f133e82f4edc173f61576b120bb
     }
 }

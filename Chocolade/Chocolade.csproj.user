@@ -4,7 +4,19 @@
     <Compile Update="FrmBestellingVerwerken.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmGegevensLeveranciers.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmOrderAanmaken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmStockChocolade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmStockGrondstof.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmVerkoopCatalogus.cs">
