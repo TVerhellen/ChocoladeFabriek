@@ -8,10 +8,7 @@ namespace Chocolade
 {
     class Machine
     {
-        public static List<Machine> roastmachines = new List<Machine>();
-        public static List<Machine> crackmachines = new List<Machine>();
-        public static List<Machine> grindingmachines = new List<Machine>();
-        public static List<Machine> temperingmachines = new List<Machine>();
+
 
         private double _productieTijd;
         private double _maxCapaciteit;

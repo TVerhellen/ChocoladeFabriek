@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Chocolade
 {
-    class GrindingMachine
+    class GrindingMachine : Machine
     {
+        public static List<Machine> grindingmachines = new List<Machine>();
+
+        public GrindingMachine() : base() { }
+        public GrindingMachine(double productietijd, double maxCapaciteit, List<TimePeriod> bezetting) : base(productietijd, maxCapaciteit, bezetting) { }
+
     }
 }

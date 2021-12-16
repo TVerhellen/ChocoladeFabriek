@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Chocolade
 {
-    class TemperingMachine
+    class TemperingMachine : Machine
     {
+        public static List<Machine> temperingmachines = new List<Machine>();
+        public TemperingMachine() : base() { }
+        public TemperingMachine(double productietijd, double maxCapaciteit, List<TimePeriod> bezetting) : base(productietijd, maxCapaciteit, bezetting) { }
+
     }
 }
