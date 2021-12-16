@@ -8,10 +8,10 @@ namespace Chocolade
 {
     class GrindingMachine : Machine
     {
-        public static List<Machine> grindingmachines = new List<Machine>();
+        public static List<Machine> list = new List<Machine>();
 
         public GrindingMachine() : base() { }
-        public GrindingMachine(double productietijd, double maxCapaciteit, List<TimePeriod> bezetting) : base(productietijd, maxCapaciteit, bezetting) { }
+        public GrindingMachine(string data) : base(data) { }
 
     }
 }

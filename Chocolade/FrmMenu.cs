@@ -24,6 +24,16 @@ namespace Chocolade
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
             Recept.LaadLijst();
+
+            Machine.laadLijsten();
+            Debug.WriteLine(RoastMachine.list[0].ProductieTijd);
+            Debug.WriteLine(RoastMachine.list[0].MaxCapaciteit);
+            Debug.WriteLine(RoastMachine.list[0].Bezetting);
+            foreach (var item in RoastMachine.list[0].Bezetting)
+            {
+                Debug.WriteLine(item);
+            }
+
         }
 
         private void productenToolStripMenuItem_Click(object sender, EventArgs e)

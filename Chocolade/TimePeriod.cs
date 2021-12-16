@@ -11,9 +11,9 @@ namespace Chocolade
         private DateTime _start;
         private DateTime _end;
 
-        TimePeriod() { }
+        public TimePeriod() { }
 
-        TimePeriod(DateTime start, DateTime end)
+        public TimePeriod(DateTime start, DateTime end)
         {
             Start = start;
             End = end;
@@ -53,6 +53,10 @@ namespace Chocolade
                 overlaps = true;
             }
             return overlaps;
+        }
+        public override string ToString()
+        {
+            return Start.ToString("dd/MM/yyyy") + "-" + End.ToString("dd/MM/yyyy");
         }
     }
 }

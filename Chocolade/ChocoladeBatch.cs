@@ -13,9 +13,12 @@ namespace Chocolade
 
         public static List<Artikel> stock = new List<Artikel>();
 
-        public ChocoladeBatch(string gegevens) : base(gegevens)
+        public ChocoladeBatch(string gegevens, bool addStock = true) : base(gegevens)
         {
-            stock.Add(this);
+            if (addStock)
+            {
+                stock.Add(this);
+            }
         }
 
         public ChocoladeBatch(string naam, double hoeveelheid)

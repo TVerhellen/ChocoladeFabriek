@@ -8,9 +8,9 @@ namespace Chocolade
 {
     class TemperingMachine : Machine
     {
-        public static List<Machine> temperingmachines = new List<Machine>();
+        public static List<Machine> list = new List<Machine>();
         public TemperingMachine() : base() { }
-        public TemperingMachine(double productietijd, double maxCapaciteit, List<TimePeriod> bezetting) : base(productietijd, maxCapaciteit, bezetting) { }
+        public TemperingMachine(string data) : base(data) { }
 
     }
 }
