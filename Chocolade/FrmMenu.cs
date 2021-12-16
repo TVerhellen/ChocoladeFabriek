@@ -1,5 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> master
 using System.Windows.Forms;
 
 namespace Chocolade
@@ -11,12 +21,24 @@ namespace Chocolade
             InitializeComponent();
         }
 
-        List<Grondstof> stockGrondstof = new List<Grondstof>();
-        List<ChocoladeBatch> stockChocolade = new List<ChocoladeBatch>();
-
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Text bestanden worden ingelezen
+            Grondstof.LaadLijst();
+            ChocoladeBatch.LaadLijst();
+            Recept.LaadLijst();
+        }
 
+        private void productenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmStockChocolade chocoladeStockOverview = new FrmStockChocolade();
+            chocoladeStockOverview.Show();
+        }
+
+        private void grondstoffenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmStockGrondstof grondstoffenOverview = new FrmStockGrondstof();
+            grondstoffenOverview.Show();
         }
 
         private void gegevensLeverancierToolStripMenuItem_Click(object sender, EventArgs e)

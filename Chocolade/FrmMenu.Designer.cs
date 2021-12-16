@@ -176,14 +176,24 @@ namespace Chocolade
             // grondstoffenToolStripMenuItem
             // 
             this.grondstoffenToolStripMenuItem.Name = "grondstoffenToolStripMenuItem";
+<<<<<<< HEAD
             this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+=======
+            this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+>>>>>>> master
             this.grondstoffenToolStripMenuItem.Text = "Grondstoffen";
+            this.grondstoffenToolStripMenuItem.Click += new System.EventHandler(this.grondstoffenToolStripMenuItem_Click);
             // 
             // productenToolStripMenuItem
             // 
             this.productenToolStripMenuItem.Name = "productenToolStripMenuItem";
+<<<<<<< HEAD
             this.productenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+=======
+            this.productenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+>>>>>>> master
             this.productenToolStripMenuItem.Text = "Producten";
+            this.productenToolStripMenuItem.Click += new System.EventHandler(this.productenToolStripMenuItem_Click);
             // 
             // Form1
             // 

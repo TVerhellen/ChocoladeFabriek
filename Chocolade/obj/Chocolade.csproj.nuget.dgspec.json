@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Student\\source\\repos\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\kristof\\source\\Project 2 Chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\kristof\\source\\Project 2 Chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\kristof\\source\\Project 2 Chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+        "projectName": "Chocolade",
+        "projectPath": "C:\\Users\\kristof\\source\\Project 2 Chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+        "packagesPath": "C:\\Users\\kristof\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kristof\\source\\Project 2 Chocolade\\chocoladefabriek\\Chocolade\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\kristof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> master
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

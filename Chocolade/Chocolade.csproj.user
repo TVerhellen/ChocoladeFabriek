@@ -4,10 +4,17 @@
     <Compile Update="FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="FrmGegevensLeveranciers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmOrderAanmaken.cs">
+=======
+    <Compile Update="FrmStockChocolade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmStockGrondstof.cs">
+>>>>>>> master
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
