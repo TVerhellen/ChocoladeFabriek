@@ -66,8 +66,14 @@ namespace Chocolade
             }
 
             //Maak product aan
-            if (this.IsProductieMogelijk(hoeveelProduct))
+            if (this.GenoegGrondstoffen(hoeveelProduct))
             {
+                TimePeriod roastTimeslot = Machine.VindVroegstMogelijkeTijdslot(RoastMachine.list, DateTime.Now);
+                TimePeriod grindTimeslot = Machine.VindVroegstMogelijkeTijdslot(GrindingMachine.list, roastTimeslot.Start);
+                TimePeriod temperingTimeslot = Machine.VindVroegstMogelijkeTijdslot(TemperingMachine.list, grindTimeslot.Start);
+
+
+
                 ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}");
                 for (int i = 0; i < Ingredienten.Count; i++)
                 {
@@ -146,7 +152,7 @@ namespace Chocolade
                 }
             }
         }
-        public bool IsProductieMogelijk(double hoeveelProduct)
+        public bool GenoegGrondstoffen(double hoeveelProduct)
         {
             Grondstof.SorteerStockLijst();
             bool aanmakenMogelijk = true;

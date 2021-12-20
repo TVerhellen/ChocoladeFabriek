@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,11 +53,17 @@ namespace Chocolade
                 //Deze periode zit volledig omsloten in de nieuwe periode
                 overlaps = true;
             }
+            if (this.Start < otherPeriod.Start && otherPeriod.End < this.End)
+            {
+                //Deze periode zit volledig omsloten in de nieuwe periode
+                overlaps = true;
+            }
+            Debug.WriteLine(overlaps);
             return overlaps;
         }
         public override string ToString()
         {
-            return Start.ToString("dd/MM/yyyy") + "-" + End.ToString("dd/MM/yyyy");
+            return $"{Start:u}-{End:u}";
         }
     }
 }

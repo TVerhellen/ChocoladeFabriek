@@ -86,7 +86,7 @@ namespace Chocolade
                         }
                         else
                         {
-                            string[] periodDates = allLines[i].Split('-');
+                            string[] periodDates = allLines[i].Split("--");
                             DateTime start = Convert.ToDateTime(periodDates[0]);
                             DateTime end = Convert.ToDateTime(periodDates[1]);
                             tempPeriod.Add(new TimePeriod(start, end));
@@ -95,6 +95,74 @@ namespace Chocolade
                     tempMachine.Bezetting = tempPeriod;
                 }
             }
+        }
+
+        public static TimePeriod VindVroegstMogelijkeTijdslot(List<Machine> machineLijst, DateTime starttijd)
+        {
+            double vertragingTegenoverNu = 5;
+
+            TimePeriod vroegstePeriode = new TimePeriod(DateTime.Now.AddDays(10000), DateTime.Now.AddDays(10001));
+
+            foreach (var machine in machineLijst)
+            {
+                double productieTijdVoorDitMachine = machine.ProductieTijd;
+                TimePeriod vroegstePeriodeDitMachine = new TimePeriod(DateTime.Now.AddDays(20000), DateTime.Now.AddDays(20001));
+                DateTime startPeriod = starttijd.AddMinutes(vertragingTegenoverNu);
+                DateTime endPeriod = startPeriod.AddMinutes(productieTijdVoorDitMachine);
+                bool changedTime = false;
+
+                //Kijk of eerste element mogelijk is
+                //Indien niet onthoud eerste conflict periode
+                //Dit is belangrijk om eerst te doen
+                TimePeriod eersteTijdslot = new TimePeriod(startPeriod, endPeriod);
+                int indexEersteConflict = -1;
+                for (int i = 0; i < machine.Bezetting.Count; i++)
+                {
+                    if (eersteTijdslot.OverlapsWithThisPeriod(machine.Bezetting[i]))
+                    {
+                        indexEersteConflict = i;
+                        startPeriod = machine.Bezetting[i].End;
+                        endPeriod = startPeriod.AddMinutes(productieTijdVoorDitMachine);
+                        break;
+                    }
+                }
+                //Controller nu rest indien nodig
+                if (indexEersteConflict != -1)
+                {
+                    for (int i = indexEersteConflict + 1; i < machine.Bezetting.Count; i++)
+                    {
+                        TimePeriod timeperiod = machine.Bezetting[i];
+                        TimePeriod testDezePeriode = new TimePeriod(startPeriod, endPeriod);
+                        if (!testDezePeriode.OverlapsWithThisPeriod(timeperiod))
+                        {
+                            vroegstePeriodeDitMachine = testDezePeriode;
+                            changedTime = true;
+                            break;
+                        }
+                        else
+                        {
+                            startPeriod = timeperiod.End;
+                            endPeriod = startPeriod.AddMinutes(productieTijdVoorDitMachine);
+                        }
+                        if (i == machine.Bezetting.Count - 1 && changedTime == false)
+                        {
+                            vroegstePeriodeDitMachine = new TimePeriod(timeperiod.End, timeperiod.End.AddMinutes(productieTijdVoorDitMachine));
+                        }
+                    }
+                }
+                else
+                {
+                    vroegstePeriodeDitMachine = new TimePeriod(startPeriod, endPeriod);
+                }
+
+                if (vroegstePeriodeDitMachine.End < vroegstePeriode.End)
+                {
+                    vroegstePeriode = vroegstePeriodeDitMachine;
+                }
+            }
+
+            Debug.WriteLine("Vroegst :" + vroegstePeriode.Start.ToString());
+            return vroegstePeriode;
         }
     }
 }
