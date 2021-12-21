@@ -33,21 +33,21 @@ namespace Chocolade
         public double ID { get; set; }
 
 
-        public void VoegToe(ChocoladeBatch artikel, double hoeveelheid)
+        public void VoegToe(ChocoladeBatch artikel, double hoeveelheid = 1)
         {
-            
-            if (artikel.Hoeveelheid > hoeveelheid)
-            {
-                artikel.Verwijder(hoeveelheid);
-                Lijst.Add(artikel);
+            Lijst.Add(artikel);
+            //if (artikel.Hoeveelheid > hoeveelheid)
+            //{
+            //    artikel.Verwijder(hoeveelheid);
+            //    Lijst.Add(artikel);
                 
 
-            }
-            else if (artikel.Hoeveelheid == hoeveelheid)
-            {
-                Lijst.Add(artikel);
-                artikel.Verwijder();
-            }
+            //}
+            //else if (artikel.Hoeveelheid == hoeveelheid)
+            //{
+            //    Lijst.Add(artikel);
+            //    artikel.Verwijder();
+            //}
         }
 
         private void GenereerID()

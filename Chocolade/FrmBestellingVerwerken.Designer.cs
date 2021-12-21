@@ -30,11 +30,14 @@ namespace Chocolade
         private void InitializeComponent()
         {
             this.lbOrders = new System.Windows.Forms.ListBox();
-            this.lbBatches = new System.Windows.Forms.ListBox();
             this.lblOrderNummer = new System.Windows.Forms.Label();
             this.btnAfwerken = new System.Windows.Forms.Button();
             this.btnVerwijderen = new System.Windows.Forms.Button();
             this.btnSluiten = new System.Windows.Forms.Button();
+            this.lvwBatches = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // lbOrders
@@ -46,16 +49,6 @@ namespace Chocolade
             this.lbOrders.Size = new System.Drawing.Size(419, 124);
             this.lbOrders.TabIndex = 0;
             this.lbOrders.SelectedIndexChanged += new System.EventHandler(this.lbOrders_SelectedIndexChanged);
-            // 
-            // lbBatches
-            // 
-            this.lbBatches.Enabled = false;
-            this.lbBatches.FormattingEnabled = true;
-            this.lbBatches.ItemHeight = 15;
-            this.lbBatches.Location = new System.Drawing.Point(28, 194);
-            this.lbBatches.Name = "lbBatches";
-            this.lbBatches.Size = new System.Drawing.Size(521, 214);
-            this.lbBatches.TabIndex = 1;
             // 
             // lblOrderNummer
             // 
@@ -98,16 +91,51 @@ namespace Chocolade
             this.btnSluiten.UseVisualStyleBackColor = true;
             this.btnSluiten.Click += new System.EventHandler(this.btnSluiten_Click);
             // 
+            // lvwBatches
+            // 
+            this.lvwBatches.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvwBatches.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvwBatches.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lvwBatches.FullRowSelect = true;
+            this.lvwBatches.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvwBatches.HideSelection = false;
+            this.lvwBatches.LabelWrap = false;
+            this.lvwBatches.Location = new System.Drawing.Point(28, 190);
+            this.lvwBatches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwBatches.Name = "lvwBatches";
+            this.lvwBatches.Size = new System.Drawing.Size(521, 231);
+            this.lvwBatches.TabIndex = 6;
+            this.lvwBatches.UseCompatibleStateImageBehavior = false;
+            this.lvwBatches.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Type chocolade";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Hoeveelheid";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Houdbaarheidsdatum";
+            this.columnHeader3.Width = 180;
+            // 
             // FrmBestellingVerwerken
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lvwBatches);
             this.Controls.Add(this.btnSluiten);
             this.Controls.Add(this.btnVerwijderen);
             this.Controls.Add(this.btnAfwerken);
             this.Controls.Add(this.lblOrderNummer);
-            this.Controls.Add(this.lbBatches);
             this.Controls.Add(this.lbOrders);
             this.Name = "FrmBestellingVerwerken";
             this.Text = "FrmBestellingVerwerken";
@@ -120,10 +148,13 @@ namespace Chocolade
         #endregion
 
         private System.Windows.Forms.ListBox lbOrders;
-        private System.Windows.Forms.ListBox lbBatches;
         private System.Windows.Forms.Label lblOrderNummer;
         private System.Windows.Forms.Button btnAfwerken;
         private System.Windows.Forms.Button btnVerwijderen;
         private System.Windows.Forms.Button btnSluiten;
+        private System.Windows.Forms.ListView lvwBatches;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
+using System.Xml;
 
 namespace Chocolade
 {
@@ -24,24 +18,69 @@ namespace Chocolade
         {
             VerkoopOrder.IDCounter = 0000;
 
+            using (XmlReader xmlIn = XmlReader.Create("Verkoop/Prijslijsten/prijslijst.xml"))
+            {
+                int tracker = 0;
+                string[] artikel = new string[4];
+                while (xmlIn.Read())
+                {
+                    switch (xmlIn.NodeType)
+                    {
+                        case XmlNodeType.Element:
+                            if (xmlIn.GetAttribute("id") != null)
+                            {
+                                artikel[0] = xmlIn.GetAttribute("id");
+                            }
+                            switch (xmlIn.Name)
+                            {
+                                case "naam":
+                                    tracker = 1;
+                                    break;
+                                case "prijsperkg":
+                                    tracker = 2;
+                                    break;
+                                case "houdbaar":
+                                    tracker = 3;
+                                    break;
+                                default:
+                                    tracker = 0;
+                                    break;
+                            }
+                            break;
+                        case XmlNodeType.Text:
+                            if (tracker != 0)
+                            {
+                                artikel[tracker] = xmlIn.Value;
+                            }
+                            break;
+                        case XmlNodeType.EndElement:
+                            if (xmlIn.Name == "artikel")
+                            {
+                                lvwCatalogus.Items.Add(new ListViewItem(artikel));
+                            }
+                            break;
+                    }
+                }
+            }
+
             RefreshBoxes();
 
         }
 
         private void btnToevoegen_Click(object sender, EventArgs e)
         {
-            if (lbCatalogus.SelectedIndex != -1 && double.TryParse(txtHoeveelheid.Text, out double hoeveelheid))
+            if (lvwCatalogus.SelectedItems.Count != 0 && double.TryParse(txtHoeveelheid.Text, out double hoeveelheid))
             {
-                if (((ChocoladeBatch)lbCatalogus.SelectedItem).Hoeveelheid >= hoeveelheid)
-                {
-                    order.VoegToe((ChocoladeBatch)lbCatalogus.SelectedItem, hoeveelheid);
-                    RefreshBoxes();
-                    txtHoeveelheid.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Foute hoeveelheid");
-                }
+                string batchgegevens = lvwCatalogus.FocusedItem.SubItems[1].Text;
+                batchgegevens += "|" + lvwCatalogus.FocusedItem.SubItems[0].Text;
+                batchgegevens += "|" + hoeveelheid.ToString();
+                batchgegevens += "|01/01/3001";
+
+
+                ChocoladeBatch batch = new ChocoladeBatch(batchgegevens, false);
+                order.VoegToe(batch);
+                RefreshBoxes();
+                txtHoeveelheid.Clear();
             }
             else
             {
@@ -67,7 +106,7 @@ namespace Chocolade
 
         private void btnAnnuleren_Click(object sender, EventArgs e)
         {
-            foreach(ChocoladeBatch batch in order.Lijst)
+            foreach (ChocoladeBatch batch in order.Lijst)
             {
                 if (!ChocoladeBatch.stock.Contains(batch))
                 {
@@ -95,8 +134,6 @@ namespace Chocolade
         {
             lbOrder.DataSource = null;
             lbOrder.DataSource = order.Lijst;
-            lbCatalogus.DataSource = null;
-            lbCatalogus.DataSource = ChocoladeBatch.stock;
             lbOrder.SelectedIndex = -1;
         }
 
@@ -104,5 +141,6 @@ namespace Chocolade
         {
             this.Close();
         }
+
     }
 }

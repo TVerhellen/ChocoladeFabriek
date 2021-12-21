@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Chocolade
 {
@@ -26,11 +20,11 @@ namespace Chocolade
             var txtFiles = Directory.EnumerateFiles("Verkoop/Lopend", "*.txt");
             foreach (string currentFile in txtFiles)
             {
-                using(reader = new StreamReader(currentFile))
+                using (reader = new StreamReader(currentFile))
                 {
                     double id = Convert.ToDouble(reader.ReadLine());
                     List<string> batches = new List<string>();
-                    while(!reader.EndOfStream)
+                    while (!reader.EndOfStream)
                     {
                         batches.Add(reader.ReadLine());
                     }
@@ -40,7 +34,7 @@ namespace Chocolade
             }
             lbOrders.DataSource = orders;
             lbOrders.SelectedIndex = -1;
-            lbBatches.DataSource = null;
+            lvwBatches.Items.Clear();
             lblOrderNummer.Text = "";
         }
 
@@ -48,24 +42,16 @@ namespace Chocolade
         {
             if (lbOrders.SelectedIndex != -1)
             {
-                lbBatches.DataSource = null;
-                lbBatches.DataSource = ((VerkoopOrder)lbOrders.SelectedItem).Lijst;
-                lbBatches.SelectedIndex = -1;
-
-                lblOrderNummer.Text = ((VerkoopOrder)lbOrders.SelectedItem).ToString();
-
                 btnAfwerken.Enabled = true;
                 btnVerwijderen.Enabled = true;
+                updateLvw();
             }
             else
             {
-                lblOrderNummer.Text = "";
-
-                lbBatches.DataSource = null;
-
                 btnAfwerken.Enabled = false;
                 btnVerwijderen.Enabled = false;
             }
+
         }
 
         private void btnAfwerken_Click(object sender, EventArgs e)
@@ -111,6 +97,16 @@ namespace Chocolade
             this.DialogResult = DialogResult.Cancel;
         }
 
+        private void updateLvw()
+        {
+            lvwBatches.Items.Clear();
+
+            foreach (ChocoladeBatch batch in ((VerkoopOrder)lbOrders.SelectedItem).Lijst)
+            {
+                ListViewItem theNewItem = new ListViewItem(new string[] { batch.Naam, batch.Hoeveelheid.ToString(), batch.Houdbaarheid.ToString("dd/MM/yyyy") });
+                lvwBatches.Items.Add(theNewItem);
+            }
+        }
 
     }
 }

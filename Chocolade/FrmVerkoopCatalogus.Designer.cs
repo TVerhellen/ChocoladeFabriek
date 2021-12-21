@@ -31,7 +31,6 @@ namespace Chocolade
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbCatalogus = new System.Windows.Forms.ListBox();
             this.lbOrder = new System.Windows.Forms.ListBox();
             this.txtHoeveelheid = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,6 +38,11 @@ namespace Chocolade
             this.btnAfwerken = new System.Windows.Forms.Button();
             this.btnAnnuleren = new System.Windows.Forms.Button();
             this.btnSluiten = new System.Windows.Forms.Button();
+            this.lvwCatalogus = new System.Windows.Forms.ListView();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // label1
@@ -59,15 +63,6 @@ namespace Chocolade
             this.label2.TabIndex = 1;
             this.label2.Text = "Order";
             // 
-            // lbCatalogus
-            // 
-            this.lbCatalogus.FormattingEnabled = true;
-            this.lbCatalogus.ItemHeight = 15;
-            this.lbCatalogus.Location = new System.Drawing.Point(32, 41);
-            this.lbCatalogus.Name = "lbCatalogus";
-            this.lbCatalogus.Size = new System.Drawing.Size(354, 169);
-            this.lbCatalogus.TabIndex = 2;
-            // 
             // lbOrder
             // 
             this.lbOrder.Enabled = false;
@@ -80,7 +75,7 @@ namespace Chocolade
             // 
             // txtHoeveelheid
             // 
-            this.txtHoeveelheid.Location = new System.Drawing.Point(392, 187);
+            this.txtHoeveelheid.Location = new System.Drawing.Point(392, 215);
             this.txtHoeveelheid.Name = "txtHoeveelheid";
             this.txtHoeveelheid.Size = new System.Drawing.Size(186, 23);
             this.txtHoeveelheid.TabIndex = 4;
@@ -88,7 +83,7 @@ namespace Chocolade
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(392, 169);
+            this.label3.Location = new System.Drawing.Point(313, 218);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 15);
             this.label3.TabIndex = 5;
@@ -96,7 +91,7 @@ namespace Chocolade
             // 
             // btnToevoegen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(584, 186);
+            this.btnToevoegen.Location = new System.Drawing.Point(584, 215);
             this.btnToevoegen.Name = "btnToevoegen";
             this.btnToevoegen.Size = new System.Drawing.Size(101, 23);
             this.btnToevoegen.TabIndex = 6;
@@ -134,11 +129,52 @@ namespace Chocolade
             this.btnSluiten.UseVisualStyleBackColor = true;
             this.btnSluiten.Click += new System.EventHandler(this.btnSluiten_Click);
             // 
+            // lvwCatalogus
+            // 
+            this.lvwCatalogus.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvwCatalogus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvwCatalogus.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lvwCatalogus.FullRowSelect = true;
+            this.lvwCatalogus.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lvwCatalogus.HideSelection = false;
+            this.lvwCatalogus.LabelWrap = false;
+            this.lvwCatalogus.Location = new System.Drawing.Point(32, 42);
+            this.lvwCatalogus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwCatalogus.Name = "lvwCatalogus";
+            this.lvwCatalogus.Size = new System.Drawing.Size(594, 168);
+            this.lvwCatalogus.TabIndex = 10;
+            this.lvwCatalogus.UseCompatibleStateImageBehavior = false;
+            this.lvwCatalogus.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ID";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Type chocolade";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Prijs per kg";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Houdbaarheidsperiode";
+            this.columnHeader3.Width = 180;
+            // 
             // FrmVerkoopCatalogus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 478);
+            this.ClientSize = new System.Drawing.Size(1035, 478);
+            this.Controls.Add(this.lvwCatalogus);
             this.Controls.Add(this.btnSluiten);
             this.Controls.Add(this.btnAnnuleren);
             this.Controls.Add(this.btnAfwerken);
@@ -146,7 +182,6 @@ namespace Chocolade
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtHoeveelheid);
             this.Controls.Add(this.lbOrder);
-            this.Controls.Add(this.lbCatalogus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmVerkoopCatalogus";
@@ -161,7 +196,6 @@ namespace Chocolade
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox lbCatalogus;
         private System.Windows.Forms.ListBox lbOrder;
         private System.Windows.Forms.TextBox txtHoeveelheid;
         private System.Windows.Forms.Label label3;
@@ -169,5 +203,10 @@ namespace Chocolade
         private System.Windows.Forms.Button btnAfwerken;
         private System.Windows.Forms.Button btnAnnuleren;
         private System.Windows.Forms.Button btnSluiten;
+        private System.Windows.Forms.ListView lvwCatalogus;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
