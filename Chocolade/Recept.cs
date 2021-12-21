@@ -22,6 +22,7 @@ namespace Chocolade
             AantalUrenPerKilo = Convert.ToInt32(arrGegevens[2]);
             DagenHoudbaar = Convert.ToInt32(arrGegevens[3]);
             string[] arrIngredienten = arrGegevens[4].Split(';');
+            //Prijs = Convert.ToDouble(arrGegevens[1])
             foreach (var item in arrIngredienten)
             {
                 string[] arrDelen = item.Split('§');
@@ -68,13 +69,20 @@ namespace Chocolade
             //Maak product aan
             if (this.GenoegGrondstoffen(hoeveelProduct))
             {
-                TimePeriod roastTimeslot = Machine.VindVroegstMogelijkeTijdslot(RoastMachine.list, DateTime.Now);
-                TimePeriod grindTimeslot = Machine.VindVroegstMogelijkeTijdslot(GrindingMachine.list, roastTimeslot.Start);
-                TimePeriod temperingTimeslot = Machine.VindVroegstMogelijkeTijdslot(TemperingMachine.list, grindTimeslot.Start);
+                MachineGebruik roastTimeslot = Machine.VindVroegstMogelijkeTijdslot(RoastMachine.list, DateTime.Now);
+                MachineGebruik grindTimeslot = Machine.VindVroegstMogelijkeTijdslot(GrindingMachine.list, roastTimeslot.Tijdslot.End);
+                MachineGebruik temperingTimeslot = Machine.VindVroegstMogelijkeTijdslot(TemperingMachine.list, grindTimeslot.Tijdslot.End);
+
+                roastTimeslot.GebruiktMachine.Bezetting.Add(roastTimeslot.Tijdslot);
+                grindTimeslot.GebruiktMachine.Bezetting.Add(grindTimeslot.Tijdslot);
+                temperingTimeslot.GebruiktMachine.Bezetting.Add(temperingTimeslot.Tijdslot);
 
 
+                List<MachineGebruik> machineGebruik = new List<MachineGebruik> { roastTimeslot, grindTimeslot, temperingTimeslot };
 
                 ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}");
+                nieuweBatch.MachinesEnTijdsloten = machineGebruik;
+
                 for (int i = 0; i < Ingredienten.Count; i++)
                 {
                     double totaalNodig = Ingredienten[i].Hoeveelheid * hoeveelProduct;
@@ -110,6 +118,7 @@ namespace Chocolade
                 //UpdateLijsten
                 Grondstof.SlaLijstOp();
                 ChocoladeBatch.SlaLijstOp();
+                Machine.SlaLijstenOp();
             }
             else
             {

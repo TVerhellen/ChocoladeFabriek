@@ -12,6 +12,5 @@ namespace Chocolade
 
         public GrindingMachine() : base() { }
         public GrindingMachine(string data) : base(data) { }
-
     }
 }

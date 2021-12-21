@@ -11,19 +11,31 @@ namespace Chocolade
     class Machine
     {
 
-
         private double _productieTijd;
         private double _maxCapaciteit;
+        private string _naam;
+        private string _filePath;
 
+        public static List<Machine> allMachines = new List<Machine>();
 
-        private List<TimePeriod> _bezetting;
+        public List<Machine> AllMachines
+        {
+            get { return allMachines; }
+            set { allMachines = value; }
+        }
+
+        private List<TimePeriod> _bezetting = new List<TimePeriod>();
 
         public Machine() { }
         public Machine(string data)
         {
 
         }
-
+        public string FilePath
+        {
+            get { return _filePath; }
+            set { _filePath = value; }
+        }
         public List<TimePeriod> Bezetting
         {
             get { return _bezetting; }
@@ -39,10 +51,49 @@ namespace Chocolade
             get { return _productieTijd; }
             set { _productieTijd = value; }
         }
+        public string Naam
+        {
+            get { return _naam; }
+            set { _naam = value; }
+        }
+
         public override string ToString()
         {
             return MaxCapaciteit.ToString() + " " + ProductieTijd.ToString() + Bezetting.ToString();//ToDO
         }
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Machine tempMachine = (Machine)obj;
+
+            return this.Naam == tempMachine.Naam;
+        }
+        public static void SlaLijstenOp()
+        {
+            foreach (var machine in Machine.allMachines)
+            {
+                using (StreamWriter writer = new StreamWriter(machine.FilePath))
+                {
+                    writer.WriteLine(machine.ProductieTijd);
+                    writer.WriteLine(machine.MaxCapaciteit);
+
+                    foreach (var tijdslot in machine.Bezetting)
+                    {
+                        writer.WriteLine(tijdslot);
+                    }
+                }
+            }
+        }
+
+
+
         public static void laadLijsten()
         {
             string[] files = Directory.GetFiles("Machines/");
@@ -69,6 +120,10 @@ namespace Chocolade
                     tempMachine = new TemperingMachine();
                     TemperingMachine.list.Add(tempMachine);
                 }
+                allMachines.Add(tempMachine);
+                tempMachine.Naam = file.Substring("Machines/".Length, (file.Length - "Machines/".Length - ".txt".Length));
+                tempMachine.FilePath = file;
+
 
                 List<TimePeriod> tempPeriod = new List<TimePeriod>();
                 using (StreamReader reader = new StreamReader(file))
@@ -88,6 +143,7 @@ namespace Chocolade
                         {
                             string[] periodDates = allLines[i].Split("--");
                             DateTime start = Convert.ToDateTime(periodDates[0]);
+                            Debug.WriteLine(periodDates[0] + " vs " + start);
                             DateTime end = Convert.ToDateTime(periodDates[1]);
                             tempPeriod.Add(new TimePeriod(start, end));
                         }
@@ -97,12 +153,12 @@ namespace Chocolade
             }
         }
 
-        public static TimePeriod VindVroegstMogelijkeTijdslot(List<Machine> machineLijst, DateTime starttijd)
+        public static MachineGebruik VindVroegstMogelijkeTijdslot(List<Machine> machineLijst, DateTime starttijd)
         {
             double vertragingTegenoverNu = 5;
 
             TimePeriod vroegstePeriode = new TimePeriod(DateTime.Now.AddDays(10000), DateTime.Now.AddDays(10001));
-
+            Machine ditMachine = machineLijst[0];
             foreach (var machine in machineLijst)
             {
                 double productieTijdVoorDitMachine = machine.ProductieTijd;
@@ -118,6 +174,7 @@ namespace Chocolade
                 int indexEersteConflict = -1;
                 for (int i = 0; i < machine.Bezetting.Count; i++)
                 {
+                    Debug.WriteLine(eersteTijdslot + " Overlapping? " + machine.Bezetting[i] + " " + eersteTijdslot.Equals(machine.Bezetting[i]));
                     if (eersteTijdslot.OverlapsWithThisPeriod(machine.Bezetting[i]))
                     {
                         indexEersteConflict = i;
@@ -155,14 +212,20 @@ namespace Chocolade
                     vroegstePeriodeDitMachine = new TimePeriod(startPeriod, endPeriod);
                 }
 
+                if (indexEersteConflict == machine.Bezetting.Count - 1 && machine.Bezetting.Count != 0)
+                {
+                    TimePeriod timeperiod = machine.Bezetting[machine.Bezetting.Count - 1];
+                    vroegstePeriodeDitMachine = new TimePeriod(timeperiod.End, timeperiod.End.AddMinutes(productieTijdVoorDitMachine));
+                }
+
                 if (vroegstePeriodeDitMachine.End < vroegstePeriode.End)
                 {
                     vroegstePeriode = vroegstePeriodeDitMachine;
+                    ditMachine = machine;
                 }
             }
 
-            Debug.WriteLine("Vroegst :" + vroegstePeriode.Start.ToString());
-            return vroegstePeriode;
+            return new MachineGebruik(ditMachine, vroegstePeriode);
         }
     }
 }

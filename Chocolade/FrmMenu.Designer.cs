@@ -47,6 +47,8 @@ namespace Chocolade
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grondstoffenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.machinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +58,8 @@ namespace Chocolade
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aankoopToolStripMenuItem,
             this.verkoopToolStripMenuItem,
-            this.stockToolStripMenuItem});
+            this.stockToolStripMenuItem,
+            this.productieToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
@@ -174,16 +177,31 @@ namespace Chocolade
             // grondstoffenToolStripMenuItem
             // 
             this.grondstoffenToolStripMenuItem.Name = "grondstoffenToolStripMenuItem";
-            this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.grondstoffenToolStripMenuItem.Text = "Grondstoffen";
             this.grondstoffenToolStripMenuItem.Click += new System.EventHandler(this.grondstoffenToolStripMenuItem_Click);
             // 
             // productenToolStripMenuItem
             // 
             this.productenToolStripMenuItem.Name = "productenToolStripMenuItem";
-            this.productenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.productenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.productenToolStripMenuItem.Text = "Producten";
             this.productenToolStripMenuItem.Click += new System.EventHandler(this.productenToolStripMenuItem_Click);
+            // 
+            // productieToolStripMenuItem
+            // 
+            this.productieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.machinesToolStripMenuItem});
+            this.productieToolStripMenuItem.Name = "productieToolStripMenuItem";
+            this.productieToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.productieToolStripMenuItem.Text = "Productie";
+            // 
+            // machinesToolStripMenuItem
+            // 
+            this.machinesToolStripMenuItem.Name = "machinesToolStripMenuItem";
+            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.machinesToolStripMenuItem.Text = "Machines";
+            this.machinesToolStripMenuItem.Click += new System.EventHandler(this.machinesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -222,6 +240,8 @@ namespace Chocolade
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grondstoffenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem machinesToolStripMenuItem;
     }
 }
 
