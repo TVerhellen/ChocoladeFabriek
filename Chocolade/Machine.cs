@@ -120,6 +120,11 @@ namespace Chocolade
                     tempMachine = new TemperingMachine();
                     TemperingMachine.list.Add(tempMachine);
                 }
+                else if (file.Contains("PackagingMachine"))
+                {
+                    tempMachine = new PackagingMachine();
+                    PackagingMachine.list.Add(tempMachine);
+                }
                 allMachines.Add(tempMachine);
                 tempMachine.Naam = file.Substring("Machines/".Length, (file.Length - "Machines/".Length - ".txt".Length));
                 tempMachine.FilePath = file;

@@ -70,15 +70,28 @@ namespace Chocolade
             if (this.GenoegGrondstoffen(hoeveelProduct))
             {
                 MachineGebruik roastTimeslot = Machine.VindVroegstMogelijkeTijdslot(RoastMachine.list, DateTime.Now);
-                MachineGebruik grindTimeslot = Machine.VindVroegstMogelijkeTijdslot(GrindingMachine.list, roastTimeslot.Tijdslot.End);
+                Debug.WriteLine("roast");
+                MachineGebruik crackTimeslot = Machine.VindVroegstMogelijkeTijdslot(CrackingMachine.list, roastTimeslot.Tijdslot.End);
+                Debug.WriteLine("crack");
+
+                MachineGebruik grindTimeslot = Machine.VindVroegstMogelijkeTijdslot(GrindingMachine.list, crackTimeslot.Tijdslot.End);
+                Debug.WriteLine("grind");
+
                 MachineGebruik temperingTimeslot = Machine.VindVroegstMogelijkeTijdslot(TemperingMachine.list, grindTimeslot.Tijdslot.End);
+                Debug.WriteLine("temper");
+
+                MachineGebruik packagingTimeslot = Machine.VindVroegstMogelijkeTijdslot(PackagingMachine.list, temperingTimeslot.Tijdslot.End);
+                Debug.WriteLine("package");
+
 
                 roastTimeslot.GebruiktMachine.Bezetting.Add(roastTimeslot.Tijdslot);
+                crackTimeslot.GebruiktMachine.Bezetting.Add(crackTimeslot.Tijdslot);
                 grindTimeslot.GebruiktMachine.Bezetting.Add(grindTimeslot.Tijdslot);
                 temperingTimeslot.GebruiktMachine.Bezetting.Add(temperingTimeslot.Tijdslot);
+                packagingTimeslot.GebruiktMachine.Bezetting.Add(packagingTimeslot.Tijdslot);
 
 
-                List<MachineGebruik> machineGebruik = new List<MachineGebruik> { roastTimeslot, grindTimeslot, temperingTimeslot };
+                List<MachineGebruik> machineGebruik = new List<MachineGebruik> { roastTimeslot, crackTimeslot, grindTimeslot, temperingTimeslot, packagingTimeslot };
 
                 ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}");
                 nieuweBatch.MachinesEnTijdsloten = machineGebruik;
