@@ -26,8 +26,17 @@ namespace Chocolade
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
             Recept.LaadLijst();
+            Debug.WriteLine("START");
 
-            Recept.receptenLijst[0].Produceer(5);
+            Debug.WriteLine("Stock:" + ChocoladeBatch.stock.Count);
+            Debug.WriteLine("Gereserveerd:" + ChocoladeBatch.gereserveerd.Count);
+
+            Recept.receptenLijst[0].Produceer(5, 123456);
+            Recept.receptenLijst[0].Produceer(4);
+
+            Debug.WriteLine("Stock:" + ChocoladeBatch.stock.Count);
+            Debug.WriteLine("Gereserveerd:" + ChocoladeBatch.gereserveerd.Count);
+
 
         }
 

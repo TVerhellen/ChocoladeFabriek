@@ -46,7 +46,7 @@ namespace Chocolade
 
         public int ID { get; set; }
 
-        public void Produceer(double hoeveelProduct)
+        public void Produceer(double hoeveelProduct, long reservatienummer = -1)
         {
             Grondstof.SorteerStockLijst();
             List<Grondstof>[] grondstofSoort = new List<Grondstof>[Ingredienten.Count];
@@ -93,8 +93,18 @@ namespace Chocolade
 
                 List<MachineGebruik> machineGebruik = new List<MachineGebruik> { roastTimeslot, crackTimeslot, grindTimeslot, temperingTimeslot, packagingTimeslot };
 
-                ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}");
+                ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}", false);
                 nieuweBatch.MachinesEnTijdsloten = machineGebruik;
+                nieuweBatch.ReservatieNummer = reservatienummer;
+
+                if (reservatienummer != -1)
+                {
+                    ChocoladeBatch.gereserveerd.Add(nieuweBatch);
+                }
+                else
+                {
+                    ChocoladeBatch.stock.Add(nieuweBatch);
+                }
 
                 for (int i = 0; i < Ingredienten.Count; i++)
                 {
@@ -131,6 +141,7 @@ namespace Chocolade
                 //UpdateLijsten
                 Grondstof.SlaLijstOp();
                 ChocoladeBatch.SlaLijstOp();
+
                 Machine.SlaLijstenOp();
             }
             else

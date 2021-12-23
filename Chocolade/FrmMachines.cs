@@ -18,10 +18,10 @@ namespace Chocolade
         {
             InitializeComponent();
         }
-        public DateTime start = DateTime.Now;
-        public DateTime end = DateTime.Now.AddDays(1);
+        public DateTime start = DateTime.Now.Date;
+        public DateTime end = DateTime.Now.AddDays(1).Date;
         int thicknessBar = 20;
-        int spacingBar = 10;
+        int spacingBar = 20;
         int margin = 20;
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -43,6 +43,9 @@ namespace Chocolade
             {
                 Machine m = Machine.allMachines[i];
                 int counter = 0;
+
+                paintRectangle(g, Color.FromArgb(255, 248, 248, 248), margin, i * (thicknessBar + spacingBar) + canvasY, canvasWidth, thicknessBar);
+
                 foreach (var timeslot in m.Bezetting)
                 {
                     if (start < timeslot.Start && timeslot.End < end || start < timeslot.Start && timeslot.End > end || start > timeslot.Start && timeslot.End < end)
@@ -127,7 +130,7 @@ namespace Chocolade
                 string drawString = item.Naam;
 
                 float x = margin;
-                float y = margin + counter * 30;
+                float y = margin + counter * 40;
                 StringFormat drawFormat = new StringFormat();
                 g.DrawString(drawString, drawFont, drawBrush, x, y, drawFormat);
                 counter++;
@@ -161,41 +164,50 @@ namespace Chocolade
                 }
             }
 
-            //etrieveBatch
+            //retrieveBatch
             ChocoladeBatch thisBatch = null;
-            foreach (var batch in ChocoladeBatch.stock)
+            List<Artikel>[] lists = { ChocoladeBatch.stock, ChocoladeBatch.gereserveerd };
+            for (int i = 0; i < lists.Length; i++)
             {
-                foreach (var machineEnTijdslot in ((ChocoladeBatch)batch).MachinesEnTijdsloten)
+                foreach (var batch in lists[i])
                 {
-                    if (thisMachine.Naam == machineEnTijdslot.GebruiktMachine.Naam && machineEnTijdslot.Tijdslot.Equals(thisPeriod))
+                    foreach (var machineEnTijdslot in ((ChocoladeBatch)batch).MachinesEnTijdsloten)
                     {
-                        thisBatch = (ChocoladeBatch)batch;
+                        if (thisMachine.Naam == machineEnTijdslot.GebruiktMachine.Naam && machineEnTijdslot.Tijdslot.Equals(thisPeriod))
+                        {
+                            thisBatch = (ChocoladeBatch)batch;
+                            break;
+                        }
+                    }
+                    if (thisBatch != null)
+                    {
+                        lblRoast.Text = thisBatch.MachinesEnTijdsloten[0].GebruiktMachine.Naam;
+                        lblCrack.Text = thisBatch.MachinesEnTijdsloten[1].GebruiktMachine.Naam;
+                        lblGrind.Text = thisBatch.MachinesEnTijdsloten[2].GebruiktMachine.Naam;
+                        lblTemper.Text = thisBatch.MachinesEnTijdsloten[3].GebruiktMachine.Naam;
+                        lblPackaging.Text = thisBatch.MachinesEnTijdsloten[4].GebruiktMachine.Naam;
+
+                        lblRoastTime.Text = thisBatch.MachinesEnTijdsloten[0].Tijdslot.ToString();
+                        lblCrackTime.Text = thisBatch.MachinesEnTijdsloten[1].Tijdslot.ToString();
+                        lblGrindTime.Text = thisBatch.MachinesEnTijdsloten[2].Tijdslot.ToString();
+                        lblTemperTime.Text = thisBatch.MachinesEnTijdsloten[3].Tijdslot.ToString();
+                        lblPackagingTime.Text = thisBatch.MachinesEnTijdsloten[4].Tijdslot.ToString();
+                        if (thisBatch.ReservatieNummer == -1)
+                        {
+                            lblReservatieID.Text = "Niet gereserveerd";
+                        }
+                        else
+                        {
+                            lblReservatieID.Text = thisBatch.ReservatieNummer.ToString();
+                        }
+
+                        lblID.Text = thisBatch.ID.ToString();
+                        lblHoudbaarheid.Text = thisBatch.Houdbaarheid.ToString();
+
                         break;
                     }
                 }
-                if (thisBatch != null)
-                {
-                    lblRoast.Text = thisBatch.MachinesEnTijdsloten[0].GebruiktMachine.Naam;
-                    lblCrack.Text = thisBatch.MachinesEnTijdsloten[1].GebruiktMachine.Naam;
-                    lblGrind.Text = thisBatch.MachinesEnTijdsloten[2].GebruiktMachine.Naam;
-                    lblTemper.Text = thisBatch.MachinesEnTijdsloten[3].GebruiktMachine.Naam;
-                    lblPackaging.Text = thisBatch.MachinesEnTijdsloten[4].GebruiktMachine.Naam;
-
-                    lblRoastTime.Text = thisBatch.MachinesEnTijdsloten[0].Tijdslot.ToString();
-                    lblCrackTime.Text = thisBatch.MachinesEnTijdsloten[1].Tijdslot.ToString();
-                    lblGrindTime.Text = thisBatch.MachinesEnTijdsloten[2].Tijdslot.ToString();
-                    lblTemperTime.Text = thisBatch.MachinesEnTijdsloten[3].Tijdslot.ToString();
-                    lblPackagingTime.Text = thisBatch.MachinesEnTijdsloten[4].Tijdslot.ToString();
-
-                    lblID.Text = thisBatch.ID.ToString();
-                    lblHoudbaarheid.Text = thisBatch.Houdbaarheid.ToString();
-
-                    break;
-                }
             }
-
-
-
         }
 
         private void pnlThisBatch_Paint(object sender, PaintEventArgs e)
@@ -208,6 +220,25 @@ namespace Chocolade
             SolidBrush blueBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 255));
             g.FillPath(blueBrush, GetRoundPath(new Rectangle(0, 0, pnlThisBatch.Width, pnlThisBatch.Height), 14));
 
+        }
+
+        private void btnVolgendTijd_Click(object sender, EventArgs e)
+        {
+            start = start.AddDays(1);
+            end = end.AddDays(1);
+            lblStartDiagram.Text = start.ToString();
+            lblEndDiagram.Text = end.ToString();
+            panel1.Refresh();
+
+        }
+
+        private void btnVorigTijd_Click(object sender, EventArgs e)
+        {
+            start = start.AddDays(-1);
+            end = end.AddDays(-1);
+            lblStartDiagram.Text = start.ToString();
+            lblEndDiagram.Text = end.ToString();
+            panel1.Refresh();
         }
     }
 }

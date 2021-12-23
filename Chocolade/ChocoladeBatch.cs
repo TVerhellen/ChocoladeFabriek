@@ -12,8 +12,17 @@ namespace Chocolade
     {
 
         public static List<Artikel> stock = new List<Artikel>();
+        public static List<Artikel> gereserveerd = new List<Artikel>();
 
         private List<MachineGebruik> _machinesEnTijdsloten;
+
+        private long _reservatieNummer;
+
+        public long ReservatieNummer
+        {
+            get { return _reservatieNummer; }
+            set { _reservatieNummer = value; }
+        }
 
 
 
@@ -63,60 +72,92 @@ namespace Chocolade
 
         public static void LaadLijst()
         {
-            if (File.Exists("Stock/chocolade.txt"))
+            string[] files = { "Stock/chocolade.txt", "Stock/gereserveerd.txt" };
+            List<Artikel>[] lists = { stock, gereserveerd };
+
+            for (int i = 0; i < files.Length; i++)
             {
-                using (StreamReader reader = new StreamReader("Stock/chocolade.txt"))
+                if (File.Exists(files[i]))
                 {
-                    stock.Clear();
-                    while (!reader.EndOfStream)
+                    using (StreamReader reader = new StreamReader(files[i]))
                     {
-                        string thisLine = reader.ReadLine();
-                        if (!String.IsNullOrWhiteSpace(thisLine))
+                        lists[i].Clear();
+                        while (!reader.EndOfStream)
                         {
-                            Debug.WriteLine(thisLine.Substring((thisLine.LastIndexOf('|') + 1), thisLine.Length - thisLine.LastIndexOf('|') - 1));
-                            string[] timeSlots = thisLine.Substring((thisLine.LastIndexOf('|') + 1), thisLine.Length - thisLine.LastIndexOf('|') - 1).Split('&');
-                            string allButTimeslots = thisLine.Substring(0, thisLine.LastIndexOf('|'));
-                            List<MachineGebruik> machinesGebruikDezeStock = new List<MachineGebruik>();
-                            ChocoladeBatch newBatch = new ChocoladeBatch(allButTimeslots);
-                            foreach (var item in timeSlots)
+                            string thisLine = reader.ReadLine();
+                            if (!String.IsNullOrWhiteSpace(thisLine))
                             {
-                                string[] tempInfo = item.Split("--");
-                                TimePeriod tempPeriod = new TimePeriod(Convert.ToDateTime(tempInfo[1]), Convert.ToDateTime(tempInfo[2]));
-                                Machine tempMachine = new Machine();
-                                tempMachine.Naam = tempInfo[0];
-                                foreach (var machine in Machine.allMachines)
+                                string[] timeSlots = thisLine.Substring((thisLine.LastIndexOf('|') + 1), thisLine.Length - thisLine.LastIndexOf('|') - 1).Split('&');
+                                string allButTimeslots = thisLine.Substring(0, thisLine.LastIndexOf('|'));
+                                string orderNummer = thisLine.Substring(0, thisLine.IndexOf('|'));
+                                string orderNummerNotIncluded = thisLine.Substring(thisLine.IndexOf('|') + 1);
+                                List<MachineGebruik> machinesGebruikDezeStock = new List<MachineGebruik>();
+                                ChocoladeBatch newBatch = new ChocoladeBatch(orderNummerNotIncluded, false);
+                                foreach (var item in timeSlots)
                                 {
-                                    if (machine.Equals(tempMachine))
+                                    string[] tempInfo = item.Split("--");
+                                    TimePeriod tempPeriod = new TimePeriod(Convert.ToDateTime(tempInfo[1]), Convert.ToDateTime(tempInfo[2]));
+                                    Machine tempMachine = new Machine();
+                                    tempMachine.Naam = tempInfo[0];
+                                    foreach (var machine in Machine.allMachines)
                                     {
-                                        tempMachine = machine;
-                                        break;
+                                        if (machine.Equals(tempMachine))
+                                        {
+                                            tempMachine = machine;
+                                            break;
+                                        }
                                     }
+                                    machinesGebruikDezeStock.Add(new MachineGebruik(tempMachine, tempPeriod));
                                 }
-                                machinesGebruikDezeStock.Add(new MachineGebruik(tempMachine, tempPeriod));
+                                newBatch.MachinesEnTijdsloten = machinesGebruikDezeStock;
+                                newBatch.ReservatieNummer = Convert.ToInt64(orderNummer);
+                                lists[i].Add(newBatch);
                             }
-                            newBatch.MachinesEnTijdsloten = machinesGebruikDezeStock;
                         }
                     }
                 }
             }
         }
 
+        public void BatchNaarGereseveerd(long reservatienummer)
+        {
+            stock.RemoveAt(stock.IndexOf(this));
+            gereserveerd.Add(this);
+            this.ReservatieNummer = reservatienummer;
+        }
+
+        public void BatchNaarStock()
+        {
+            stock.RemoveAt(gereserveerd.IndexOf(this));
+            stock.Add(this);
+            this.ReservatieNummer = -1;
+        }
 
         public static void SlaLijstOp()
         {
-            if (File.Exists("Stock/chocolade.txt"))
+            string[] files = { "Stock/chocolade.txt", "Stock/gereserveerd.txt" };
+            List<Artikel>[] lists = { stock, gereserveerd };
+            for (int i = 0; i < files.Length; i++)
             {
-                using (StreamWriter writer = new StreamWriter("Stock/chocolade.txt"))
+                if (File.Exists(files[i]))
                 {
-
-                    foreach (var item in stock)
+                    using (StreamWriter writer = new StreamWriter(files[i]))
                     {
-                        ChocoladeBatch tempItem = (ChocoladeBatch)item;
-                        string gebruikstring = String.Join('&', tempItem.MachinesEnTijdsloten);
-                        writer.WriteLine($"{item.Naam}|{item.ID}|{item.Hoeveelheid}|{item.Houdbaarheid.ToString("dd/MM/yyyy")}|{gebruikstring}");
+
+                        foreach (var item in lists[i])
+                        {
+                            ChocoladeBatch tempItem = (ChocoladeBatch)item;
+                            string gebruikstring = String.Join('&', tempItem.MachinesEnTijdsloten);
+                            writer.WriteLine($"{tempItem.ReservatieNummer}|{item.Naam}|{item.ID}|{item.Hoeveelheid}|{item.Houdbaarheid.ToString("dd/MM/yyyy")}|{gebruikstring}");
+                        }
                     }
                 }
+
+
+
             }
+
+
         }
         public static void SorteerStockLijst()
         {
