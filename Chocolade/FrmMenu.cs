@@ -22,9 +22,14 @@ namespace Chocolade
         private void Form1_Load(object sender, EventArgs e)
         {
             //Text bestanden worden ingelezen
+            Machine.laadLijsten();
+
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
             Recept.LaadLijst();
+            Recept.receptenLijst[0].Produceer(5);
+            Recept.receptenLijst[1].Produceer(5, 123456);
+
         }
 
         private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,6 +54,12 @@ namespace Chocolade
         {
             FrmStockGrondstof grondstoffenOverview = new FrmStockGrondstof();
             grondstoffenOverview.Show();
+        }
+
+        private void machinesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMachines machinesForm = new FrmMachines();
+            machinesForm.Show();
         }
 
         private void gegevensLeverancierToolStripMenuItem_Click(object sender, EventArgs e)
