@@ -76,7 +76,6 @@ D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\ob
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmBestellingVerwerken.resources
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources
-<<<<<<< HEAD
 C:\Users\kristof\source\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.exe
 C:\Users\kristof\source\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.deps.json
 C:\Users\kristof\source\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.runtimeconfig.json
@@ -98,15 +97,11 @@ C:\Users\kristof\source\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\ref\
 C:\Users\kristof\source\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.pdb
 C:\Users\kristof\source\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
 C:\Users\kristof\source\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmMachines.resources
-=======
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensLeveranciers.resources
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmOrderAanmaken.resources
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopHistoriek.resources
-<<<<<<< HEAD
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensKlant.resources
-=======
->>>>>>> master
->>>>>>> 663fb6a6209ac2f9a719e11eb6cbab82653f2631
+D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmMachines.resources

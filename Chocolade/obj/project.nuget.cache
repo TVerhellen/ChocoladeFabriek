@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uucADCbgf74aWgSiZ+D2aIOjzVjfPw+MfU38h740QaRxZOU5TM0JO1DbCa/g9OPl0AfCJDBCY69C2PpVCwLkkA==",
+  "dgSpecHash": "p9aAt3JwCknRVkJiG7WdyOSDzF+Lsx8iifsivNVf6OzslSGTJLrINvcPKExJqxfvnsAzmBXNs4bcDPw4f5kdfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+  "projectFilePath": "D:\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

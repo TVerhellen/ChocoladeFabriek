@@ -19,23 +19,12 @@ namespace Chocolade
         private DateTime _momentBeschikbaar;
         private double _prijs;
 
-        public double Prijs
-        {
-<<<<<<< HEAD
-            string[] arrGegevens = gegevens.Split('|');
-            Prijs = Convert.ToDouble(arrGegevens[4]);
-            if (addToStock)
-=======
-            get { return _prijs; }
-            set { _prijs = value; }
-        }
+
 
 
         public ChocoladeBatch(string gegevens, bool addStock = true) : base(gegevens)
         {
             if (addStock)
-
->>>>>>> 663fb6a6209ac2f9a719e11eb6cbab82653f2631
             {
                 stock.Add(this);
             }
@@ -45,6 +34,12 @@ namespace Chocolade
         {
             Naam = naam;
             Hoeveelheid = hoeveelheid;
+        }
+
+        public double Prijs
+        {
+            get { return _prijs; }
+            set { _prijs = value; }
         }
         public DateTime MomentBeschikbaar
         {
@@ -67,8 +62,6 @@ namespace Chocolade
             get { return _machinesEnTijdsloten; }
             set { _machinesEnTijdsloten = value; }
         }
-
-        public double Prijs { get; set; }
 
         #region functies
         public override void Verwijder(double hoeveelheid = -1)

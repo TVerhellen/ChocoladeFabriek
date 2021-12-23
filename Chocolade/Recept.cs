@@ -28,7 +28,6 @@ namespace Chocolade
                 string[] arrDelen = item.Split('§');
                 Ingredienten.Add(new Grondstof(arrDelen[0], Convert.ToInt32(arrDelen[1])));
             }
-            PrijsPerKg = Convert.ToDouble(arrGegevens[5]);
             receptenLijst.Add(this);
         }
 
@@ -47,13 +46,8 @@ namespace Chocolade
 
         public int ID { get; set; }
 
-<<<<<<< HEAD
-        public double PrijsPerKg { get; set; }
-
-        public void Produceer(double hoeveelProduct)
-=======
         public void Produceer(double hoeveelProduct, double reservatienummer = -1)
->>>>>>> 663fb6a6209ac2f9a719e11eb6cbab82653f2631
+
         {
             Grondstof.SorteerStockLijst();
             List<Grondstof>[] grondstofSoort = new List<Grondstof>[Ingredienten.Count];
@@ -76,9 +70,7 @@ namespace Chocolade
             //Maak product aan
             if (this.GenoegGrondstoffen(hoeveelProduct))
             {
-<<<<<<< HEAD
-                ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}|{PrijsPerKg*hoeveelProduct}");
-=======
+
                 MachineGebruik roastTimeslot = Machine.VindVroegstMogelijkeTijdslot(RoastMachine.list, DateTime.Now);
                 MachineGebruik crackTimeslot = Machine.VindVroegstMogelijkeTijdslot(CrackingMachine.list, roastTimeslot.Tijdslot.End);
                 MachineGebruik grindTimeslot = Machine.VindVroegstMogelijkeTijdslot(GrindingMachine.list, crackTimeslot.Tijdslot.End);
@@ -109,7 +101,6 @@ namespace Chocolade
                     ChocoladeBatch.stock.Add(nieuweBatch);
                 }
 
->>>>>>> 663fb6a6209ac2f9a719e11eb6cbab82653f2631
                 for (int i = 0; i < Ingredienten.Count; i++)
                 {
                     double totaalNodig = Ingredienten[i].Hoeveelheid * hoeveelProduct;

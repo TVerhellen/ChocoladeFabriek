@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-Ruby Druppels|0401|5|1200|Criollo bonen§30;Melk§20|13,5
-Wit Blok|0301|5|900|Criollo bonen§30;Melk§30|8
-Zwart 80% Crispearls|0107|5|900|Criollo bonen§50;Melk§10|12
-=======
 Ruby Chocolade|123456|10.5|150|Criollo bonen§30;Melk§20
 Witte Chocolade|123456|12|150|Criollo bonen§30;Melk§30
 Puur 80%|123456|13|150|Criollo bonen§50;Melk§10
->>>>>>> 663fb6a6209ac2f9a719e11eb6cbab82653f2631
