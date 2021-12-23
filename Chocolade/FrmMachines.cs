@@ -187,11 +187,11 @@ namespace Chocolade
                         lblTemper.Text = thisBatch.MachinesEnTijdsloten[3].GebruiktMachine.Naam;
                         lblPackaging.Text = thisBatch.MachinesEnTijdsloten[4].GebruiktMachine.Naam;
 
-                        lblRoastTime.Text = thisBatch.MachinesEnTijdsloten[0].Tijdslot.ToString();
-                        lblCrackTime.Text = thisBatch.MachinesEnTijdsloten[1].Tijdslot.ToString();
-                        lblGrindTime.Text = thisBatch.MachinesEnTijdsloten[2].Tijdslot.ToString();
-                        lblTemperTime.Text = thisBatch.MachinesEnTijdsloten[3].Tijdslot.ToString();
-                        lblPackagingTime.Text = thisBatch.MachinesEnTijdsloten[4].Tijdslot.ToString();
+                        lblRoastTime.Text = thisBatch.MachinesEnTijdsloten[0].Tijdslot.Start + " - " + thisBatch.MachinesEnTijdsloten[0].Tijdslot.End;
+                        lblCrackTime.Text = thisBatch.MachinesEnTijdsloten[1].Tijdslot.Start + " - " + thisBatch.MachinesEnTijdsloten[1].Tijdslot.End;
+                        lblGrindTime.Text = thisBatch.MachinesEnTijdsloten[2].Tijdslot.Start + " - " + thisBatch.MachinesEnTijdsloten[2].Tijdslot.End;
+                        lblTemperTime.Text = thisBatch.MachinesEnTijdsloten[3].Tijdslot.Start + " - " + thisBatch.MachinesEnTijdsloten[3].Tijdslot.End;
+                        lblPackagingTime.Text = thisBatch.MachinesEnTijdsloten[4].Tijdslot.Start + " - " + thisBatch.MachinesEnTijdsloten[4].Tijdslot.End;
                         if (thisBatch.ReservatieNummer == -1)
                         {
                             lblReservatieID.Text = "Niet gereserveerd";
@@ -203,6 +203,9 @@ namespace Chocolade
 
                         lblID.Text = thisBatch.ID.ToString();
                         lblHoudbaarheid.Text = thisBatch.Houdbaarheid.ToString();
+                        lblBeschikbaar.Text = thisBatch.MomentBeschikbaar.ToString();
+                        lblPrijs.Text = thisBatch.Prijs.ToString();
+
                         break;
                     }
                 }
@@ -217,7 +220,7 @@ namespace Chocolade
             int margin = 20;
 
             SolidBrush blueBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 255));
-            g.FillPath(blueBrush, GetRoundPath(new Rectangle(0, 0, pnlThisBatch.Width, pnlThisBatch.Height), 14));
+            g.FillPath(blueBrush, GetRoundPath(new Rectangle(0, 0, pnlThisBatch.Width, pnlThisBatch.Height), 40));
 
         }
 

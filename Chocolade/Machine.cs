@@ -148,7 +148,6 @@ namespace Chocolade
                         {
                             string[] periodDates = allLines[i].Split("--");
                             DateTime start = Convert.ToDateTime(periodDates[0]);
-                            Debug.WriteLine(periodDates[0] + " vs " + start);
                             DateTime end = Convert.ToDateTime(periodDates[1]);
                             tempPeriod.Add(new TimePeriod(start, end));
                         }
@@ -179,7 +178,6 @@ namespace Chocolade
                 int indexEersteConflict = -1;
                 for (int i = 0; i < machine.Bezetting.Count; i++)
                 {
-                    Debug.WriteLine(eersteTijdslot + " Overlapping? " + machine.Bezetting[i] + " " + eersteTijdslot.Equals(machine.Bezetting[i]));
                     if (eersteTijdslot.OverlapsWithThisPeriod(machine.Bezetting[i]))
                     {
                         indexEersteConflict = i;

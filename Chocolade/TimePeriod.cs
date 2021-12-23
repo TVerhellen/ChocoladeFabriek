@@ -73,8 +73,6 @@ namespace Chocolade
                 //Dit zou niet nodig moeten zijn....
                 overlaps = true;
             }
-            Debug.WriteLine(this + " en " + otherPeriod + " " + overlaps);
-            Debug.WriteLine(this.Start + " en " + otherPeriod.Start + " " + (this.Start > otherPeriod.Start) + "  " + (this.Start < otherPeriod.End));
 
             return overlaps;
         }

@@ -19,7 +19,7 @@ namespace Chocolade
             string[] arrGegevens = gegevens.Split('|');
             Naam = arrGegevens[0];
             ID = Convert.ToInt32(arrGegevens[1]);
-            AantalUrenPerKilo = Convert.ToInt32(arrGegevens[2]);
+            PrijsPerKilo = Convert.ToDouble(arrGegevens[2]);
             DagenHoudbaar = Convert.ToInt32(arrGegevens[3]);
             string[] arrIngredienten = arrGegevens[4].Split(';');
             //Prijs = Convert.ToDouble(arrGegevens[1])
@@ -40,13 +40,13 @@ namespace Chocolade
 
         public string Naam { get; set; }
 
-        public int AantalUrenPerKilo { get; set; }
+        public double PrijsPerKilo { get; set; }
 
         public int DagenHoudbaar { get; set; }
 
         public int ID { get; set; }
 
-        public void Produceer(double hoeveelProduct, long reservatienummer = -1)
+        public void Produceer(double hoeveelProduct, double reservatienummer = -1)
         {
             Grondstof.SorteerStockLijst();
             List<Grondstof>[] grondstofSoort = new List<Grondstof>[Ingredienten.Count];
@@ -70,18 +70,10 @@ namespace Chocolade
             if (this.GenoegGrondstoffen(hoeveelProduct))
             {
                 MachineGebruik roastTimeslot = Machine.VindVroegstMogelijkeTijdslot(RoastMachine.list, DateTime.Now);
-                Debug.WriteLine("roast");
                 MachineGebruik crackTimeslot = Machine.VindVroegstMogelijkeTijdslot(CrackingMachine.list, roastTimeslot.Tijdslot.End);
-                Debug.WriteLine("crack");
-
                 MachineGebruik grindTimeslot = Machine.VindVroegstMogelijkeTijdslot(GrindingMachine.list, crackTimeslot.Tijdslot.End);
-                Debug.WriteLine("grind");
-
                 MachineGebruik temperingTimeslot = Machine.VindVroegstMogelijkeTijdslot(TemperingMachine.list, grindTimeslot.Tijdslot.End);
-                Debug.WriteLine("temper");
-
                 MachineGebruik packagingTimeslot = Machine.VindVroegstMogelijkeTijdslot(PackagingMachine.list, temperingTimeslot.Tijdslot.End);
-                Debug.WriteLine("package");
 
 
                 roastTimeslot.GebruiktMachine.Bezetting.Add(roastTimeslot.Tijdslot);
@@ -96,7 +88,8 @@ namespace Chocolade
                 ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}", false);
                 nieuweBatch.MachinesEnTijdsloten = machineGebruik;
                 nieuweBatch.ReservatieNummer = reservatienummer;
-
+                nieuweBatch.MomentBeschikbaar = packagingTimeslot.Tijdslot.End;
+                nieuweBatch.Prijs = this.PrijsPerKilo * hoeveelProduct;
                 if (reservatienummer != -1)
                 {
                     ChocoladeBatch.gereserveerd.Add(nieuweBatch);
@@ -162,7 +155,7 @@ namespace Chocolade
                         {
                             ingredienten.Add(ingredient.Naam + "§" + ingredient.Hoeveelheid);
                         }
-                        writer.WriteLine($"{item.Naam}|{item.ID}|{item.AantalUrenPerKilo}|{item.DagenHoudbaar}|{String.Join(';', ingredienten)}");
+                        writer.WriteLine($"{item.Naam}|{item.ID}|{item.PrijsPerKilo}|{item.DagenHoudbaar}|{String.Join(';', ingredienten)}");
                     }
                 }
             }

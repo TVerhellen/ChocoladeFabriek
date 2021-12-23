@@ -36,6 +36,12 @@ namespace Chocolade
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlThisBatch = new System.Windows.Forms.Panel();
+            this.lblBeschikbaar = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblPrijs = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblReservatieID = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblHoudbaarheid = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,8 +63,6 @@ namespace Chocolade
             this.label3 = new System.Windows.Forms.Label();
             this.btnVorigTijd = new System.Windows.Forms.Button();
             this.btnVolgendTijd = new System.Windows.Forms.Button();
-            this.lblReservatieID = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.pnlThisBatch.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +127,10 @@ namespace Chocolade
             // pnlThisBatch
             // 
             this.pnlThisBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlThisBatch.Controls.Add(this.lblBeschikbaar);
+            this.pnlThisBatch.Controls.Add(this.label13);
+            this.pnlThisBatch.Controls.Add(this.lblPrijs);
+            this.pnlThisBatch.Controls.Add(this.label12);
             this.pnlThisBatch.Controls.Add(this.lblReservatieID);
             this.pnlThisBatch.Controls.Add(this.label11);
             this.pnlThisBatch.Controls.Add(this.lblID);
@@ -146,16 +154,82 @@ namespace Chocolade
             this.pnlThisBatch.Controls.Add(this.label3);
             this.pnlThisBatch.Location = new System.Drawing.Point(39, 429);
             this.pnlThisBatch.Name = "pnlThisBatch";
-            this.pnlThisBatch.Size = new System.Drawing.Size(851, 370);
+            this.pnlThisBatch.Size = new System.Drawing.Size(851, 432);
             this.pnlThisBatch.TabIndex = 1;
             this.pnlThisBatch.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlThisBatch_Paint);
+            // 
+            // lblBeschikbaar
+            // 
+            this.lblBeschikbaar.AutoSize = true;
+            this.lblBeschikbaar.BackColor = System.Drawing.Color.White;
+            this.lblBeschikbaar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblBeschikbaar.Location = new System.Drawing.Point(226, 144);
+            this.lblBeschikbaar.Name = "lblBeschikbaar";
+            this.lblBeschikbaar.Size = new System.Drawing.Size(12, 17);
+            this.lblBeschikbaar.TabIndex = 29;
+            this.lblBeschikbaar.Text = " ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(30, 144);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(143, 18);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Beschikbaar vanaf:";
+            // 
+            // lblPrijs
+            // 
+            this.lblPrijs.AutoSize = true;
+            this.lblPrijs.BackColor = System.Drawing.Color.White;
+            this.lblPrijs.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPrijs.Location = new System.Drawing.Point(226, 107);
+            this.lblPrijs.Name = "lblPrijs";
+            this.lblPrijs.Size = new System.Drawing.Size(12, 17);
+            this.lblPrijs.TabIndex = 27;
+            this.lblPrijs.Text = " ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(30, 107);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 18);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Prijs:";
+            // 
+            // lblReservatieID
+            // 
+            this.lblReservatieID.AutoSize = true;
+            this.lblReservatieID.BackColor = System.Drawing.Color.White;
+            this.lblReservatieID.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblReservatieID.Location = new System.Drawing.Point(226, 71);
+            this.lblReservatieID.Name = "lblReservatieID";
+            this.lblReservatieID.Size = new System.Drawing.Size(12, 17);
+            this.lblReservatieID.TabIndex = 25;
+            this.lblReservatieID.Text = " ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(30, 71);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 18);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Order Id:";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
             this.lblID.BackColor = System.Drawing.Color.White;
             this.lblID.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblID.Location = new System.Drawing.Point(225, 26);
+            this.lblID.Location = new System.Drawing.Point(226, 35);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(12, 17);
             this.lblID.TabIndex = 23;
@@ -166,7 +240,7 @@ namespace Chocolade
             this.lblHoudbaarheid.AutoSize = true;
             this.lblHoudbaarheid.BackColor = System.Drawing.Color.White;
             this.lblHoudbaarheid.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHoudbaarheid.Location = new System.Drawing.Point(225, 90);
+            this.lblHoudbaarheid.Location = new System.Drawing.Point(226, 184);
             this.lblHoudbaarheid.Name = "lblHoudbaarheid";
             this.lblHoudbaarheid.Size = new System.Drawing.Size(12, 17);
             this.lblHoudbaarheid.TabIndex = 22;
@@ -177,7 +251,7 @@ namespace Chocolade
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(29, 89);
+            this.label9.Location = new System.Drawing.Point(30, 184);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 18);
             this.label9.TabIndex = 21;
@@ -188,7 +262,7 @@ namespace Chocolade
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(30, 26);
+            this.label8.Location = new System.Drawing.Point(30, 35);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 18);
             this.label8.TabIndex = 20;
@@ -199,7 +273,7 @@ namespace Chocolade
             this.lblPackagingTime.AutoSize = true;
             this.lblPackagingTime.BackColor = System.Drawing.Color.White;
             this.lblPackagingTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPackagingTime.Location = new System.Drawing.Point(485, 283);
+            this.lblPackagingTime.Location = new System.Drawing.Point(490, 374);
             this.lblPackagingTime.Name = "lblPackagingTime";
             this.lblPackagingTime.Size = new System.Drawing.Size(12, 17);
             this.lblPackagingTime.TabIndex = 19;
@@ -210,7 +284,7 @@ namespace Chocolade
             this.lblTemperTime.AutoSize = true;
             this.lblTemperTime.BackColor = System.Drawing.Color.White;
             this.lblTemperTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTemperTime.Location = new System.Drawing.Point(485, 245);
+            this.lblTemperTime.Location = new System.Drawing.Point(490, 336);
             this.lblTemperTime.Name = "lblTemperTime";
             this.lblTemperTime.Size = new System.Drawing.Size(12, 17);
             this.lblTemperTime.TabIndex = 18;
@@ -221,7 +295,7 @@ namespace Chocolade
             this.lblGrindTime.AutoSize = true;
             this.lblGrindTime.BackColor = System.Drawing.Color.White;
             this.lblGrindTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGrindTime.Location = new System.Drawing.Point(485, 207);
+            this.lblGrindTime.Location = new System.Drawing.Point(490, 298);
             this.lblGrindTime.Name = "lblGrindTime";
             this.lblGrindTime.Size = new System.Drawing.Size(12, 17);
             this.lblGrindTime.TabIndex = 17;
@@ -232,7 +306,7 @@ namespace Chocolade
             this.lblCrackTime.AutoSize = true;
             this.lblCrackTime.BackColor = System.Drawing.Color.White;
             this.lblCrackTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCrackTime.Location = new System.Drawing.Point(485, 169);
+            this.lblCrackTime.Location = new System.Drawing.Point(490, 260);
             this.lblCrackTime.Name = "lblCrackTime";
             this.lblCrackTime.Size = new System.Drawing.Size(12, 17);
             this.lblCrackTime.TabIndex = 16;
@@ -243,7 +317,7 @@ namespace Chocolade
             this.lblRoastTime.AutoSize = true;
             this.lblRoastTime.BackColor = System.Drawing.Color.White;
             this.lblRoastTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRoastTime.Location = new System.Drawing.Point(485, 131);
+            this.lblRoastTime.Location = new System.Drawing.Point(490, 222);
             this.lblRoastTime.Name = "lblRoastTime";
             this.lblRoastTime.Size = new System.Drawing.Size(12, 17);
             this.lblRoastTime.TabIndex = 15;
@@ -254,7 +328,7 @@ namespace Chocolade
             this.lblPackaging.AutoSize = true;
             this.lblPackaging.BackColor = System.Drawing.Color.White;
             this.lblPackaging.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPackaging.Location = new System.Drawing.Point(224, 283);
+            this.lblPackaging.Location = new System.Drawing.Point(226, 374);
             this.lblPackaging.Name = "lblPackaging";
             this.lblPackaging.Size = new System.Drawing.Size(12, 17);
             this.lblPackaging.TabIndex = 14;
@@ -265,7 +339,7 @@ namespace Chocolade
             this.lblTemper.AutoSize = true;
             this.lblTemper.BackColor = System.Drawing.Color.White;
             this.lblTemper.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTemper.Location = new System.Drawing.Point(224, 245);
+            this.lblTemper.Location = new System.Drawing.Point(226, 336);
             this.lblTemper.Name = "lblTemper";
             this.lblTemper.Size = new System.Drawing.Size(12, 17);
             this.lblTemper.TabIndex = 13;
@@ -276,7 +350,7 @@ namespace Chocolade
             this.lblGrind.AutoSize = true;
             this.lblGrind.BackColor = System.Drawing.Color.White;
             this.lblGrind.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGrind.Location = new System.Drawing.Point(224, 207);
+            this.lblGrind.Location = new System.Drawing.Point(226, 298);
             this.lblGrind.Name = "lblGrind";
             this.lblGrind.Size = new System.Drawing.Size(12, 17);
             this.lblGrind.TabIndex = 12;
@@ -287,7 +361,7 @@ namespace Chocolade
             this.lblCrack.AutoSize = true;
             this.lblCrack.BackColor = System.Drawing.Color.White;
             this.lblCrack.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCrack.Location = new System.Drawing.Point(224, 169);
+            this.lblCrack.Location = new System.Drawing.Point(226, 260);
             this.lblCrack.Name = "lblCrack";
             this.lblCrack.Size = new System.Drawing.Size(12, 17);
             this.lblCrack.TabIndex = 11;
@@ -298,7 +372,7 @@ namespace Chocolade
             this.lblRoast.AutoSize = true;
             this.lblRoast.BackColor = System.Drawing.Color.White;
             this.lblRoast.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRoast.Location = new System.Drawing.Point(224, 131);
+            this.lblRoast.Location = new System.Drawing.Point(226, 222);
             this.lblRoast.Name = "lblRoast";
             this.lblRoast.Size = new System.Drawing.Size(12, 17);
             this.lblRoast.TabIndex = 10;
@@ -309,7 +383,7 @@ namespace Chocolade
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(30, 283);
+            this.label7.Location = new System.Drawing.Point(30, 373);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(144, 18);
             this.label7.TabIndex = 9;
@@ -320,7 +394,7 @@ namespace Chocolade
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(30, 245);
+            this.label6.Location = new System.Drawing.Point(30, 335);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 18);
             this.label6.TabIndex = 8;
@@ -331,7 +405,7 @@ namespace Chocolade
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(30, 207);
+            this.label5.Location = new System.Drawing.Point(30, 297);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 18);
             this.label5.TabIndex = 7;
@@ -342,7 +416,7 @@ namespace Chocolade
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(30, 169);
+            this.label4.Location = new System.Drawing.Point(30, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 18);
             this.label4.TabIndex = 6;
@@ -353,7 +427,7 @@ namespace Chocolade
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(30, 131);
+            this.label3.Location = new System.Drawing.Point(30, 221);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 5;
@@ -379,34 +453,12 @@ namespace Chocolade
             this.btnVolgendTijd.UseVisualStyleBackColor = true;
             this.btnVolgendTijd.Click += new System.EventHandler(this.btnVolgendTijd_Click);
             // 
-            // lblReservatieID
-            // 
-            this.lblReservatieID.AutoSize = true;
-            this.lblReservatieID.BackColor = System.Drawing.Color.White;
-            this.lblReservatieID.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblReservatieID.Location = new System.Drawing.Point(225, 56);
-            this.lblReservatieID.Name = "lblReservatieID";
-            this.lblReservatieID.Size = new System.Drawing.Size(12, 17);
-            this.lblReservatieID.TabIndex = 25;
-            this.lblReservatieID.Text = " ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(30, 56);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 18);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Reservatie Id:";
-            // 
             // FrmMachines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(932, 873);
+            this.ClientSize = new System.Drawing.Size(932, 906);
             this.Controls.Add(this.btnVolgendTijd);
             this.Controls.Add(this.btnVorigTijd);
             this.Controls.Add(this.pnlThisBatch);
@@ -458,5 +510,9 @@ namespace Chocolade
         private System.Windows.Forms.Button btnVolgendTijd;
         private System.Windows.Forms.Label lblReservatieID;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblPrijs;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblBeschikbaar;
+        private System.Windows.Forms.Label label13;
     }
 }

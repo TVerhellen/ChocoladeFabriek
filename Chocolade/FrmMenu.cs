@@ -26,8 +26,8 @@ namespace Chocolade
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
             Recept.LaadLijst();
-            Recept.receptenLijst[0].Produceer(5, 123456);
-            Recept.receptenLijst[0].Produceer(4);
+            Recept.receptenLijst[0].Produceer(5);
+            Recept.receptenLijst[1].Produceer(5, 123456);
 
         }
 
