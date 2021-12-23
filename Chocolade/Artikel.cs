@@ -27,7 +27,7 @@ namespace Chocolade
 
         public override string ToString()
         {
-            return $"{Naam}|{ID}|{Hoeveelheid}|{Houdbaarheid}";
+            return $"{Naam}|{ID.ToString().PadLeft(4, '0')}|{Hoeveelheid}|{Houdbaarheid.ToString("dd/MM/yyyy")}";
         }
         public override bool Equals(object obj)
         {
@@ -66,5 +66,7 @@ namespace Chocolade
                 }
             }
         }
+
+
     }
 }

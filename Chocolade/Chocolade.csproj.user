@@ -5,7 +5,16 @@
     <Compile Update="FrmAankoopArtikels.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmBestellingVerwerken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmGegevensKlant.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmGegevensLeveranciers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMachines.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmMenu.cs">
@@ -18,6 +27,15 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmStockGrondstof.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmVerkoopCatalogus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmVerkoopHistoriek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmVerkoopLopend.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

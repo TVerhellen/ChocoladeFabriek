@@ -1,4 +1,6 @@
 ﻿using System;
+
+
 using System.Windows.Forms;
 
 namespace Chocolade
@@ -13,9 +15,26 @@ namespace Chocolade
         private void Form1_Load(object sender, EventArgs e)
         {
             //Text bestanden worden ingelezen
+            Machine.laadLijsten();
+
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
             Recept.LaadLijst();
+            Recept.receptenLijst[0].Produceer(5);
+            Recept.receptenLijst[1].Produceer(5, 123456);
+
+        }
+
+        private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopCatalogus catalogus = new FrmVerkoopCatalogus();
+            catalogus.ShowDialog();
+        }
+
+        private void bestellingVerwerkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBestellingVerwerken verwerken = new FrmBestellingVerwerken();
+            verwerken.ShowDialog();
         }
 
         private void productenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,6 +49,12 @@ namespace Chocolade
             grondstoffenOverview.Show();
         }
 
+        private void machinesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMachines machinesForm = new FrmMachines();
+            machinesForm.Show();
+        }
+
         private void gegevensLeverancierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmGegevensLeveranciers NieuweGegevensLeveranciers = new FrmGegevensLeveranciers();
@@ -42,10 +67,30 @@ namespace Chocolade
             nieuweOrder.Show();
         }
 
+
         private void aankoopartikelsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmAankoopArtikels aankoopArtikelsOverzicht = new FrmAankoopArtikels();
             aankoopArtikelsOverzicht.Show();
+        }
+
+        private void historiekToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopHistoriek nieuweHistoriek = new FrmVerkoopHistoriek();
+            nieuweHistoriek.ShowDialog();
+        }
+
+        private void lopendeBestellingenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopLopend nieuwLopend = new FrmVerkoopLopend();
+            nieuwLopend.ShowDialog();
+        }
+
+        private void gegevensKlantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGegevensKlant nieuwGegevensKlant = new FrmGegevensKlant();
+            nieuwGegevensKlant.Show();
+
         }
     }
 }
