@@ -7,12 +7,7 @@
     },
     "additionalProbingPaths": [
       "C:\\Users\\kristof\\.dotnet\\store\\|arch|\\|tfm|",
-<<<<<<< HEAD
-      "C:\\Users\\tijsv\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-=======
       "C:\\Users\\kristof\\.nuget\\packages"
->>>>>>> Productie
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

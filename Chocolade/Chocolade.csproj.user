@@ -2,7 +2,13 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="FrmAankoopArtikels.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmBestellingVerwerken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmGegevensKlant.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmGegevensLeveranciers.cs">
@@ -27,6 +33,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmVerkoopHistoriek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmVerkoopLopend.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

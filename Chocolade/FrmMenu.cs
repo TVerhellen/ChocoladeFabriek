@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 using System.Windows.Forms;
 
@@ -74,10 +67,30 @@ namespace Chocolade
             nieuweOrder.Show();
         }
 
+
+        private void aankoopartikelsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAankoopArtikels aankoopArtikelsOverzicht = new FrmAankoopArtikels();
+            aankoopArtikelsOverzicht.Show();
+        }
+
         private void historiekToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmVerkoopHistoriek nieuweHistoriek = new FrmVerkoopHistoriek();
             nieuweHistoriek.ShowDialog();
+        }
+
+        private void lopendeBestellingenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopLopend nieuwLopend = new FrmVerkoopLopend();
+            nieuwLopend.ShowDialog();
+        }
+
+        private void gegevensKlantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGegevensKlant nieuwGegevensKlant = new FrmGegevensKlant();
+            nieuwGegevensKlant.Show();
+
         }
     }
 }

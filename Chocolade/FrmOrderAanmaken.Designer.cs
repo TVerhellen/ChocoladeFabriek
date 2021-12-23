@@ -33,7 +33,6 @@ namespace Chocolade
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbLeverancier = new System.Windows.Forms.ComboBox();
             this.txtDatum = new System.Windows.Forms.TextBox();
             this.txtBtw = new System.Windows.Forms.TextBox();
             this.txtGemeente = new System.Windows.Forms.TextBox();
@@ -43,9 +42,9 @@ namespace Chocolade
             this.lvCatalogus = new System.Windows.Forms.ListView();
             this.chArtikelnummer = new System.Windows.Forms.ColumnHeader();
             this.chArtikelnaam = new System.Windows.Forms.ColumnHeader();
+            this.chSoort = new System.Windows.Forms.ColumnHeader();
             this.chEenheid = new System.Windows.Forms.ColumnHeader();
             this.chPrijs = new System.Windows.Forms.ColumnHeader();
-            this.chTotaleprijs = new System.Windows.Forms.ColumnHeader();
             this.label9 = new System.Windows.Forms.Label();
             this.btnOrderPlaatsen = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,12 +52,13 @@ namespace Chocolade
             this.lvOrderAanmaken = new System.Windows.Forms.ListView();
             this.chArtikelnummerOrderPlaatsen = new System.Windows.Forms.ColumnHeader();
             this.chArtikelnaamOrderPlaatsen = new System.Windows.Forms.ColumnHeader();
+            this.chSoortkolom = new System.Windows.Forms.ColumnHeader();
             this.chHoeveelheidOrderPlaatsen = new System.Windows.Forms.ColumnHeader();
             this.chEenheidOrderPlaatsen = new System.Windows.Forms.ColumnHeader();
             this.chPrijsOrderPlaatsen = new System.Windows.Forms.ColumnHeader();
             this.chTotalePrijsOrderPlaatsen = new System.Windows.Forms.ColumnHeader();
             this.dtpDatumOrder = new System.Windows.Forms.DateTimePicker();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.flrTeZoekenPad = new System.Windows.Forms.FolderBrowserDialog();
             this.lblSelecteerBestand = new System.Windows.Forms.Label();
             this.txtPadBestand = new System.Windows.Forms.TextBox();
             this.btnSelecteerBestand = new System.Windows.Forms.Button();
@@ -74,6 +74,9 @@ namespace Chocolade
             this.txtStraatnaam = new System.Windows.Forms.TextBox();
             this.txtStraatnummer = new System.Windows.Forms.TextBox();
             this.txtPostCode = new System.Windows.Forms.TextBox();
+            this.openBestelCatalogus = new System.Windows.Forms.OpenFileDialog();
+            this.txtLeveranciersNaam = new System.Windows.Forms.TextBox();
+            this.txtLeverancierNummer = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -108,18 +111,9 @@ namespace Chocolade
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(474, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 20);
+            this.label5.Size = new System.Drawing.Size(163, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Datum order:";
-            // 
-            // cmbLeverancier
-            // 
-            this.cmbLeverancier.FormattingEnabled = true;
-            this.cmbLeverancier.Location = new System.Drawing.Point(189, 64);
-            this.cmbLeverancier.Name = "cmbLeverancier";
-            this.cmbLeverancier.Size = new System.Drawing.Size(254, 28);
-            this.cmbLeverancier.TabIndex = 5;
-            this.cmbLeverancier.SelectedIndexChanged += new System.EventHandler(this.cmbLeverancier_SelectedIndexChanged);
+            this.label5.Text = "Gewenste datum order:";
             // 
             // txtDatum
             // 
@@ -176,9 +170,9 @@ namespace Chocolade
             this.lvCatalogus.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chArtikelnummer,
             this.chArtikelnaam,
+            this.chSoort,
             this.chEenheid,
-            this.chPrijs,
-            this.chTotaleprijs});
+            this.chPrijs});
             this.lvCatalogus.FullRowSelect = true;
             this.lvCatalogus.GridLines = true;
             this.lvCatalogus.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -199,8 +193,13 @@ namespace Chocolade
             // 
             // chArtikelnaam
             // 
-            this.chArtikelnaam.Text = "Artikelnaam";
-            this.chArtikelnaam.Width = 300;
+            this.chArtikelnaam.Text = "Kwaliteit";
+            this.chArtikelnaam.Width = 100;
+            // 
+            // chSoort
+            // 
+            this.chSoort.Text = "Soort";
+            this.chSoort.Width = 200;
             // 
             // chEenheid
             // 
@@ -213,12 +212,6 @@ namespace Chocolade
             this.chPrijs.Text = "Prijs";
             this.chPrijs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.chPrijs.Width = 125;
-            // 
-            // chTotaleprijs
-            // 
-            this.chTotaleprijs.Text = "Totale prijs";
-            this.chTotaleprijs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.chTotaleprijs.Width = 125;
             // 
             // label9
             // 
@@ -262,6 +255,7 @@ namespace Chocolade
             this.lvOrderAanmaken.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chArtikelnummerOrderPlaatsen,
             this.chArtikelnaamOrderPlaatsen,
+            this.chSoortkolom,
             this.chHoeveelheidOrderPlaatsen,
             this.chEenheidOrderPlaatsen,
             this.chPrijsOrderPlaatsen,
@@ -285,8 +279,13 @@ namespace Chocolade
             // 
             // chArtikelnaamOrderPlaatsen
             // 
-            this.chArtikelnaamOrderPlaatsen.Text = "Artikelnaam";
-            this.chArtikelnaamOrderPlaatsen.Width = 250;
+            this.chArtikelnaamOrderPlaatsen.Text = "Kwaliteit";
+            this.chArtikelnaamOrderPlaatsen.Width = 75;
+            // 
+            // chSoortkolom
+            // 
+            this.chSoortkolom.Text = "Soort";
+            this.chSoortkolom.Width = 175;
             // 
             // chHoeveelheidOrderPlaatsen
             // 
@@ -314,15 +313,20 @@ namespace Chocolade
             // 
             // dtpDatumOrder
             // 
-            this.dtpDatumOrder.Location = new System.Drawing.Point(664, 23);
+            this.dtpDatumOrder.CustomFormat = "\'dd/MM/yyyy\'";
+            this.dtpDatumOrder.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDatumOrder.Location = new System.Drawing.Point(664, 20);
+            this.dtpDatumOrder.MinDate = new System.DateTime(2021, 12, 21, 0, 0, 0, 0);
             this.dtpDatumOrder.Name = "dtpDatumOrder";
-            this.dtpDatumOrder.Size = new System.Drawing.Size(229, 27);
+            this.dtpDatumOrder.Size = new System.Drawing.Size(114, 27);
             this.dtpDatumOrder.TabIndex = 26;
+            this.dtpDatumOrder.Value = new System.DateTime(2021, 12, 21, 0, 0, 0, 0);
             // 
-            // folderBrowserDialog1
+            // flrTeZoekenPad
             // 
-            this.folderBrowserDialog1.Description = "cccccc";
-            this.folderBrowserDialog1.RootFolder = System.Environment.SpecialFolder.CommonProgramFiles;
+            this.flrTeZoekenPad.Description = "cccccc";
+            this.flrTeZoekenPad.RootFolder = System.Environment.SpecialFolder.CommonProgramFiles;
+            this.flrTeZoekenPad.Tag = "";
             // 
             // lblSelecteerBestand
             // 
@@ -350,6 +354,7 @@ namespace Chocolade
             this.btnSelecteerBestand.TabIndex = 29;
             this.btnSelecteerBestand.Text = "...";
             this.btnSelecteerBestand.UseVisualStyleBackColor = true;
+            this.btnSelecteerBestand.Click += new System.EventHandler(this.btnSelecteerBestand_Click);
             // 
             // btnImporteerBestand
             // 
@@ -408,7 +413,6 @@ namespace Chocolade
             this.lblTotaleHoeveelheidInput.Size = new System.Drawing.Size(12, 20);
             this.lblTotaleHoeveelheidInput.TabIndex = 35;
             this.lblTotaleHoeveelheidInput.Text = ".";
-            this.lblTotaleHoeveelheidInput.Click += new System.EventHandler(this.label7_Click);
             // 
             // label7
             // 
@@ -461,11 +465,29 @@ namespace Chocolade
             this.txtPostCode.Size = new System.Drawing.Size(86, 27);
             this.txtPostCode.TabIndex = 41;
             // 
+            // txtLeveranciersNaam
+            // 
+            this.txtLeveranciersNaam.Location = new System.Drawing.Point(272, 61);
+            this.txtLeveranciersNaam.Name = "txtLeveranciersNaam";
+            this.txtLeveranciersNaam.ReadOnly = true;
+            this.txtLeveranciersNaam.Size = new System.Drawing.Size(171, 27);
+            this.txtLeveranciersNaam.TabIndex = 42;
+            // 
+            // txtLeverancierNummer
+            // 
+            this.txtLeverancierNummer.Location = new System.Drawing.Point(189, 61);
+            this.txtLeverancierNummer.Name = "txtLeverancierNummer";
+            this.txtLeverancierNummer.ReadOnly = true;
+            this.txtLeverancierNummer.Size = new System.Drawing.Size(77, 27);
+            this.txtLeverancierNummer.TabIndex = 43;
+            // 
             // FrmOrderAanmaken
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 871);
+            this.Controls.Add(this.txtLeverancierNummer);
+            this.Controls.Add(this.txtLeveranciersNaam);
             this.Controls.Add(this.txtPostCode);
             this.Controls.Add(this.txtStraatnummer);
             this.Controls.Add(this.txtStraatnaam);
@@ -494,7 +516,6 @@ namespace Chocolade
             this.Controls.Add(this.txtGemeente);
             this.Controls.Add(this.txtBtw);
             this.Controls.Add(this.txtDatum);
-            this.Controls.Add(this.cmbLeverancier);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -513,7 +534,6 @@ namespace Chocolade
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbLeverancier;
         private System.Windows.Forms.TextBox txtDatum;
         private System.Windows.Forms.TextBox txtBtw;
         private System.Windows.Forms.TextBox txtGemeente;
@@ -525,7 +545,6 @@ namespace Chocolade
         private System.Windows.Forms.ColumnHeader chArtikelnaam;
         private System.Windows.Forms.ColumnHeader chEenheid;
         private System.Windows.Forms.ColumnHeader chPrijs;
-        private System.Windows.Forms.ColumnHeader chTotaleprijs;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnOrderPlaatsen;
         private System.Windows.Forms.Label label10;
@@ -538,7 +557,7 @@ namespace Chocolade
         private System.Windows.Forms.ColumnHeader chTotalePrijsOrderPlaatsen;
         private System.Windows.Forms.ColumnHeader chHoeveelheidOrderPlaatsen;
         private System.Windows.Forms.DateTimePicker dtpDatumOrder;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.FolderBrowserDialog flrTeZoekenPad;
         private System.Windows.Forms.Label lblSelecteerBestand;
         private System.Windows.Forms.TextBox txtPadBestand;
         private System.Windows.Forms.Button btnSelecteerBestand;
@@ -554,5 +573,10 @@ namespace Chocolade
         private System.Windows.Forms.TextBox txtStraatnaam;
         private System.Windows.Forms.TextBox txtStraatnummer;
         private System.Windows.Forms.TextBox txtPostCode;
+        private System.Windows.Forms.OpenFileDialog openBestelCatalogus;
+        private System.Windows.Forms.ColumnHeader chSoort;
+        private System.Windows.Forms.ColumnHeader chSoortkolom;
+        private System.Windows.Forms.TextBox txtLeveranciersNaam;
+        private System.Windows.Forms.TextBox txtLeverancierNummer;
     }
 }

@@ -12,13 +12,13 @@ namespace Chocolade
         private string _btwNummer;
         private string _email;
         private string _telefoonnummer;
-        private int _leverancierNummer;
+        private string _leverancierNummer;
 
         public Leverancier()
         {
 
         }
-        public Leverancier(int leverancierNummer, string naam, string straat, string straatnummer, string postcode, string gemeente, string btw, string email, string telefoonnummer)
+        public Leverancier(string leverancierNummer, string naam, string straat, string straatnummer, string postcode, string gemeente, string btw, string email, string telefoonnummer)
         {
             LeverancierNummer = leverancierNummer;
             Naam = naam;
@@ -31,7 +31,7 @@ namespace Chocolade
             Telefoonnumer = telefoonnummer;
         }
 
-        public int LeverancierNummer
+        public string LeverancierNummer
         {
             get { return _leverancierNummer; }
             set { _leverancierNummer = value; }
@@ -81,6 +81,35 @@ namespace Chocolade
         {
             return Naam + Environment.NewLine + Straat.PadRight(20) + StraatNummer + Environment.NewLine + Postcode.PadRight(20) + Gemeente + Environment.NewLine + BTW;
         }
+        //public void InlezenBestand()
+        //{
+        //    string[] tempGegevensLeverancier;
+        //    Leverancier LeverancierGegevens = new Leverancier();
+        //    List<Leverancier> mijnLeveranciers = new List<Leverancier>();
+        //    if (File.Exists("Aankoop/Leveranciergegevens/Leveranciergegevens.txt"))
+        //    {
+        //        using (StreamReader reader = new StreamReader("Aankoop/Leveranciergegevens/Leveranciergegevens.txt"))
+        //        {
+        //            while (!reader.EndOfStream)
+        //            {
+        //                tempGegevensLeverancier = reader.ReadLine().Split(";");
+        //                if (tempGegevensLeverancier.Length > 1)
+        //                {
+        //                    LeverancierGegevens = new Leverancier(Convert.ToInt32(tempGegevensLeverancier[0]).ToString("0000"), tempGegevensLeverancier[1], tempGegevensLeverancier[2], tempGegevensLeverancier[3], tempGegevensLeverancier[4], tempGegevensLeverancier[5], tempGegevensLeverancier[6], tempGegevensLeverancier[7], tempGegevensLeverancier[8]);
+        //                    mijnLeveranciers.Add(LeverancierGegevens);
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        using (StreamWriter writer = new StreamWriter("Aankoop/Leveranciergegevens/Leveranciergegevens.txt"))
+        //        {
+        //            writer.WriteLine("- Geen leverancier geselecteerd -");
+        //        }
+        //    }
+
+        //} 
 
     }
 }
