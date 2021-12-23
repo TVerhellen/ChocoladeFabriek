@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Chocolade
 {
@@ -44,6 +41,11 @@ namespace Chocolade
             }
             Artikel Temp = (Artikel)obj;
             return this.ID == Temp.ID;
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;  //Iemand heeft iets met die GetHashCode gedaan in een childklasse. Dit moet je aanpassen anders ga je altijd 0 returnen, dit is dus een bug! 
         }
 
         public virtual void Verwijder(double hoeveelheid = -1)

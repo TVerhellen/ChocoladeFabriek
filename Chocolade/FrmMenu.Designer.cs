@@ -38,6 +38,7 @@ namespace Chocolade
             this.lopendeOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automatischeOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gegevensLeverancierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aankoopartikelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verkoopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gegevensKlantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catalogusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,8 @@ namespace Chocolade
             this.historiekToolStripMenuItem,
             this.lopendeOrdersToolStripMenuItem,
             this.automatischeOrdersToolStripMenuItem,
-            this.gegevensLeverancierToolStripMenuItem});
+            this.gegevensLeverancierToolStripMenuItem,
+            this.aankoopartikelsToolStripMenuItem});
             this.aankoopToolStripMenuItem.Name = "aankoopToolStripMenuItem";
             this.aankoopToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.aankoopToolStripMenuItem.Text = "Aankoop";
@@ -121,6 +123,13 @@ namespace Chocolade
             this.gegevensLeverancierToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
             this.gegevensLeverancierToolStripMenuItem.Text = "Gegevens leverancier";
             this.gegevensLeverancierToolStripMenuItem.Click += new System.EventHandler(this.gegevensLeverancierToolStripMenuItem_Click);
+            // 
+            // aankoopartikelsToolStripMenuItem
+            // 
+            this.aankoopartikelsToolStripMenuItem.Name = "aankoopartikelsToolStripMenuItem";
+            this.aankoopartikelsToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.aankoopartikelsToolStripMenuItem.Text = "Aankoopartikels";
+            this.aankoopartikelsToolStripMenuItem.Click += new System.EventHandler(this.aankoopartikelsToolStripMenuItem_Click);
             // 
             // verkoopToolStripMenuItem
             // 
@@ -176,22 +185,14 @@ namespace Chocolade
             // grondstoffenToolStripMenuItem
             // 
             this.grondstoffenToolStripMenuItem.Name = "grondstoffenToolStripMenuItem";
-<<<<<<< HEAD
             this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-=======
-            this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
->>>>>>> master
             this.grondstoffenToolStripMenuItem.Text = "Grondstoffen";
             this.grondstoffenToolStripMenuItem.Click += new System.EventHandler(this.grondstoffenToolStripMenuItem_Click);
             // 
             // productenToolStripMenuItem
             // 
             this.productenToolStripMenuItem.Name = "productenToolStripMenuItem";
-<<<<<<< HEAD
             this.productenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-=======
-            this.productenToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
->>>>>>> master
             this.productenToolStripMenuItem.Text = "Producten";
             this.productenToolStripMenuItem.Click += new System.EventHandler(this.productenToolStripMenuItem_Click);
             // 
@@ -232,6 +233,7 @@ namespace Chocolade
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grondstoffenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aankoopartikelsToolStripMenuItem;
     }
 }
 

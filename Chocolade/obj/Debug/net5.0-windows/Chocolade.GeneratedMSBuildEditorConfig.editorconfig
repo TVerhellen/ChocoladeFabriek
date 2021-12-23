@@ -7,8 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Chocolade
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Student\source\repos\chocoladefabriek\Chocolade\
-=======
-build_property.ProjectDir = C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\
->>>>>>> master

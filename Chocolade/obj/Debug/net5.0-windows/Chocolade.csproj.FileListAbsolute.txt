@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.csproj.AssemblyReference.cache
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.Form1.resources
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.csproj.GenerateResource.cache
@@ -19,7 +18,6 @@ C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-window
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensLeveranciers.resources
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmOrderAanmaken.resources
-=======
 D:\Visual Studios Projects\2e project C#\chocolade\Chocolade\bin\Debug\net5.0-windows\Chocolade.exe
 D:\Visual Studios Projects\2e project C#\chocolade\Chocolade\bin\Debug\net5.0-windows\Chocolade.deps.json
 D:\Visual Studios Projects\2e project C#\chocolade\Chocolade\bin\Debug\net5.0-windows\Chocolade.runtimeconfig.json
@@ -58,4 +56,6 @@ C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources
->>>>>>> master
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources

@@ -1,15 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-<<<<<<< HEAD
-=======
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
->>>>>>> master
 using System.Windows.Forms;
 
 namespace Chocolade
@@ -51,6 +40,12 @@ namespace Chocolade
         {
             FrmOrderAanmaken nieuweOrder = new FrmOrderAanmaken();
             nieuweOrder.Show();
+        }
+
+        private void aankoopartikelsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAankoopArtikels aankoopArtikelsOverzicht = new FrmAankoopArtikels();
+            aankoopArtikelsOverzicht.Show();
         }
     }
 }
