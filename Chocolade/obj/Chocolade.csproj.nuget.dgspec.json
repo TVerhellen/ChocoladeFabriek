@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kristof\\source\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {}
+    "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kristof\\source\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {
+    "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kristof\\source\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+        "projectUniqueName": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
         "projectName": "Chocolade",
-        "projectPath": "C:\\Users\\kristof\\source\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+        "projectPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
         "packagesPath": "C:\\Users\\kristof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kristof\\source\\chocoladefabriek\\Chocolade\\obj\\",
+        "outputPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kristof\\AppData\\Roaming\\NuGet\\NuGet.Config",

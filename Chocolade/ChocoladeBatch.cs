@@ -13,7 +13,6 @@ namespace Chocolade
 
         public static List<Artikel> stock = new List<Artikel>();
         public static List<Artikel> gereserveerd = new List<Artikel>();
-
         private List<MachineGebruik> _machinesEnTijdsloten;
         private double _reservatieNummer;
         private DateTime _momentBeschikbaar;
@@ -29,6 +28,7 @@ namespace Chocolade
         public ChocoladeBatch(string gegevens, bool addStock = true) : base(gegevens)
         {
             if (addStock)
+
             {
                 stock.Add(this);
             }

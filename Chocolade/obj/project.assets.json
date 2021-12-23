@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kristof\\source\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+      "projectUniqueName": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
       "projectName": "Chocolade",
-      "projectPath": "C:\\Users\\kristof\\source\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+      "projectPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
       "packagesPath": "C:\\Users\\kristof\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kristof\\source\\chocoladefabriek\\Chocolade\\obj\\",
+      "outputPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kristof\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -66,5 +66,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

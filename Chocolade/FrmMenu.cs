@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace Chocolade
@@ -31,6 +32,18 @@ namespace Chocolade
 
         }
 
+        private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopCatalogus catalogus = new FrmVerkoopCatalogus();
+            catalogus.ShowDialog();
+        }
+
+        private void bestellingVerwerkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBestellingVerwerken verwerken = new FrmBestellingVerwerken();
+            verwerken.ShowDialog();
+        }
+
         private void productenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmStockChocolade chocoladeStockOverview = new FrmStockChocolade();
@@ -47,6 +60,24 @@ namespace Chocolade
         {
             FrmMachines machinesForm = new FrmMachines();
             machinesForm.Show();
+        }
+
+        private void gegevensLeverancierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGegevensLeveranciers NieuweGegevensLeveranciers = new FrmGegevensLeveranciers();
+            NieuweGegevensLeveranciers.Show();
+        }
+
+        private void orderPlaatsenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrderAanmaken nieuweOrder = new FrmOrderAanmaken();
+            nieuweOrder.Show();
+        }
+
+        private void historiekToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopHistoriek nieuweHistoriek = new FrmVerkoopHistoriek();
+            nieuweHistoriek.ShowDialog();
         }
     }
 }

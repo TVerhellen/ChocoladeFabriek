@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<artikels>
+   <artikel id = "0101">
+      <naam>Zwart 55% blok</naam>
+      <prijsperkg>8</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0102">
+      <naam>Zwart 55% druppels</naam>
+      <prijsperkg>9</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0103">
+      <naam>Zwart 70% blok</naam>
+      <prijsperkg>10</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0104">
+      <naam>Zwart 70% druppels</naam>
+      <prijsperkg>11</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0105">
+      <naam>Zwart 80% blok</naam>
+      <prijsperkg>10</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0106">
+      <naam>Zwart 80% druppels</naam>
+      <prijsperkg>11</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0107">
+      <naam>Zwart 80% crispearls</naam>
+      <prijsperkg>12</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0201">
+      <naam>Melk blok</naam>
+      <prijsperkg>8</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0202">
+      <naam>Melk druppels</naam>
+      <prijsperkg>9</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0203">
+      <naam>Melk crispearls</naam>
+      <prijsperkg>12</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0301">
+      <naam>Wit blok</naam>
+      <prijsperkg>8</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0302">
+      <naam>Wit druppels</naam>
+      <prijsperkg>9</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0303">
+      <naam>Wit crispearls</naam>
+      <prijsperkg>12</prijsperkg>
+      <houdbaar>3 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0401">
+      <naam>Ruby druppels</naam>
+      <prijsperkg>13,5</prijsperkg>
+      <houdbaar>4 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0501">
+      <naam>Gold druppels</naam>
+      <prijsperkg>13,5</prijsperkg>
+      <houdbaar>4 jaar</houdbaar>
+   </artikel>
+   <artikel id = "0601">
+      <naam>Hazelnoot druppels</naam>
+      <prijsperkg>13,5</prijsperkg>
+      <houdbaar>4 jaar</houdbaar>
+   </artikel>
+</artikels> 
