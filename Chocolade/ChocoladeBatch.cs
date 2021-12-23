@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Chocolade
 {
@@ -15,6 +16,8 @@ namespace Chocolade
 
         public ChocoladeBatch(string gegevens, bool addToStock = true) : base(gegevens)
         {
+            string[] arrGegevens = gegevens.Split('|');
+            Prijs = Convert.ToDouble(arrGegevens[4]);
             if (addToStock)
             {
                 stock.Add(this);
@@ -32,11 +35,14 @@ namespace Chocolade
             set { stock = value; }
         }
 
+        public double Prijs { get; set; }
+
         #region functies
         public override void Verwijder(double hoeveelheid = -1)
         {
             if (hoeveelheid >= 0)
             {
+                Prijs *= (Hoeveelheid - hoeveelheid) / Hoeveelheid;
                 Hoeveelheid -= hoeveelheid;
             }
             else
@@ -78,6 +84,22 @@ namespace Chocolade
         public static void SorteerStockLijst()
         {
             stock = stock.OrderBy(o => o.Naam).ThenBy(o => o.Houdbaarheid).ToList();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString()+$"|{Prijs}";
+        }
+
+        public void ToXml(XmlWriter writer)
+        {
+            writer.WriteStartElement("artikel");
+            writer.WriteAttributeString("id", ID.ToString());
+            writer.WriteElementString("naam", Naam);
+            writer.WriteElementString("hoeveelheid", Hoeveelheid.ToString());
+            writer.WriteElementString("houdbaarheid", Houdbaarheid.ToString("dd/MM/yyyy"));
+            writer.WriteElementString("prijs", Prijs.ToString("0.00"));
+            writer.WriteEndElement();
         }
         #endregion
 

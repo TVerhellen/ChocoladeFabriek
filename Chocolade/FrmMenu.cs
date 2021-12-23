@@ -68,5 +68,17 @@ namespace Chocolade
             FrmVerkoopHistoriek nieuweHistoriek = new FrmVerkoopHistoriek();
             nieuweHistoriek.ShowDialog();
         }
+
+        private void lopendeBestellingenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopLopend nieuwLopend = new FrmVerkoopLopend();
+            nieuwLopend.ShowDialog();
+        }
+
+        private void gegevensKlantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGegevensKlant nieuwGegevensKlant = new FrmGegevensKlant();
+            nieuwGegevensKlant.Show();
+        }
     }
 }

@@ -4,6 +4,9 @@
     <Compile Update="FrmBestellingVerwerken.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmGegevensKlant.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmGegevensLeveranciers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -23,6 +26,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmVerkoopHistoriek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmVerkoopLopend.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

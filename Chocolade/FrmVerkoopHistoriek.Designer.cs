@@ -38,6 +38,7 @@ namespace Chocolade
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.lblOrderNummer = new System.Windows.Forms.Label();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,8 @@ namespace Chocolade
             this.lvwChocoladeBatch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader1});
             this.lvwChocoladeBatch.FullRowSelect = true;
             this.lvwChocoladeBatch.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwChocoladeBatch.HideSelection = false;
@@ -130,6 +132,10 @@ namespace Chocolade
             this.lblOrderNummer.TabIndex = 5;
             this.lblOrderNummer.Text = "orderid";
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Prijs";
+            // 
             // FrmVerkoopHistoriek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -160,5 +166,6 @@ namespace Chocolade
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label lblOrderNummer;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

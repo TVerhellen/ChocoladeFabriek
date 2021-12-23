@@ -81,3 +81,5 @@ D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\ob
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopHistoriek.resources
+D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
+D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensKlant.resources

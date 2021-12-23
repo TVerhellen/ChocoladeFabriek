@@ -138,6 +138,7 @@ namespace Chocolade
             this.gegevensKlantToolStripMenuItem.Name = "gegevensKlantToolStripMenuItem";
             this.gegevensKlantToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.gegevensKlantToolStripMenuItem.Text = "Gegevens klant";
+            this.gegevensKlantToolStripMenuItem.Click += new System.EventHandler(this.gegevensKlantToolStripMenuItem_Click);
             // 
             // catalogusToolStripMenuItem
             // 
@@ -165,6 +166,7 @@ namespace Chocolade
             this.lopendeBestellingenToolStripMenuItem.Name = "lopendeBestellingenToolStripMenuItem";
             this.lopendeBestellingenToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.lopendeBestellingenToolStripMenuItem.Text = "Lopende Bestellingen";
+            this.lopendeBestellingenToolStripMenuItem.Click += new System.EventHandler(this.lopendeBestellingenToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
@@ -178,14 +180,14 @@ namespace Chocolade
             // grondstoffenToolStripMenuItem
             // 
             this.grondstoffenToolStripMenuItem.Name = "grondstoffenToolStripMenuItem";
-            this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.grondstoffenToolStripMenuItem.Text = "Grondstoffen";
             this.grondstoffenToolStripMenuItem.Click += new System.EventHandler(this.grondstoffenToolStripMenuItem_Click);
             // 
             // productenToolStripMenuItem
             // 
             this.productenToolStripMenuItem.Name = "productenToolStripMenuItem";
-            this.productenToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.productenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productenToolStripMenuItem.Text = "Producten";
             this.productenToolStripMenuItem.Click += new System.EventHandler(this.productenToolStripMenuItem_Click);
             // 

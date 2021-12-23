@@ -63,7 +63,7 @@ namespace Chocolade
                 }
             }
 
-            RefreshBoxes();
+            updateLvw();
 
         }
 
@@ -74,12 +74,13 @@ namespace Chocolade
                 string batchgegevens = lvwCatalogus.FocusedItem.SubItems[1].Text;
                 batchgegevens += "|" + lvwCatalogus.FocusedItem.SubItems[0].Text;
                 batchgegevens += "|" + hoeveelheid.ToString();
-                batchgegevens += "|01/01/3001";
+                batchgegevens += "|01/01/0001";
+                batchgegevens += "|" + (Convert.ToDouble(lvwCatalogus.FocusedItem.SubItems[2].Text)*hoeveelheid).ToString();
 
 
                 ChocoladeBatch batch = new ChocoladeBatch(batchgegevens, false);
                 order.VoegToe(batch);
-                RefreshBoxes();
+                updateLvw();
                 txtHoeveelheid.Clear();
             }
             else
@@ -127,19 +128,23 @@ namespace Chocolade
 
             }
             order = new VerkoopOrder();
-            RefreshBoxes();
-        }
-
-        private void RefreshBoxes()
-        {
-            lbOrder.DataSource = null;
-            lbOrder.DataSource = order.Lijst;
-            lbOrder.SelectedIndex = -1;
+            updateLvw();
         }
 
         private void btnSluiten_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void updateLvw()
+        {
+            lvwOrder.Items.Clear();
+
+            foreach (ChocoladeBatch batch in order.Lijst)
+            {
+                ListViewItem theNewItem = new ListViewItem(new string[] { batch.Naam, batch.Hoeveelheid.ToString(), batch.Houdbaarheid.ToString("dd/MM/yyyy"), batch.Prijs.ToString() });
+                lvwOrder.Items.Add(theNewItem);
+            }
         }
 
     }

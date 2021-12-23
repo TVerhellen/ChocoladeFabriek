@@ -27,6 +27,7 @@ namespace Chocolade
                 string[] arrDelen = item.Split('§');
                 Ingredienten.Add(new Grondstof(arrDelen[0], Convert.ToInt32(arrDelen[1])));
             }
+            PrijsPerKg = Convert.ToDouble(arrGegevens[5]);
             receptenLijst.Add(this);
         }
 
@@ -44,6 +45,8 @@ namespace Chocolade
         public int DagenHoudbaar { get; set; }
 
         public int ID { get; set; }
+
+        public double PrijsPerKg { get; set; }
 
         public void Produceer(double hoeveelProduct)
         {
@@ -68,7 +71,7 @@ namespace Chocolade
             //Maak product aan
             if (this.IsProductieMogelijk(hoeveelProduct))
             {
-                ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}");
+                ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}|{PrijsPerKg*hoeveelProduct}");
                 for (int i = 0; i < Ingredienten.Count; i++)
                 {
                     double totaalNodig = Ingredienten[i].Hoeveelheid * hoeveelProduct;

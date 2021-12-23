@@ -76,7 +76,7 @@ namespace Chocolade
 
             foreach (ChocoladeBatch batch in ((VerkoopOrder)lbOrders.SelectedItem).Lijst)
             {
-                ListViewItem theNewItem = new ListViewItem(new string[] { batch.Naam, batch.Hoeveelheid.ToString(), batch.Houdbaarheid.ToString("dd/MM/yyyy") });
+                ListViewItem theNewItem = new ListViewItem(new string[] { batch.Naam, batch.Hoeveelheid.ToString(), batch.Houdbaarheid.ToString("dd/MM/yyyy"), batch.Prijs.ToString() });
                 lvwChocoladeBatch.Items.Add(theNewItem);
             }
         }
