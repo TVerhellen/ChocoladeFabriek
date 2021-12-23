@@ -124,6 +124,7 @@ namespace Chocolade
             stock.RemoveAt(stock.IndexOf(this));
             gereserveerd.Add(this);
             this.ReservatieNummer = reservatienummer;
+            SlaLijstOp();
         }
 
         public void BatchNaarStock()
@@ -131,6 +132,7 @@ namespace Chocolade
             stock.RemoveAt(gereserveerd.IndexOf(this));
             stock.Add(this);
             this.ReservatieNummer = -1;
+            SlaLijstOp();
         }
 
         public static void SlaLijstOp()
@@ -152,12 +154,7 @@ namespace Chocolade
                         }
                     }
                 }
-
-
-
             }
-
-
         }
         public static void SorteerStockLijst()
         {

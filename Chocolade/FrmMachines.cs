@@ -203,7 +203,6 @@ namespace Chocolade
 
                         lblID.Text = thisBatch.ID.ToString();
                         lblHoudbaarheid.Text = thisBatch.Houdbaarheid.ToString();
-
                         break;
                     }
                 }
