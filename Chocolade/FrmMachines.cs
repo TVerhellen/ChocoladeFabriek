@@ -17,17 +17,22 @@ namespace Chocolade
         public FrmMachines()
         {
             InitializeComponent();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
         }
         public DateTime start = DateTime.Now.Date;
         public DateTime end = DateTime.Now.AddDays(1).Date;
         int thicknessBar = 20;
         int spacingBar = 20;
         int margin = 20;
+        float scaleFactor = 1;
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
             Graphics g = e.Graphics;
+            scaleFactor = g.DpiX / 120;
+            // g.PageScale = scaleFactor;
 
             int totalWidth = panel1.Width;
 
@@ -109,6 +114,7 @@ namespace Chocolade
 
         private void FrmMachines_Load(object sender, EventArgs e)
         {
+
             lblStartDiagram.Text = start.ToString();
             lblEndDiagram.Text = end.ToString();
         }
@@ -116,6 +122,8 @@ namespace Chocolade
         private void pnlNamesMachines_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+            scaleFactor = g.DpiX / 120;
+            //g.PageScale = scaleFactor;
 
             int totalWidth = pnlNamesMachines.Width;
             int margin = 20;
@@ -215,6 +223,8 @@ namespace Chocolade
         private void pnlThisBatch_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+            scaleFactor = g.DpiX / 120;
+            //g.PageScale = scaleFactor;
 
             int totalWidth = pnlThisBatch.Width;
             int margin = 20;
