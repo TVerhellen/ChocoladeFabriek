@@ -128,3 +128,4 @@ C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\ref\Chocolade.dll
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.pdb
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
+C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogin.resources

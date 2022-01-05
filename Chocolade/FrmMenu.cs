@@ -26,6 +26,10 @@ namespace Chocolade
             //int DPI = Int32.Parse((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ThemeManager", "LastLoadedDPI", "96"));
 
             //Text bestanden worden ingelezen
+
+            FrmLogin login = new FrmLogin();
+            login.ShowDialog();
+
             Machine.laadLijsten();
 
             Grondstof.LaadLijst();
