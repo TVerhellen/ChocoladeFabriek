@@ -25,14 +25,19 @@ namespace Chocolade
         int thicknessBar = 20;
         int spacingBar = 20;
         int margin = 20;
-        float scaleFactor = 1;
 
+        private void FrmMachines_Load(object sender, EventArgs e)
+        {
+            lblStartDiagram.Text = start.ToString();
+            lblEndDiagram.Text = end.ToString();
+            Debug.WriteLine(panel1.Height);
+            thicknessBar = spacingBar = margin = (int)(panel1.Height * 0.077);
+
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
             Graphics g = e.Graphics;
-            scaleFactor = g.DpiX / 120;
-            // g.PageScale = scaleFactor;
 
             int totalWidth = panel1.Width;
 
@@ -112,21 +117,11 @@ namespace Chocolade
         }
 
 
-        private void FrmMachines_Load(object sender, EventArgs e)
-        {
-
-            lblStartDiagram.Text = start.ToString();
-            lblEndDiagram.Text = end.ToString();
-        }
 
         private void pnlNamesMachines_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            scaleFactor = g.DpiX / 120;
-            //g.PageScale = scaleFactor;
-
             int totalWidth = pnlNamesMachines.Width;
-            int margin = 20;
 
             SolidBrush blueBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 255));
             g.FillPath(blueBrush, GetRoundPath(new Rectangle(0, 0, totalWidth, panel1.Height), 40));
@@ -138,7 +133,7 @@ namespace Chocolade
                 string drawString = item.Naam;
 
                 float x = margin;
-                float y = margin + counter * 40;
+                float y = margin + counter * margin * 2;
                 StringFormat drawFormat = new StringFormat();
                 g.DrawString(drawString, drawFont, drawBrush, x, y, drawFormat);
                 counter++;
@@ -223,7 +218,6 @@ namespace Chocolade
         private void pnlThisBatch_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            scaleFactor = g.DpiX / 120;
             //g.PageScale = scaleFactor;
 
             int totalWidth = pnlThisBatch.Width;

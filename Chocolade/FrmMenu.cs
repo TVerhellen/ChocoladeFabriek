@@ -28,8 +28,12 @@ namespace Chocolade
             //Text bestanden worden ingelezen
 
             FrmLogin login = new FrmLogin();
-            login.ShowDialog();
-
+            DialogResult result = DialogResult.OK;
+            result = login.ShowDialog();
+            if (result != DialogResult.OK)
+            {
+                Application.Exit();
+            }
             Machine.laadLijsten();
 
             Grondstof.LaadLijst();

@@ -68,7 +68,6 @@ namespace Chocolade
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Location = new System.Drawing.Point(308, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 262);
@@ -126,7 +125,6 @@ namespace Chocolade
             // 
             // pnlThisBatch
             // 
-            this.pnlThisBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlThisBatch.Controls.Add(this.lblBeschikbaar);
             this.pnlThisBatch.Controls.Add(this.label13);
             this.pnlThisBatch.Controls.Add(this.lblPrijs);
@@ -152,7 +150,7 @@ namespace Chocolade
             this.pnlThisBatch.Controls.Add(this.label5);
             this.pnlThisBatch.Controls.Add(this.label4);
             this.pnlThisBatch.Controls.Add(this.label3);
-            this.pnlThisBatch.Location = new System.Drawing.Point(39, 429);
+            this.pnlThisBatch.Location = new System.Drawing.Point(42, 429);
             this.pnlThisBatch.Name = "pnlThisBatch";
             this.pnlThisBatch.Size = new System.Drawing.Size(851, 432);
             this.pnlThisBatch.TabIndex = 1;

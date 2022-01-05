@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace Chocolade
 
             if (String.IsNullOrWhiteSpace(gebruikersnaam) || String.IsNullOrWhiteSpace(wachtwoord))
             {
-                MessageBox.Show("Gelieve een gebruikersnaam en wachtwoordi n te voeren.", "Fout", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Gelieve een gebruikersnaam en wachtwoord in te voeren.", "Fout", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             if (IsWachtwoordCorrect())
             {
@@ -78,6 +79,12 @@ namespace Chocolade
                 return accounts;
             }
             throw new FileLoadException("Could not find gebruikers.txt");
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            Debug.WriteLine(this.Size.Width + " height: " + this.Size.Height);
+
         }
     }
 }
