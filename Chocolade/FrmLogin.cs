@@ -14,6 +14,7 @@ namespace Chocolade
 {
     public partial class FrmLogin : Form
     {
+        double startX = 0;
         public Gebruiker ingelogdeGebruiker = null;
 
         public FrmLogin()
@@ -83,8 +84,24 @@ namespace Chocolade
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            Debug.WriteLine(this.Size.Width + " height: " + this.Size.Height);
+            pctChocolate.Location = new Point(-(this.Width / 2), pctChocolate.Location.Y);
+            //pctChocolate.Width = 0;
+            timer1.Start();
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            startX += 0.1;
+            pctChocolate.Location = new Point((int)(pctChocolate.Location.X + startX), pctChocolate.Location.Y);
+            if (pctChocolate.Location.X > this.Width / 2 - pctChocolate.Width / 2)
+            {
+                timer1.Stop();
+            }
         }
     }
 }

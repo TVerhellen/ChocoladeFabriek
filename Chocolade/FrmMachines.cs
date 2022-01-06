@@ -40,9 +40,9 @@ namespace Chocolade
         private void RefreshMachineList()
         {
             ToDisplayMachines.Clear();
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
-                int indexMachine = i + 7 * machinePage;
+                int indexMachine = i + 6 * machinePage;
                 if (indexMachine < Machine.allMachines.Count)
                 {
                     ToDisplayMachines.Add(Machine.allMachines[indexMachine]);
@@ -160,11 +160,11 @@ namespace Chocolade
             double thisX = e.Location.X;
             double thisY = e.Location.Y;
             int thisRow = (int)(thisY - margin) / (thicknessBar + spacingBar);
-            if (thisRow < 0 || thisRow > Machine.allMachines.Count - 1)
+            if (thisRow < 0 || thisRow > ToDisplayMachines.Count - 1)
             {
                 return;
             }
-            Machine thisMachine = Machine.allMachines[thisRow];
+            Machine thisMachine = ToDisplayMachines[thisRow];
             double percentage = (thisX - margin) / (panel1.Width - (2 * margin));
             DateTime thisTime = start.AddMinutes(percentage * (end - start).TotalMinutes);
             TimePeriod checkThisPeriod = new TimePeriod(thisTime, thisTime.AddMilliseconds(2));
@@ -254,10 +254,13 @@ namespace Chocolade
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            machinePage--;
-            RefreshMachineList();
-            panel1.Refresh();
-            lblPage.Text = (machinePage + 1).ToString();
+            if (machinePage > 0)
+            {
+                machinePage--;
+                RefreshMachineList();
+                panel1.Refresh();
+                lblPage.Text = (machinePage + 1).ToString();
+            }
         }
 
         private void btnDown_Click(object sender, EventArgs e)

@@ -29,17 +29,22 @@ namespace Chocolade
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
             this.txtWachtwoord = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pctChocolate = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pctChocolate)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 38);
+            this.label1.Location = new System.Drawing.Point(29, 146);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 0;
@@ -47,14 +52,14 @@ namespace Chocolade
             // 
             // txtGebruikersnaam
             // 
-            this.txtGebruikersnaam.Location = new System.Drawing.Point(164, 35);
+            this.txtGebruikersnaam.Location = new System.Drawing.Point(166, 143);
             this.txtGebruikersnaam.Name = "txtGebruikersnaam";
             this.txtGebruikersnaam.Size = new System.Drawing.Size(177, 27);
             this.txtGebruikersnaam.TabIndex = 1;
             // 
             // txtWachtwoord
             // 
-            this.txtWachtwoord.Location = new System.Drawing.Point(164, 84);
+            this.txtWachtwoord.Location = new System.Drawing.Point(166, 192);
             this.txtWachtwoord.Name = "txtWachtwoord";
             this.txtWachtwoord.PasswordChar = '*';
             this.txtWachtwoord.Size = new System.Drawing.Size(177, 27);
@@ -63,7 +68,7 @@ namespace Chocolade
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 87);
+            this.label2.Location = new System.Drawing.Point(29, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 2;
@@ -71,27 +76,57 @@ namespace Chocolade
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(27, 142);
+            this.btnLogin.Location = new System.Drawing.Point(29, 240);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(314, 29);
+            this.btnLogin.Size = new System.Drawing.Size(135, 29);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(208, 240);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(135, 29);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pctChocolate
+            // 
+            this.pctChocolate.Image = global::Chocolade.Properties.Resources.Chocolate;
+            this.pctChocolate.Location = new System.Drawing.Point(125, 35);
+            this.pctChocolate.Name = "pctChocolate";
+            this.pctChocolate.Size = new System.Drawing.Size(124, 92);
+            this.pctChocolate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctChocolate.TabIndex = 6;
+            this.pctChocolate.TabStop = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 202);
+            this.ClientSize = new System.Drawing.Size(371, 313);
+            this.Controls.Add(this.pctChocolate);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtWachtwoord);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtGebruikersnaam);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pctChocolate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +139,8 @@ namespace Chocolade
         private System.Windows.Forms.TextBox txtWachtwoord;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pctChocolate;
     }
 }
