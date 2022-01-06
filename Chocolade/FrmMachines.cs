@@ -22,6 +22,8 @@ namespace Chocolade
         }
         public DateTime start = DateTime.Now.Date;
         public DateTime end = DateTime.Now.AddDays(1).Date;
+        List<Machine> ToDisplayMachines = new List<Machine>();
+        int machinePage = 0;
         int thicknessBar = 20;
         int spacingBar = 20;
         int margin = 20;
@@ -32,8 +34,23 @@ namespace Chocolade
             lblEndDiagram.Text = end.ToString();
             Debug.WriteLine(panel1.Height);
             thicknessBar = spacingBar = margin = (int)(panel1.Height * 0.077);
-
+            RefreshMachineList();
         }
+
+        private void RefreshMachineList()
+        {
+            ToDisplayMachines.Clear();
+            for (int i = 0; i < 7; i++)
+            {
+                int indexMachine = i + 7 * machinePage;
+                if (indexMachine < Machine.allMachines.Count)
+                {
+                    ToDisplayMachines.Add(Machine.allMachines[indexMachine]);
+                }
+            }
+            pnlNamesMachines.Refresh();
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -49,9 +66,9 @@ namespace Chocolade
             SolidBrush blueBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 255));
             g.FillPath(blueBrush, GetRoundPath(new Rectangle(0, 0, totalWidth, panel1.Height), 40));
 
-            for (int i = 0; i < Machine.allMachines.Count; i++)
+            for (int i = 0; i < ToDisplayMachines.Count; i++)
             {
-                Machine m = Machine.allMachines[i];
+                Machine m = ToDisplayMachines[i];
                 int counter = 0;
 
                 paintRectangle(g, Color.FromArgb(255, 248, 248, 248), margin, i * (thicknessBar + spacingBar) + canvasY, canvasWidth, thicknessBar);
@@ -87,7 +104,6 @@ namespace Chocolade
                             counter = 0;
                         }
                         paintRectangle(g, thisColor, bartStart, startY, barWidth, thicknessBar);
-
                     }
                 }
             }
@@ -116,8 +132,6 @@ namespace Chocolade
             g.FillRectangle(blueBrush, rect);
         }
 
-
-
         private void pnlNamesMachines_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -128,10 +142,9 @@ namespace Chocolade
             int counter = 0;
             Font drawFont = new Font("Arial", 10);
             SolidBrush drawBrush = new SolidBrush(Color.FromArgb(255, 100, 100, 130));
-            foreach (var item in Machine.allMachines)
+            foreach (var item in ToDisplayMachines)
             {
                 string drawString = item.Naam;
-
                 float x = margin;
                 float y = margin + counter * margin * 2;
                 StringFormat drawFormat = new StringFormat();
@@ -141,10 +154,9 @@ namespace Chocolade
         }
 
 
-
         private void panel1_MouseClick(object sender, MouseEventArgs e)
         {
-            //RetrievePeriod
+            //Retrieve Period
             double thisX = e.Location.X;
             double thisY = e.Location.Y;
             int thisRow = (int)(thisY - margin) / (thicknessBar + spacingBar);
@@ -152,7 +164,6 @@ namespace Chocolade
             {
                 return;
             }
-            //Debug.WriteLine(thisRow);
             Machine thisMachine = Machine.allMachines[thisRow];
             double percentage = (thisX - margin) / (panel1.Width - (2 * margin));
             DateTime thisTime = start.AddMinutes(percentage * (end - start).TotalMinutes);
@@ -167,7 +178,7 @@ namespace Chocolade
                 }
             }
 
-            //retrieveBatch
+            //Retrieve Batch
             ChocoladeBatch thisBatch = null;
             List<Artikel>[] lists = { ChocoladeBatch.stock, ChocoladeBatch.gereserveerd };
             for (int i = 0; i < lists.Length; i++)
@@ -208,7 +219,6 @@ namespace Chocolade
                         lblHoudbaarheid.Text = thisBatch.Houdbaarheid.ToString();
                         lblBeschikbaar.Text = thisBatch.MomentBeschikbaar.ToString();
                         lblPrijs.Text = thisBatch.Prijs.ToString();
-
                         break;
                     }
                 }
@@ -218,11 +228,7 @@ namespace Chocolade
         private void pnlThisBatch_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            //g.PageScale = scaleFactor;
-
             int totalWidth = pnlThisBatch.Width;
-            int margin = 20;
-
             SolidBrush blueBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 255));
             g.FillPath(blueBrush, GetRoundPath(new Rectangle(0, 0, pnlThisBatch.Width, pnlThisBatch.Height), 40));
 
@@ -235,7 +241,6 @@ namespace Chocolade
             lblStartDiagram.Text = start.ToString();
             lblEndDiagram.Text = end.ToString();
             panel1.Refresh();
-
         }
 
         private void btnVorigTijd_Click(object sender, EventArgs e)
@@ -245,6 +250,22 @@ namespace Chocolade
             lblStartDiagram.Text = start.ToString();
             lblEndDiagram.Text = end.ToString();
             panel1.Refresh();
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            machinePage--;
+            RefreshMachineList();
+            panel1.Refresh();
+            lblPage.Text = (machinePage + 1).ToString();
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            machinePage++;
+            RefreshMachineList();
+            panel1.Refresh();
+            lblPage.Text = (machinePage + 1).ToString();
         }
     }
 }

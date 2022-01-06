@@ -63,6 +63,9 @@ namespace Chocolade
             this.label3 = new System.Windows.Forms.Label();
             this.btnVorigTijd = new System.Windows.Forms.Button();
             this.btnVolgendTijd = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.lblPage = new System.Windows.Forms.Label();
             this.pnlThisBatch.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,7 +155,7 @@ namespace Chocolade
             this.pnlThisBatch.Controls.Add(this.label3);
             this.pnlThisBatch.Location = new System.Drawing.Point(42, 429);
             this.pnlThisBatch.Name = "pnlThisBatch";
-            this.pnlThisBatch.Size = new System.Drawing.Size(851, 432);
+            this.pnlThisBatch.Size = new System.Drawing.Size(948, 432);
             this.pnlThisBatch.TabIndex = 1;
             this.pnlThisBatch.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlThisBatch_Paint);
             // 
@@ -451,12 +454,45 @@ namespace Chocolade
             this.btnVolgendTijd.UseVisualStyleBackColor = true;
             this.btnVolgendTijd.Click += new System.EventHandler(this.btnVolgendTijd_Click);
             // 
+            // btnUp
+            // 
+            this.btnUp.Location = new System.Drawing.Point(916, 131);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(74, 29);
+            this.btnUp.TabIndex = 7;
+            this.btnUp.Text = "Up";
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.Location = new System.Drawing.Point(916, 326);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(74, 29);
+            this.btnDown.TabIndex = 8;
+            this.btnDown.Text = "Down";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // lblPage
+            // 
+            this.lblPage.AutoSize = true;
+            this.lblPage.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPage.Location = new System.Drawing.Point(916, 93);
+            this.lblPage.Name = "lblPage";
+            this.lblPage.Size = new System.Drawing.Size(16, 17);
+            this.lblPage.TabIndex = 9;
+            this.lblPage.Text = "1";
+            // 
             // FrmMachines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(932, 906);
+            this.ClientSize = new System.Drawing.Size(1002, 906);
+            this.Controls.Add(this.lblPage);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnUp);
             this.Controls.Add(this.btnVolgendTijd);
             this.Controls.Add(this.btnVorigTijd);
             this.Controls.Add(this.pnlThisBatch);
@@ -512,5 +548,8 @@ namespace Chocolade
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblBeschikbaar;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Label lblPage;
     }
 }
