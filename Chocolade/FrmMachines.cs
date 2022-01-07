@@ -30,11 +30,11 @@ namespace Chocolade
 
         private void FrmMachines_Load(object sender, EventArgs e)
         {
-            lblStartDiagram.Text = start.ToString();
-            lblEndDiagram.Text = end.ToString();
+            lblStartDiagram.Text = start.ToString("dd/MM/yyyy");
             Debug.WriteLine(panel1.Height);
             thicknessBar = spacingBar = margin = (int)(panel1.Height * 0.077);
             RefreshMachineList();
+            tmrBarAnimation.Start();
         }
 
         private void RefreshMachineList()
@@ -129,7 +129,14 @@ namespace Chocolade
         {
             SolidBrush blueBrush = new SolidBrush(thisColor);
             Rectangle rect = new Rectangle(x, y, height, width);
-            g.FillRectangle(blueBrush, rect);
+            try
+            {
+                g.FillRectangle(blueBrush, rect);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(rect);
+            }
         }
 
         private void pnlNamesMachines_Paint(object sender, PaintEventArgs e)
@@ -237,18 +244,16 @@ namespace Chocolade
         private void btnVolgendTijd_Click(object sender, EventArgs e)
         {
             start = start.AddDays(1);
-            end = end.AddDays(1);
-            lblStartDiagram.Text = start.ToString();
-            lblEndDiagram.Text = end.ToString();
+            end = start.AddDays(1);
+            lblStartDiagram.Text = start.ToString("dd/MM/yyyy");
             panel1.Refresh();
         }
 
         private void btnVorigTijd_Click(object sender, EventArgs e)
         {
             start = start.AddDays(-1);
-            end = end.AddDays(-1);
-            lblStartDiagram.Text = start.ToString();
-            lblEndDiagram.Text = end.ToString();
+            end = start.AddDays(1);
+            lblStartDiagram.Text = start.ToString("dd/MM/yyyy");
             panel1.Refresh();
         }
 
@@ -259,7 +264,6 @@ namespace Chocolade
                 machinePage--;
                 RefreshMachineList();
                 panel1.Refresh();
-                lblPage.Text = (machinePage + 1).ToString();
             }
         }
 
@@ -268,7 +272,51 @@ namespace Chocolade
             machinePage++;
             RefreshMachineList();
             panel1.Refresh();
-            lblPage.Text = (machinePage + 1).ToString();
+        }
+        int counter = 0;
+        int speed = 30;
+
+        private void ShrinkPanel(Panel thisPanel)
+        {
+            thisPanel.Width -= speed;
+            thisPanel.Location = new Point(thisPanel.Location.X + speed, thisPanel.Location.Y);
+        }
+        private int EaseInOutCubic(int x)
+        {
+            return (int)(x < 0.5 ? 4 * x * x * x : 1 - Math.Pow(-2 * x + 2, 3) / 2);
+        }
+
+        private void tmrBarAnimation_Tick(object sender, EventArgs e)
+        {
+            counter++;
+
+            ShrinkPanel(pnlAnimationBar1);
+
+            if (counter > 5)
+            {
+                ShrinkPanel(pnlAnimationBar2);
+            }
+            if (counter > 10)
+            {
+                ShrinkPanel(pnlAnimationBar3);
+            }
+            if (counter > 15)
+            {
+                ShrinkPanel(pnlAnimationBar4);
+            }
+            if (counter > 20)
+            {
+                ShrinkPanel(pnlAnimationBar5);
+            }
+            if (counter > 25)
+            {
+                ShrinkPanel(pnlAnimationBar6);
+            }
+
+            if (pnlAnimationBar6.Width < 10)
+            {
+                tmrBarAnimation.Stop();
+            }
         }
     }
 }

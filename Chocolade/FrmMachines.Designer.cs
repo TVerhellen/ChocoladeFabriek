@@ -29,9 +29,15 @@ namespace Chocolade
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlAnimationBar6 = new System.Windows.Forms.Panel();
+            this.pnlAnimationBar5 = new System.Windows.Forms.Panel();
+            this.pnlAnimationBar4 = new System.Windows.Forms.Panel();
+            this.pnlAnimationBar3 = new System.Windows.Forms.Panel();
+            this.pnlAnimationBar2 = new System.Windows.Forms.Panel();
+            this.pnlAnimationBar1 = new System.Windows.Forms.Panel();
             this.lblStartDiagram = new System.Windows.Forms.Label();
-            this.lblEndDiagram = new System.Windows.Forms.Label();
             this.pnlNamesMachines = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,12 +71,19 @@ namespace Chocolade
             this.btnVolgendTijd = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
-            this.lblPage = new System.Windows.Forms.Label();
+            this.tmrBarAnimation = new System.Windows.Forms.Timer(this.components);
+            this.panel1.SuspendLayout();
             this.pnlThisBatch.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pnlAnimationBar6);
+            this.panel1.Controls.Add(this.pnlAnimationBar5);
+            this.panel1.Controls.Add(this.pnlAnimationBar4);
+            this.panel1.Controls.Add(this.pnlAnimationBar3);
+            this.panel1.Controls.Add(this.pnlAnimationBar2);
+            this.panel1.Controls.Add(this.pnlAnimationBar1);
             this.panel1.Location = new System.Drawing.Point(308, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 262);
@@ -78,25 +91,69 @@ namespace Chocolade
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             // 
+            // pnlAnimationBar6
+            // 
+            this.pnlAnimationBar6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlAnimationBar6.BackColor = System.Drawing.Color.White;
+            this.pnlAnimationBar6.Location = new System.Drawing.Point(19, 215);
+            this.pnlAnimationBar6.Name = "pnlAnimationBar6";
+            this.pnlAnimationBar6.Size = new System.Drawing.Size(551, 35);
+            this.pnlAnimationBar6.TabIndex = 14;
+            // 
+            // pnlAnimationBar5
+            // 
+            this.pnlAnimationBar5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlAnimationBar5.BackColor = System.Drawing.Color.White;
+            this.pnlAnimationBar5.Location = new System.Drawing.Point(19, 174);
+            this.pnlAnimationBar5.Name = "pnlAnimationBar5";
+            this.pnlAnimationBar5.Size = new System.Drawing.Size(551, 35);
+            this.pnlAnimationBar5.TabIndex = 13;
+            // 
+            // pnlAnimationBar4
+            // 
+            this.pnlAnimationBar4.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlAnimationBar4.BackColor = System.Drawing.Color.White;
+            this.pnlAnimationBar4.Location = new System.Drawing.Point(19, 133);
+            this.pnlAnimationBar4.Name = "pnlAnimationBar4";
+            this.pnlAnimationBar4.Size = new System.Drawing.Size(551, 35);
+            this.pnlAnimationBar4.TabIndex = 12;
+            // 
+            // pnlAnimationBar3
+            // 
+            this.pnlAnimationBar3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlAnimationBar3.BackColor = System.Drawing.Color.White;
+            this.pnlAnimationBar3.Location = new System.Drawing.Point(19, 92);
+            this.pnlAnimationBar3.Name = "pnlAnimationBar3";
+            this.pnlAnimationBar3.Size = new System.Drawing.Size(551, 35);
+            this.pnlAnimationBar3.TabIndex = 11;
+            // 
+            // pnlAnimationBar2
+            // 
+            this.pnlAnimationBar2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlAnimationBar2.BackColor = System.Drawing.Color.White;
+            this.pnlAnimationBar2.Location = new System.Drawing.Point(19, 51);
+            this.pnlAnimationBar2.Name = "pnlAnimationBar2";
+            this.pnlAnimationBar2.Size = new System.Drawing.Size(551, 35);
+            this.pnlAnimationBar2.TabIndex = 10;
+            // 
+            // pnlAnimationBar1
+            // 
+            this.pnlAnimationBar1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pnlAnimationBar1.BackColor = System.Drawing.Color.White;
+            this.pnlAnimationBar1.Location = new System.Drawing.Point(19, 10);
+            this.pnlAnimationBar1.Name = "pnlAnimationBar1";
+            this.pnlAnimationBar1.Size = new System.Drawing.Size(551, 35);
+            this.pnlAnimationBar1.TabIndex = 9;
+            // 
             // lblStartDiagram
             // 
             this.lblStartDiagram.AutoSize = true;
-            this.lblStartDiagram.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblStartDiagram.Location = new System.Drawing.Point(308, 56);
+            this.lblStartDiagram.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStartDiagram.Location = new System.Drawing.Point(564, 60);
             this.lblStartDiagram.Name = "lblStartDiagram";
-            this.lblStartDiagram.Size = new System.Drawing.Size(46, 17);
+            this.lblStartDiagram.Size = new System.Drawing.Size(54, 19);
             this.lblStartDiagram.TabIndex = 1;
             this.lblStartDiagram.Text = "label1";
-            // 
-            // lblEndDiagram
-            // 
-            this.lblEndDiagram.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEndDiagram.Location = new System.Drawing.Point(671, 56);
-            this.lblEndDiagram.Name = "lblEndDiagram";
-            this.lblEndDiagram.Size = new System.Drawing.Size(219, 20);
-            this.lblEndDiagram.TabIndex = 2;
-            this.lblEndDiagram.Text = "label2";
-            this.lblEndDiagram.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pnlNamesMachines
             // 
@@ -155,7 +212,7 @@ namespace Chocolade
             this.pnlThisBatch.Controls.Add(this.label3);
             this.pnlThisBatch.Location = new System.Drawing.Point(42, 429);
             this.pnlThisBatch.Name = "pnlThisBatch";
-            this.pnlThisBatch.Size = new System.Drawing.Size(948, 432);
+            this.pnlThisBatch.Size = new System.Drawing.Size(930, 432);
             this.pnlThisBatch.TabIndex = 1;
             this.pnlThisBatch.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlThisBatch_Paint);
             // 
@@ -436,53 +493,60 @@ namespace Chocolade
             // 
             // btnVorigTijd
             // 
-            this.btnVorigTijd.Location = new System.Drawing.Point(480, 50);
+            this.btnVorigTijd.BackgroundImage = global::Chocolade.Properties.Resources.left_chevron;
+            this.btnVorigTijd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVorigTijd.FlatAppearance.BorderSize = 0;
+            this.btnVorigTijd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVorigTijd.Location = new System.Drawing.Point(499, 54);
             this.btnVorigTijd.Name = "btnVorigTijd";
             this.btnVorigTijd.Size = new System.Drawing.Size(29, 29);
             this.btnVorigTijd.TabIndex = 5;
-            this.btnVorigTijd.Text = "<";
             this.btnVorigTijd.UseVisualStyleBackColor = true;
             this.btnVorigTijd.Click += new System.EventHandler(this.btnVorigTijd_Click);
             // 
             // btnVolgendTijd
             // 
-            this.btnVolgendTijd.Location = new System.Drawing.Point(627, 50);
+            this.btnVolgendTijd.BackgroundImage = global::Chocolade.Properties.Resources.chevron;
+            this.btnVolgendTijd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnVolgendTijd.FlatAppearance.BorderSize = 0;
+            this.btnVolgendTijd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolgendTijd.Location = new System.Drawing.Point(679, 55);
             this.btnVolgendTijd.Name = "btnVolgendTijd";
             this.btnVolgendTijd.Size = new System.Drawing.Size(29, 29);
             this.btnVolgendTijd.TabIndex = 6;
-            this.btnVolgendTijd.Text = ">";
             this.btnVolgendTijd.UseVisualStyleBackColor = true;
             this.btnVolgendTijd.Click += new System.EventHandler(this.btnVolgendTijd_Click);
             // 
             // btnUp
             // 
-            this.btnUp.Location = new System.Drawing.Point(916, 131);
+            this.btnUp.BackgroundImage = global::Chocolade.Properties.Resources.up_arrow;
+            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUp.FlatAppearance.BorderSize = 0;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.Location = new System.Drawing.Point(916, 93);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(74, 29);
+            this.btnUp.Size = new System.Drawing.Size(45, 45);
             this.btnUp.TabIndex = 7;
-            this.btnUp.Text = "Up";
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnDown
             // 
-            this.btnDown.Location = new System.Drawing.Point(916, 326);
+            this.btnDown.BackgroundImage = global::Chocolade.Properties.Resources.down_arrow;
+            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDown.FlatAppearance.BorderSize = 0;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Location = new System.Drawing.Point(916, 310);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(74, 29);
+            this.btnDown.Size = new System.Drawing.Size(45, 45);
             this.btnDown.TabIndex = 8;
-            this.btnDown.Text = "Down";
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
-            // lblPage
+            // tmrBarAnimation
             // 
-            this.lblPage.AutoSize = true;
-            this.lblPage.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPage.Location = new System.Drawing.Point(916, 93);
-            this.lblPage.Name = "lblPage";
-            this.lblPage.Size = new System.Drawing.Size(16, 17);
-            this.lblPage.TabIndex = 9;
-            this.lblPage.Text = "1";
+            this.tmrBarAnimation.Interval = 10;
+            this.tmrBarAnimation.Tick += new System.EventHandler(this.tmrBarAnimation_Tick);
             // 
             // FrmMachines
             // 
@@ -490,7 +554,6 @@ namespace Chocolade
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(1002, 906);
-            this.Controls.Add(this.lblPage);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.btnVolgendTijd);
@@ -499,12 +562,12 @@ namespace Chocolade
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlNamesMachines);
-            this.Controls.Add(this.lblEndDiagram);
             this.Controls.Add(this.lblStartDiagram);
             this.Controls.Add(this.panel1);
             this.Name = "FrmMachines";
             this.Text = "Machines";
             this.Load += new System.EventHandler(this.FrmMachines_Load);
+            this.panel1.ResumeLayout(false);
             this.pnlThisBatch.ResumeLayout(false);
             this.pnlThisBatch.PerformLayout();
             this.ResumeLayout(false);
@@ -516,7 +579,6 @@ namespace Chocolade
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblStartDiagram;
-        private System.Windows.Forms.Label lblEndDiagram;
         private System.Windows.Forms.Panel pnlNamesMachines;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -550,6 +612,12 @@ namespace Chocolade
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
-        private System.Windows.Forms.Label lblPage;
+        private System.Windows.Forms.Panel pnlAnimationBar1;
+        private System.Windows.Forms.Timer tmrBarAnimation;
+        private System.Windows.Forms.Panel pnlAnimationBar6;
+        private System.Windows.Forms.Panel pnlAnimationBar5;
+        private System.Windows.Forms.Panel pnlAnimationBar4;
+        private System.Windows.Forms.Panel pnlAnimationBar3;
+        private System.Windows.Forms.Panel pnlAnimationBar2;
     }
 }
