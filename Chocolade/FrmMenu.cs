@@ -20,11 +20,11 @@ namespace Chocolade
             InitializeComponent();
         }
 
+        public Gebruiker ingelogdeGebruiker = null;
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            // var currentDPI = (int)Registry.GetValue("HKEY_CURRENT_USER\\Control Panel\\Desktop", "LogPixels", 96);
-            //int DPI = Int32.Parse((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ThemeManager", "LastLoadedDPI", "96"));
-
             //Text bestanden worden ingelezen
 
             FrmLogin login = new FrmLogin();
@@ -34,6 +34,7 @@ namespace Chocolade
             {
                 Application.Exit();
             }
+            ingelogdeGebruiker = login.ingelogdeGebruiker;
             Machine.laadLijsten();
 
             Grondstof.LaadLijst();

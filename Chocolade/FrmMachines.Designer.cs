@@ -565,6 +565,7 @@ namespace Chocolade
             this.Controls.Add(this.lblStartDiagram);
             this.Controls.Add(this.panel1);
             this.Name = "FrmMachines";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Machines";
             this.Load += new System.EventHandler(this.FrmMachines_Load);
             this.panel1.ResumeLayout(false);

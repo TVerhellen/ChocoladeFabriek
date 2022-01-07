@@ -24,12 +24,14 @@ namespace Chocolade
         public DateTime end = DateTime.Now.AddDays(1).Date;
         List<Machine> ToDisplayMachines = new List<Machine>();
         int machinePage = 0;
+        int maxPage = 0;
         int thicknessBar = 20;
         int spacingBar = 20;
         int margin = 20;
 
         private void FrmMachines_Load(object sender, EventArgs e)
         {
+            maxPage = (int)(Machine.allMachines.Count / 6);
             lblStartDiagram.Text = start.ToString("dd/MM/yyyy");
             Debug.WriteLine(panel1.Height);
             thicknessBar = spacingBar = margin = (int)(panel1.Height * 0.077);
@@ -269,17 +271,24 @@ namespace Chocolade
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            machinePage++;
-            RefreshMachineList();
-            panel1.Refresh();
+            if (machinePage < maxPage)
+            {
+                machinePage++;
+                RefreshMachineList();
+                panel1.Refresh();
+            }
+
         }
         int counter = 0;
         int speed = 30;
 
         private void ShrinkPanel(Panel thisPanel)
         {
-            thisPanel.Width -= speed;
-            thisPanel.Location = new Point(thisPanel.Location.X + speed, thisPanel.Location.Y);
+            if (thisPanel.Width > 1)
+            {
+                thisPanel.Width -= speed;
+                thisPanel.Location = new Point(thisPanel.Location.X + speed, thisPanel.Location.Y);
+            }
         }
         private int EaseInOutCubic(int x)
         {

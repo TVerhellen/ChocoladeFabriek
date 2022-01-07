@@ -85,7 +85,6 @@ namespace Chocolade
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             pctChocolate.Location = new Point(-(this.Width / 2), pctChocolate.Location.Y);
-            //pctChocolate.Width = 0;
             timer1.Start();
         }
 
