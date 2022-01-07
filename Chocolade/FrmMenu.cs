@@ -15,6 +15,8 @@ namespace Chocolade
 {
     public partial class Form1 : Form
     {
+        private Form activeForm;
+
         public Form1()
         {
             InitializeComponent();
@@ -22,11 +24,11 @@ namespace Chocolade
 
         public Gebruiker ingelogdeGebruiker = null;
 
+        List<List<Button>> buttongroupList = new List<List<Button>>();
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //Text bestanden worden ingelezen
-
             FrmLogin login = new FrmLogin();
             DialogResult result = DialogResult.OK;
             result = login.ShowDialog();
@@ -42,8 +44,34 @@ namespace Chocolade
             Recept.LaadLijst();
             Recept.receptenLijst[0].Produceer(5);
             Recept.receptenLijst[1].Produceer(5, 123456);
+            List<Button> machineButtons = new List<Button> { btnMachinesOverview };
+            List<Button> stockButtons = new List<Button> { btnStock, btnStockBatches, btnStockGrondstoffen };
+            List<Button> verkoopButtons = new List<Button> { btnVerkoop, btnGegevensKlant, btnCatalogus, btnBestellingVerwerken, btnHistoriek, btnLopendeBestellingen };
+            List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderMenu, btnOrderVerwerken, btnAankoopHistoriek, btnAankoopLopendeOrders, btnAutomatischOrders, btnGegevensLeverancier };
+
+            buttongroupList.Add(stockButtons);
+            buttongroupList.Add(aankoopButtons);
+            buttongroupList.Add(machineButtons);
+            buttongroupList.Add(verkoopButtons);
+            AlignButtonGroups();
+
 
         }
+
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.pnlContainer.Controls.Add(childForm);
+            this.pnlContainer.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
 
         private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -91,6 +119,91 @@ namespace Chocolade
         {
             FrmVerkoopHistoriek nieuweHistoriek = new FrmVerkoopHistoriek();
             nieuweHistoriek.ShowDialog();
+        }
+
+        private void btnMachinesOverview_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmMachines(), sender);
+        }
+
+        private void btnBatches_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmStockChocolade(), sender);
+        }
+
+        private void btnStockGrondstoffen_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmStockGrondstof(), sender);
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            ToggleButtons(sender);
+        }
+        private void ToggleButtons(object sender)
+        {
+            List<Button> thisButtonGroup = null;
+            foreach (var buttonsGroup in buttongroupList)
+            {
+                foreach (var button in buttonsGroup)
+                {
+                    if (button == sender)
+                    {
+                        //Found button
+                        thisButtonGroup = buttonsGroup;
+                        if (button.Text.IndexOf("-") != -1)
+                        {
+                            button.Text = button.Text.Replace("-", "+");
+                        }
+                        else
+                        {
+                            button.Text = button.Text.Replace("+", "-");
+                        }
+                        break;
+                    }
+                }
+            }
+
+            if (thisButtonGroup.Count > 1)
+            {
+                bool setToValue = !thisButtonGroup[1].Visible;
+                for (int i = 1; i < thisButtonGroup.Count; i++)
+                {
+                    thisButtonGroup[i].Visible = setToValue;
+                    thisButtonGroup[i].Location = new Point(thisButtonGroup[0].Location.X + 20, thisButtonGroup[0].Location.Y + thisButtonGroup[0].Height * i);
+                }
+                int signMultiplier = 1;
+                if (!setToValue)
+                {
+                    signMultiplier = -1;
+                }
+                int offsetAmount = (thisButtonGroup.Count - 1) * btnMachinesOverview.Height * signMultiplier;
+                for (int i = buttongroupList.IndexOf(thisButtonGroup) + 1; i < buttongroupList.Count; i++)
+                {
+                    foreach (var button in buttongroupList[i])
+                    {
+                        button.Location = new Point(button.Location.X, button.Location.Y + offsetAmount);
+                    }
+                }
+            }
+        }
+        private void AlignButtonGroups()
+        {
+            Button topButton = buttongroupList[0][0];
+            for (int i = 1; i < buttongroupList.Count; i++)
+            {
+                buttongroupList[i][0].Location = new Point(buttongroupList[i][0].Location.X, topButton.Location.Y + topButton.Height * i);
+            }
+        }
+
+        private void btnVerkoop_Click(object sender, EventArgs e)
+        {
+            ToggleButtons(sender);
+        }
+
+        private void btnAankoop_Click(object sender, EventArgs e)
+        {
+            ToggleButtons(sender);
         }
     }
 }
