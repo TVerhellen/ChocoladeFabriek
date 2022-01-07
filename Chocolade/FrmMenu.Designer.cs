@@ -54,6 +54,7 @@ namespace Chocolade
             this.btnStockBatches = new System.Windows.Forms.Button();
             this.btnStockGrondstoffen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGegevensLeverancier = new System.Windows.Forms.Button();
             this.btnAutomatischOrders = new System.Windows.Forms.Button();
             this.btnAankoopLopendeOrders = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@ namespace Chocolade
             this.btnStock = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -236,7 +238,7 @@ namespace Chocolade
             this.btnMachinesOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMachinesOverview.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMachinesOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnMachinesOverview.Location = new System.Drawing.Point(4, 48);
+            this.btnMachinesOverview.Location = new System.Drawing.Point(4, 292);
             this.btnMachinesOverview.Name = "btnMachinesOverview";
             this.btnMachinesOverview.Size = new System.Drawing.Size(246, 60);
             this.btnMachinesOverview.TabIndex = 1;
@@ -289,6 +291,7 @@ namespace Chocolade
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnGegevensLeverancier);
             this.panel1.Controls.Add(this.btnAutomatischOrders);
             this.panel1.Controls.Add(this.btnAankoopLopendeOrders);
@@ -312,6 +315,17 @@ namespace Chocolade
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 1024);
             this.panel1.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Chocolade.Properties.Resources.Chocolate;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(54, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(124, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // btnGegevensLeverancier
             // 
@@ -528,7 +542,7 @@ namespace Chocolade
             this.btnVerkoop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerkoop.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVerkoop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnVerkoop.Location = new System.Drawing.Point(4, 312);
+            this.btnVerkoop.Location = new System.Drawing.Point(1, 332);
             this.btnVerkoop.Name = "btnVerkoop";
             this.btnVerkoop.Size = new System.Drawing.Size(246, 60);
             this.btnVerkoop.TabIndex = 6;
@@ -568,6 +582,7 @@ namespace Chocolade
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -615,6 +630,7 @@ namespace Chocolade
         private System.Windows.Forms.Button btnOrderMenu;
         private System.Windows.Forms.Button btnOrderPlaatsen;
         private System.Windows.Forms.Button btnAankoop;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

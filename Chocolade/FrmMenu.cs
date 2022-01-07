@@ -140,30 +140,14 @@ namespace Chocolade
         {
             ToggleButtons(sender);
         }
+
         private void ToggleButtons(object sender)
         {
-            List<Button> thisButtonGroup = null;
-            foreach (var buttonsGroup in buttongroupList)
-            {
-                foreach (var button in buttonsGroup)
-                {
-                    if (button == sender)
-                    {
-                        //Found button
-                        thisButtonGroup = buttonsGroup;
-                        if (button.Text.IndexOf("-") != -1)
-                        {
-                            button.Text = button.Text.Replace("-", "+");
-                        }
-                        else
-                        {
-                            button.Text = button.Text.Replace("+", "-");
-                        }
-                        break;
-                    }
-                }
-            }
-
+            List<Button> thisButtonGroup = FindGroupButtonBelongsTo(sender);
+            RepositionOtherButtons(thisButtonGroup);
+        }
+        private void RepositionOtherButtons(List<Button> thisButtonGroup)
+        {
             if (thisButtonGroup.Count > 1)
             {
                 bool setToValue = !thisButtonGroup[1].Visible;
@@ -186,7 +170,31 @@ namespace Chocolade
                     }
                 }
             }
+
         }
+        private List<Button> FindGroupButtonBelongsTo(object sender)
+        {
+            foreach (var buttonsGroup in buttongroupList)
+            {
+                foreach (var button in buttonsGroup)
+                {
+                    if (button == sender)
+                    {
+                        if (button.Text.IndexOf("-") != -1)
+                        {
+                            button.Text = button.Text.Replace("-", "+");
+                        }
+                        else
+                        {
+                            button.Text = button.Text.Replace("+", "-");
+                        }
+                        return buttonsGroup;
+                    }
+                }
+            }
+            throw new Exception("Buttongroup not found.");
+        }
+
         private void AlignButtonGroups()
         {
             Button topButton = buttongroupList[0][0];
