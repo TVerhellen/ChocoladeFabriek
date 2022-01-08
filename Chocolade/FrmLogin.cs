@@ -84,8 +84,6 @@ namespace Chocolade
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            pctChocolate.Location = new Point(-(this.Width / 2), pctChocolate.Location.Y);
-            timer1.Start();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -94,14 +92,5 @@ namespace Chocolade
             Environment.Exit(1);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            startX += 0.5;
-            pctChocolate.Location = new Point((int)(pctChocolate.Location.X + startX), pctChocolate.Location.Y);
-            if (pctChocolate.Location.X > this.Width / 2 - pctChocolate.Width / 2)
-            {
-                timer1.Stop();
-            }
-        }
     }
 }

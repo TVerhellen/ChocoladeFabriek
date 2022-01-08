@@ -29,13 +29,11 @@ namespace Chocolade
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pctChocolate = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,7 +44,6 @@ namespace Chocolade
             ((System.ComponentModel.ISupportInitialize)(this.pctChocolate)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -110,16 +107,11 @@ namespace Chocolade
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // pctChocolate
             // 
             this.pctChocolate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
             this.pctChocolate.Image = global::Chocolade.Properties.Resources.Chocolate;
-            this.pctChocolate.Location = new System.Drawing.Point(174, 109);
+            this.pctChocolate.Location = new System.Drawing.Point(168, 109);
             this.pctChocolate.Name = "pctChocolate";
             this.pctChocolate.Size = new System.Drawing.Size(124, 92);
             this.pctChocolate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,7 +199,6 @@ namespace Chocolade
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,7 +211,6 @@ namespace Chocolade
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pctChocolate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;

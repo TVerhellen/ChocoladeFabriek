@@ -64,9 +64,9 @@ namespace Chocolade
             this.lvwChocoladeBatch.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwChocoladeBatch.HideSelection = false;
             this.lvwChocoladeBatch.LabelWrap = false;
-            this.lvwChocoladeBatch.Location = new System.Drawing.Point(58, 205);
+            this.lvwChocoladeBatch.Location = new System.Drawing.Point(57, 157);
             this.lvwChocoladeBatch.Name = "lvwChocoladeBatch";
-            this.lvwChocoladeBatch.Size = new System.Drawing.Size(717, 343);
+            this.lvwChocoladeBatch.Size = new System.Drawing.Size(717, 420);
             this.lvwChocoladeBatch.TabIndex = 0;
             this.lvwChocoladeBatch.UseCompatibleStateImageBehavior = false;
             this.lvwChocoladeBatch.View = System.Windows.Forms.View.Details;
@@ -95,7 +95,7 @@ namespace Chocolade
             this.btnVerwijder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerwijder.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVerwijder.ForeColor = System.Drawing.Color.White;
-            this.btnVerwijder.Location = new System.Drawing.Point(58, 590);
+            this.btnVerwijder.Location = new System.Drawing.Point(57, 613);
             this.btnVerwijder.Name = "btnVerwijder";
             this.btnVerwijder.Size = new System.Drawing.Size(105, 35);
             this.btnVerwijder.TabIndex = 1;
@@ -110,7 +110,7 @@ namespace Chocolade
             this.btnVoegToe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoegToe.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVoegToe.ForeColor = System.Drawing.Color.White;
-            this.btnVoegToe.Location = new System.Drawing.Point(511, 62);
+            this.btnVoegToe.Location = new System.Drawing.Point(510, 14);
             this.btnVoegToe.Name = "btnVoegToe";
             this.btnVoegToe.Size = new System.Drawing.Size(105, 35);
             this.btnVoegToe.TabIndex = 19;
@@ -122,7 +122,7 @@ namespace Chocolade
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(571, 116);
+            this.label3.Location = new System.Drawing.Point(570, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 18;
@@ -132,7 +132,7 @@ namespace Chocolade
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(323, 116);
+            this.label2.Location = new System.Drawing.Point(322, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 18);
             this.label2.TabIndex = 17;
@@ -142,7 +142,7 @@ namespace Chocolade
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(58, 116);
+            this.label1.Location = new System.Drawing.Point(57, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 18);
             this.label1.TabIndex = 16;
@@ -151,7 +151,7 @@ namespace Chocolade
             // txtHoudbaarheidGrondstof
             // 
             this.txtHoudbaarheidGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHoudbaarheidGrondstof.Location = new System.Drawing.Point(583, 150);
+            this.txtHoudbaarheidGrondstof.Location = new System.Drawing.Point(582, 102);
             this.txtHoudbaarheidGrondstof.Name = "txtHoudbaarheidGrondstof";
             this.txtHoudbaarheidGrondstof.Size = new System.Drawing.Size(181, 20);
             this.txtHoudbaarheidGrondstof.TabIndex = 15;
@@ -159,7 +159,7 @@ namespace Chocolade
             // txtHoeveelheidGrondstof
             // 
             this.txtHoeveelheidGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHoeveelheidGrondstof.Location = new System.Drawing.Point(335, 150);
+            this.txtHoeveelheidGrondstof.Location = new System.Drawing.Point(334, 102);
             this.txtHoeveelheidGrondstof.Name = "txtHoeveelheidGrondstof";
             this.txtHoeveelheidGrondstof.Size = new System.Drawing.Size(181, 20);
             this.txtHoeveelheidGrondstof.TabIndex = 14;
@@ -167,7 +167,7 @@ namespace Chocolade
             // txtTypeGrondstof
             // 
             this.txtTypeGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTypeGrondstof.Location = new System.Drawing.Point(70, 150);
+            this.txtTypeGrondstof.Location = new System.Drawing.Point(69, 102);
             this.txtTypeGrondstof.Name = "txtTypeGrondstof";
             this.txtTypeGrondstof.Size = new System.Drawing.Size(181, 20);
             this.txtTypeGrondstof.TabIndex = 13;
@@ -179,7 +179,7 @@ namespace Chocolade
             this.btnWijzig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWijzig.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnWijzig.ForeColor = System.Drawing.Color.White;
-            this.btnWijzig.Location = new System.Drawing.Point(670, 62);
+            this.btnWijzig.Location = new System.Drawing.Point(669, 14);
             this.btnWijzig.Name = "btnWijzig";
             this.btnWijzig.Size = new System.Drawing.Size(105, 35);
             this.btnWijzig.TabIndex = 12;
@@ -191,7 +191,7 @@ namespace Chocolade
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(48, 48);
+            this.label4.Location = new System.Drawing.Point(47, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(255, 32);
             this.label4.TabIndex = 20;
@@ -200,7 +200,7 @@ namespace Chocolade
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(58, 140);
+            this.panel1.Location = new System.Drawing.Point(57, 92);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 41);
             this.panel1.TabIndex = 21;
@@ -208,7 +208,7 @@ namespace Chocolade
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(323, 140);
+            this.panel2.Location = new System.Drawing.Point(322, 92);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(204, 41);
             this.panel2.TabIndex = 22;
@@ -216,7 +216,7 @@ namespace Chocolade
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(571, 140);
+            this.panel3.Location = new System.Drawing.Point(570, 92);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 41);
             this.panel3.TabIndex = 23;
