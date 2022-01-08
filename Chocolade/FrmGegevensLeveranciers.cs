@@ -14,6 +14,8 @@ namespace Chocolade
         Leverancier LeverancierGegevens = new Leverancier();
         List<Leverancier> mijnLeveranciers = new List<Leverancier>();
         int leverancierNummer = 1;
+        string tekstGeselecteerdeLeverancier = "";
+        string nieuweFoldernaamLeverancier = "";
 
         private void GegevensLeveranciers_Load(object sender, System.EventArgs e)
         {
@@ -22,7 +24,7 @@ namespace Chocolade
 
             foreach (var LeverancierGegevens in mijnLeveranciers)
             {
-                cmbLeveranciers.Items.Add(leverancierNummer.ToString() + ".".PadRight(3) + LeverancierGegevens.Naam);
+                cmbLeveranciers.Items.Add(leverancierNummer.ToString("0000") + ".".PadRight(3) + LeverancierGegevens.Naam);
                 leverancierNummer++;
             }
             cmbLeveranciers.SelectedIndex = 0;
@@ -35,6 +37,9 @@ namespace Chocolade
             if (cmbLeveranciers.SelectedIndex == 0)
             {
                 LeverancierGegeven();
+                InlezenBestand();
+                NieuweLeveranciersMap("Catalogus");
+                NieuweLeveranciersMap("Bestelorders");
             }
             else
             {
@@ -90,6 +95,8 @@ namespace Chocolade
                 txtTelefoon.Text = mijnLeveranciers[cmbLeveranciers.SelectedIndex - 1].Telefoonnumer;
                 txtEmail.Text = mijnLeveranciers[cmbLeveranciers.SelectedIndex - 1].Email;
 
+                tekstGeselecteerdeLeverancier = txtLevNaam.Text;
+
                 txtBtwNummer.Enabled = false;
             }
         }
@@ -105,7 +112,7 @@ namespace Chocolade
                         tempGegevensLeverancier = reader.ReadLine().Split(";");
                         if (tempGegevensLeverancier.Length > 1)
                         {
-                            LeverancierGegevens = new Leverancier(Convert.ToInt32(tempGegevensLeverancier[0]), tempGegevensLeverancier[1], tempGegevensLeverancier[2], tempGegevensLeverancier[3], tempGegevensLeverancier[4], tempGegevensLeverancier[5], tempGegevensLeverancier[6], tempGegevensLeverancier[7], tempGegevensLeverancier[8]);
+                            LeverancierGegevens = new Leverancier(Convert.ToInt32(tempGegevensLeverancier[0]).ToString("0000"), tempGegevensLeverancier[1], tempGegevensLeverancier[2], tempGegevensLeverancier[3], tempGegevensLeverancier[4], tempGegevensLeverancier[5], tempGegevensLeverancier[6], tempGegevensLeverancier[7], tempGegevensLeverancier[8]);
                             mijnLeveranciers.Add(LeverancierGegevens);
                         }
                     }
@@ -131,18 +138,19 @@ namespace Chocolade
             string btwNummer = "";
             string email = "";
             string telefoonnummer;
-            int leverancierNummer;
+            string leverancierNummer;
             int btw = 0;
             string[] gegevensLeverancier;
             string[] tempGegevensLeverancier;
 
             if (cmbLeveranciers.SelectedIndex == 0)
             {
-                leverancierNummer = mijnLeveranciers.Count + 1;
+                leverancierNummer = (mijnLeveranciers.Count + 1).ToString("0000");
             }
             else
             {
-                leverancierNummer = Convert.ToInt32(cmbLeveranciers.SelectedIndex);
+                leverancierNummer = Convert.ToInt32(cmbLeveranciers.SelectedIndex).ToString("0000");
+
             }
 
             naam = txtLevNaam.Text;
@@ -190,6 +198,12 @@ namespace Chocolade
                 mijnLeveranciers.RemoveAt(cmbLeveranciers.SelectedIndex - 1);
                 cmbLeveranciers.Items.Insert(cmbLeveranciers.SelectedIndex, leverancierNummer.ToString() + ".".PadRight(3) + LeverancierGegevens.Naam);
                 cmbLeveranciers.Items.RemoveAt(cmbLeveranciers.SelectedIndex);
+
+
+                if (Directory.Exists(@"Aankoop/Catalogus/" + LeverancierGegevens.LeverancierNummer + " " + tekstGeselecteerdeLeverancier))
+                {
+                    Directory.Move(@"Aankoop/Catalogus/" + LeverancierGegevens.LeverancierNummer + " " + tekstGeselecteerdeLeverancier, @"Aankoop/Catalogus/" + LeverancierGegevens.LeverancierNummer + " " + LeverancierGegevens.Naam);
+                }
             }
 
             if (File.Exists("Aankoop/Leveranciergegevens/Leveranciergegevens.txt"))
@@ -227,9 +241,23 @@ namespace Chocolade
             txtBtwNummer.Text = "";
             txtTelefoon.Text = "";
             txtEmail.Text = "";
+            cmbLeveranciers.SelectedIndex = 0;
 
         }
 
+        public void NieuweLeveranciersMap(string folderNaam)
+        {
+            string folderPath = @"Aankoop/" + folderNaam;
 
+            if (!Directory.Exists(folderPath + "/" + LeverancierGegevens.LeverancierNummer + " " + LeverancierGegevens.Naam))
+            {
+                Directory.CreateDirectory(folderPath + "/" + LeverancierGegevens.LeverancierNummer + " " + LeverancierGegevens.Naam);
+            }
+        }
+
+        private void CreateDirectory()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

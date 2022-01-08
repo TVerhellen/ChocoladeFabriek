@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders ordernummer="5555">
+<order>
+<artikelnummer>0001</artikelnummer>
+<kwaliteit>BIO</kwaliteit>
+<soort>Ariba</soort>
+<prijsPerKg>3,99</prijsPerKg>
+</order>
+</orders ordernummer="5555">

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders ordernummer="5555">
+<order>
+<batchId>67572</batchId>
+<kwaliteit>BIO</kwaliteit>
+<prijsPerKg>3,99</prijsPerKg>
+<artikelnummer>0001</artikelnummer>
+<soort>Ariba</soort>
+<productieDatum>20/12/2021</productieDatum>
+<gewicht>5</gewicht>
+<houdbaarheidsDatum>20/12/2023</houdbaarheidsDatum>
+<totaal>19,950000000000003</totaal>
+</order>
+<order>
+<batchId>23016</batchId>
+<kwaliteit>smaak</kwaliteit>
+<prijsPerKg>49,99</prijsPerKg>
+<artikelnummer>0004</artikelnummer>
+<soort>Wild</soort>
+<productieDatum>20/12/2021</productieDatum>
+<gewicht>5</gewicht>
+<houdbaarheidsDatum>20/12/2023</houdbaarheidsDatum>
+<totaal>249,95000000000002</totaal>
+</order>
+<order>
+<batchId>88521</batchId>
+<kwaliteit>GMO</kwaliteit>
+<prijsPerKg>14,99</prijsPerKg>
+<artikelnummer>0002</artikelnummer>
+<soort>Criollo</soort>
+<productieDatum>20/12/2021</productieDatum>
+<gewicht>5</gewicht>
+<houdbaarheidsDatum>20/12/2023</houdbaarheidsDatum>
+<totaal>74,95</totaal>
+</order>
+<totaalOrder>344,85</totaalOrder>
+</orders>

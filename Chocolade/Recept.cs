@@ -47,6 +47,7 @@ namespace Chocolade
         public int ID { get; set; }
 
         public void Produceer(double hoeveelProduct, double reservatienummer = -1)
+
         {
             Grondstof.SorteerStockLijst();
             List<Grondstof>[] grondstofSoort = new List<Grondstof>[Ingredienten.Count];
@@ -69,6 +70,7 @@ namespace Chocolade
             //Maak product aan
             if (this.GenoegGrondstoffen(hoeveelProduct))
             {
+
                 MachineGebruik roastTimeslot = Machine.VindVroegstMogelijkeTijdslot(RoastMachine.list, DateTime.Now);
                 MachineGebruik crackTimeslot = Machine.VindVroegstMogelijkeTijdslot(CrackingMachine.list, roastTimeslot.Tijdslot.End);
                 MachineGebruik grindTimeslot = Machine.VindVroegstMogelijkeTijdslot(GrindingMachine.list, crackTimeslot.Tijdslot.End);

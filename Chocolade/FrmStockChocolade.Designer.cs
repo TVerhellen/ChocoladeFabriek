@@ -66,9 +66,16 @@ namespace Chocolade
             this.lvwChocoladeBatch.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwChocoladeBatch.HideSelection = false;
             this.lvwChocoladeBatch.LabelWrap = false;
+<<<<<<< HEAD
             this.lvwChocoladeBatch.Location = new System.Drawing.Point(57, 157);
             this.lvwChocoladeBatch.Name = "lvwChocoladeBatch";
             this.lvwChocoladeBatch.Size = new System.Drawing.Size(717, 420);
+=======
+            this.lvwChocoladeBatch.Location = new System.Drawing.Point(58, 92);
+            this.lvwChocoladeBatch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwChocoladeBatch.Name = "lvwChocoladeBatch";
+            this.lvwChocoladeBatch.Size = new System.Drawing.Size(594, 231);
+>>>>>>> master
             this.lvwChocoladeBatch.TabIndex = 0;
             this.lvwChocoladeBatch.UseCompatibleStateImageBehavior = false;
             this.lvwChocoladeBatch.View = System.Windows.Forms.View.Details;
@@ -91,6 +98,7 @@ namespace Chocolade
             // 
             // btnVerwijder
             // 
+<<<<<<< HEAD
             this.btnVerwijder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVerwijder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
             this.btnVerwijder.FlatAppearance.BorderSize = 0;
@@ -100,6 +108,12 @@ namespace Chocolade
             this.btnVerwijder.Location = new System.Drawing.Point(57, 613);
             this.btnVerwijder.Name = "btnVerwijder";
             this.btnVerwijder.Size = new System.Drawing.Size(105, 35);
+=======
+            this.btnVerwijder.Location = new System.Drawing.Point(58, 334);
+            this.btnVerwijder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVerwijder.Name = "btnVerwijder";
+            this.btnVerwijder.Size = new System.Drawing.Size(82, 22);
+>>>>>>> master
             this.btnVerwijder.TabIndex = 1;
             this.btnVerwijder.Text = "Verwijder";
             this.btnVerwijder.UseVisualStyleBackColor = false;
@@ -107,6 +121,7 @@ namespace Chocolade
             // 
             // btnVoegToe
             // 
+<<<<<<< HEAD
             this.btnVoegToe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(130)))));
             this.btnVoegToe.FlatAppearance.BorderSize = 0;
             this.btnVoegToe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -115,6 +130,12 @@ namespace Chocolade
             this.btnVoegToe.Location = new System.Drawing.Point(510, 14);
             this.btnVoegToe.Name = "btnVoegToe";
             this.btnVoegToe.Size = new System.Drawing.Size(105, 35);
+=======
+            this.btnVoegToe.Location = new System.Drawing.Point(569, 65);
+            this.btnVoegToe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoegToe.Name = "btnVoegToe";
+            this.btnVoegToe.Size = new System.Drawing.Size(82, 22);
+>>>>>>> master
             this.btnVoegToe.TabIndex = 19;
             this.btnVoegToe.Text = "Voeg Toe";
             this.btnVoegToe.UseVisualStyleBackColor = false;
@@ -123,59 +144,99 @@ namespace Chocolade
             // label3
             // 
             this.label3.AutoSize = true;
+<<<<<<< HEAD
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(570, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
+=======
+            this.label3.Location = new System.Drawing.Point(412, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 15);
+>>>>>>> master
             this.label3.TabIndex = 18;
             this.label3.Text = "Houdbaarheid:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+<<<<<<< HEAD
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(322, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 18);
+=======
+            this.label2.Location = new System.Drawing.Point(234, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 15);
+>>>>>>> master
             this.label2.TabIndex = 17;
             this.label2.Text = "Hoeveelheid:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+<<<<<<< HEAD
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(57, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 18);
+=======
+            this.label1.Location = new System.Drawing.Point(58, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 15);
+>>>>>>> master
             this.label1.TabIndex = 16;
             this.label1.Text = "Type Grondstof:";
             // 
             // txtHoudbaarheidGrondstof
             // 
+<<<<<<< HEAD
             this.txtHoudbaarheidGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHoudbaarheidGrondstof.Location = new System.Drawing.Point(582, 102);
             this.txtHoudbaarheidGrondstof.Name = "txtHoudbaarheidGrondstof";
             this.txtHoudbaarheidGrondstof.Size = new System.Drawing.Size(181, 20);
+=======
+            this.txtHoudbaarheidGrondstof.Location = new System.Drawing.Point(412, 56);
+            this.txtHoudbaarheidGrondstof.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoudbaarheidGrondstof.Name = "txtHoudbaarheidGrondstof";
+            this.txtHoudbaarheidGrondstof.Size = new System.Drawing.Size(129, 23);
+>>>>>>> master
             this.txtHoudbaarheidGrondstof.TabIndex = 15;
             // 
             // txtHoeveelheidGrondstof
             // 
+<<<<<<< HEAD
             this.txtHoeveelheidGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHoeveelheidGrondstof.Location = new System.Drawing.Point(334, 102);
             this.txtHoeveelheidGrondstof.Name = "txtHoeveelheidGrondstof";
             this.txtHoeveelheidGrondstof.Size = new System.Drawing.Size(181, 20);
+=======
+            this.txtHoeveelheidGrondstof.Location = new System.Drawing.Point(234, 56);
+            this.txtHoeveelheidGrondstof.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHoeveelheidGrondstof.Name = "txtHoeveelheidGrondstof";
+            this.txtHoeveelheidGrondstof.Size = new System.Drawing.Size(159, 23);
+>>>>>>> master
             this.txtHoeveelheidGrondstof.TabIndex = 14;
             // 
             // txtTypeGrondstof
             // 
+<<<<<<< HEAD
             this.txtTypeGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTypeGrondstof.Location = new System.Drawing.Point(69, 102);
             this.txtTypeGrondstof.Name = "txtTypeGrondstof";
             this.txtTypeGrondstof.Size = new System.Drawing.Size(181, 20);
+=======
+            this.txtTypeGrondstof.Location = new System.Drawing.Point(58, 56);
+            this.txtTypeGrondstof.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTypeGrondstof.Name = "txtTypeGrondstof";
+            this.txtTypeGrondstof.Size = new System.Drawing.Size(159, 23);
+>>>>>>> master
             this.txtTypeGrondstof.TabIndex = 13;
             // 
             // btnWijzig
             // 
+<<<<<<< HEAD
             this.btnWijzig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(192)))));
             this.btnWijzig.FlatAppearance.BorderSize = 0;
             this.btnWijzig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -184,6 +245,12 @@ namespace Chocolade
             this.btnWijzig.Location = new System.Drawing.Point(669, 14);
             this.btnWijzig.Name = "btnWijzig";
             this.btnWijzig.Size = new System.Drawing.Size(105, 35);
+=======
+            this.btnWijzig.Location = new System.Drawing.Point(569, 31);
+            this.btnWijzig.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnWijzig.Name = "btnWijzig";
+            this.btnWijzig.Size = new System.Drawing.Size(82, 22);
+>>>>>>> master
             this.btnWijzig.TabIndex = 12;
             this.btnWijzig.Text = "Wijzig";
             this.btnWijzig.UseVisualStyleBackColor = false;
@@ -230,11 +297,15 @@ namespace Chocolade
             // 
             // FrmStockChocolade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(815, 660);
             this.Controls.Add(this.label4);
+=======
+            this.ClientSize = new System.Drawing.Size(700, 374);
+>>>>>>> master
             this.Controls.Add(this.btnVoegToe);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -245,9 +316,13 @@ namespace Chocolade
             this.Controls.Add(this.btnWijzig);
             this.Controls.Add(this.btnVerwijder);
             this.Controls.Add(this.lvwChocoladeBatch);
+<<<<<<< HEAD
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+=======
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+>>>>>>> master
             this.Name = "FrmStockChocolade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chocolade Batches";

@@ -56,9 +56,97 @@ namespace Chocolade
 
         private void btnAfwerken_Click(object sender, EventArgs e)
         {
-            File.Move($"Verkoop/Lopend/{(VerkoopOrder)lbOrders.SelectedItem}.txt", $"Verkoop/Historiek/Afgewerkt/{((VerkoopOrder)lbOrders.SelectedItem).ToString()}.txt");
+            
 
-            ((VerkoopOrder)lbOrders.SelectedItem).Lijst.Clear();
+            double tempHoeveelheid = 0;
+            bool controle = false;
+            List<ChocoladeBatch> actualBatches = new List<ChocoladeBatch>();
+            foreach (ChocoladeBatch batch in ((VerkoopOrder)lbOrders.SelectedItem).Lijst)
+            {
+                controle = false;
+                foreach (ChocoladeBatch stockBatch in ChocoladeBatch.stock)
+                {
+                    if (batch.ID.ToString().PadLeft(10, '0').Substring(0, 4) == stockBatch.ID.ToString().PadLeft(10, '0').Substring(0, 4))
+                    {
+                        if (tempHoeveelheid == 0)
+                        {
+                            batch.Houdbaarheid = stockBatch.Houdbaarheid;
+                            batch.ID = stockBatch.ID;
+                            if (batch.Hoeveelheid <= stockBatch.Hoeveelheid)
+                            {
+                                if (batch.Hoeveelheid == stockBatch.Hoeveelheid)
+                                {
+                                    stockBatch.Verwijder();
+                                    controle = true;
+                                }
+                                else
+                                {
+                                    stockBatch.Verwijder(batch.Hoeveelheid);
+                                    controle = true;
+                                }
+                                actualBatches.Add(batch);
+                                break;
+                            }
+                            else
+                            {
+                                tempHoeveelheid = batch.Hoeveelheid - stockBatch.Hoeveelheid;
+                                batch.Hoeveelheid = stockBatch.Hoeveelheid;
+                                actualBatches.Add(batch);
+                            }
+                        }
+                        else
+                        {
+                            ChocoladeBatch newBatch = new ChocoladeBatch(batch.Naam, tempHoeveelheid);
+                            
+                            newBatch.Houdbaarheid = stockBatch.Houdbaarheid;
+                            newBatch.ID = stockBatch.ID;
+                            if (newBatch.Hoeveelheid <= stockBatch.Hoeveelheid)
+                            {
+                                if (newBatch.Hoeveelheid == stockBatch.Hoeveelheid)
+                                {
+                                    newBatch.Prijs = stockBatch.Prijs;
+                                    stockBatch.Verwijder();
+                                    controle = true;
+                                }
+                                else
+                                {
+                                    newBatch.Prijs = stockBatch.Prijs * newBatch.Hoeveelheid / stockBatch.Hoeveelheid;
+                                    stockBatch.Verwijder(newBatch.Hoeveelheid);
+                                    controle = true;
+                                }
+                                actualBatches.Add(newBatch);
+                                break;
+                            }
+                            else
+                            {
+                                tempHoeveelheid = newBatch.Hoeveelheid - stockBatch.Hoeveelheid;
+                                newBatch.Hoeveelheid = stockBatch.Hoeveelheid;
+                                actualBatches.Add(newBatch);
+                            }
+                        }
+
+
+                    }
+                }
+                if (!controle)
+                {
+                    MessageBox.Show("Niet alle artikelen zijn in stock!");
+                    foreach (ChocoladeBatch actualBatch in actualBatches)
+                    {
+                        ChocoladeBatch.stock.Add(actualBatch);
+                    }
+                    ChocoladeBatch.SorteerStockLijst();
+                    break;
+                }
+            }
+            if (controle)
+            {
+                ((VerkoopOrder)lbOrders.SelectedItem).Lijst = actualBatches;
+                File.Move($"Verkoop/Lopend/{(VerkoopOrder)lbOrders.SelectedItem}.txt", $"Verkoop/Historiek/Afgewerkt/{(VerkoopOrder)lbOrders.SelectedItem}.txt");
+                ((VerkoopOrder)lbOrders.SelectedItem).GenerateXml();
+            }
+
+            //lbOrders.Items.RemoveAt(lbOrders.SelectedIndex);
             lbOrders.SelectedIndex = -1;
         }
 
@@ -107,6 +195,5 @@ namespace Chocolade
                 lvwBatches.Items.Add(theNewItem);
             }
         }
-
     }
 }

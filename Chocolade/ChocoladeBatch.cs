@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Chocolade
 {
@@ -18,17 +19,12 @@ namespace Chocolade
         private DateTime _momentBeschikbaar;
         private double _prijs;
 
-        public double Prijs
-        {
-            get { return _prijs; }
-            set { _prijs = value; }
-        }
+
 
 
         public ChocoladeBatch(string gegevens, bool addStock = true) : base(gegevens)
         {
             if (addStock)
-
             {
                 stock.Add(this);
             }
@@ -38,6 +34,12 @@ namespace Chocolade
         {
             Naam = naam;
             Hoeveelheid = hoeveelheid;
+        }
+
+        public double Prijs
+        {
+            get { return _prijs; }
+            set { _prijs = value; }
         }
         public DateTime MomentBeschikbaar
         {
@@ -66,6 +68,7 @@ namespace Chocolade
         {
             if (hoeveelheid >= 0)
             {
+                Prijs *= (Hoeveelheid - hoeveelheid) / Hoeveelheid;
                 Hoeveelheid -= hoeveelheid;
             }
             else
@@ -182,6 +185,22 @@ namespace Chocolade
         public static void SorteerStockLijst()
         {
             stock = stock.OrderBy(o => o.Naam).ThenBy(o => o.Houdbaarheid).ToList();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString()+$"|{Prijs}";
+        }
+
+        public void ToXml(XmlWriter writer)
+        {
+            writer.WriteStartElement("artikel");
+            writer.WriteAttributeString("id", ID.ToString());
+            writer.WriteElementString("naam", Naam);
+            writer.WriteElementString("hoeveelheid", Hoeveelheid.ToString());
+            writer.WriteElementString("houdbaarheid", Houdbaarheid.ToString("dd/MM/yyyy"));
+            writer.WriteElementString("prijs", Prijs.ToString("0.00"));
+            writer.WriteEndElement();
         }
         #endregion
 

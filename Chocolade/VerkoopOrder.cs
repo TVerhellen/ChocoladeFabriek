@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Chocolade
 {
@@ -60,6 +61,20 @@ namespace Chocolade
         public override string ToString()
         {
             return $"order{ID}";
+        }
+
+        public void GenerateXml()
+        {
+            using (XmlWriter writer = XmlWriter.Create($"Verkoop/Xmls/order{ID}.xml"))
+            {
+                writer.WriteStartElement("order");
+                writer.WriteAttributeString("id", ID.ToString());
+                foreach (ChocoladeBatch batch in Lijst)
+                {
+                    batch.ToXml(writer);
+                }
+                writer.WriteEndElement();
+            }
         }
 
     }
