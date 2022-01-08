@@ -51,6 +51,9 @@ namespace Chocolade
             // lvwGrondstof
             // 
             this.lvwGrondstof.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvwGrondstof.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvwGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvwGrondstof.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -97,6 +100,7 @@ namespace Chocolade
             this.btnVoegToe.TabIndex = 22;
             this.btnVoegToe.Text = "Voeg Toe";
             this.btnVoegToe.UseVisualStyleBackColor = false;
+            this.btnVoegToe.Click += new System.EventHandler(this.btnVoegToe_Click);
             // 
             // btnWijzig
             // 
@@ -111,9 +115,11 @@ namespace Chocolade
             this.btnWijzig.TabIndex = 21;
             this.btnWijzig.Text = "Wijzig";
             this.btnWijzig.UseVisualStyleBackColor = false;
+            this.btnWijzig.Click += new System.EventHandler(this.btnWijzig_Click);
             // 
             // btnVerwijder
             // 
+            this.btnVerwijder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVerwijder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
             this.btnVerwijder.FlatAppearance.BorderSize = 0;
             this.btnVerwijder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -125,6 +131,7 @@ namespace Chocolade
             this.btnVerwijder.TabIndex = 20;
             this.btnVerwijder.Text = "Verwijder";
             this.btnVerwijder.UseVisualStyleBackColor = false;
+            this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
             // label4
             // 

@@ -51,6 +51,9 @@ namespace Chocolade
             // lvwChocoladeBatch
             // 
             this.lvwChocoladeBatch.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvwChocoladeBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvwChocoladeBatch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvwChocoladeBatch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -86,12 +89,13 @@ namespace Chocolade
             // 
             // btnVerwijder
             // 
+            this.btnVerwijder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnVerwijder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
             this.btnVerwijder.FlatAppearance.BorderSize = 0;
             this.btnVerwijder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerwijder.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVerwijder.ForeColor = System.Drawing.Color.White;
-            this.btnVerwijder.Location = new System.Drawing.Point(58, 582);
+            this.btnVerwijder.Location = new System.Drawing.Point(58, 590);
             this.btnVerwijder.Name = "btnVerwijder";
             this.btnVerwijder.Size = new System.Drawing.Size(105, 35);
             this.btnVerwijder.TabIndex = 1;

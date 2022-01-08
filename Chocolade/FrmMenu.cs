@@ -30,14 +30,14 @@ namespace Chocolade
         {
             //Text bestanden worden ingelezen
             FrmLogin login = new FrmLogin();
-            DialogResult result = DialogResult.OK;
-            result = login.ShowDialog();
+            DialogResult result = login.ShowDialog();
             if (result != DialogResult.OK)
             {
-                Application.Exit();
+                Environment.Exit(1);
             }
-            ingelogdeGebruiker = login.ingelogdeGebruiker;
-            Machine.laadLijsten();
+            Debug.WriteLine(result);
+            LoadProfile(login);
+
 
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
@@ -56,6 +56,14 @@ namespace Chocolade
             AlignButtonGroups();
 
 
+        }
+
+        private void LoadProfile(FrmLogin login)
+        {
+            ingelogdeGebruiker = login.ingelogdeGebruiker;
+            lblProfile.Text = ingelogdeGebruiker.Gebruikersnaam.Substring(0, 2);
+            lblProfile.Location = new Point((pnlProfileCircle.Width - lblProfile.Width) / 2, lblProfile.Location.Y);
+            Machine.laadLijsten();
         }
 
         private void OpenChildForm(Form childForm, object btnSender)
@@ -128,12 +136,21 @@ namespace Chocolade
 
         private void btnBatches_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmStockChocolade(), sender);
+            if (ingelogdeGebruiker.Rol == Gebruikersrol.werknemer)
+            {
+                MessageBox.Show("U heeft niet de juiste bevoegdheden om dit te doen!", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+            else
+            {
+                OpenChildForm(new FrmStockChocolade(), sender);
+            }
         }
 
         private void btnStockGrondstoffen_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmStockGrondstof(), sender);
+            FrmStockGrondstof thisForm = new FrmStockGrondstof();
+            thisForm.ingelogdeGebruiker = ingelogdeGebruiker;
+            OpenChildForm(thisForm, sender);
         }
 
         private void btnStock_Click(object sender, EventArgs e)
@@ -144,8 +161,29 @@ namespace Chocolade
         private void ToggleButtons(object sender)
         {
             List<Button> thisButtonGroup = FindGroupButtonBelongsTo(sender);
+            //TODO
+            //CloseOtherGroups(thisButtonGroup);
             RepositionOtherButtons(thisButtonGroup);
         }
+
+        private void CloseOtherGroups(List<Button> thisButtonGroup)
+        {
+            for (int i = 0; i < buttongroupList.Count; i++)
+            {
+                List<Button> g = buttongroupList[i];
+                if (thisButtonGroup != g)
+                {
+                    if (g.Count > 1 && g[1].Visible == true)
+                    {
+                        foreach (var button in g)
+                        {
+                            button.Visible = false;
+                        }
+                    }
+                }
+            }
+        }
+
         private void RepositionOtherButtons(List<Button> thisButtonGroup)
         {
             if (thisButtonGroup.Count > 1)
@@ -212,6 +250,42 @@ namespace Chocolade
         private void btnAankoop_Click(object sender, EventArgs e)
         {
             ToggleButtons(sender);
+        }
+        private void pnlProfileCircle_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            SolidBrush myBrush = new SolidBrush(Color.FromArgb(255, 100, 100, 255));
+            int centerX = pnlProfileCircle.Width / 2;
+            int centerY = pnlProfileCircle.Width / 2;
+            int radius = pnlProfileCircle.Width / 2 - 2;
+            g.FillEllipse(myBrush, centerX - radius, centerY - radius, radius + radius, radius + radius);
+        }
+
+        private void pnlProfileCircle_Click(object sender, EventArgs e)
+        {
+            ProfileWindow();
+        }
+
+        private void lblProfile_Click(object sender, EventArgs e)
+        {
+            ProfileWindow();
+        }
+
+        private void ProfileWindow()
+        {
+            FrmLogout logout = new FrmLogout();
+            DialogResult dialogResult = logout.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                FrmLogin login = new FrmLogin();
+                DialogResult result = DialogResult.OK;
+                result = login.ShowDialog();
+                if (result != DialogResult.OK)
+                {
+                    Application.Exit();
+                }
+                LoadProfile(login);
+            }
         }
     }
 }

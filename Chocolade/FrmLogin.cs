@@ -90,12 +90,13 @@ namespace Chocolade
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult = DialogResult.Cancel;
+            Environment.Exit(1);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            startX += 0.1;
+            startX += 0.5;
             pctChocolate.Location = new Point((int)(pctChocolate.Location.X + startX), pctChocolate.Location.Y);
             if (pctChocolate.Location.X > this.Width / 2 - pctChocolate.Width / 2)
             {

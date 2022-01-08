@@ -236,6 +236,7 @@ namespace Chocolade
 
         private void pnlThisBatch_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.Clear(SystemColors.Control);
             Graphics g = e.Graphics;
             int totalWidth = pnlThisBatch.Width;
             SolidBrush blueBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 255));

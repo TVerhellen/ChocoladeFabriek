@@ -51,6 +51,9 @@ namespace Chocolade
             this.machinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMachinesOverview = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.pnlProfileCircle = new System.Windows.Forms.Panel();
+            this.lblProfile = new System.Windows.Forms.Label();
+            this.pctProfile = new System.Windows.Forms.PictureBox();
             this.btnStockBatches = new System.Windows.Forms.Button();
             this.btnStockGrondstoffen = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -71,6 +74,9 @@ namespace Chocolade
             this.btnVerkoop = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.pnlContainer.SuspendLayout();
+            this.pnlProfileCircle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctProfile)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,10 +89,10 @@ namespace Chocolade
             this.verkoopToolStripMenuItem,
             this.stockToolStripMenuItem,
             this.productieToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(250, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(274, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1058, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1034, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -249,10 +255,47 @@ namespace Chocolade
             // 
             // pnlContainer
             // 
-            this.pnlContainer.Location = new System.Drawing.Point(250, 45);
+            this.pnlContainer.Controls.Add(this.pnlProfileCircle);
+            this.pnlContainer.Controls.Add(this.pctProfile);
+            this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainer.Location = new System.Drawing.Point(274, 30);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1058, 905);
+            this.pnlContainer.Size = new System.Drawing.Size(1034, 994);
             this.pnlContainer.TabIndex = 2;
+            // 
+            // pnlProfileCircle
+            // 
+            this.pnlProfileCircle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlProfileCircle.Controls.Add(this.lblProfile);
+            this.pnlProfileCircle.Location = new System.Drawing.Point(953, 20);
+            this.pnlProfileCircle.Name = "pnlProfileCircle";
+            this.pnlProfileCircle.Size = new System.Drawing.Size(60, 60);
+            this.pnlProfileCircle.TabIndex = 23;
+            this.pnlProfileCircle.Click += new System.EventHandler(this.pnlProfileCircle_Click);
+            this.pnlProfileCircle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlProfileCircle_Paint);
+            // 
+            // lblProfile
+            // 
+            this.lblProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProfile.AutoSize = true;
+            this.lblProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(255)))));
+            this.lblProfile.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblProfile.ForeColor = System.Drawing.Color.White;
+            this.lblProfile.Location = new System.Drawing.Point(8, 14);
+            this.lblProfile.Name = "lblProfile";
+            this.lblProfile.Size = new System.Drawing.Size(45, 32);
+            this.lblProfile.TabIndex = 22;
+            this.lblProfile.Text = "Kr";
+            this.lblProfile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProfile.Click += new System.EventHandler(this.lblProfile_Click);
+            // 
+            // pctProfile
+            // 
+            this.pctProfile.Location = new System.Drawing.Point(0, 0);
+            this.pctProfile.Name = "pctProfile";
+            this.pctProfile.Size = new System.Drawing.Size(100, 50);
+            this.pctProfile.TabIndex = 24;
+            this.pctProfile.TabStop = false;
             // 
             // btnStockBatches
             // 
@@ -313,7 +356,7 @@ namespace Chocolade
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 1024);
+            this.panel1.Size = new System.Drawing.Size(274, 1024);
             this.panel1.TabIndex = 5;
             // 
             // pictureBox1
@@ -542,7 +585,7 @@ namespace Chocolade
             this.btnVerkoop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerkoop.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVerkoop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnVerkoop.Location = new System.Drawing.Point(1, 332);
+            this.btnVerkoop.Location = new System.Drawing.Point(4, 332);
             this.btnVerkoop.Name = "btnVerkoop";
             this.btnVerkoop.Size = new System.Drawing.Size(246, 60);
             this.btnVerkoop.TabIndex = 6;
@@ -581,6 +624,10 @@ namespace Chocolade
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.pnlContainer.ResumeLayout(false);
+            this.pnlProfileCircle.ResumeLayout(false);
+            this.pnlProfileCircle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctProfile)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -631,6 +678,9 @@ namespace Chocolade
         private System.Windows.Forms.Button btnOrderPlaatsen;
         private System.Windows.Forms.Button btnAankoop;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblProfile;
+        private System.Windows.Forms.PictureBox pctProfile;
+        private System.Windows.Forms.Panel pnlProfileCircle;
     }
 }
 

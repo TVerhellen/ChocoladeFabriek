@@ -11,6 +11,9 @@
     <Compile Update="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmLogout.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmMachines.cs">
       <SubType>Form</SubType>
     </Compile>
