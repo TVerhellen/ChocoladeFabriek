@@ -46,6 +46,7 @@ namespace Chocolade
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BatchNummer = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // lvwChocoladeBatch
@@ -58,7 +59,8 @@ namespace Chocolade
             this.lvwChocoladeBatch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.BatchNummer});
             this.lvwChocoladeBatch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lvwChocoladeBatch.FullRowSelect = true;
             this.lvwChocoladeBatch.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -221,6 +223,11 @@ namespace Chocolade
             this.panel3.Size = new System.Drawing.Size(204, 41);
             this.panel3.TabIndex = 23;
             // 
+            // BatchNummer
+            // 
+            this.BatchNummer.Text = "Batch Nummer";
+            this.BatchNummer.Width = 240;
+            // 
             // FrmStockChocolade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -269,5 +276,6 @@ namespace Chocolade
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ColumnHeader BatchNummer;
     }
 }

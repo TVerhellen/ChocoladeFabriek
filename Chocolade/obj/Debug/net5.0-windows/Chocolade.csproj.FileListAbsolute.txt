@@ -131,3 +131,4 @@ C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogin.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.Properties.Resources.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogout.resources
+C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmHome.resources

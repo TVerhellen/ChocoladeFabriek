@@ -74,7 +74,7 @@ namespace Chocolade
                     string wachtwoord = accountAsStrings[3];
                     string rol = accountAsStrings[4];
 
-                    tempGebruiker = new Gebruiker(voornaam, wachtwoord, rol);
+                    tempGebruiker = new Gebruiker(gebruikersnaam, wachtwoord, rol);
                     accounts.Add(tempGebruiker);
                 }
                 return accounts;
@@ -92,5 +92,12 @@ namespace Chocolade
             Environment.Exit(1);
         }
 
+        private void pctChocolate_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            ingelogdeGebruiker = new Gebruiker();
+            ingelogdeGebruiker.Gebruikersnaam = "Steven";
+            ingelogdeGebruiker.Rol = Gebruikersrol.ceo;
+        }
     }
 }

@@ -55,7 +55,7 @@ namespace Chocolade
             this.lblProfile = new System.Windows.Forms.Label();
             this.btnStockBatches = new System.Windows.Forms.Button();
             this.btnStockGrondstoffen = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlLeftMenu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGegevensLeverancier = new System.Windows.Forms.Button();
             this.btnAutomatischOrders = new System.Windows.Forms.Button();
@@ -74,7 +74,7 @@ namespace Chocolade
             this.btnStock = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlProfileCircle.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlLeftMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,9 +243,9 @@ namespace Chocolade
             this.btnMachinesOverview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnMachinesOverview.Location = new System.Drawing.Point(4, 292);
             this.btnMachinesOverview.Name = "btnMachinesOverview";
-            this.btnMachinesOverview.Size = new System.Drawing.Size(246, 60);
+            this.btnMachinesOverview.Size = new System.Drawing.Size(274, 60);
             this.btnMachinesOverview.TabIndex = 1;
-            this.btnMachinesOverview.Text = "             Machines";
+            this.btnMachinesOverview.Text = "Machines";
             this.btnMachinesOverview.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMachinesOverview.UseVisualStyleBackColor = false;
             this.btnMachinesOverview.Click += new System.EventHandler(this.btnMachinesOverview_Click);
@@ -295,9 +295,9 @@ namespace Chocolade
             this.btnStockBatches.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnStockBatches.Location = new System.Drawing.Point(4, 180);
             this.btnStockBatches.Name = "btnStockBatches";
-            this.btnStockBatches.Size = new System.Drawing.Size(246, 60);
+            this.btnStockBatches.Size = new System.Drawing.Size(274, 60);
             this.btnStockBatches.TabIndex = 3;
-            this.btnStockBatches.Text = "             Chocolade";
+            this.btnStockBatches.Text = "Chocolade";
             this.btnStockBatches.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStockBatches.UseVisualStyleBackColor = false;
             this.btnStockBatches.Visible = false;
@@ -312,41 +312,41 @@ namespace Chocolade
             this.btnStockGrondstoffen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnStockGrondstoffen.Location = new System.Drawing.Point(4, 246);
             this.btnStockGrondstoffen.Name = "btnStockGrondstoffen";
-            this.btnStockGrondstoffen.Size = new System.Drawing.Size(246, 60);
+            this.btnStockGrondstoffen.Size = new System.Drawing.Size(274, 60);
             this.btnStockGrondstoffen.TabIndex = 4;
-            this.btnStockGrondstoffen.Text = "             Grondstoffen";
+            this.btnStockGrondstoffen.Text = "Grondstoffen";
             this.btnStockGrondstoffen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStockGrondstoffen.UseVisualStyleBackColor = false;
             this.btnStockGrondstoffen.Visible = false;
             this.btnStockGrondstoffen.Click += new System.EventHandler(this.btnStockGrondstoffen_Click);
             // 
-            // panel1
+            // pnlLeftMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btnGegevensLeverancier);
-            this.panel1.Controls.Add(this.btnAutomatischOrders);
-            this.panel1.Controls.Add(this.btnAankoopLopendeOrders);
-            this.panel1.Controls.Add(this.btnAankoopHistoriek);
-            this.panel1.Controls.Add(this.btnOrderVerwerken);
-            this.panel1.Controls.Add(this.btnOrderMenu);
-            this.panel1.Controls.Add(this.btnOrderPlaatsen);
-            this.panel1.Controls.Add(this.btnAankoop);
-            this.panel1.Controls.Add(this.btnLopendeBestellingen);
-            this.panel1.Controls.Add(this.btnHistoriek);
-            this.panel1.Controls.Add(this.btnBestellingVerwerken);
-            this.panel1.Controls.Add(this.btnCatalogus);
-            this.panel1.Controls.Add(this.btnGegevensKlant);
-            this.panel1.Controls.Add(this.btnVerkoop);
-            this.panel1.Controls.Add(this.btnStock);
-            this.panel1.Controls.Add(this.btnStockGrondstoffen);
-            this.panel1.Controls.Add(this.btnStockBatches);
-            this.panel1.Controls.Add(this.btnMachinesOverview);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 1024);
-            this.panel1.TabIndex = 5;
+            this.pnlLeftMenu.BackColor = System.Drawing.Color.White;
+            this.pnlLeftMenu.Controls.Add(this.pictureBox1);
+            this.pnlLeftMenu.Controls.Add(this.btnGegevensLeverancier);
+            this.pnlLeftMenu.Controls.Add(this.btnAutomatischOrders);
+            this.pnlLeftMenu.Controls.Add(this.btnAankoopLopendeOrders);
+            this.pnlLeftMenu.Controls.Add(this.btnAankoopHistoriek);
+            this.pnlLeftMenu.Controls.Add(this.btnOrderVerwerken);
+            this.pnlLeftMenu.Controls.Add(this.btnOrderMenu);
+            this.pnlLeftMenu.Controls.Add(this.btnOrderPlaatsen);
+            this.pnlLeftMenu.Controls.Add(this.btnAankoop);
+            this.pnlLeftMenu.Controls.Add(this.btnLopendeBestellingen);
+            this.pnlLeftMenu.Controls.Add(this.btnHistoriek);
+            this.pnlLeftMenu.Controls.Add(this.btnBestellingVerwerken);
+            this.pnlLeftMenu.Controls.Add(this.btnCatalogus);
+            this.pnlLeftMenu.Controls.Add(this.btnGegevensKlant);
+            this.pnlLeftMenu.Controls.Add(this.btnVerkoop);
+            this.pnlLeftMenu.Controls.Add(this.btnStock);
+            this.pnlLeftMenu.Controls.Add(this.btnStockGrondstoffen);
+            this.pnlLeftMenu.Controls.Add(this.btnStockBatches);
+            this.pnlLeftMenu.Controls.Add(this.btnMachinesOverview);
+            this.pnlLeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeftMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeftMenu.Name = "pnlLeftMenu";
+            this.pnlLeftMenu.Size = new System.Drawing.Size(274, 1024);
+            this.pnlLeftMenu.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -368,9 +368,9 @@ namespace Chocolade
             this.btnGegevensLeverancier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnGegevensLeverancier.Location = new System.Drawing.Point(12, 973);
             this.btnGegevensLeverancier.Name = "btnGegevensLeverancier";
-            this.btnGegevensLeverancier.Size = new System.Drawing.Size(246, 60);
+            this.btnGegevensLeverancier.Size = new System.Drawing.Size(274, 60);
             this.btnGegevensLeverancier.TabIndex = 19;
-            this.btnGegevensLeverancier.Text = "             Gegevens Leverancier";
+            this.btnGegevensLeverancier.Text = "Gegevens Leverancier";
             this.btnGegevensLeverancier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGegevensLeverancier.UseVisualStyleBackColor = false;
             this.btnGegevensLeverancier.Visible = false;
@@ -384,9 +384,9 @@ namespace Chocolade
             this.btnAutomatischOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnAutomatischOrders.Location = new System.Drawing.Point(3, 942);
             this.btnAutomatischOrders.Name = "btnAutomatischOrders";
-            this.btnAutomatischOrders.Size = new System.Drawing.Size(246, 60);
+            this.btnAutomatischOrders.Size = new System.Drawing.Size(274, 60);
             this.btnAutomatischOrders.TabIndex = 18;
-            this.btnAutomatischOrders.Text = "             Automatische Orders";
+            this.btnAutomatischOrders.Text = "Automatische Orders";
             this.btnAutomatischOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAutomatischOrders.UseVisualStyleBackColor = false;
             this.btnAutomatischOrders.Visible = false;
@@ -400,9 +400,9 @@ namespace Chocolade
             this.btnAankoopLopendeOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnAankoopLopendeOrders.Location = new System.Drawing.Point(4, 907);
             this.btnAankoopLopendeOrders.Name = "btnAankoopLopendeOrders";
-            this.btnAankoopLopendeOrders.Size = new System.Drawing.Size(246, 60);
+            this.btnAankoopLopendeOrders.Size = new System.Drawing.Size(274, 60);
             this.btnAankoopLopendeOrders.TabIndex = 17;
-            this.btnAankoopLopendeOrders.Text = "             Lopende Orders";
+            this.btnAankoopLopendeOrders.Text = "Lopende Orders";
             this.btnAankoopLopendeOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAankoopLopendeOrders.UseVisualStyleBackColor = false;
             this.btnAankoopLopendeOrders.Visible = false;
@@ -416,9 +416,9 @@ namespace Chocolade
             this.btnAankoopHistoriek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnAankoopHistoriek.Location = new System.Drawing.Point(3, 860);
             this.btnAankoopHistoriek.Name = "btnAankoopHistoriek";
-            this.btnAankoopHistoriek.Size = new System.Drawing.Size(246, 60);
+            this.btnAankoopHistoriek.Size = new System.Drawing.Size(274, 60);
             this.btnAankoopHistoriek.TabIndex = 16;
-            this.btnAankoopHistoriek.Text = "             Historiek";
+            this.btnAankoopHistoriek.Text = "Historiek";
             this.btnAankoopHistoriek.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAankoopHistoriek.UseVisualStyleBackColor = false;
             this.btnAankoopHistoriek.Visible = false;
@@ -432,9 +432,9 @@ namespace Chocolade
             this.btnOrderVerwerken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnOrderVerwerken.Location = new System.Drawing.Point(-2, 810);
             this.btnOrderVerwerken.Name = "btnOrderVerwerken";
-            this.btnOrderVerwerken.Size = new System.Drawing.Size(246, 60);
+            this.btnOrderVerwerken.Size = new System.Drawing.Size(274, 60);
             this.btnOrderVerwerken.TabIndex = 15;
-            this.btnOrderVerwerken.Text = "             Order Verwerken";
+            this.btnOrderVerwerken.Text = "Order Verwerken";
             this.btnOrderVerwerken.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrderVerwerken.UseVisualStyleBackColor = false;
             this.btnOrderVerwerken.Visible = false;
@@ -448,9 +448,9 @@ namespace Chocolade
             this.btnOrderMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnOrderMenu.Location = new System.Drawing.Point(1, 764);
             this.btnOrderMenu.Name = "btnOrderMenu";
-            this.btnOrderMenu.Size = new System.Drawing.Size(246, 60);
+            this.btnOrderMenu.Size = new System.Drawing.Size(274, 60);
             this.btnOrderMenu.TabIndex = 14;
-            this.btnOrderMenu.Text = "             Order Menu";
+            this.btnOrderMenu.Text = "Order Menu";
             this.btnOrderMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrderMenu.UseVisualStyleBackColor = false;
             this.btnOrderMenu.Visible = false;
@@ -464,9 +464,9 @@ namespace Chocolade
             this.btnOrderPlaatsen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnOrderPlaatsen.Location = new System.Drawing.Point(1, 709);
             this.btnOrderPlaatsen.Name = "btnOrderPlaatsen";
-            this.btnOrderPlaatsen.Size = new System.Drawing.Size(246, 60);
+            this.btnOrderPlaatsen.Size = new System.Drawing.Size(274, 60);
             this.btnOrderPlaatsen.TabIndex = 13;
-            this.btnOrderPlaatsen.Text = "             Order Plaatsen";
+            this.btnOrderPlaatsen.Text = "Order Plaatsen";
             this.btnOrderPlaatsen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrderPlaatsen.UseVisualStyleBackColor = false;
             this.btnOrderPlaatsen.Visible = false;
@@ -480,9 +480,9 @@ namespace Chocolade
             this.btnAankoop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnAankoop.Location = new System.Drawing.Point(4, 672);
             this.btnAankoop.Name = "btnAankoop";
-            this.btnAankoop.Size = new System.Drawing.Size(246, 60);
+            this.btnAankoop.Size = new System.Drawing.Size(274, 60);
             this.btnAankoop.TabIndex = 12;
-            this.btnAankoop.Text = "             + Aankoop";
+            this.btnAankoop.Text = "Aankoop";
             this.btnAankoop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAankoop.UseVisualStyleBackColor = false;
             this.btnAankoop.Click += new System.EventHandler(this.btnAankoop_Click);
@@ -496,9 +496,9 @@ namespace Chocolade
             this.btnLopendeBestellingen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnLopendeBestellingen.Location = new System.Drawing.Point(0, 618);
             this.btnLopendeBestellingen.Name = "btnLopendeBestellingen";
-            this.btnLopendeBestellingen.Size = new System.Drawing.Size(246, 60);
+            this.btnLopendeBestellingen.Size = new System.Drawing.Size(274, 60);
             this.btnLopendeBestellingen.TabIndex = 11;
-            this.btnLopendeBestellingen.Text = "             Lopende Bestellingen";
+            this.btnLopendeBestellingen.Text = "Lopende Bestellingen";
             this.btnLopendeBestellingen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLopendeBestellingen.UseVisualStyleBackColor = false;
             this.btnLopendeBestellingen.Visible = false;
@@ -512,9 +512,9 @@ namespace Chocolade
             this.btnHistoriek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnHistoriek.Location = new System.Drawing.Point(3, 565);
             this.btnHistoriek.Name = "btnHistoriek";
-            this.btnHistoriek.Size = new System.Drawing.Size(246, 60);
+            this.btnHistoriek.Size = new System.Drawing.Size(274, 60);
             this.btnHistoriek.TabIndex = 10;
-            this.btnHistoriek.Text = "             Historiek";
+            this.btnHistoriek.Text = "Historiek";
             this.btnHistoriek.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistoriek.UseVisualStyleBackColor = false;
             this.btnHistoriek.Visible = false;
@@ -528,9 +528,9 @@ namespace Chocolade
             this.btnBestellingVerwerken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnBestellingVerwerken.Location = new System.Drawing.Point(4, 499);
             this.btnBestellingVerwerken.Name = "btnBestellingVerwerken";
-            this.btnBestellingVerwerken.Size = new System.Drawing.Size(246, 60);
+            this.btnBestellingVerwerken.Size = new System.Drawing.Size(274, 60);
             this.btnBestellingVerwerken.TabIndex = 9;
-            this.btnBestellingVerwerken.Text = "             Bestelling Verwerken";
+            this.btnBestellingVerwerken.Text = "Bestelling Verwerken";
             this.btnBestellingVerwerken.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBestellingVerwerken.UseVisualStyleBackColor = false;
             this.btnBestellingVerwerken.Visible = false;
@@ -544,9 +544,9 @@ namespace Chocolade
             this.btnCatalogus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnCatalogus.Location = new System.Drawing.Point(4, 433);
             this.btnCatalogus.Name = "btnCatalogus";
-            this.btnCatalogus.Size = new System.Drawing.Size(246, 60);
+            this.btnCatalogus.Size = new System.Drawing.Size(274, 60);
             this.btnCatalogus.TabIndex = 8;
-            this.btnCatalogus.Text = "             Catalogus";
+            this.btnCatalogus.Text = "Catalogus";
             this.btnCatalogus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCatalogus.UseVisualStyleBackColor = false;
             this.btnCatalogus.Visible = false;
@@ -560,9 +560,9 @@ namespace Chocolade
             this.btnGegevensKlant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnGegevensKlant.Location = new System.Drawing.Point(1, 378);
             this.btnGegevensKlant.Name = "btnGegevensKlant";
-            this.btnGegevensKlant.Size = new System.Drawing.Size(246, 60);
+            this.btnGegevensKlant.Size = new System.Drawing.Size(274, 60);
             this.btnGegevensKlant.TabIndex = 7;
-            this.btnGegevensKlant.Text = "             Gegevens Klant";
+            this.btnGegevensKlant.Text = "Gegevens Klant";
             this.btnGegevensKlant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGegevensKlant.UseVisualStyleBackColor = false;
             this.btnGegevensKlant.Visible = false;
@@ -576,9 +576,9 @@ namespace Chocolade
             this.btnVerkoop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnVerkoop.Location = new System.Drawing.Point(4, 332);
             this.btnVerkoop.Name = "btnVerkoop";
-            this.btnVerkoop.Size = new System.Drawing.Size(246, 60);
+            this.btnVerkoop.Size = new System.Drawing.Size(274, 60);
             this.btnVerkoop.TabIndex = 6;
-            this.btnVerkoop.Text = "             + Verkoop";
+            this.btnVerkoop.Text = "Verkoop";
             this.btnVerkoop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerkoop.UseVisualStyleBackColor = false;
             this.btnVerkoop.Click += new System.EventHandler(this.btnVerkoop_Click);
@@ -592,9 +592,9 @@ namespace Chocolade
             this.btnStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnStock.Location = new System.Drawing.Point(4, 114);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(246, 60);
+            this.btnStock.Size = new System.Drawing.Size(274, 60);
             this.btnStock.TabIndex = 5;
-            this.btnStock.Text = "             + Stock";
+            this.btnStock.Text = "Stock";
             this.btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStock.UseVisualStyleBackColor = false;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
@@ -607,7 +607,7 @@ namespace Chocolade
             this.Controls.Add(this.pnlProfileCircle);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlLeftMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -617,7 +617,7 @@ namespace Chocolade
             this.menuStrip1.PerformLayout();
             this.pnlProfileCircle.ResumeLayout(false);
             this.pnlProfileCircle.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.pnlLeftMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -650,7 +650,7 @@ namespace Chocolade
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Button btnStockBatches;
         private System.Windows.Forms.Button btnStockGrondstoffen;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlLeftMenu;
         private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button btnVerkoop;
         private System.Windows.Forms.Button btnLopendeBestellingen;

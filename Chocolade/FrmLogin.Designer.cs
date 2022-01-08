@@ -117,6 +117,7 @@ namespace Chocolade
             this.pctChocolate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctChocolate.TabIndex = 6;
             this.pctChocolate.TabStop = false;
+            this.pctChocolate.Click += new System.EventHandler(this.pctChocolate_Click);
             // 
             // label3
             // 

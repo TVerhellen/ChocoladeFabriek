@@ -29,23 +29,25 @@ namespace Chocolade
         private void Form1_Load(object sender, EventArgs e)
         {
             //Text bestanden worden ingelezen
+
+
             FrmLogin login = new FrmLogin();
             DialogResult result = login.ShowDialog();
             if (result != DialogResult.OK)
             {
                 Environment.Exit(1);
             }
-            Debug.WriteLine(result);
             LoadProfile(login);
-
 
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
+            Machine.laadLijsten();
+
             Recept.LaadLijst();
-            Recept.receptenLijst[0].Produceer(5);
-            Recept.receptenLijst[1].Produceer(5, 123456);
+            //Recept.receptenLijst[0].Produceer(5);
+            //Recept.receptenLijst[1].Produceer(5, 123456);
             List<Button> machineButtons = new List<Button> { btnMachinesOverview };
-            List<Button> stockButtons = new List<Button> { btnStock, btnStockBatches, btnStockGrondstoffen };
+            List<Button> stockButtons = new List<Button> { btnStock, btnStockGrondstoffen, btnStockBatches };
             List<Button> verkoopButtons = new List<Button> { btnVerkoop, btnGegevensKlant, btnCatalogus, btnBestellingVerwerken, btnHistoriek, btnLopendeBestellingen };
             List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderMenu, btnOrderVerwerken, btnAankoopHistoriek, btnAankoopLopendeOrders, btnAutomatischOrders, btnGegevensLeverancier };
 
@@ -53,9 +55,8 @@ namespace Chocolade
             buttongroupList.Add(aankoopButtons);
             buttongroupList.Add(machineButtons);
             buttongroupList.Add(verkoopButtons);
+            AdjustSizeAndTextButtons();
             AlignButtonGroups();
-
-
         }
 
         private void LoadProfile(FrmLogin login)
@@ -63,10 +64,13 @@ namespace Chocolade
             ingelogdeGebruiker = login.ingelogdeGebruiker;
             lblProfile.Text = ingelogdeGebruiker.Gebruikersnaam.Substring(0, 2);
             lblProfile.Location = new Point((pnlProfileCircle.Width - lblProfile.Width) / 2, lblProfile.Location.Y);
-            Machine.laadLijsten();
+
+            FrmHome thisForm = new FrmHome();
+            thisForm.ingelogdeGebruiker = ingelogdeGebruiker;
+            OpenChildForm(thisForm);
         }
 
-        private void OpenChildForm(Form childForm, object btnSender)
+        private void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -131,7 +135,7 @@ namespace Chocolade
 
         private void btnMachinesOverview_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmMachines(), sender);
+            OpenChildForm(new FrmMachines());
         }
 
         private void btnBatches_Click(object sender, EventArgs e)
@@ -142,7 +146,7 @@ namespace Chocolade
             }
             else
             {
-                OpenChildForm(new FrmStockChocolade(), sender);
+                OpenChildForm(new FrmStockChocolade());
             }
         }
 
@@ -150,7 +154,7 @@ namespace Chocolade
         {
             FrmStockGrondstof thisForm = new FrmStockGrondstof();
             thisForm.ingelogdeGebruiker = ingelogdeGebruiker;
-            OpenChildForm(thisForm, sender);
+            OpenChildForm(thisForm);
         }
 
         private void btnStock_Click(object sender, EventArgs e)
@@ -184,6 +188,34 @@ namespace Chocolade
             }
         }
 
+        private void AdjustSizeAndTextButtons()
+        {
+            for (int i = 0; i < buttongroupList.Count; i++)
+            {
+                for (int j = 0; j < buttongroupList[i].Count; j++)
+                {
+                    Button b = buttongroupList[i][j];
+                    b.Width = pnlLeftMenu.Width;
+                    b.Location = new Point(0, b.Location.Y);
+                    if (buttongroupList[i].Count > 1)
+                    {
+                        if (j == 0)
+                        {
+                            b.Text = "             + " + b.Text;
+                        }
+                        else
+                        {
+                            b.Text = "             └ " + b.Text;
+                        }
+                    }
+                    else
+                    {
+                        b.Text = "             " + b.Text;
+                    }
+                }
+            }
+        }
+
         private void RepositionOtherButtons(List<Button> thisButtonGroup)
         {
             if (thisButtonGroup.Count > 1)
@@ -192,7 +224,7 @@ namespace Chocolade
                 for (int i = 1; i < thisButtonGroup.Count; i++)
                 {
                     thisButtonGroup[i].Visible = setToValue;
-                    thisButtonGroup[i].Location = new Point(thisButtonGroup[0].Location.X + 20, thisButtonGroup[0].Location.Y + thisButtonGroup[0].Height * i);
+                    thisButtonGroup[i].Location = new Point(thisButtonGroup[0].Location.X, thisButtonGroup[0].Location.Y + thisButtonGroup[0].Height * i);
                 }
                 int signMultiplier = 1;
                 if (!setToValue)

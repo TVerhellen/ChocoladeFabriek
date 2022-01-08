@@ -1,3 +1,16 @@
-Ruby Chocolade|123456|10.5|150|Criollo bonen§30;Melk§20
-Witte Chocolade|123456|12|150|Criollo bonen§30;Melk§30
-Puur 80%|123456|13|150|Criollo bonen§50;Melk§10
+zwart 55% blok|0101|10.5|150|Criollo bonen§30;Melk§20
+zwart 55% druppels|0102|10.5|150|Criollo bonen§30;Melk§20
+zwart 70% blok|0103|10.5|150|Criollo bonen§30;Melk§20
+zwart 70% druppels|0104|10.5|150|Criollo bonen§30;Melk§20
+zwart 80% blok|0105|10.5|150|Criollo bonen§30;Melk§20
+zwart 80% druppels|0106|10.5|150|Criollo bonen§30;Melk§20
+zwart 80% crispearls|0107|10.5|150|Criollo bonen§30;Melk§20
+melk blok|0201|10.5|150|Criollo bonen§30;Melk§20
+melk druppels|0202|10.5|150|Criollo bonen§30;Melk§20
+melk crispearls|0203|10.5|150|Criollo bonen§30;Melk§20
+wit blok|0301|10.5|150|Criollo bonen§30;Melk§20
+wit druppels|0302|10.5|150|Criollo bonen§30;Melk§20
+wit crispearls|0303|10.5|150|Criollo bonen§30;Melk§20
+ruby druppels|0401|10.5|150|Criollo bonen§30;Melk§20
+gold druppels|0501|10.5|150|Criollo bonen§30;Melk§20
+hazelnoot druppels|0601|10.5|150|Criollo bonen§30;Melk§20
