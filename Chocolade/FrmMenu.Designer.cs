@@ -219,22 +219,16 @@ namespace Chocolade
             // grondstoffenToolStripMenuItem
             // 
             this.grondstoffenToolStripMenuItem.Name = "grondstoffenToolStripMenuItem";
-<<<<<<< HEAD
             this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-=======
-            this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
->>>>>>> master
+
             this.grondstoffenToolStripMenuItem.Text = "Grondstoffen";
             this.grondstoffenToolStripMenuItem.Click += new System.EventHandler(this.grondstoffenToolStripMenuItem_Click);
             // 
             // productenToolStripMenuItem
             // 
             this.productenToolStripMenuItem.Name = "productenToolStripMenuItem";
-<<<<<<< HEAD
             this.productenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-=======
-            this.productenToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
->>>>>>> master
+
             this.productenToolStripMenuItem.Text = "Producten";
             this.productenToolStripMenuItem.Click += new System.EventHandler(this.productenToolStripMenuItem_Click);
             // 
@@ -668,7 +662,6 @@ namespace Chocolade
 
         private System.Windows.Forms.ToolStripMenuItem productieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem machinesToolStripMenuItem;
-<<<<<<< HEAD
         private System.Windows.Forms.Button btnMachinesOverview;
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Button btnStockBatches;
@@ -692,9 +685,7 @@ namespace Chocolade
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.Panel pnlProfileCircle;
-=======
 
->>>>>>> master
     }
 }
 

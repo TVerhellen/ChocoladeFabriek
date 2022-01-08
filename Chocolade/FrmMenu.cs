@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,10 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-=======
-﻿using System;
 
->>>>>>> master
 
 using System.Windows.Forms;
 
@@ -145,7 +141,6 @@ namespace Chocolade
             nieuweHistoriek.ShowDialog();
         }
 
-<<<<<<< HEAD
         private void btnMachinesOverview_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmMachines());
@@ -331,7 +326,7 @@ namespace Chocolade
                 }
                 LoadProfile(login);
             }
-=======
+        }
         private void lopendeBestellingenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmVerkoopLopend nieuwLopend = new FrmVerkoopLopend();
@@ -343,7 +338,7 @@ namespace Chocolade
             FrmGegevensKlant nieuwGegevensKlant = new FrmGegevensKlant();
             nieuwGegevensKlant.Show();
 
->>>>>>> master
+
         }
     }
 }
