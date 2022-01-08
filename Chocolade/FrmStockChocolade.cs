@@ -34,7 +34,7 @@ namespace Chocolade
 
             foreach (var item in ChocoladeBatch.stock)
             {
-                ListViewItem theNewItem = new ListViewItem(new string[] { item.Naam, item.Hoeveelheid.ToString(), item.Houdbaarheid.ToString("dd/MM/yyyy") });
+                ListViewItem theNewItem = new ListViewItem(new string[] { item.Naam, item.Hoeveelheid.ToString(), item.Houdbaarheid.ToString("dd/MM/yyyy"), item.ID.ToString() });
                 lvwChocoladeBatch.Items.Add(theNewItem);
             }
         }
