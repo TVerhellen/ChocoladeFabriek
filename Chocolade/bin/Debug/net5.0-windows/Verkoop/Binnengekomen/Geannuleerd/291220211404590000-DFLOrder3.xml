@@ -1,0 +1,19 @@
+<Bestelling OrderNummer="291220211404590000">
+	<Info>
+		<AanmaakDatum>29/12/2021 14:04:59</AanmaakDatum>
+		<OpgesteldDoor>Default</OpgesteldDoor>
+		<BijhorendGebruikerID>0000</BijhorendGebruikerID>
+	</Info>
+	<BesteldeArtikels>
+		<Artikel ID="0101">
+			<Omschrijving>Zwart 55% blok</Omschrijving>
+			<PrijsPerKg>8</PrijsPerKg>
+			<AantalKgBesteld>15</AantalKgBesteld>
+		</Artikel>
+		<Artikel ID="0102">
+			<Omschrijving>Zwart 55% druppels</Omschrijving>
+			<PrijsPerKg>9</PrijsPerKg>
+			<AantalKgBesteld>9</AantalKgBesteld>
+		</Artikel>
+	</BesteldeArtikels>
+</Bestelling>
