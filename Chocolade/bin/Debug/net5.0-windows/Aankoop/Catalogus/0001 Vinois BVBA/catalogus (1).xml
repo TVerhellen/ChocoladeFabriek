@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogus>
+<!--item 1 -->
+<item>
+    <artikelnummer>0001</artikelnummer>
+    <soort>Ariba</soort>
+    <kwaliteit>BIO</kwaliteit>
+    <prijsPerKg>3.99</prijsPerKg>
+</item>
+<!--item 2 -->
+<item>
+    <artikelnummer>0002</artikelnummer>
+    <soort>Criollo</soort>
+    <kwaliteit>GMO</kwaliteit>
+    <prijsPerKg>14.99</prijsPerKg>
+</item>
+<!--item 3 -->
+<item>
+    <artikelnummer>0003</artikelnummer>
+    <soort>Trinitario</soort>
+    <kwaliteit>smaak</kwaliteit>
+    <prijsPerKg>19.99</prijsPerKg>
+</item>
+<!--item 4 -->
+<item>
+    <artikelnummer>0004</artikelnummer>
+    <soort>Wild</soort>
+    <kwaliteit>smaak</kwaliteit>
+    <prijsPerKg>49.99</prijsPerKg>
+</item>
+<catalogus>

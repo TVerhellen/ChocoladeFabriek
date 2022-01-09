@@ -1,4 +1,7 @@
 - Geen leverancier geselecteerd -
+<<<<<<< HEAD
+0001;Vinois BVBA;Noordhoutstraat;86;9031;Drongen;000000097;@;09
+=======
 0001;aaa;aa;aa;aa;aa;000000097;@;03
 0002;ada;aa;aa;aa;aa;000000097;@;03
 0003;sss;ss;ss;sss;s;000000097;@;ss 
@@ -9,3 +12,4 @@
 0008;Vinois NV;Noordhoutstraat;86;9031;Drongen;000000097;@;09
 0009;aaaa;aaa;a;aa;aa;000000097;@;09
 0010;qqq;qq;qqqq;qqq;qq;000000097;@;09
+>>>>>>> de0fe91bff9028c4dfe8eea8686ca7838886f51c

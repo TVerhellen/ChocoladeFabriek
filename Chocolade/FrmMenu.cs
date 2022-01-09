@@ -50,7 +50,8 @@ namespace Chocolade
             List<Button> machineButtons = new List<Button> { btnMachinesOverview };
             List<Button> stockButtons = new List<Button> { btnStock, btnStockGrondstoffen, btnStockBatches };
             List<Button> verkoopButtons = new List<Button> { btnVerkoop, btnGegevensKlant, btnCatalogus, btnBestellingVerwerken, btnHistoriek, btnLopendeBestellingen };
-            List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderMenu, btnOrderVerwerken, btnAankoopHistoriek, btnAankoopLopendeOrders, btnAutomatischOrders, btnGegevensLeverancier };
+            List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderVerwerken, btnGegevensLeverancier };
+            List<Button> personeelButton = new List<Button> { btnPersoneel };
 
             buttongroupList.Add(stockButtons);
             buttongroupList.Add(aankoopButtons);
@@ -340,5 +341,18 @@ namespace Chocolade
 
 
         }
+
+        private void orderVerwerkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrderVerwerken nieuwOrder = new FrmOrderVerwerken();
+            nieuwOrder.Show();
+        }
+
+        private void pnlContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
     }
 }
