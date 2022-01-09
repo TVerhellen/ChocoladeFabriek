@@ -1,3 +1,3 @@
-Kristof|||123|werknemer
-Tijs|||456|ceo
-Steven|||789|manager
+Kristof|||123|Werknemer
+Tijs|||456|CEO
+Steven|||789|Manager

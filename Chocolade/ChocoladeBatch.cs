@@ -19,9 +19,6 @@ namespace Chocolade
         private DateTime _momentBeschikbaar;
         private double _prijs;
 
-
-
-
         public ChocoladeBatch(string gegevens, bool addStock = true) : base(gegevens)
         {
             if (addStock)
@@ -189,7 +186,7 @@ namespace Chocolade
 
         public override string ToString()
         {
-            return base.ToString()+$"|{Prijs}";
+            return base.ToString() + $"|{Prijs}";
         }
 
         public void ToXml(XmlWriter writer)

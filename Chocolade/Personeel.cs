@@ -8,32 +8,35 @@ using System.Threading.Tasks;
 namespace Chocolade
 {
 
-    public enum Gebruikersrol { werknemer, manager, ceo }
+    public enum Gebruikersrol { Werknemer, Manager, CEO, Non_actief }
 
-    public class Gebruiker
+    public class Personeel
     {
         private string _gebruikersnaam;
         private string _wachtwoord;
         private string _voornaam;
         private string _achternaam;
         private Gebruikersrol _rol;
-        public static List<Gebruiker> list = new List<Gebruiker>();
+        public static List<Personeel> list = new List<Personeel>();
 
-        public Gebruiker() { }
-        public Gebruiker(string gebruikersnaam, string wachtwoord, string rol)
+        public Personeel() { }
+        public Personeel(string gebruikersnaam, string wachtwoord, string rol)
         {
             Gebruikersnaam = gebruikersnaam;
             Wachtwoord = wachtwoord;
             switch (rol)
             {
-                case "werknemer":
-                    Rol = Gebruikersrol.werknemer;
+                case "Werknemer":
+                    Rol = Gebruikersrol.Werknemer;
                     break;
-                case "manager":
-                    Rol = Gebruikersrol.manager;
+                case "Manager":
+                    Rol = Gebruikersrol.Manager;
                     break;
-                case "ceo":
-                    Rol = Gebruikersrol.ceo;
+                case "CEO":
+                    Rol = Gebruikersrol.CEO;
+                    break;
+                case "Non_actief":
+                    Rol = Gebruikersrol.Non_actief;
                     break;
                 default:
                     break;
@@ -74,11 +77,11 @@ namespace Chocolade
 
         public static void LaadLijst()
         {
-            List<Gebruiker> accounts = new List<Gebruiker>();
+            List<Personeel> accounts = new List<Personeel>();
             if (File.Exists("gebruikers.txt"))
             {
                 string[] accountsAsStrings = File.ReadAllLines("gebruikers.txt");
-                Gebruiker tempGebruiker = null;
+                Personeel tempGebruiker = null;
                 foreach (var accountAsLine in accountsAsStrings)
                 {
                     string[] accountAsStrings = accountAsLine.Split('|');
@@ -88,7 +91,7 @@ namespace Chocolade
                     string wachtwoord = accountAsStrings[3];
                     string rol = accountAsStrings[4];
 
-                    tempGebruiker = new Gebruiker(gebruikersnaam, wachtwoord, rol);
+                    tempGebruiker = new Personeel(gebruikersnaam, wachtwoord, rol);
                     accounts.Add(tempGebruiker);
                 }
                 list = accounts;
@@ -97,6 +100,25 @@ namespace Chocolade
             {
                 throw new FileLoadException("Could not find gebruikers.txt");
             }
+        }
+
+        public override string ToString()
+        {
+            return Gebruikersnaam;
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Personeel tempPersoneel = (Personeel)obj;
+
+            return this.Gebruikersnaam == tempPersoneel.Gebruikersnaam;
         }
     }
 }

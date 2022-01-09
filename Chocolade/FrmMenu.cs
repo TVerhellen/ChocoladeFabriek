@@ -23,7 +23,7 @@ namespace Chocolade
             InitializeComponent();
         }
 
-        public Gebruiker ingelogdeGebruiker = null;
+        public Personeel ingelogdeGebruiker = null;
 
         List<List<Button>> buttongroupList = new List<List<Button>>();
 
@@ -43,15 +43,18 @@ namespace Chocolade
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
             Machine.laadLijsten();
-            Gebruiker.LaadLijst();
+            Personeel.LaadLijst();
 
             Recept.LaadLijst();
-            //Recept.receptenLijst[0].Produceer(5);
-            //Recept.receptenLijst[1].Produceer(5, 123456);
+            //Recept.receptenLijst[8].Produceer(5);
+            //Recept.receptenLijst[10].Produceer(10);
+            //Recept.receptenLijst[11].Produceer(15);
+            //Recept.receptenLijst[12].Produceer(5);
+
             List<Button> machineButtons = new List<Button> { btnMachinesOverview };
             List<Button> stockButtons = new List<Button> { btnStock, btnStockGrondstoffen, btnStockBatches };
             List<Button> verkoopButtons = new List<Button> { btnVerkoop, btnGegevensKlant, btnCatalogus, btnBestellingVerwerken, btnHistoriek, btnLopendeBestellingen };
-            List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderMenu, btnOrderVerwerken, btnAankoopHistoriek, btnAankoopLopendeOrders, btnAutomatischOrders, btnGegevensLeverancier };
+            List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderMenu, btnOrderVerwerken, btnAankoopHistoriek, btnAankoopLopendeOrders, btnAutomatischOrders, btnGegevensLeverancier, btnAankoopArtikels };
             List<Button> personeelButtons = new List<Button> { btnPersoneel };
 
             buttongroupList.Add(stockButtons);
@@ -89,19 +92,19 @@ namespace Chocolade
             childForm.Show();
         }
 
-
+        //Done
         private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmVerkoopCatalogus catalogus = new FrmVerkoopCatalogus();
             catalogus.ShowDialog();
         }
-
+        //Done
         private void bestellingVerwerkenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmBestellingVerwerken verwerken = new FrmBestellingVerwerken();
             verwerken.ShowDialog();
         }
-
+        //Kristof
         private void productenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmStockChocolade chocoladeStockOverview = new FrmStockChocolade();
@@ -119,26 +122,26 @@ namespace Chocolade
             FrmMachines machinesForm = new FrmMachines();
             machinesForm.Show();
         }
-
+        //Done
         private void gegevensLeverancierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmGegevensLeveranciers NieuweGegevensLeveranciers = new FrmGegevensLeveranciers();
             NieuweGegevensLeveranciers.Show();
         }
-
+        //Done
         private void orderPlaatsenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmOrderAanmaken nieuweOrder = new FrmOrderAanmaken();
             nieuweOrder.Show();
         }
 
-
+        //Done
         private void aankoopartikelsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmAankoopArtikels aankoopArtikelsOverzicht = new FrmAankoopArtikels();
             aankoopArtikelsOverzicht.Show();
         }
-
+        //Done
         private void historiekToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmVerkoopHistoriek nieuweHistoriek = new FrmVerkoopHistoriek();
@@ -324,12 +327,13 @@ namespace Chocolade
                 LoadProfile(login);
             }
         }
+        //Done
         private void lopendeBestellingenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmVerkoopLopend nieuwLopend = new FrmVerkoopLopend();
             nieuwLopend.ShowDialog();
         }
-
+        //Done
         private void gegevensKlantToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmGegevensKlant nieuwGegevensKlant = new FrmGegevensKlant();
@@ -343,15 +347,66 @@ namespace Chocolade
 
         private void btnPersoneel_Click(object sender, EventArgs e)
         {
-            if (ingelogdeGebruiker.Rol == Gebruikersrol.ceo)
+            if (ingelogdeGebruiker.Rol == Gebruikersrol.CEO)
             {
                 FrmPersoneel thisForm = new FrmPersoneel();
+                thisForm.ingelogdeGebruiker = ingelogdeGebruiker;
                 OpenChildForm(thisForm);
             }
             else
             {
                 MessageBox.Show("U heeft niet de juiste bevoegdheden om dit te doen!", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
+        }
+
+        private void btnGegevensLeverancier_Click(object sender, EventArgs e)
+        {
+            FrmGegevensLeveranciers thisForm = new FrmGegevensLeveranciers();
+            OpenChildForm(thisForm);
+
+        }
+
+        private void btnOrderPlaatsen_Click(object sender, EventArgs e)
+        {
+            FrmOrderAanmaken thisForm = new FrmOrderAanmaken();
+            OpenChildForm(thisForm);
+        }
+
+        private void btnAankoopArtikels_Click(object sender, EventArgs e)
+        {
+            FrmAankoopArtikels thisForm = new FrmAankoopArtikels();
+            OpenChildForm(thisForm);
+        }
+
+        private void btnHistoriek_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopHistoriek thisForm = new FrmVerkoopHistoriek();
+            OpenChildForm(thisForm);
+        }
+
+        private void btnCatalogus_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopCatalogus thisForm = new FrmVerkoopCatalogus();
+            OpenChildForm(thisForm);
+        }
+
+        private void btnBestellingVerwerken_Click(object sender, EventArgs e)
+        {
+            FrmBestellingVerwerken thisForm = new FrmBestellingVerwerken();
+            OpenChildForm(thisForm);
+        }
+
+        private void btnGegevensKlant_Click(object sender, EventArgs e)
+        {
+            FrmGegevensKlant thisForm = new FrmGegevensKlant();
+            OpenChildForm(thisForm);
+        }
+
+
+        private void btnLopendeBestellingen_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopLopend thisForm = new FrmVerkoopLopend();
+            OpenChildForm(thisForm);
         }
     }
 }

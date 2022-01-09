@@ -33,7 +33,6 @@ namespace Chocolade
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtFunctie = new System.Windows.Forms.TextBox();
             this.txtWachtwoord = new System.Windows.Forms.TextBox();
             this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,6 +45,8 @@ namespace Chocolade
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.cmbFunctie = new System.Windows.Forms.ComboBox();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -88,14 +89,6 @@ namespace Chocolade
             this.label7.TabIndex = 41;
             this.label7.Text = "Gebruikersnaam:";
             // 
-            // txtFunctie
-            // 
-            this.txtFunctie.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFunctie.Location = new System.Drawing.Point(581, 102);
-            this.txtFunctie.Name = "txtFunctie";
-            this.txtFunctie.Size = new System.Drawing.Size(181, 20);
-            this.txtFunctie.TabIndex = 40;
-            // 
             // txtWachtwoord
             // 
             this.txtWachtwoord.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -115,6 +108,7 @@ namespace Chocolade
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.cmbFunctie);
             this.panel3.Location = new System.Drawing.Point(569, 92);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 41);
@@ -221,6 +215,14 @@ namespace Chocolade
             this.columnHeader3.Text = "Functie";
             this.columnHeader3.Width = 180;
             // 
+            // cmbFunctie
+            // 
+            this.cmbFunctie.FormattingEnabled = true;
+            this.cmbFunctie.Location = new System.Drawing.Point(3, 7);
+            this.cmbFunctie.Name = "cmbFunctie";
+            this.cmbFunctie.Size = new System.Drawing.Size(198, 28);
+            this.cmbFunctie.TabIndex = 0;
+            // 
             // FrmPersoneel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -230,7 +232,6 @@ namespace Chocolade
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtFunctie);
             this.Controls.Add(this.txtWachtwoord);
             this.Controls.Add(this.txtGebruikersnaam);
             this.Controls.Add(this.panel3);
@@ -243,6 +244,7 @@ namespace Chocolade
             this.Name = "FrmPersoneel";
             this.Text = "FrmPersoneel";
             this.Load += new System.EventHandler(this.FrmPersoneel_Load);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,7 +256,6 @@ namespace Chocolade
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtFunctie;
         private System.Windows.Forms.TextBox txtWachtwoord;
         private System.Windows.Forms.TextBox txtGebruikersnaam;
         private System.Windows.Forms.Panel panel3;
@@ -267,5 +268,6 @@ namespace Chocolade
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ComboBox cmbFunctie;
     }
 }

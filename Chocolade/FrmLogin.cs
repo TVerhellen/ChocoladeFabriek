@@ -15,7 +15,7 @@ namespace Chocolade
     public partial class FrmLogin : Form
     {
         double startX = 0;
-        public Gebruiker ingelogdeGebruiker = null;
+        public Personeel ingelogdeGebruiker = null;
 
         public FrmLogin()
         {
@@ -44,7 +44,7 @@ namespace Chocolade
         private bool IsWachtwoordCorrect()
         {
             bool wachtwoordIsCorrect = false;
-            List<Gebruiker> alleGebruikers = VulLijstMetGebruikers();
+            List<Personeel> alleGebruikers = VulLijstMetGebruikers();
 
             foreach (var gebruiker in alleGebruikers)
             {
@@ -58,13 +58,13 @@ namespace Chocolade
             return wachtwoordIsCorrect;
         }
 
-        private List<Gebruiker> VulLijstMetGebruikers()
+        private List<Personeel> VulLijstMetGebruikers()
         {
-            List<Gebruiker> accounts = new List<Gebruiker>();
+            List<Personeel> accounts = new List<Personeel>();
             if (File.Exists("gebruikers.txt"))
             {
                 string[] accountsAsStrings = File.ReadAllLines("gebruikers.txt");
-                Gebruiker tempGebruiker = null;
+                Personeel tempGebruiker = null;
                 foreach (var accountAsLine in accountsAsStrings)
                 {
                     string[] accountAsStrings = accountAsLine.Split('|');
@@ -74,7 +74,7 @@ namespace Chocolade
                     string wachtwoord = accountAsStrings[3];
                     string rol = accountAsStrings[4];
 
-                    tempGebruiker = new Gebruiker(gebruikersnaam, wachtwoord, rol);
+                    tempGebruiker = new Personeel(gebruikersnaam, wachtwoord, rol);
                     accounts.Add(tempGebruiker);
                 }
                 return accounts;
@@ -95,9 +95,9 @@ namespace Chocolade
         private void pctChocolate_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            ingelogdeGebruiker = new Gebruiker();
+            ingelogdeGebruiker = new Personeel();
             ingelogdeGebruiker.Gebruikersnaam = "Steven";
-            ingelogdeGebruiker.Rol = Gebruikersrol.ceo;
+            ingelogdeGebruiker.Rol = Gebruikersrol.CEO;
         }
     }
 }

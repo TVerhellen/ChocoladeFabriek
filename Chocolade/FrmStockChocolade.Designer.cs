@@ -33,6 +33,7 @@ namespace Chocolade
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.BatchNummer = new System.Windows.Forms.ColumnHeader();
             this.btnVerwijder = new System.Windows.Forms.Button();
             this.btnVoegToe = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@ namespace Chocolade
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.BatchNummer = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // lvwChocoladeBatch
@@ -66,10 +66,10 @@ namespace Chocolade
             this.lvwChocoladeBatch.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwChocoladeBatch.HideSelection = false;
             this.lvwChocoladeBatch.LabelWrap = false;
-            this.lvwChocoladeBatch.Location = new System.Drawing.Point(57, 157);
+            this.lvwChocoladeBatch.Location = new System.Drawing.Point(58, 160);
+            this.lvwChocoladeBatch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvwChocoladeBatch.Name = "lvwChocoladeBatch";
-            this.lvwChocoladeBatch.Size = new System.Drawing.Size(717, 420);
-
+            this.lvwChocoladeBatch.Size = new System.Drawing.Size(717, 326);
             this.lvwChocoladeBatch.TabIndex = 0;
             this.lvwChocoladeBatch.UseCompatibleStateImageBehavior = false;
             this.lvwChocoladeBatch.View = System.Windows.Forms.View.Details;
@@ -90,6 +90,11 @@ namespace Chocolade
             this.columnHeader3.Text = "Houdbaarheidsdatum";
             this.columnHeader3.Width = 180;
             // 
+            // BatchNummer
+            // 
+            this.BatchNummer.Text = "Batch Nummer";
+            this.BatchNummer.Width = 240;
+            // 
             // btnVerwijder
             // 
             this.btnVerwijder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -98,7 +103,8 @@ namespace Chocolade
             this.btnVerwijder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerwijder.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVerwijder.ForeColor = System.Drawing.Color.White;
-            this.btnVerwijder.Location = new System.Drawing.Point(57, 613);
+            this.btnVerwijder.Location = new System.Drawing.Point(58, 515);
+            this.btnVerwijder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerwijder.Name = "btnVerwijder";
             this.btnVerwijder.Size = new System.Drawing.Size(105, 35);
             this.btnVerwijder.TabIndex = 1;
@@ -113,7 +119,8 @@ namespace Chocolade
             this.btnVoegToe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoegToe.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVoegToe.ForeColor = System.Drawing.Color.White;
-            this.btnVoegToe.Location = new System.Drawing.Point(510, 14);
+            this.btnVoegToe.Location = new System.Drawing.Point(474, 13);
+            this.btnVoegToe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVoegToe.Name = "btnVoegToe";
             this.btnVoegToe.Size = new System.Drawing.Size(105, 35);
             this.btnVoegToe.TabIndex = 19;
@@ -125,7 +132,7 @@ namespace Chocolade
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(570, 68);
+            this.label3.Location = new System.Drawing.Point(571, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 18;
@@ -135,7 +142,7 @@ namespace Chocolade
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(322, 68);
+            this.label2.Location = new System.Drawing.Point(314, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 18);
             this.label2.TabIndex = 17;
@@ -145,7 +152,7 @@ namespace Chocolade
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(57, 68);
+            this.label1.Location = new System.Drawing.Point(58, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 18);
             this.label1.TabIndex = 16;
@@ -154,7 +161,8 @@ namespace Chocolade
             // txtHoudbaarheidGrondstof
             // 
             this.txtHoudbaarheidGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHoudbaarheidGrondstof.Location = new System.Drawing.Point(582, 102);
+            this.txtHoudbaarheidGrondstof.Location = new System.Drawing.Point(583, 108);
+            this.txtHoudbaarheidGrondstof.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHoudbaarheidGrondstof.Name = "txtHoudbaarheidGrondstof";
             this.txtHoudbaarheidGrondstof.Size = new System.Drawing.Size(181, 20);
             this.txtHoudbaarheidGrondstof.TabIndex = 15;
@@ -162,7 +170,8 @@ namespace Chocolade
             // txtHoeveelheidGrondstof
             // 
             this.txtHoeveelheidGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHoeveelheidGrondstof.Location = new System.Drawing.Point(334, 102);
+            this.txtHoeveelheidGrondstof.Location = new System.Drawing.Point(326, 108);
+            this.txtHoeveelheidGrondstof.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHoeveelheidGrondstof.Name = "txtHoeveelheidGrondstof";
             this.txtHoeveelheidGrondstof.Size = new System.Drawing.Size(181, 20);
             this.txtHoeveelheidGrondstof.TabIndex = 14;
@@ -170,7 +179,8 @@ namespace Chocolade
             // txtTypeGrondstof
             // 
             this.txtTypeGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTypeGrondstof.Location = new System.Drawing.Point(69, 102);
+            this.txtTypeGrondstof.Location = new System.Drawing.Point(70, 108);
+            this.txtTypeGrondstof.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTypeGrondstof.Name = "txtTypeGrondstof";
             this.txtTypeGrondstof.Size = new System.Drawing.Size(181, 20);
             this.txtTypeGrondstof.TabIndex = 13;
@@ -182,7 +192,8 @@ namespace Chocolade
             this.btnWijzig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWijzig.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnWijzig.ForeColor = System.Drawing.Color.White;
-            this.btnWijzig.Location = new System.Drawing.Point(669, 14);
+            this.btnWijzig.Location = new System.Drawing.Point(656, 13);
+            this.btnWijzig.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnWijzig.Name = "btnWijzig";
             this.btnWijzig.Size = new System.Drawing.Size(105, 35);
             this.btnWijzig.TabIndex = 12;
@@ -194,7 +205,7 @@ namespace Chocolade
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(47, 0);
+            this.label4.Location = new System.Drawing.Point(54, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(255, 32);
             this.label4.TabIndex = 20;
@@ -203,7 +214,8 @@ namespace Chocolade
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(57, 92);
+            this.panel1.Location = new System.Drawing.Point(58, 97);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 41);
             this.panel1.TabIndex = 21;
@@ -211,7 +223,8 @@ namespace Chocolade
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(322, 92);
+            this.panel2.Location = new System.Drawing.Point(314, 97);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(204, 41);
             this.panel2.TabIndex = 22;
@@ -219,22 +232,18 @@ namespace Chocolade
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(570, 92);
+            this.panel3.Location = new System.Drawing.Point(571, 97);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 41);
             this.panel3.TabIndex = 23;
             // 
-            // BatchNummer
-            // 
-            this.BatchNummer.Text = "Batch Nummer";
-            this.BatchNummer.Width = 240;
-            // 
             // FrmStockChocolade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(815, 660);
+            this.ClientSize = new System.Drawing.Size(815, 573);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnVoegToe);
             this.Controls.Add(this.label3);
@@ -249,6 +258,7 @@ namespace Chocolade
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmStockChocolade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chocolade Batches";

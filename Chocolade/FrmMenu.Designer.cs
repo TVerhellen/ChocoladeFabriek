@@ -52,6 +52,7 @@ namespace Chocolade
             this.machinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMachinesOverview = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.btnAankoopArtikels = new System.Windows.Forms.Button();
             this.pnlProfileCircle = new System.Windows.Forms.Panel();
             this.lblProfile = new System.Windows.Forms.Label();
             this.btnStockBatches = new System.Windows.Forms.Button();
@@ -273,6 +274,23 @@ namespace Chocolade
             this.pnlContainer.Size = new System.Drawing.Size(1034, 917);
             this.pnlContainer.TabIndex = 2;
             // 
+            // btnAankoopArtikels
+            // 
+            this.btnAankoopArtikels.BackColor = System.Drawing.Color.White;
+            this.btnAankoopArtikels.FlatAppearance.BorderSize = 0;
+            this.btnAankoopArtikels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAankoopArtikels.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAankoopArtikels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.btnAankoopArtikels.Location = new System.Drawing.Point(2, 860);
+            this.btnAankoopArtikels.Name = "btnAankoopArtikels";
+            this.btnAankoopArtikels.Size = new System.Drawing.Size(274, 60);
+            this.btnAankoopArtikels.TabIndex = 22;
+            this.btnAankoopArtikels.Text = "Aankoopartikels";
+            this.btnAankoopArtikels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAankoopArtikels.UseVisualStyleBackColor = false;
+            this.btnAankoopArtikels.Visible = false;
+            this.btnAankoopArtikels.Click += new System.EventHandler(this.btnAankoopArtikels_Click);
+            // 
             // pnlProfileCircle
             // 
             this.pnlProfileCircle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -336,6 +354,7 @@ namespace Chocolade
             // pnlLeftMenu
             // 
             this.pnlLeftMenu.BackColor = System.Drawing.Color.White;
+            this.pnlLeftMenu.Controls.Add(this.btnAankoopArtikels);
             this.pnlLeftMenu.Controls.Add(this.btnPersoneel);
             this.pnlLeftMenu.Controls.Add(this.pictureBox1);
             this.pnlLeftMenu.Controls.Add(this.btnGegevensLeverancier);
@@ -369,7 +388,7 @@ namespace Chocolade
             this.btnPersoneel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersoneel.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPersoneel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnPersoneel.Location = new System.Drawing.Point(-3, 465);
+            this.btnPersoneel.Location = new System.Drawing.Point(-3, 485);
             this.btnPersoneel.Name = "btnPersoneel";
             this.btnPersoneel.Size = new System.Drawing.Size(274, 60);
             this.btnPersoneel.TabIndex = 21;
@@ -404,6 +423,7 @@ namespace Chocolade
             this.btnGegevensLeverancier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGegevensLeverancier.UseVisualStyleBackColor = false;
             this.btnGegevensLeverancier.Visible = false;
+            this.btnGegevensLeverancier.Click += new System.EventHandler(this.btnGegevensLeverancier_Click);
             // 
             // btnAutomatischOrders
             // 
@@ -412,7 +432,7 @@ namespace Chocolade
             this.btnAutomatischOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutomatischOrders.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAutomatischOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnAutomatischOrders.Location = new System.Drawing.Point(3, 942);
+            this.btnAutomatischOrders.Location = new System.Drawing.Point(-2, 940);
             this.btnAutomatischOrders.Name = "btnAutomatischOrders";
             this.btnAutomatischOrders.Size = new System.Drawing.Size(274, 60);
             this.btnAutomatischOrders.TabIndex = 18;
@@ -500,6 +520,7 @@ namespace Chocolade
             this.btnOrderPlaatsen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrderPlaatsen.UseVisualStyleBackColor = false;
             this.btnOrderPlaatsen.Visible = false;
+            this.btnOrderPlaatsen.Click += new System.EventHandler(this.btnOrderPlaatsen_Click);
             // 
             // btnAankoop
             // 
@@ -524,7 +545,7 @@ namespace Chocolade
             this.btnLopendeBestellingen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLopendeBestellingen.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLopendeBestellingen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnLopendeBestellingen.Location = new System.Drawing.Point(0, 618);
+            this.btnLopendeBestellingen.Location = new System.Drawing.Point(-6, 615);
             this.btnLopendeBestellingen.Name = "btnLopendeBestellingen";
             this.btnLopendeBestellingen.Size = new System.Drawing.Size(274, 60);
             this.btnLopendeBestellingen.TabIndex = 11;
@@ -548,6 +569,7 @@ namespace Chocolade
             this.btnHistoriek.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistoriek.UseVisualStyleBackColor = false;
             this.btnHistoriek.Visible = false;
+            this.btnHistoriek.Click += new System.EventHandler(this.btnHistoriek_Click);
             // 
             // btnBestellingVerwerken
             // 
@@ -556,7 +578,7 @@ namespace Chocolade
             this.btnBestellingVerwerken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBestellingVerwerken.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBestellingVerwerken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnBestellingVerwerken.Location = new System.Drawing.Point(4, 499);
+            this.btnBestellingVerwerken.Location = new System.Drawing.Point(3, 531);
             this.btnBestellingVerwerken.Name = "btnBestellingVerwerken";
             this.btnBestellingVerwerken.Size = new System.Drawing.Size(274, 60);
             this.btnBestellingVerwerken.TabIndex = 9;
@@ -564,6 +586,7 @@ namespace Chocolade
             this.btnBestellingVerwerken.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBestellingVerwerken.UseVisualStyleBackColor = false;
             this.btnBestellingVerwerken.Visible = false;
+            this.btnBestellingVerwerken.Click += new System.EventHandler(this.btnBestellingVerwerken_Click);
             // 
             // btnCatalogus
             // 
@@ -580,6 +603,7 @@ namespace Chocolade
             this.btnCatalogus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCatalogus.UseVisualStyleBackColor = false;
             this.btnCatalogus.Visible = false;
+            this.btnCatalogus.Click += new System.EventHandler(this.btnCatalogus_Click);
             // 
             // btnGegevensKlant
             // 
@@ -722,6 +746,7 @@ namespace Chocolade
         private System.Windows.Forms.Panel pnlProfileCircle;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnPersoneel;
+        private System.Windows.Forms.Button btnAankoopArtikels;
     }
 }
 
