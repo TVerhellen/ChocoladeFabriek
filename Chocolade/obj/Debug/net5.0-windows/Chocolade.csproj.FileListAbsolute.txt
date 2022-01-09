@@ -144,3 +144,4 @@ C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-window
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensKlant.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
+C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmPersoneel.resources

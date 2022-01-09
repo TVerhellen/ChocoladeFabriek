@@ -57,6 +57,7 @@ namespace Chocolade
             this.btnStockBatches = new System.Windows.Forms.Button();
             this.btnStockGrondstoffen = new System.Windows.Forms.Button();
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
+            this.btnPersoneel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGegevensLeverancier = new System.Windows.Forms.Button();
             this.btnAutomatischOrders = new System.Windows.Forms.Button();
@@ -73,6 +74,7 @@ namespace Chocolade
             this.btnGegevensKlant = new System.Windows.Forms.Button();
             this.btnVerkoop = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnlProfileCircle.SuspendLayout();
             this.pnlLeftMenu.SuspendLayout();
@@ -220,7 +222,6 @@ namespace Chocolade
             // 
             this.grondstoffenToolStripMenuItem.Name = "grondstoffenToolStripMenuItem";
             this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-
             this.grondstoffenToolStripMenuItem.Text = "Grondstoffen";
             this.grondstoffenToolStripMenuItem.Click += new System.EventHandler(this.grondstoffenToolStripMenuItem_Click);
             // 
@@ -228,7 +229,6 @@ namespace Chocolade
             // 
             this.productenToolStripMenuItem.Name = "productenToolStripMenuItem";
             this.productenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-
             this.productenToolStripMenuItem.Text = "Producten";
             this.productenToolStripMenuItem.Click += new System.EventHandler(this.productenToolStripMenuItem_Click);
             // 
@@ -277,7 +277,7 @@ namespace Chocolade
             // 
             this.pnlProfileCircle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProfileCircle.Controls.Add(this.lblProfile);
-            this.pnlProfileCircle.Location = new System.Drawing.Point(1236, 41);
+            this.pnlProfileCircle.Location = new System.Drawing.Point(1073, 41);
             this.pnlProfileCircle.Name = "pnlProfileCircle";
             this.pnlProfileCircle.Size = new System.Drawing.Size(60, 60);
             this.pnlProfileCircle.TabIndex = 23;
@@ -336,6 +336,7 @@ namespace Chocolade
             // pnlLeftMenu
             // 
             this.pnlLeftMenu.BackColor = System.Drawing.Color.White;
+            this.pnlLeftMenu.Controls.Add(this.btnPersoneel);
             this.pnlLeftMenu.Controls.Add(this.pictureBox1);
             this.pnlLeftMenu.Controls.Add(this.btnGegevensLeverancier);
             this.pnlLeftMenu.Controls.Add(this.btnAutomatischOrders);
@@ -360,6 +361,22 @@ namespace Chocolade
             this.pnlLeftMenu.Name = "pnlLeftMenu";
             this.pnlLeftMenu.Size = new System.Drawing.Size(274, 1024);
             this.pnlLeftMenu.TabIndex = 5;
+            // 
+            // btnPersoneel
+            // 
+            this.btnPersoneel.BackColor = System.Drawing.Color.White;
+            this.btnPersoneel.FlatAppearance.BorderSize = 0;
+            this.btnPersoneel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersoneel.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPersoneel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.btnPersoneel.Location = new System.Drawing.Point(-3, 465);
+            this.btnPersoneel.Name = "btnPersoneel";
+            this.btnPersoneel.Size = new System.Drawing.Size(274, 60);
+            this.btnPersoneel.TabIndex = 21;
+            this.btnPersoneel.Text = "Personeel";
+            this.btnPersoneel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersoneel.UseVisualStyleBackColor = false;
+            this.btnPersoneel.Click += new System.EventHandler(this.btnPersoneel_Click);
             // 
             // pictureBox1
             // 
@@ -612,11 +629,29 @@ namespace Chocolade
             this.btnStock.UseVisualStyleBackColor = false;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(1155, 46);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(120, 47);
+            this.btnLogout.TabIndex = 24;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1308, 1024);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pnlProfileCircle);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.menuStrip1);
@@ -685,7 +720,8 @@ namespace Chocolade
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.Panel pnlProfileCircle;
-
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnPersoneel;
     }
 }
 

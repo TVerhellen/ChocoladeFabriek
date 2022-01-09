@@ -43,6 +43,7 @@ namespace Chocolade
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
             Machine.laadLijsten();
+            Gebruiker.LaadLijst();
 
             Recept.LaadLijst();
             //Recept.receptenLijst[0].Produceer(5);
@@ -51,11 +52,14 @@ namespace Chocolade
             List<Button> stockButtons = new List<Button> { btnStock, btnStockGrondstoffen, btnStockBatches };
             List<Button> verkoopButtons = new List<Button> { btnVerkoop, btnGegevensKlant, btnCatalogus, btnBestellingVerwerken, btnHistoriek, btnLopendeBestellingen };
             List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderMenu, btnOrderVerwerken, btnAankoopHistoriek, btnAankoopLopendeOrders, btnAutomatischOrders, btnGegevensLeverancier };
+            List<Button> personeelButtons = new List<Button> { btnPersoneel };
 
             buttongroupList.Add(stockButtons);
             buttongroupList.Add(aankoopButtons);
             buttongroupList.Add(machineButtons);
             buttongroupList.Add(verkoopButtons);
+            buttongroupList.Add(personeelButtons);
+
             AdjustSizeAndTextButtons();
             AlignButtonGroups();
         }
@@ -148,14 +152,7 @@ namespace Chocolade
 
         private void btnBatches_Click(object sender, EventArgs e)
         {
-            if (ingelogdeGebruiker.Rol == Gebruikersrol.werknemer)
-            {
-                MessageBox.Show("U heeft niet de juiste bevoegdheden om dit te doen!", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            }
-            else
-            {
-                OpenChildForm(new FrmStockChocolade());
-            }
+            OpenChildForm(new FrmStockChocolade());
         }
 
         private void btnStockGrondstoffen_Click(object sender, EventArgs e)
@@ -224,6 +221,8 @@ namespace Chocolade
             }
         }
 
+
+
         private void RepositionOtherButtons(List<Button> thisButtonGroup)
         {
             if (thisButtonGroup.Count > 1)
@@ -248,7 +247,6 @@ namespace Chocolade
                     }
                 }
             }
-
         }
         private List<Button> FindGroupButtonBelongsTo(object sender)
         {
@@ -308,7 +306,6 @@ namespace Chocolade
 
         private void lblProfile_Click(object sender, EventArgs e)
         {
-            ProfileWindow();
         }
 
         private void ProfileWindow()
@@ -337,8 +334,24 @@ namespace Chocolade
         {
             FrmGegevensKlant nieuwGegevensKlant = new FrmGegevensKlant();
             nieuwGegevensKlant.Show();
+        }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            ProfileWindow();
+        }
 
+        private void btnPersoneel_Click(object sender, EventArgs e)
+        {
+            if (ingelogdeGebruiker.Rol == Gebruikersrol.ceo)
+            {
+                FrmPersoneel thisForm = new FrmPersoneel();
+                OpenChildForm(thisForm);
+            }
+            else
+            {
+                MessageBox.Show("U heeft niet de juiste bevoegdheden om dit te doen!", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
         }
     }
 }

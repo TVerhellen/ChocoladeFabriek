@@ -21,12 +21,7 @@ namespace Chocolade
         {
             updateLvw();
         }
-        private void btnVerwijder_Click(object sender, EventArgs e)
-        {
-            ChocoladeBatch.stock.RemoveAt(lvwChocoladeBatch.SelectedIndices[0]);
-            ChocoladeBatch.SlaLijstOp();
-            updateLvw();
-        }
+
 
         private void updateLvw()
         {
@@ -72,6 +67,12 @@ namespace Chocolade
                 txtHoeveelheidGrondstof.Clear();
                 txtHoudbaarheidGrondstof.Clear();
             }
+        }
+        private void btnVerwijder_Click(object sender, EventArgs e)
+        {
+            ChocoladeBatch.stock.RemoveAt(lvwChocoladeBatch.SelectedIndices[0]);
+            ChocoladeBatch.SlaLijstOp();
+            updateLvw();
         }
     }
 }
