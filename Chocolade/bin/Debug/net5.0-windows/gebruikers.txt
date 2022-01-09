@@ -1,0 +1,3 @@
+Kristof|kristof|lettens|123|werknemer
+Tijs|tijs|verhellen|456|ceo
+Steven|steven|rombaut|789|manager

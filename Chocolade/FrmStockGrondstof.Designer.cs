@@ -29,46 +29,44 @@ namespace Chocolade
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnVerwijder = new System.Windows.Forms.Button();
             this.lvwGrondstof = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.btnWijzig = new System.Windows.Forms.Button();
-            this.txtTypeGrondstof = new System.Windows.Forms.TextBox();
-            this.txtHoeveelheidGrondstof = new System.Windows.Forms.TextBox();
-            this.txtHoudbaarheidGrondstof = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnVoegToe = new System.Windows.Forms.Button();
+            this.btnWijzig = new System.Windows.Forms.Button();
+            this.btnVerwijder = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtHoudbaarheidGrondstof = new System.Windows.Forms.TextBox();
+            this.txtHoeveelheidGrondstof = new System.Windows.Forms.TextBox();
+            this.txtTypeGrondstof = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // btnVerwijder
-            // 
-            this.btnVerwijder.Location = new System.Drawing.Point(63, 456);
-            this.btnVerwijder.Name = "btnVerwijder";
-            this.btnVerwijder.Size = new System.Drawing.Size(94, 29);
-            this.btnVerwijder.TabIndex = 3;
-            this.btnVerwijder.Text = "Verwijder";
-            this.btnVerwijder.UseVisualStyleBackColor = true;
-            this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
             // lvwGrondstof
             // 
             this.lvwGrondstof.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.lvwGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lvwGrondstof.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lvwGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvwGrondstof.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lvwGrondstof.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lvwGrondstof.FullRowSelect = true;
             this.lvwGrondstof.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwGrondstof.HideSelection = false;
             this.lvwGrondstof.LabelWrap = false;
-            this.lvwGrondstof.Location = new System.Drawing.Point(63, 130);
+            this.lvwGrondstof.Location = new System.Drawing.Point(58, 160);
             this.lvwGrondstof.Name = "lvwGrondstof";
-            this.lvwGrondstof.Size = new System.Drawing.Size(678, 307);
+            this.lvwGrondstof.Size = new System.Drawing.Size(717, 326);
             this.lvwGrondstof.TabIndex = 2;
             this.lvwGrondstof.UseCompatibleStateImageBehavior = false;
             this.lvwGrondstof.View = System.Windows.Forms.View.Details;
@@ -89,86 +87,157 @@ namespace Chocolade
             this.columnHeader3.Text = "Houdbaarheidsdatum";
             this.columnHeader3.Width = 180;
             // 
+            // btnVoegToe
+            // 
+            this.btnVoegToe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(130)))));
+            this.btnVoegToe.FlatAppearance.BorderSize = 0;
+            this.btnVoegToe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoegToe.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVoegToe.ForeColor = System.Drawing.Color.White;
+            this.btnVoegToe.Location = new System.Drawing.Point(511, 17);
+            this.btnVoegToe.Name = "btnVoegToe";
+            this.btnVoegToe.Size = new System.Drawing.Size(105, 35);
+            this.btnVoegToe.TabIndex = 22;
+            this.btnVoegToe.Text = "Voeg Toe";
+            this.btnVoegToe.UseVisualStyleBackColor = false;
+            this.btnVoegToe.Click += new System.EventHandler(this.btnVoegToe_Click);
+            // 
             // btnWijzig
             // 
-            this.btnWijzig.Location = new System.Drawing.Point(647, 40);
+            this.btnWijzig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(192)))));
+            this.btnWijzig.FlatAppearance.BorderSize = 0;
+            this.btnWijzig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWijzig.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnWijzig.ForeColor = System.Drawing.Color.White;
+            this.btnWijzig.Location = new System.Drawing.Point(670, 17);
             this.btnWijzig.Name = "btnWijzig";
-            this.btnWijzig.Size = new System.Drawing.Size(94, 29);
-            this.btnWijzig.TabIndex = 4;
+            this.btnWijzig.Size = new System.Drawing.Size(105, 35);
+            this.btnWijzig.TabIndex = 21;
             this.btnWijzig.Text = "Wijzig";
-            this.btnWijzig.UseVisualStyleBackColor = true;
+            this.btnWijzig.UseVisualStyleBackColor = false;
             this.btnWijzig.Click += new System.EventHandler(this.btnWijzig_Click);
             // 
-            // txtTypeGrondstof
+            // btnVerwijder
             // 
-            this.txtTypeGrondstof.Location = new System.Drawing.Point(63, 74);
-            this.txtTypeGrondstof.Name = "txtTypeGrondstof";
-            this.txtTypeGrondstof.Size = new System.Drawing.Size(181, 27);
-            this.txtTypeGrondstof.TabIndex = 5;
+            this.btnVerwijder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnVerwijder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
+            this.btnVerwijder.FlatAppearance.BorderSize = 0;
+            this.btnVerwijder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerwijder.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVerwijder.ForeColor = System.Drawing.Color.White;
+            this.btnVerwijder.Location = new System.Drawing.Point(58, 515);
+            this.btnVerwijder.Name = "btnVerwijder";
+            this.btnVerwijder.Size = new System.Drawing.Size(105, 35);
+            this.btnVerwijder.TabIndex = 20;
+            this.btnVerwijder.Text = "Verwijder";
+            this.btnVerwijder.UseVisualStyleBackColor = false;
+            this.btnVerwijder.Click += new System.EventHandler(this.btnVerwijder_Click);
             // 
-            // txtHoeveelheidGrondstof
+            // label4
             // 
-            this.txtHoeveelheidGrondstof.Location = new System.Drawing.Point(265, 74);
-            this.txtHoeveelheidGrondstof.Name = "txtHoeveelheidGrondstof";
-            this.txtHoeveelheidGrondstof.Size = new System.Drawing.Size(181, 27);
-            this.txtHoeveelheidGrondstof.TabIndex = 6;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(48, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 32);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Grondstoffen";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(571, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 18);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Houdbaarheid:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(323, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 18);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Hoeveelheid:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(58, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 18);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Type Grondstof:";
             // 
             // txtHoudbaarheidGrondstof
             // 
-            this.txtHoudbaarheidGrondstof.Location = new System.Drawing.Point(468, 74);
+            this.txtHoudbaarheidGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHoudbaarheidGrondstof.Location = new System.Drawing.Point(583, 105);
             this.txtHoudbaarheidGrondstof.Name = "txtHoudbaarheidGrondstof";
-            this.txtHoudbaarheidGrondstof.Size = new System.Drawing.Size(147, 27);
-            this.txtHoudbaarheidGrondstof.TabIndex = 7;
+            this.txtHoudbaarheidGrondstof.Size = new System.Drawing.Size(181, 20);
+            this.txtHoudbaarheidGrondstof.TabIndex = 26;
             // 
-            // label1
+            // txtHoeveelheidGrondstof
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Type Grondstof:";
+            this.txtHoeveelheidGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHoeveelheidGrondstof.Location = new System.Drawing.Point(335, 105);
+            this.txtHoeveelheidGrondstof.Name = "txtHoeveelheidGrondstof";
+            this.txtHoeveelheidGrondstof.Size = new System.Drawing.Size(181, 20);
+            this.txtHoeveelheidGrondstof.TabIndex = 25;
             // 
-            // label2
+            // txtTypeGrondstof
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Hoeveelheid:";
+            this.txtTypeGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTypeGrondstof.Location = new System.Drawing.Point(70, 105);
+            this.txtTypeGrondstof.Name = "txtTypeGrondstof";
+            this.txtTypeGrondstof.Size = new System.Drawing.Size(181, 20);
+            this.txtTypeGrondstof.TabIndex = 24;
             // 
-            // label3
+            // panel3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(468, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Houdbaarheid:";
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(571, 95);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(204, 41);
+            this.panel3.TabIndex = 33;
             // 
-            // btnVoegToe
+            // panel2
             // 
-            this.btnVoegToe.Location = new System.Drawing.Point(647, 86);
-            this.btnVoegToe.Name = "btnVoegToe";
-            this.btnVoegToe.Size = new System.Drawing.Size(94, 29);
-            this.btnVoegToe.TabIndex = 11;
-            this.btnVoegToe.Text = "Voeg Toe";
-            this.btnVoegToe.UseVisualStyleBackColor = true;
-            this.btnVoegToe.Click += new System.EventHandler(this.btnVoegToe_Click);
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(323, 95);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(204, 41);
+            this.panel2.TabIndex = 32;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(58, 95);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(204, 41);
+            this.panel1.TabIndex = 31;
             // 
             // FrmStockGrondstof
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 531);
-            this.Controls.Add(this.btnVoegToe);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(243)))));
+            this.ClientSize = new System.Drawing.Size(815, 573);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtHoudbaarheidGrondstof);
             this.Controls.Add(this.txtHoeveelheidGrondstof);
             this.Controls.Add(this.txtTypeGrondstof);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnVoegToe);
             this.Controls.Add(this.btnWijzig);
             this.Controls.Add(this.btnVerwijder);
             this.Controls.Add(this.lvwGrondstof);
@@ -181,19 +250,22 @@ namespace Chocolade
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnVerwijder;
         private System.Windows.Forms.ListView lvwGrondstof;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button btnWijzig;
-        private System.Windows.Forms.TextBox txtTypeGrondstof;
-        private System.Windows.Forms.TextBox txtHoeveelheidGrondstof;
-        private System.Windows.Forms.TextBox txtHoudbaarheidGrondstof;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnVoegToe;
+        private System.Windows.Forms.Button btnWijzig;
+        private System.Windows.Forms.Button btnVerwijder;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtHoudbaarheidGrondstof;
+        private System.Windows.Forms.TextBox txtHoeveelheidGrondstof;
+        private System.Windows.Forms.TextBox txtTypeGrondstof;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
