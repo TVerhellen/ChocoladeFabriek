@@ -57,7 +57,7 @@ namespace Chocolade
 
         private void btnAfwerken_Click(object sender, EventArgs e)
         {
-            
+
 
             double tempHoeveelheid = 0;
             bool controle = false;
@@ -98,7 +98,7 @@ namespace Chocolade
                         else
                         {
                             ChocoladeBatch newBatch = new ChocoladeBatch(batch.Naam, tempHoeveelheid);
-                            
+
                             newBatch.Houdbaarheid = stockBatch.Houdbaarheid;
                             newBatch.ID = stockBatch.ID;
                             if (newBatch.Hoeveelheid <= stockBatch.Hoeveelheid)
@@ -190,18 +190,13 @@ namespace Chocolade
             //        }
             //    }
             //}
-            
+
             orders.RemoveAt(lbOrders.SelectedIndex);
             lbOrders.SelectedIndex = -1;
             lbOrders.DataSource = null;
             lbOrders.DataSource = orders;
             lbOrders.SelectedIndex = -1;
 
-        }
-
-        private void btnSluiten_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
         }
 
         private void updateLvw()

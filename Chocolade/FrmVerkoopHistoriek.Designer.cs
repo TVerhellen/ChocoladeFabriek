@@ -37,8 +37,8 @@ namespace Chocolade
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.lblOrderNummer = new System.Windows.Forms.Label();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.lblOrderNummer = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,19 +46,24 @@ namespace Chocolade
             // 
             this.groupBox1.Controls.Add(this.radGeannuleerd);
             this.groupBox1.Controls.Add(this.radAfgewerkt);
-            this.groupBox1.Location = new System.Drawing.Point(39, 24);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(45, 32);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(158, 100);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(181, 133);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Type historiek";
+            this.groupBox1.Text = "Type historiek:";
             // 
             // radGeannuleerd
             // 
             this.radGeannuleerd.AutoSize = true;
-            this.radGeannuleerd.Location = new System.Drawing.Point(22, 59);
+            this.radGeannuleerd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radGeannuleerd.Location = new System.Drawing.Point(25, 79);
+            this.radGeannuleerd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radGeannuleerd.Name = "radGeannuleerd";
-            this.radGeannuleerd.Size = new System.Drawing.Size(92, 19);
+            this.radGeannuleerd.Size = new System.Drawing.Size(122, 22);
             this.radGeannuleerd.TabIndex = 1;
             this.radGeannuleerd.TabStop = true;
             this.radGeannuleerd.Text = "Geannuleerd";
@@ -68,9 +73,11 @@ namespace Chocolade
             // radAfgewerkt
             // 
             this.radAfgewerkt.AutoSize = true;
-            this.radAfgewerkt.Location = new System.Drawing.Point(22, 33);
+            this.radAfgewerkt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radAfgewerkt.Location = new System.Drawing.Point(25, 44);
+            this.radAfgewerkt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radAfgewerkt.Name = "radAfgewerkt";
-            this.radAfgewerkt.Size = new System.Drawing.Size(79, 19);
+            this.radAfgewerkt.Size = new System.Drawing.Size(100, 22);
             this.radAfgewerkt.TabIndex = 0;
             this.radAfgewerkt.TabStop = true;
             this.radAfgewerkt.Text = "Afgewerkt";
@@ -79,11 +86,14 @@ namespace Chocolade
             // 
             // lbOrders
             // 
+            this.lbOrders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbOrders.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbOrders.FormattingEnabled = true;
-            this.lbOrders.ItemHeight = 15;
-            this.lbOrders.Location = new System.Drawing.Point(231, 30);
+            this.lbOrders.ItemHeight = 17;
+            this.lbOrders.Location = new System.Drawing.Point(264, 40);
+            this.lbOrders.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbOrders.Name = "lbOrders";
-            this.lbOrders.Size = new System.Drawing.Size(402, 94);
+            this.lbOrders.Size = new System.Drawing.Size(459, 104);
             this.lbOrders.TabIndex = 1;
             this.lbOrders.SelectedIndexChanged += new System.EventHandler(this.lbOrders_SelectedIndexChanged);
             // 
@@ -96,14 +106,14 @@ namespace Chocolade
             this.columnHeader5,
             this.columnHeader6,
             this.columnHeader1});
+            this.lvwChocoladeBatch.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lvwChocoladeBatch.FullRowSelect = true;
             this.lvwChocoladeBatch.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwChocoladeBatch.HideSelection = false;
             this.lvwChocoladeBatch.LabelWrap = false;
-            this.lvwChocoladeBatch.Location = new System.Drawing.Point(39, 170);
-            this.lvwChocoladeBatch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwChocoladeBatch.Location = new System.Drawing.Point(45, 227);
             this.lvwChocoladeBatch.Name = "lvwChocoladeBatch";
-            this.lvwChocoladeBatch.Size = new System.Drawing.Size(594, 231);
+            this.lvwChocoladeBatch.Size = new System.Drawing.Size(679, 307);
             this.lvwChocoladeBatch.TabIndex = 4;
             this.lvwChocoladeBatch.UseCompatibleStateImageBehavior = false;
             this.lvwChocoladeBatch.View = System.Windows.Forms.View.Details;
@@ -123,28 +133,30 @@ namespace Chocolade
             this.columnHeader6.Text = "Houdbaarheidsdatum";
             this.columnHeader6.Width = 180;
             // 
-            // lblOrderNummer
-            // 
-            this.lblOrderNummer.AutoSize = true;
-            this.lblOrderNummer.Location = new System.Drawing.Point(39, 153);
-            this.lblOrderNummer.Name = "lblOrderNummer";
-            this.lblOrderNummer.Size = new System.Drawing.Size(45, 15);
-            this.lblOrderNummer.TabIndex = 5;
-            this.lblOrderNummer.Text = "orderid";
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Prijs";
             // 
+            // lblOrderNummer
+            // 
+            this.lblOrderNummer.AutoSize = true;
+            this.lblOrderNummer.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderNummer.Location = new System.Drawing.Point(45, 204);
+            this.lblOrderNummer.Name = "lblOrderNummer";
+            this.lblOrderNummer.Size = new System.Drawing.Size(73, 18);
+            this.lblOrderNummer.TabIndex = 5;
+            this.lblOrderNummer.Text = "Order ID:";
+            // 
             // FrmVerkoopHistoriek
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 433);
+            this.ClientSize = new System.Drawing.Size(771, 577);
             this.Controls.Add(this.lblOrderNummer);
             this.Controls.Add(this.lvwChocoladeBatch);
             this.Controls.Add(this.lbOrders);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmVerkoopHistoriek";
             this.Text = "Verkoop: Historiek";
             this.Load += new System.EventHandler(this.FrmVerkoopHistoriek_Load);

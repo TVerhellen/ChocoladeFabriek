@@ -23,7 +23,7 @@ namespace Chocolade
             InitializeComponent();
         }
 
-        public Gebruiker ingelogdeGebruiker = null;
+        public Personeel ingelogdeGebruiker = null;
 
         List<List<Button>> buttongroupList = new List<List<Button>>();
 
@@ -39,23 +39,27 @@ namespace Chocolade
                 Environment.Exit(1);
             }
             LoadProfile(login);
+            lblCurrentMenu.Text = "";
 
             Grondstof.LaadLijst();
             ChocoladeBatch.LaadLijst();
             Machine.laadLijsten();
+            Personeel.LaadLijst();
 
             Recept.LaadLijst();
-            //Recept.receptenLijst[0].Produceer(5);
-            //Recept.receptenLijst[1].Produceer(5, 123456);
+
             List<Button> machineButtons = new List<Button> { btnMachinesOverview };
             List<Button> stockButtons = new List<Button> { btnStock, btnStockGrondstoffen, btnStockBatches };
             List<Button> verkoopButtons = new List<Button> { btnVerkoop, btnGegevensKlant, btnCatalogus, btnBestellingVerwerken, btnHistoriek, btnLopendeBestellingen };
-            List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderMenu, btnOrderVerwerken, btnAankoopHistoriek, btnAankoopLopendeOrders, btnAutomatischOrders, btnGegevensLeverancier };
+            List<Button> aankoopButtons = new List<Button> { btnAankoop, btnOrderPlaatsen, btnOrderVerwerken, btnGegevensLeverancier };
+            List<Button> personeelButtons = new List<Button> { btnPersoneel };
 
             buttongroupList.Add(stockButtons);
             buttongroupList.Add(aankoopButtons);
             buttongroupList.Add(machineButtons);
             buttongroupList.Add(verkoopButtons);
+            buttongroupList.Add(personeelButtons);
+
             AdjustSizeAndTextButtons();
             AlignButtonGroups();
         }
@@ -85,19 +89,19 @@ namespace Chocolade
             childForm.Show();
         }
 
-
+        //Done
         private void catalogusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmVerkoopCatalogus catalogus = new FrmVerkoopCatalogus();
             catalogus.ShowDialog();
         }
-
+        //Done
         private void bestellingVerwerkenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmBestellingVerwerken verwerken = new FrmBestellingVerwerken();
             verwerken.ShowDialog();
         }
-
+        //Kristof
         private void productenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmStockChocolade chocoladeStockOverview = new FrmStockChocolade();
@@ -115,26 +119,26 @@ namespace Chocolade
             FrmMachines machinesForm = new FrmMachines();
             machinesForm.Show();
         }
-
+        //Done
         private void gegevensLeverancierToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmGegevensLeveranciers NieuweGegevensLeveranciers = new FrmGegevensLeveranciers();
             NieuweGegevensLeveranciers.Show();
         }
-
+        //Done
         private void orderPlaatsenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmOrderAanmaken nieuweOrder = new FrmOrderAanmaken();
             nieuweOrder.Show();
         }
 
-
+        //Done
         private void aankoopartikelsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmAankoopArtikels aankoopArtikelsOverzicht = new FrmAankoopArtikels();
             aankoopArtikelsOverzicht.Show();
         }
-
+        //Done
         private void historiekToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmVerkoopHistoriek nieuweHistoriek = new FrmVerkoopHistoriek();
@@ -144,18 +148,15 @@ namespace Chocolade
         private void btnMachinesOverview_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmMachines());
+            lblCurrentMenu.Text = "Overzicht Machines";
+
         }
 
         private void btnBatches_Click(object sender, EventArgs e)
         {
-            if (ingelogdeGebruiker.Rol == Gebruikersrol.werknemer)
-            {
-                MessageBox.Show("U heeft niet de juiste bevoegdheden om dit te doen!", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            }
-            else
-            {
-                OpenChildForm(new FrmStockChocolade());
-            }
+            OpenChildForm(new FrmStockChocolade());
+            lblCurrentMenu.Text = "Stock Chocolade Batches";
+
         }
 
         private void btnStockGrondstoffen_Click(object sender, EventArgs e)
@@ -163,11 +164,13 @@ namespace Chocolade
             FrmStockGrondstof thisForm = new FrmStockGrondstof();
             thisForm.ingelogdeGebruiker = ingelogdeGebruiker;
             OpenChildForm(thisForm);
+            lblCurrentMenu.Text = "Stock Grondstoffen";
         }
 
         private void btnStock_Click(object sender, EventArgs e)
         {
             ToggleButtons(sender);
+
         }
 
         private void ToggleButtons(object sender)
@@ -224,6 +227,8 @@ namespace Chocolade
             }
         }
 
+
+
         private void RepositionOtherButtons(List<Button> thisButtonGroup)
         {
             if (thisButtonGroup.Count > 1)
@@ -248,7 +253,6 @@ namespace Chocolade
                     }
                 }
             }
-
         }
         private List<Button> FindGroupButtonBelongsTo(object sender)
         {
@@ -308,7 +312,6 @@ namespace Chocolade
 
         private void lblProfile_Click(object sender, EventArgs e)
         {
-            ProfileWindow();
         }
 
         private void ProfileWindow()
@@ -324,21 +327,108 @@ namespace Chocolade
                 {
                     Application.Exit();
                 }
+                lblCurrentMenu.Text = "";
                 LoadProfile(login);
             }
         }
-        private void lopendeBestellingenToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            FrmVerkoopLopend nieuwLopend = new FrmVerkoopLopend();
-            nieuwLopend.ShowDialog();
+            ProfileWindow();
         }
 
-        private void gegevensKlantToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnPersoneel_Click(object sender, EventArgs e)
         {
-            FrmGegevensKlant nieuwGegevensKlant = new FrmGegevensKlant();
-            nieuwGegevensKlant.Show();
+            if (ingelogdeGebruiker.Rol == Gebruikersrol.CEO)
+            {
+                FrmPersoneel thisForm = new FrmPersoneel();
+                thisForm.ingelogdeGebruiker = ingelogdeGebruiker;
+                OpenChildForm(thisForm);
+                lblCurrentMenu.Text = "Personeel";
+
+            }
+            else
+            {
+                MessageBox.Show("U heeft niet de juiste bevoegdheden om dit te doen!", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+
+        private void btnGegevensLeverancier_Click(object sender, EventArgs e)
+        {
+            FrmGegevensLeveranciers thisForm = new FrmGegevensLeveranciers();
+            OpenChildForm(thisForm);
+            lblCurrentMenu.Text = "Gegevens Leverancier";
+
+        }
+
+        private void btnOrderPlaatsen_Click(object sender, EventArgs e)
+        {
+            FrmOrderAanmaken thisForm = new FrmOrderAanmaken();
+            lblCurrentMenu.Text = "Order Plaatsen";
+            OpenChildForm(thisForm);
+        }
+
+        private void btnAankoopArtikels_Click(object sender, EventArgs e)
+        {
+            FrmAankoopArtikels thisForm = new FrmAankoopArtikels();
+            lblCurrentMenu.Text = "Aankoopartikels";
+            OpenChildForm(thisForm);
+        }
+
+        private void btnHistoriek_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopHistoriek thisForm = new FrmVerkoopHistoriek();
+            OpenChildForm(thisForm);
+            lblCurrentMenu.Text = "Historiek Verkoop";
+
+        }
+
+        private void btnCatalogus_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopCatalogus thisForm = new FrmVerkoopCatalogus();
+            OpenChildForm(thisForm);
+            lblCurrentMenu.Text = "Catalogus";
+
+        }
+
+        private void btnBestellingVerwerken_Click(object sender, EventArgs e)
+        {
+            FrmBestellingVerwerken thisForm = new FrmBestellingVerwerken();
+            OpenChildForm(thisForm);
+            lblCurrentMenu.Text = "Bestelling Verwerken";
+
+        }
+
+        private void btnGegevensKlant_Click(object sender, EventArgs e)
+        {
+            FrmGegevensKlant thisForm = new FrmGegevensKlant();
+            OpenChildForm(thisForm);
+            lblCurrentMenu.Text = "Gegevens Klant";
+
+        }
 
 
+
+
+        private void pnlContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnOrderVerwerken_Click(object sender, EventArgs e)
+        {
+            FrmOrderVerwerken form = new FrmOrderVerwerken();
+            lblCurrentMenu.Text = "Order Verwerken";
+            OpenChildForm(form);
+        }
+
+        private void btnLopendeBestellingen_Click(object sender, EventArgs e)
+        {
+            FrmVerkoopLopend form = new FrmVerkoopLopend();
+            lblCurrentMenu.Text = "Lopende Bestellingen";
+
+            OpenChildForm(form);
         }
     }
 }

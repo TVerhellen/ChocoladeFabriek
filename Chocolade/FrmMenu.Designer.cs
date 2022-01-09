@@ -1,5 +1,4 @@
-﻿
-namespace Chocolade
+﻿namespace Chocolade
 {
     partial class Form1
     {
@@ -29,41 +28,18 @@ namespace Chocolade
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.aankoopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderPlaatsenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordermenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderVerwerkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historiekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lopendeOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.automatischeOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gegevensLeverancierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aankoopartikelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verkoopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gegevensKlantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.catalogusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bestellingVerwerkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historiekToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lopendeBestellingenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grondstoffenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.machinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMachinesOverview = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.btnAankoopArtikels = new System.Windows.Forms.Button();
             this.pnlProfileCircle = new System.Windows.Forms.Panel();
             this.lblProfile = new System.Windows.Forms.Label();
             this.btnStockBatches = new System.Windows.Forms.Button();
             this.btnStockGrondstoffen = new System.Windows.Forms.Button();
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
+            this.btnPersoneel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGegevensLeverancier = new System.Windows.Forms.Button();
-            this.btnAutomatischOrders = new System.Windows.Forms.Button();
-            this.btnAankoopLopendeOrders = new System.Windows.Forms.Button();
-            this.btnAankoopHistoriek = new System.Windows.Forms.Button();
             this.btnOrderVerwerken = new System.Windows.Forms.Button();
-            this.btnOrderMenu = new System.Windows.Forms.Button();
             this.btnOrderPlaatsen = new System.Windows.Forms.Button();
             this.btnAankoop = new System.Windows.Forms.Button();
             this.btnLopendeBestellingen = new System.Windows.Forms.Button();
@@ -73,179 +49,12 @@ namespace Chocolade
             this.btnGegevensKlant = new System.Windows.Forms.Button();
             this.btnVerkoop = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblCurrentMenu = new System.Windows.Forms.Label();
             this.pnlProfileCircle.SuspendLayout();
             this.pnlLeftMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aankoopToolStripMenuItem,
-            this.verkoopToolStripMenuItem,
-            this.stockToolStripMenuItem,
-            this.productieToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(274, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1034, 30);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // aankoopToolStripMenuItem
-            // 
-            this.aankoopToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.orderPlaatsenToolStripMenuItem,
-            this.ordermenuToolStripMenuItem,
-            this.orderVerwerkenToolStripMenuItem,
-            this.historiekToolStripMenuItem,
-            this.lopendeOrdersToolStripMenuItem,
-            this.automatischeOrdersToolStripMenuItem,
-            this.gegevensLeverancierToolStripMenuItem,
-            this.aankoopartikelsToolStripMenuItem});
-            this.aankoopToolStripMenuItem.Name = "aankoopToolStripMenuItem";
-            this.aankoopToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.aankoopToolStripMenuItem.Text = "Aankoop";
-            // 
-            // orderPlaatsenToolStripMenuItem
-            // 
-            this.orderPlaatsenToolStripMenuItem.Name = "orderPlaatsenToolStripMenuItem";
-            this.orderPlaatsenToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.orderPlaatsenToolStripMenuItem.Text = "Order plaatsen";
-            this.orderPlaatsenToolStripMenuItem.Click += new System.EventHandler(this.orderPlaatsenToolStripMenuItem_Click);
-            // 
-            // ordermenuToolStripMenuItem
-            // 
-            this.ordermenuToolStripMenuItem.Name = "ordermenuToolStripMenuItem";
-            this.ordermenuToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.ordermenuToolStripMenuItem.Text = "Ordermenu";
-            // 
-            // orderVerwerkenToolStripMenuItem
-            // 
-            this.orderVerwerkenToolStripMenuItem.Name = "orderVerwerkenToolStripMenuItem";
-            this.orderVerwerkenToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.orderVerwerkenToolStripMenuItem.Text = "Order verwerken";
-            // 
-            // historiekToolStripMenuItem
-            // 
-            this.historiekToolStripMenuItem.Name = "historiekToolStripMenuItem";
-            this.historiekToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.historiekToolStripMenuItem.Text = "Historiek";
-            // 
-            // lopendeOrdersToolStripMenuItem
-            // 
-            this.lopendeOrdersToolStripMenuItem.Name = "lopendeOrdersToolStripMenuItem";
-            this.lopendeOrdersToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.lopendeOrdersToolStripMenuItem.Text = "Lopende orders";
-            // 
-            // automatischeOrdersToolStripMenuItem
-            // 
-            this.automatischeOrdersToolStripMenuItem.Name = "automatischeOrdersToolStripMenuItem";
-            this.automatischeOrdersToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.automatischeOrdersToolStripMenuItem.Text = "Automatische orders";
-            // 
-            // gegevensLeverancierToolStripMenuItem
-            // 
-            this.gegevensLeverancierToolStripMenuItem.Name = "gegevensLeverancierToolStripMenuItem";
-            this.gegevensLeverancierToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.gegevensLeverancierToolStripMenuItem.Text = "Gegevens leverancier";
-            this.gegevensLeverancierToolStripMenuItem.Click += new System.EventHandler(this.gegevensLeverancierToolStripMenuItem_Click);
-            // 
-            // aankoopartikelsToolStripMenuItem
-            // 
-            this.aankoopartikelsToolStripMenuItem.Name = "aankoopartikelsToolStripMenuItem";
-            this.aankoopartikelsToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.aankoopartikelsToolStripMenuItem.Text = "Aankoopartikels";
-            this.aankoopartikelsToolStripMenuItem.Click += new System.EventHandler(this.aankoopartikelsToolStripMenuItem_Click);
-            // 
-            // verkoopToolStripMenuItem
-            // 
-            this.verkoopToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gegevensKlantToolStripMenuItem,
-            this.catalogusToolStripMenuItem,
-            this.bestellingVerwerkenToolStripMenuItem,
-            this.historiekToolStripMenuItem1,
-            this.lopendeBestellingenToolStripMenuItem});
-            this.verkoopToolStripMenuItem.Name = "verkoopToolStripMenuItem";
-            this.verkoopToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
-            this.verkoopToolStripMenuItem.Text = "Verkoop";
-            // 
-            // gegevensKlantToolStripMenuItem
-            // 
-            this.gegevensKlantToolStripMenuItem.Name = "gegevensKlantToolStripMenuItem";
-            this.gegevensKlantToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.gegevensKlantToolStripMenuItem.Text = "Gegevens klant";
-            this.gegevensKlantToolStripMenuItem.Click += new System.EventHandler(this.gegevensKlantToolStripMenuItem_Click);
-            // 
-            // catalogusToolStripMenuItem
-            // 
-            this.catalogusToolStripMenuItem.Name = "catalogusToolStripMenuItem";
-            this.catalogusToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.catalogusToolStripMenuItem.Text = "Catalogus";
-            this.catalogusToolStripMenuItem.Click += new System.EventHandler(this.catalogusToolStripMenuItem_Click);
-            // 
-            // bestellingVerwerkenToolStripMenuItem
-            // 
-            this.bestellingVerwerkenToolStripMenuItem.Name = "bestellingVerwerkenToolStripMenuItem";
-            this.bestellingVerwerkenToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.bestellingVerwerkenToolStripMenuItem.Text = "Bestelling verwerken";
-            this.bestellingVerwerkenToolStripMenuItem.Click += new System.EventHandler(this.bestellingVerwerkenToolStripMenuItem_Click);
-            // 
-            // historiekToolStripMenuItem1
-            // 
-            this.historiekToolStripMenuItem1.Name = "historiekToolStripMenuItem1";
-            this.historiekToolStripMenuItem1.Size = new System.Drawing.Size(235, 26);
-            this.historiekToolStripMenuItem1.Text = "Historiek";
-            this.historiekToolStripMenuItem1.Click += new System.EventHandler(this.historiekToolStripMenuItem1_Click);
-            // 
-            // lopendeBestellingenToolStripMenuItem
-            // 
-            this.lopendeBestellingenToolStripMenuItem.Name = "lopendeBestellingenToolStripMenuItem";
-            this.lopendeBestellingenToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
-            this.lopendeBestellingenToolStripMenuItem.Text = "Lopende Bestellingen";
-            this.lopendeBestellingenToolStripMenuItem.Click += new System.EventHandler(this.lopendeBestellingenToolStripMenuItem_Click);
-            // 
-            // stockToolStripMenuItem
-            // 
-            this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.grondstoffenToolStripMenuItem,
-            this.productenToolStripMenuItem});
-            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
-            this.stockToolStripMenuItem.Text = "Stock";
-            // 
-            // grondstoffenToolStripMenuItem
-            // 
-            this.grondstoffenToolStripMenuItem.Name = "grondstoffenToolStripMenuItem";
-            this.grondstoffenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-
-            this.grondstoffenToolStripMenuItem.Text = "Grondstoffen";
-            this.grondstoffenToolStripMenuItem.Click += new System.EventHandler(this.grondstoffenToolStripMenuItem_Click);
-            // 
-            // productenToolStripMenuItem
-            // 
-            this.productenToolStripMenuItem.Name = "productenToolStripMenuItem";
-            this.productenToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-
-            this.productenToolStripMenuItem.Text = "Producten";
-            this.productenToolStripMenuItem.Click += new System.EventHandler(this.productenToolStripMenuItem_Click);
-            // 
-            // productieToolStripMenuItem
-            // 
-            this.productieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.machinesToolStripMenuItem});
-            this.productieToolStripMenuItem.Name = "productieToolStripMenuItem";
-            this.productieToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
-            this.productieToolStripMenuItem.Text = "Productie";
-            // 
-            // machinesToolStripMenuItem
-            // 
-            this.machinesToolStripMenuItem.Name = "machinesToolStripMenuItem";
-            this.machinesToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
-            this.machinesToolStripMenuItem.Text = "Machines";
-            this.machinesToolStripMenuItem.Click += new System.EventHandler(this.machinesToolStripMenuItem_Click);
             // 
             // btnMachinesOverview
             // 
@@ -272,12 +81,30 @@ namespace Chocolade
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(1034, 917);
             this.pnlContainer.TabIndex = 2;
+            this.pnlContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContainer_Paint);
+            // 
+            // btnAankoopArtikels
+            // 
+            this.btnAankoopArtikels.BackColor = System.Drawing.Color.White;
+            this.btnAankoopArtikels.FlatAppearance.BorderSize = 0;
+            this.btnAankoopArtikels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAankoopArtikels.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAankoopArtikels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.btnAankoopArtikels.Location = new System.Drawing.Point(2, 860);
+            this.btnAankoopArtikels.Name = "btnAankoopArtikels";
+            this.btnAankoopArtikels.Size = new System.Drawing.Size(274, 60);
+            this.btnAankoopArtikels.TabIndex = 22;
+            this.btnAankoopArtikels.Text = "Aankoopartikels";
+            this.btnAankoopArtikels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAankoopArtikels.UseVisualStyleBackColor = false;
+            this.btnAankoopArtikels.Visible = false;
+            this.btnAankoopArtikels.Click += new System.EventHandler(this.btnAankoopArtikels_Click);
             // 
             // pnlProfileCircle
             // 
             this.pnlProfileCircle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProfileCircle.Controls.Add(this.lblProfile);
-            this.pnlProfileCircle.Location = new System.Drawing.Point(1236, 41);
+            this.pnlProfileCircle.Location = new System.Drawing.Point(1076, 26);
             this.pnlProfileCircle.Name = "pnlProfileCircle";
             this.pnlProfileCircle.Size = new System.Drawing.Size(60, 60);
             this.pnlProfileCircle.TabIndex = 23;
@@ -336,13 +163,11 @@ namespace Chocolade
             // pnlLeftMenu
             // 
             this.pnlLeftMenu.BackColor = System.Drawing.Color.White;
+            this.pnlLeftMenu.Controls.Add(this.btnAankoopArtikels);
+            this.pnlLeftMenu.Controls.Add(this.btnPersoneel);
             this.pnlLeftMenu.Controls.Add(this.pictureBox1);
             this.pnlLeftMenu.Controls.Add(this.btnGegevensLeverancier);
-            this.pnlLeftMenu.Controls.Add(this.btnAutomatischOrders);
-            this.pnlLeftMenu.Controls.Add(this.btnAankoopLopendeOrders);
-            this.pnlLeftMenu.Controls.Add(this.btnAankoopHistoriek);
             this.pnlLeftMenu.Controls.Add(this.btnOrderVerwerken);
-            this.pnlLeftMenu.Controls.Add(this.btnOrderMenu);
             this.pnlLeftMenu.Controls.Add(this.btnOrderPlaatsen);
             this.pnlLeftMenu.Controls.Add(this.btnAankoop);
             this.pnlLeftMenu.Controls.Add(this.btnLopendeBestellingen);
@@ -360,6 +185,22 @@ namespace Chocolade
             this.pnlLeftMenu.Name = "pnlLeftMenu";
             this.pnlLeftMenu.Size = new System.Drawing.Size(274, 1024);
             this.pnlLeftMenu.TabIndex = 5;
+            // 
+            // btnPersoneel
+            // 
+            this.btnPersoneel.BackColor = System.Drawing.Color.White;
+            this.btnPersoneel.FlatAppearance.BorderSize = 0;
+            this.btnPersoneel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersoneel.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPersoneel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.btnPersoneel.Location = new System.Drawing.Point(-3, 485);
+            this.btnPersoneel.Name = "btnPersoneel";
+            this.btnPersoneel.Size = new System.Drawing.Size(274, 60);
+            this.btnPersoneel.TabIndex = 21;
+            this.btnPersoneel.Text = "Personeel";
+            this.btnPersoneel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersoneel.UseVisualStyleBackColor = false;
+            this.btnPersoneel.Click += new System.EventHandler(this.btnPersoneel_Click);
             // 
             // pictureBox1
             // 
@@ -387,54 +228,7 @@ namespace Chocolade
             this.btnGegevensLeverancier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGegevensLeverancier.UseVisualStyleBackColor = false;
             this.btnGegevensLeverancier.Visible = false;
-            // 
-            // btnAutomatischOrders
-            // 
-            this.btnAutomatischOrders.BackColor = System.Drawing.Color.White;
-            this.btnAutomatischOrders.FlatAppearance.BorderSize = 0;
-            this.btnAutomatischOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAutomatischOrders.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAutomatischOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnAutomatischOrders.Location = new System.Drawing.Point(3, 942);
-            this.btnAutomatischOrders.Name = "btnAutomatischOrders";
-            this.btnAutomatischOrders.Size = new System.Drawing.Size(274, 60);
-            this.btnAutomatischOrders.TabIndex = 18;
-            this.btnAutomatischOrders.Text = "Automatische Orders";
-            this.btnAutomatischOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAutomatischOrders.UseVisualStyleBackColor = false;
-            this.btnAutomatischOrders.Visible = false;
-            // 
-            // btnAankoopLopendeOrders
-            // 
-            this.btnAankoopLopendeOrders.BackColor = System.Drawing.Color.White;
-            this.btnAankoopLopendeOrders.FlatAppearance.BorderSize = 0;
-            this.btnAankoopLopendeOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAankoopLopendeOrders.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAankoopLopendeOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnAankoopLopendeOrders.Location = new System.Drawing.Point(4, 907);
-            this.btnAankoopLopendeOrders.Name = "btnAankoopLopendeOrders";
-            this.btnAankoopLopendeOrders.Size = new System.Drawing.Size(274, 60);
-            this.btnAankoopLopendeOrders.TabIndex = 17;
-            this.btnAankoopLopendeOrders.Text = "Lopende Orders";
-            this.btnAankoopLopendeOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAankoopLopendeOrders.UseVisualStyleBackColor = false;
-            this.btnAankoopLopendeOrders.Visible = false;
-            // 
-            // btnAankoopHistoriek
-            // 
-            this.btnAankoopHistoriek.BackColor = System.Drawing.Color.White;
-            this.btnAankoopHistoriek.FlatAppearance.BorderSize = 0;
-            this.btnAankoopHistoriek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAankoopHistoriek.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAankoopHistoriek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnAankoopHistoriek.Location = new System.Drawing.Point(3, 860);
-            this.btnAankoopHistoriek.Name = "btnAankoopHistoriek";
-            this.btnAankoopHistoriek.Size = new System.Drawing.Size(274, 60);
-            this.btnAankoopHistoriek.TabIndex = 16;
-            this.btnAankoopHistoriek.Text = "Historiek";
-            this.btnAankoopHistoriek.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAankoopHistoriek.UseVisualStyleBackColor = false;
-            this.btnAankoopHistoriek.Visible = false;
+            this.btnGegevensLeverancier.Click += new System.EventHandler(this.btnGegevensLeverancier_Click);
             // 
             // btnOrderVerwerken
             // 
@@ -451,22 +245,7 @@ namespace Chocolade
             this.btnOrderVerwerken.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrderVerwerken.UseVisualStyleBackColor = false;
             this.btnOrderVerwerken.Visible = false;
-            // 
-            // btnOrderMenu
-            // 
-            this.btnOrderMenu.BackColor = System.Drawing.Color.White;
-            this.btnOrderMenu.FlatAppearance.BorderSize = 0;
-            this.btnOrderMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrderMenu.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnOrderMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnOrderMenu.Location = new System.Drawing.Point(1, 764);
-            this.btnOrderMenu.Name = "btnOrderMenu";
-            this.btnOrderMenu.Size = new System.Drawing.Size(274, 60);
-            this.btnOrderMenu.TabIndex = 14;
-            this.btnOrderMenu.Text = "Order Menu";
-            this.btnOrderMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderMenu.UseVisualStyleBackColor = false;
-            this.btnOrderMenu.Visible = false;
+            this.btnOrderVerwerken.Click += new System.EventHandler(this.btnOrderVerwerken_Click);
             // 
             // btnOrderPlaatsen
             // 
@@ -483,6 +262,7 @@ namespace Chocolade
             this.btnOrderPlaatsen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrderPlaatsen.UseVisualStyleBackColor = false;
             this.btnOrderPlaatsen.Visible = false;
+            this.btnOrderPlaatsen.Click += new System.EventHandler(this.btnOrderPlaatsen_Click);
             // 
             // btnAankoop
             // 
@@ -507,7 +287,7 @@ namespace Chocolade
             this.btnLopendeBestellingen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLopendeBestellingen.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLopendeBestellingen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnLopendeBestellingen.Location = new System.Drawing.Point(0, 618);
+            this.btnLopendeBestellingen.Location = new System.Drawing.Point(-6, 615);
             this.btnLopendeBestellingen.Name = "btnLopendeBestellingen";
             this.btnLopendeBestellingen.Size = new System.Drawing.Size(274, 60);
             this.btnLopendeBestellingen.TabIndex = 11;
@@ -515,6 +295,7 @@ namespace Chocolade
             this.btnLopendeBestellingen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLopendeBestellingen.UseVisualStyleBackColor = false;
             this.btnLopendeBestellingen.Visible = false;
+            this.btnLopendeBestellingen.Click += new System.EventHandler(this.btnLopendeBestellingen_Click);
             // 
             // btnHistoriek
             // 
@@ -531,6 +312,7 @@ namespace Chocolade
             this.btnHistoriek.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistoriek.UseVisualStyleBackColor = false;
             this.btnHistoriek.Visible = false;
+            this.btnHistoriek.Click += new System.EventHandler(this.btnHistoriek_Click);
             // 
             // btnBestellingVerwerken
             // 
@@ -539,7 +321,7 @@ namespace Chocolade
             this.btnBestellingVerwerken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBestellingVerwerken.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBestellingVerwerken.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.btnBestellingVerwerken.Location = new System.Drawing.Point(4, 499);
+            this.btnBestellingVerwerken.Location = new System.Drawing.Point(3, 531);
             this.btnBestellingVerwerken.Name = "btnBestellingVerwerken";
             this.btnBestellingVerwerken.Size = new System.Drawing.Size(274, 60);
             this.btnBestellingVerwerken.TabIndex = 9;
@@ -547,6 +329,7 @@ namespace Chocolade
             this.btnBestellingVerwerken.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBestellingVerwerken.UseVisualStyleBackColor = false;
             this.btnBestellingVerwerken.Visible = false;
+            this.btnBestellingVerwerken.Click += new System.EventHandler(this.btnBestellingVerwerken_Click);
             // 
             // btnCatalogus
             // 
@@ -563,6 +346,7 @@ namespace Chocolade
             this.btnCatalogus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCatalogus.UseVisualStyleBackColor = false;
             this.btnCatalogus.Visible = false;
+            this.btnCatalogus.Click += new System.EventHandler(this.btnCatalogus_Click);
             // 
             // btnGegevensKlant
             // 
@@ -579,6 +363,7 @@ namespace Chocolade
             this.btnGegevensKlant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGegevensKlant.UseVisualStyleBackColor = false;
             this.btnGegevensKlant.Visible = false;
+            this.btnGegevensKlant.Click += new System.EventHandler(this.btnGegevensKlant_Click);
             // 
             // btnVerkoop
             // 
@@ -612,22 +397,48 @@ namespace Chocolade
             this.btnStock.UseVisualStyleBackColor = false;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(1158, 31);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(120, 47);
+            this.btnLogout.TabIndex = 24;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // lblCurrentMenu
+            // 
+            this.lblCurrentMenu.AutoSize = true;
+            this.lblCurrentMenu.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCurrentMenu.Location = new System.Drawing.Point(342, 41);
+            this.lblCurrentMenu.Name = "lblCurrentMenu";
+            this.lblCurrentMenu.Size = new System.Drawing.Size(90, 32);
+            this.lblCurrentMenu.TabIndex = 25;
+            this.lblCurrentMenu.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1308, 1024);
+            this.Controls.Add(this.lblCurrentMenu);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pnlProfileCircle);
             this.Controls.Add(this.pnlContainer);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlLeftMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.pnlProfileCircle.ResumeLayout(false);
             this.pnlProfileCircle.PerformLayout();
             this.pnlLeftMenu.ResumeLayout(false);
@@ -638,30 +449,6 @@ namespace Chocolade
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem aankoopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem orderPlaatsenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ordermenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem orderVerwerkenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historiekToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lopendeOrdersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem automatischeOrdersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gegevensLeverancierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verkoopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gegevensKlantToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem catalogusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bestellingVerwerkenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historiekToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem lopendeBestellingenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem grondstoffenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productenToolStripMenuItem;
-
-        private System.Windows.Forms.ToolStripMenuItem aankoopartikelsToolStripMenuItem;
-
-        private System.Windows.Forms.ToolStripMenuItem productieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem machinesToolStripMenuItem;
         private System.Windows.Forms.Button btnMachinesOverview;
         private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Button btnStockBatches;
@@ -669,23 +456,21 @@ namespace Chocolade
         private System.Windows.Forms.Panel pnlLeftMenu;
         private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button btnVerkoop;
-        private System.Windows.Forms.Button btnLopendeBestellingen;
         private System.Windows.Forms.Button btnHistoriek;
         private System.Windows.Forms.Button btnBestellingVerwerken;
         private System.Windows.Forms.Button btnCatalogus;
         private System.Windows.Forms.Button btnGegevensKlant;
         private System.Windows.Forms.Button btnGegevensLeverancier;
-        private System.Windows.Forms.Button btnAutomatischOrders;
-        private System.Windows.Forms.Button btnAankoopLopendeOrders;
-        private System.Windows.Forms.Button btnAankoopHistoriek;
         private System.Windows.Forms.Button btnOrderVerwerken;
-        private System.Windows.Forms.Button btnOrderMenu;
         private System.Windows.Forms.Button btnOrderPlaatsen;
         private System.Windows.Forms.Button btnAankoop;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.Panel pnlProfileCircle;
-
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnPersoneel;
+        private System.Windows.Forms.Button btnAankoopArtikels;
+        private System.Windows.Forms.Button btnLopendeBestellingen;
+        private System.Windows.Forms.Label lblCurrentMenu;
     }
 }
-

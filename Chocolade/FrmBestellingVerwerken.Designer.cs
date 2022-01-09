@@ -33,7 +33,6 @@ namespace Chocolade
             this.lblOrderNummer = new System.Windows.Forms.Label();
             this.btnAfwerken = new System.Windows.Forms.Button();
             this.btnVerwijderen = new System.Windows.Forms.Button();
-            this.btnSluiten = new System.Windows.Forms.Button();
             this.lvwBatches = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -42,54 +41,60 @@ namespace Chocolade
             // 
             // lbOrders
             // 
+            this.lbOrders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbOrders.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbOrders.FormattingEnabled = true;
-            this.lbOrders.ItemHeight = 15;
-            this.lbOrders.Location = new System.Drawing.Point(28, 26);
+            this.lbOrders.ItemHeight = 17;
+            this.lbOrders.Location = new System.Drawing.Point(32, 35);
+            this.lbOrders.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbOrders.Name = "lbOrders";
-            this.lbOrders.Size = new System.Drawing.Size(419, 124);
+            this.lbOrders.Size = new System.Drawing.Size(516, 138);
             this.lbOrders.TabIndex = 0;
             this.lbOrders.SelectedIndexChanged += new System.EventHandler(this.lbOrders_SelectedIndexChanged);
             // 
             // lblOrderNummer
             // 
             this.lblOrderNummer.AutoSize = true;
-            this.lblOrderNummer.Location = new System.Drawing.Point(28, 173);
+            this.lblOrderNummer.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrderNummer.Location = new System.Drawing.Point(32, 231);
             this.lblOrderNummer.Name = "lblOrderNummer";
-            this.lblOrderNummer.Size = new System.Drawing.Size(35, 15);
+            this.lblOrderNummer.Size = new System.Drawing.Size(54, 18);
             this.lblOrderNummer.TabIndex = 2;
-            this.lblOrderNummer.Text = "order";
+            this.lblOrderNummer.Text = "Order:";
             // 
             // btnAfwerken
             // 
+            this.btnAfwerken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(130)))));
             this.btnAfwerken.Enabled = false;
-            this.btnAfwerken.Location = new System.Drawing.Point(453, 26);
+            this.btnAfwerken.FlatAppearance.BorderSize = 0;
+            this.btnAfwerken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAfwerken.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAfwerken.ForeColor = System.Drawing.Color.White;
+            this.btnAfwerken.Location = new System.Drawing.Point(576, 34);
+            this.btnAfwerken.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAfwerken.Name = "btnAfwerken";
-            this.btnAfwerken.Size = new System.Drawing.Size(96, 23);
+            this.btnAfwerken.Size = new System.Drawing.Size(110, 31);
             this.btnAfwerken.TabIndex = 3;
             this.btnAfwerken.Text = "Afwerken";
-            this.btnAfwerken.UseVisualStyleBackColor = true;
+            this.btnAfwerken.UseVisualStyleBackColor = false;
             this.btnAfwerken.Click += new System.EventHandler(this.btnAfwerken_Click);
             // 
             // btnVerwijderen
             // 
+            this.btnVerwijderen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
             this.btnVerwijderen.Enabled = false;
-            this.btnVerwijderen.Location = new System.Drawing.Point(453, 77);
+            this.btnVerwijderen.FlatAppearance.BorderSize = 0;
+            this.btnVerwijderen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerwijderen.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVerwijderen.ForeColor = System.Drawing.Color.White;
+            this.btnVerwijderen.Location = new System.Drawing.Point(576, 102);
+            this.btnVerwijderen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVerwijderen.Name = "btnVerwijderen";
-            this.btnVerwijderen.Size = new System.Drawing.Size(96, 23);
+            this.btnVerwijderen.Size = new System.Drawing.Size(110, 31);
             this.btnVerwijderen.TabIndex = 4;
             this.btnVerwijderen.Text = "Verwijderen";
-            this.btnVerwijderen.UseVisualStyleBackColor = true;
+            this.btnVerwijderen.UseVisualStyleBackColor = false;
             this.btnVerwijderen.Click += new System.EventHandler(this.btnVerwijderen_Click);
-            // 
-            // btnSluiten
-            // 
-            this.btnSluiten.Location = new System.Drawing.Point(453, 127);
-            this.btnSluiten.Name = "btnSluiten";
-            this.btnSluiten.Size = new System.Drawing.Size(96, 23);
-            this.btnSluiten.TabIndex = 5;
-            this.btnSluiten.Text = "Sluiten";
-            this.btnSluiten.UseVisualStyleBackColor = true;
-            this.btnSluiten.Click += new System.EventHandler(this.btnSluiten_Click);
             // 
             // lvwBatches
             // 
@@ -99,14 +104,14 @@ namespace Chocolade
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lvwBatches.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lvwBatches.FullRowSelect = true;
             this.lvwBatches.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwBatches.HideSelection = false;
             this.lvwBatches.LabelWrap = false;
-            this.lvwBatches.Location = new System.Drawing.Point(28, 190);
-            this.lvwBatches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwBatches.Location = new System.Drawing.Point(32, 253);
             this.lvwBatches.Name = "lvwBatches";
-            this.lvwBatches.Size = new System.Drawing.Size(521, 231);
+            this.lvwBatches.Size = new System.Drawing.Size(654, 307);
             this.lvwBatches.TabIndex = 6;
             this.lvwBatches.UseCompatibleStateImageBehavior = false;
             this.lvwBatches.View = System.Windows.Forms.View.Details;
@@ -128,15 +133,15 @@ namespace Chocolade
             // 
             // FrmBestellingVerwerken
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.lvwBatches);
-            this.Controls.Add(this.btnSluiten);
             this.Controls.Add(this.btnVerwijderen);
             this.Controls.Add(this.btnAfwerken);
             this.Controls.Add(this.lblOrderNummer);
             this.Controls.Add(this.lbOrders);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmBestellingVerwerken";
             this.Text = "FrmBestellingVerwerken";
             this.Load += new System.EventHandler(this.FrmBestellingVerwerken_Load);
@@ -151,7 +156,6 @@ namespace Chocolade
         private System.Windows.Forms.Label lblOrderNummer;
         private System.Windows.Forms.Button btnAfwerken;
         private System.Windows.Forms.Button btnVerwijderen;
-        private System.Windows.Forms.Button btnSluiten;
         private System.Windows.Forms.ListView lvwBatches;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

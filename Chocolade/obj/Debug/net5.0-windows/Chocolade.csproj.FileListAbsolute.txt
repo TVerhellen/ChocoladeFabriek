@@ -144,6 +144,8 @@ C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-window
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopCatalogus.resources
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopHistoriek.resources
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.OrderVerwerken.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmOrderVerwerken.resources
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.exe
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.deps.json
@@ -177,7 +179,15 @@ C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocola
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensKlant.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
+C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmPersoneel.resources
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmHome.resources
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogin.resources
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogout.resources
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.Properties.Resources.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmHome.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogin.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogout.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.Properties.Resources.resources
+C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmOrderVerwerken.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmOrderVerwerken.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmPersoneel.resources

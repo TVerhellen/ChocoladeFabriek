@@ -17,11 +17,12 @@ namespace Chocolade
         {
             InitializeComponent();
         }
-
+        
         List<string[]> klanten = new List<string[]>();
 
         private void FrmGegevensKlant_Load(object sender, EventArgs e)
         {
+            
             lblNaamBedrijf.Text = "";
             lblBtwNummer.Text = "";
             lblNaamPersoon.Text = "";

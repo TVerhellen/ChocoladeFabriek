@@ -13,7 +13,7 @@ namespace Chocolade
 {
     public partial class FrmStockGrondstof : Form
     {
-        public Gebruiker ingelogdeGebruiker = null;
+        public Personeel ingelogdeGebruiker = null;
 
         public FrmStockGrondstof()
         {
@@ -54,7 +54,7 @@ namespace Chocolade
 
         private void btnVoegToe_Click(object sender, EventArgs e)
         {
-            if (ingelogdeGebruiker.Rol == Gebruikersrol.werknemer)
+            if (ingelogdeGebruiker.Rol == Gebruikersrol.Werknemer)
             {
                 MessageBox.Show("U heeft niet de juiste bevoegdheden om deze actie uit te voeren.");
             }
@@ -70,7 +70,7 @@ namespace Chocolade
 
         private void btnVerwijder_Click(object sender, EventArgs e)
         {
-            if (ingelogdeGebruiker.Rol == Gebruikersrol.werknemer)
+            if (ingelogdeGebruiker.Rol == Gebruikersrol.Werknemer)
             {
                 MessageBox.Show("U heeft niet de juiste bevoegdheden om deze actie uit te voeren.");
             }
@@ -84,7 +84,7 @@ namespace Chocolade
 
         private void btnWijzig_Click(object sender, EventArgs e)
         {
-            if (ingelogdeGebruiker.Rol == Gebruikersrol.werknemer)
+            if (ingelogdeGebruiker.Rol == Gebruikersrol.Werknemer)
             {
                 MessageBox.Show("U heeft niet de juiste bevoegdheden om deze actie uit te voeren.");
             }

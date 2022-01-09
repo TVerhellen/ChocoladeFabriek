@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
-using System.Collections.Generic;
 
 namespace Chocolade
 {
@@ -15,7 +15,7 @@ namespace Chocolade
 
         VerkoopOrder order = new VerkoopOrder();
         List<string> orderNames = new List<string>();
-        
+
 
         private void FrmVerkoopCatalogus_Load(object sender, EventArgs e)
         {
@@ -74,11 +74,11 @@ namespace Chocolade
                                 {
                                     VerkoopOrder order = new VerkoopOrder();
                                     order.ID += counter;
-                                    foreach(ChocoladeBatch batch in batches)
+                                    foreach (ChocoladeBatch batch in batches)
                                     {
                                         order.VoegToe(batch);
                                     }
-                                    
+
                                     lbXmlOrders.Items.Add(order);
                                 }
                                 break;
@@ -146,7 +146,7 @@ namespace Chocolade
                 batchgegevens += "|" + lvwCatalogus.FocusedItem.SubItems[0].Text;
                 batchgegevens += "|" + hoeveelheid.ToString();
                 batchgegevens += "|01/01/0001";
-                batchgegevens += "|" + (Convert.ToDouble(lvwCatalogus.FocusedItem.SubItems[2].Text)*hoeveelheid).ToString();
+                batchgegevens += "|" + (Convert.ToDouble(lvwCatalogus.FocusedItem.SubItems[2].Text) * hoeveelheid).ToString();
 
 
                 ChocoladeBatch batch = new ChocoladeBatch(batchgegevens, false);
@@ -214,11 +214,6 @@ namespace Chocolade
             }
             order = new VerkoopOrder();
             updateLvw();
-        }
-
-        private void btnSluiten_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void updateLvw()

@@ -12,7 +12,7 @@ namespace Chocolade
 {
     public partial class FrmHome : Form
     {
-        public Gebruiker ingelogdeGebruiker = null;
+        public Personeel ingelogdeGebruiker = null;
         public FrmHome()
         {
             InitializeComponent();
