@@ -1,5 +1,4 @@
-﻿
-namespace Chocolade
+﻿namespace Chocolade
 {
     partial class Form1
     {
@@ -32,7 +31,11 @@ namespace Chocolade
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aankoopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderPlaatsenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordermenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderVerwerkenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lopendeOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.automatischeOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gegevensLeverancierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aankoopartikelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verkoopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,9 +89,7 @@ namespace Chocolade
             this.menuStrip1.Location = new System.Drawing.Point(274, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-
             this.menuStrip1.Size = new System.Drawing.Size(1034, 30);
-
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -96,7 +97,11 @@ namespace Chocolade
             // 
             this.aankoopToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.orderPlaatsenToolStripMenuItem,
+            this.ordermenuToolStripMenuItem,
             this.orderVerwerkenToolStripMenuItem,
+            this.historiekToolStripMenuItem,
+            this.lopendeOrdersToolStripMenuItem,
+            this.automatischeOrdersToolStripMenuItem,
             this.gegevensLeverancierToolStripMenuItem,
             this.aankoopartikelsToolStripMenuItem});
             this.aankoopToolStripMenuItem.Name = "aankoopToolStripMenuItem";
@@ -110,13 +115,35 @@ namespace Chocolade
             this.orderPlaatsenToolStripMenuItem.Text = "Order plaatsen";
             this.orderPlaatsenToolStripMenuItem.Click += new System.EventHandler(this.orderPlaatsenToolStripMenuItem_Click);
             // 
+            // ordermenuToolStripMenuItem
+            // 
+            this.ordermenuToolStripMenuItem.Name = "ordermenuToolStripMenuItem";
+            this.ordermenuToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.ordermenuToolStripMenuItem.Text = "Ordermenu";
+            // 
             // orderVerwerkenToolStripMenuItem
             // 
             this.orderVerwerkenToolStripMenuItem.Name = "orderVerwerkenToolStripMenuItem";
             this.orderVerwerkenToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
             this.orderVerwerkenToolStripMenuItem.Text = "Order verwerken";
-
-
+            // 
+            // historiekToolStripMenuItem
+            // 
+            this.historiekToolStripMenuItem.Name = "historiekToolStripMenuItem";
+            this.historiekToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.historiekToolStripMenuItem.Text = "Historiek";
+            // 
+            // lopendeOrdersToolStripMenuItem
+            // 
+            this.lopendeOrdersToolStripMenuItem.Name = "lopendeOrdersToolStripMenuItem";
+            this.lopendeOrdersToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.lopendeOrdersToolStripMenuItem.Text = "Lopende orders";
+            // 
+            // automatischeOrdersToolStripMenuItem
+            // 
+            this.automatischeOrdersToolStripMenuItem.Name = "automatischeOrdersToolStripMenuItem";
+            this.automatischeOrdersToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
+            this.automatischeOrdersToolStripMenuItem.Text = "Automatische orders";
             // 
             // gegevensLeverancierToolStripMenuItem
             // 
@@ -237,8 +264,8 @@ namespace Chocolade
             // 
             // pnlContainer
             // 
-            this.pnlContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlContainer.Location = new System.Drawing.Point(274, 107);
             this.pnlContainer.Name = "pnlContainer";
@@ -588,7 +615,11 @@ namespace Chocolade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
+            this.ClientSize = new System.Drawing.Size(1308, 1024);
+            this.Controls.Add(this.pnlProfileCircle);
+            this.Controls.Add(this.pnlContainer);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnlLeftMenu);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -610,7 +641,11 @@ namespace Chocolade
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aankoopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderPlaatsenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordermenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderVerwerkenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historiekToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lopendeOrdersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem automatischeOrdersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gegevensLeverancierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verkoopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gegevensKlantToolStripMenuItem;
@@ -652,4 +687,3 @@ namespace Chocolade
 
     }
 }
-
