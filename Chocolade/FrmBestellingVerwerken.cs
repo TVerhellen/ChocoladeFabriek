@@ -132,9 +132,23 @@ namespace Chocolade
                 if (!controle)
                 {
                     MessageBox.Show("Niet alle artikelen zijn in stock!");
+                    bool isAangevuld;
                     foreach (ChocoladeBatch actualBatch in actualBatches)
                     {
-                        ChocoladeBatch.stock.Add(actualBatch);
+                        isAangevuld = false;
+                        foreach (ChocoladeBatch stockBatch in ChocoladeBatch.stock)
+                        {
+                            if (actualBatch.ID.ToString().PadLeft(10, '0').Substring(0, 4) == stockBatch.ID.ToString().PadLeft(10, '0').Substring(0, 4))
+                            {
+                                stockBatch.Hoeveelheid += actualBatch.Hoeveelheid;
+                                isAangevuld = true;
+                                break;
+                            }
+                        }
+                        if (!isAangevuld)
+                        {
+                            ChocoladeBatch.stock.Add(actualBatch);
+                        }
                     }
                     ChocoladeBatch.SorteerStockLijst();
                     break;
@@ -146,8 +160,8 @@ namespace Chocolade
                 File.Move($"Verkoop/Lopend/{(VerkoopOrder)lbOrders.SelectedItem}.txt", $"Verkoop/Historiek/Afgewerkt/{(VerkoopOrder)lbOrders.SelectedItem}.txt");
                 ((VerkoopOrder)lbOrders.SelectedItem).GenerateXml();
             }
-
-            //lbOrders.Items.RemoveAt(lbOrders.SelectedIndex);
+            ChocoladeBatch.SorteerStockLijst();
+            ChocoladeBatch.SlaLijstOp();
             lbOrders.SelectedIndex = -1;
             lvwBatches.Items.Clear();
         }
@@ -157,29 +171,32 @@ namespace Chocolade
             VerkoopOrder order = (VerkoopOrder)lbOrders.SelectedItem;
             File.Move($"Verkoop/Lopend/{order}.txt", $"Verkoop/Historiek/Geannuleerd/{order}.txt");
 
-            foreach (ChocoladeBatch batch in order.Lijst)
-            {
-                if (!ChocoladeBatch.stock.Contains(batch))
-                {
-                    ChocoladeBatch.stock.Add(batch);
-                    ChocoladeBatch.SorteerStockLijst();
-                }
-                else
-                {
-                    for (int i = 0; i < ChocoladeBatch.stock.Count; i++)
-                    {
-                        if (batch.Equals(ChocoladeBatch.stock[i]))
-                        {
-                            ChocoladeBatch.stock[i].Hoeveelheid += batch.Hoeveelheid;
-                            break;
-                        }
-                    }
-                }
-            }
+            //foreach (ChocoladeBatch batch in order.Lijst)
+            //{
+            //    if (!ChocoladeBatch.stock.Contains(batch))
+            //    {
+            //        ChocoladeBatch.stock.Add(batch);
+            //        ChocoladeBatch.SorteerStockLijst();
+            //    }
+            //    else
+            //    {
+            //        for (int i = 0; i < ChocoladeBatch.stock.Count; i++)
+            //        {
+            //            if (batch.Equals(ChocoladeBatch.stock[i]))
+            //            {
+            //                ChocoladeBatch.stock[i].Hoeveelheid += batch.Hoeveelheid;
+            //                break;
+            //            }
+            //        }
+            //    }
+            //}
+            
             orders.RemoveAt(lbOrders.SelectedIndex);
+            lbOrders.SelectedIndex = -1;
             lbOrders.DataSource = null;
             lbOrders.DataSource = orders;
             lbOrders.SelectedIndex = -1;
+
         }
 
         private void btnSluiten_Click(object sender, EventArgs e)

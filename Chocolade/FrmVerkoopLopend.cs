@@ -32,7 +32,8 @@ namespace Chocolade
                     List<string> batches = new List<string>();
                     while (!reader.EndOfStream)
                     {
-                        batches.Add(reader.ReadLine()); 
+                        string data = reader.ReadLine();
+                        batches.Add(data); 
                     }
                     VerkoopOrder order = new VerkoopOrder(id, batches);
                     orders.Add(order);

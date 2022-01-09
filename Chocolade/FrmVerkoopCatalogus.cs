@@ -14,15 +14,17 @@ namespace Chocolade
         }
 
         VerkoopOrder order = new VerkoopOrder();
+        List<string> orderNames = new List<string>();
         
 
         private void FrmVerkoopCatalogus_Load(object sender, EventArgs e)
         {
             VerkoopOrder.IDCounter = 0000;
 
-            var txtFiles = Directory.EnumerateFiles("Verkoop/Binnengekomen", "*.xml");
+            var txtFiles = Directory.EnumerateFiles("Verkoop/Binnengekomen/Te Bevestigen", "*.xml");
             foreach (string currentFile in txtFiles)
             {
+                orderNames.Add(currentFile.Substring(36));
                 using (XmlReader xmlIn = XmlReader.Create(currentFile))
                 {
                     List<ChocoladeBatch> batches = new List<ChocoladeBatch>();
@@ -160,6 +162,12 @@ namespace Chocolade
 
         private void btnAfwerken_Click(object sender, EventArgs e)
         {
+            if (radXml.Checked)
+            {
+                File.Move($"Verkoop/binnengekomen/Te Bevestigen/{orderNames[lbXmlOrders.SelectedIndex]}", $"Verkoop/binnengekomen/Bevestigd/{orderNames[lbXmlOrders.SelectedIndex]}");
+                lbXmlOrders.Items.RemoveAt(lbXmlOrders.SelectedIndex);
+                lbXmlOrders.SelectedIndex = -1;
+            }
             if (order.Lijst.Count != 0)
             {
                 using (StreamWriter opslag = new StreamWriter($"Verkoop/Lopend/{order}.txt"))
@@ -178,6 +186,12 @@ namespace Chocolade
 
         private void btnAnnuleren_Click(object sender, EventArgs e)
         {
+            if (radXml.Checked)
+            {
+                File.Move($"Verkoop/binnengekomen/Te Bevestigen/{orderNames[lbXmlOrders.SelectedIndex]}", $"Verkoop/binnengekomen/Geannuleerd/{orderNames[lbXmlOrders.SelectedIndex]}");
+                lbXmlOrders.Items.RemoveAt(lbXmlOrders.SelectedIndex);
+                lbXmlOrders.SelectedIndex = -1;
+            }
             foreach (ChocoladeBatch batch in order.Lijst)
             {
                 if (!ChocoladeBatch.stock.Contains(batch))
@@ -228,6 +242,7 @@ namespace Chocolade
                 btnToevoegen.Enabled = true;
                 lbXmlOrders.SelectedIndex = -1;
                 lvwOrder.Items.Clear();
+                order = new VerkoopOrder();
             }
         }
 
@@ -241,6 +256,7 @@ namespace Chocolade
                 btnToevoegen.Enabled = false;
                 lvwCatalogus.SelectedIndices.Clear();
                 lvwOrder.Items.Clear();
+                order = new VerkoopOrder();
             }
         }
 
