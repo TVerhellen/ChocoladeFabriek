@@ -86,7 +86,7 @@ namespace Chocolade
 
 
                 List<MachineGebruik> machineGebruik = new List<MachineGebruik> { roastTimeslot, crackTimeslot, grindTimeslot, temperingTimeslot, packagingTimeslot };
-
+                Debug.WriteLine(this.ID);
                 ChocoladeBatch nieuweBatch = new ChocoladeBatch($"{Naam}|{GenereerID()}|{hoeveelProduct}|{DateTime.Now.AddDays(DagenHoudbaar).ToString("dd/MM/yyyy")}", false);
                 nieuweBatch.MachinesEnTijdsloten = machineGebruik;
                 nieuweBatch.ReservatieNummer = reservatienummer;
@@ -209,7 +209,7 @@ namespace Chocolade
         }
         private long GenereerID()
         {
-            return Convert.ToInt64(DateTime.Now.ToString("yyyyMMddhhmmssfff"));
+            return Convert.ToInt64(this.ID + "" + DateTime.Now.ToString("yyMMddhhmmssfff"));
         }
     }
 }
