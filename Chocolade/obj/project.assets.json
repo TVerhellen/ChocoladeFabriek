@@ -8,21 +8,31 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kristof\\.nuget\\packages\\": {}
+    "C:\\Users\\tijsv\\.nuget\\packages\\": {}
+    //"C:\\Users\\kristof\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+      "projectUniqueName": "C:\\Users\\tijsv\\Documents\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
       "projectName": "Chocolade",
-      "projectPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
-      "packagesPath": "C:\\Users\\kristof\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\obj\\",
+      "projectPath": "C:\\Users\\tijsv\\Documents\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+      "packagesPath": "C:\\Users\\tijsv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tijsv\\Documents\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kristof\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\tijsv\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
+      //"projectUniqueName": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+      //"projectName": "Chocolade",
+      //"projectPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+      //"packagesPath": "C:\\Users\\kristof\\.nuget\\packages\\",
+      //"outputPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\obj\\",
+      //"projectStyle": "PackageReference",
+      //"configFilePaths": [
+      //  "C:\\Users\\kristof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+      //  "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      //],
       "originalTargetFrameworks": [
         "net5.0-windows7.0"
       ],
@@ -63,7 +73,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

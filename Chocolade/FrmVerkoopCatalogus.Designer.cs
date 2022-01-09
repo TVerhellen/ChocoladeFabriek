@@ -47,12 +47,17 @@ namespace Chocolade
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.grbTypeBestelling = new System.Windows.Forms.GroupBox();
+            this.radXml = new System.Windows.Forms.RadioButton();
+            this.radManueel = new System.Windows.Forms.RadioButton();
+            this.lbXmlOrders = new System.Windows.Forms.ListBox();
+            this.grbTypeBestelling.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 22);
+            this.label1.Location = new System.Drawing.Point(25, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 0;
@@ -61,7 +66,7 @@ namespace Chocolade
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 229);
+            this.label2.Location = new System.Drawing.Point(25, 331);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 15);
             this.label2.TabIndex = 1;
@@ -69,7 +74,7 @@ namespace Chocolade
             // 
             // txtHoeveelheid
             // 
-            this.txtHoeveelheid.Location = new System.Drawing.Point(392, 215);
+            this.txtHoeveelheid.Location = new System.Drawing.Point(385, 317);
             this.txtHoeveelheid.Name = "txtHoeveelheid";
             this.txtHoeveelheid.Size = new System.Drawing.Size(186, 23);
             this.txtHoeveelheid.TabIndex = 4;
@@ -77,7 +82,7 @@ namespace Chocolade
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(313, 218);
+            this.label3.Location = new System.Drawing.Point(306, 320);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 15);
             this.label3.TabIndex = 5;
@@ -85,7 +90,7 @@ namespace Chocolade
             // 
             // btnToevoegen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(584, 215);
+            this.btnToevoegen.Location = new System.Drawing.Point(577, 317);
             this.btnToevoegen.Name = "btnToevoegen";
             this.btnToevoegen.Size = new System.Drawing.Size(101, 23);
             this.btnToevoegen.TabIndex = 6;
@@ -95,7 +100,7 @@ namespace Chocolade
             // 
             // btnAfwerken
             // 
-            this.btnAfwerken.Location = new System.Drawing.Point(584, 408);
+            this.btnAfwerken.Location = new System.Drawing.Point(577, 510);
             this.btnAfwerken.Name = "btnAfwerken";
             this.btnAfwerken.Size = new System.Drawing.Size(101, 23);
             this.btnAfwerken.TabIndex = 7;
@@ -105,7 +110,7 @@ namespace Chocolade
             // 
             // btnAnnuleren
             // 
-            this.btnAnnuleren.Location = new System.Drawing.Point(477, 408);
+            this.btnAnnuleren.Location = new System.Drawing.Point(470, 510);
             this.btnAnnuleren.Name = "btnAnnuleren";
             this.btnAnnuleren.Size = new System.Drawing.Size(101, 23);
             this.btnAnnuleren.TabIndex = 8;
@@ -115,7 +120,7 @@ namespace Chocolade
             // 
             // btnSluiten
             // 
-            this.btnSluiten.Location = new System.Drawing.Point(584, 437);
+            this.btnSluiten.Location = new System.Drawing.Point(577, 539);
             this.btnSluiten.Name = "btnSluiten";
             this.btnSluiten.Size = new System.Drawing.Size(101, 23);
             this.btnSluiten.TabIndex = 9;
@@ -136,7 +141,7 @@ namespace Chocolade
             this.lvwCatalogus.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwCatalogus.HideSelection = false;
             this.lvwCatalogus.LabelWrap = false;
-            this.lvwCatalogus.Location = new System.Drawing.Point(32, 42);
+            this.lvwCatalogus.Location = new System.Drawing.Point(25, 144);
             this.lvwCatalogus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwCatalogus.Name = "lvwCatalogus";
             this.lvwCatalogus.Size = new System.Drawing.Size(653, 168);
@@ -176,7 +181,7 @@ namespace Chocolade
             this.lvwOrder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwOrder.HideSelection = false;
             this.lvwOrder.LabelWrap = false;
-            this.lvwOrder.Location = new System.Drawing.Point(32, 255);
+            this.lvwOrder.Location = new System.Drawing.Point(25, 357);
             this.lvwOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvwOrder.Name = "lvwOrder";
             this.lvwOrder.Size = new System.Drawing.Size(653, 148);
@@ -203,11 +208,58 @@ namespace Chocolade
             // 
             this.columnHeader8.Text = "Prijs";
             // 
+            // grbTypeBestelling
+            // 
+            this.grbTypeBestelling.Controls.Add(this.radXml);
+            this.grbTypeBestelling.Controls.Add(this.radManueel);
+            this.grbTypeBestelling.Location = new System.Drawing.Point(25, 12);
+            this.grbTypeBestelling.Name = "grbTypeBestelling";
+            this.grbTypeBestelling.Size = new System.Drawing.Size(200, 100);
+            this.grbTypeBestelling.TabIndex = 12;
+            this.grbTypeBestelling.TabStop = false;
+            this.grbTypeBestelling.Text = "Type bestelling";
+            // 
+            // radXml
+            // 
+            this.radXml.AutoSize = true;
+            this.radXml.Location = new System.Drawing.Point(20, 62);
+            this.radXml.Name = "radXml";
+            this.radXml.Size = new System.Drawing.Size(49, 19);
+            this.radXml.TabIndex = 1;
+            this.radXml.TabStop = true;
+            this.radXml.Text = "XML";
+            this.radXml.UseVisualStyleBackColor = true;
+            this.radXml.CheckedChanged += new System.EventHandler(this.radXml_CheckedChanged);
+            // 
+            // radManueel
+            // 
+            this.radManueel.AutoSize = true;
+            this.radManueel.Location = new System.Drawing.Point(20, 28);
+            this.radManueel.Name = "radManueel";
+            this.radManueel.Size = new System.Drawing.Size(71, 19);
+            this.radManueel.TabIndex = 0;
+            this.radManueel.TabStop = true;
+            this.radManueel.Text = "Manueel";
+            this.radManueel.UseVisualStyleBackColor = true;
+            this.radManueel.CheckedChanged += new System.EventHandler(this.radManueel_CheckedChanged);
+            // 
+            // lbXmlOrders
+            // 
+            this.lbXmlOrders.FormattingEnabled = true;
+            this.lbXmlOrders.ItemHeight = 15;
+            this.lbXmlOrders.Location = new System.Drawing.Point(259, 12);
+            this.lbXmlOrders.Name = "lbXmlOrders";
+            this.lbXmlOrders.Size = new System.Drawing.Size(419, 94);
+            this.lbXmlOrders.TabIndex = 13;
+            this.lbXmlOrders.SelectedIndexChanged += new System.EventHandler(this.lbXmlOrders_SelectedIndexChanged);
+            // 
             // FrmVerkoopCatalogus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 478);
+            this.ClientSize = new System.Drawing.Size(1035, 640);
+            this.Controls.Add(this.lbXmlOrders);
+            this.Controls.Add(this.grbTypeBestelling);
             this.Controls.Add(this.lvwOrder);
             this.Controls.Add(this.lvwCatalogus);
             this.Controls.Add(this.btnSluiten);
@@ -221,6 +273,8 @@ namespace Chocolade
             this.Name = "FrmVerkoopCatalogus";
             this.Text = "FrmVerkoopCatalogus";
             this.Load += new System.EventHandler(this.FrmVerkoopCatalogus_Load);
+            this.grbTypeBestelling.ResumeLayout(false);
+            this.grbTypeBestelling.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +300,9 @@ namespace Chocolade
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.GroupBox grbTypeBestelling;
+        private System.Windows.Forms.RadioButton radXml;
+        private System.Windows.Forms.RadioButton radManueel;
+        private System.Windows.Forms.ListBox lbXmlOrders;
     }
 }

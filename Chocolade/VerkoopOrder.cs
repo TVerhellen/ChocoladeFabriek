@@ -25,6 +25,8 @@ namespace Chocolade
             foreach (string batch in producten)
             {
                 ChocoladeBatch orderBatch = new ChocoladeBatch(batch, false);
+                string[] data = batch.Split('|');
+                orderBatch.Prijs = Convert.ToDouble(data[data.Length - 1]);
                 Lijst.Add(orderBatch);
             }
         }
@@ -37,18 +39,6 @@ namespace Chocolade
         public void VoegToe(ChocoladeBatch artikel, double hoeveelheid = 1)
         {
             Lijst.Add(artikel);
-            //if (artikel.Hoeveelheid > hoeveelheid)
-            //{
-            //    artikel.Verwijder(hoeveelheid);
-            //    Lijst.Add(artikel);
-                
-
-            //}
-            //else if (artikel.Hoeveelheid == hoeveelheid)
-            //{
-            //    Lijst.Add(artikel);
-            //    artikel.Verwijder();
-            //}
         }
 
         private void GenereerID()
