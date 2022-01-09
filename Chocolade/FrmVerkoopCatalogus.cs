@@ -21,7 +21,7 @@ namespace Chocolade
         {
             VerkoopOrder.IDCounter = 0000;
 
-            var txtFiles = Directory.EnumerateFiles("Verkoop/Binnengekomen/Te Bevestigen", "*.xml");
+            var txtFiles = Directory.EnumerateFiles("Verkoop/Binnengekomen/TeBevestigen", "*.xml");
             foreach (string currentFile in txtFiles)
             {
                 orderNames.Add(currentFile.Substring(36));
@@ -164,7 +164,7 @@ namespace Chocolade
         {
             if (radXml.Checked)
             {
-                File.Move($"Verkoop/binnengekomen/Te Bevestigen/{orderNames[lbXmlOrders.SelectedIndex]}", $"Verkoop/binnengekomen/Bevestigd/{orderNames[lbXmlOrders.SelectedIndex]}");
+                File.Move($"Verkoop/binnengekomen/TeBevestigen/{orderNames[lbXmlOrders.SelectedIndex]}", $"Verkoop/binnengekomen/Bevestigd/{orderNames[lbXmlOrders.SelectedIndex]}");
                 lbXmlOrders.Items.RemoveAt(lbXmlOrders.SelectedIndex);
                 lbXmlOrders.SelectedIndex = -1;
             }
@@ -188,7 +188,7 @@ namespace Chocolade
         {
             if (radXml.Checked)
             {
-                File.Move($"Verkoop/binnengekomen/Te Bevestigen/{orderNames[lbXmlOrders.SelectedIndex]}", $"Verkoop/binnengekomen/Geannuleerd/{orderNames[lbXmlOrders.SelectedIndex]}");
+                File.Move($"Verkoop/binnengekomen/TeBevestigen/{orderNames[lbXmlOrders.SelectedIndex]}", $"Verkoop/binnengekomen/Geannuleerd/{orderNames[lbXmlOrders.SelectedIndex]}");
                 lbXmlOrders.Items.RemoveAt(lbXmlOrders.SelectedIndex);
                 lbXmlOrders.SelectedIndex = -1;
             }
