@@ -76,6 +76,9 @@ D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\ob
 D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmBestellingVerwerken.resources
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
 C:\Users\kristof\source\Project 2 Chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources
 C:\Users\kristof\source\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.exe
 C:\Users\kristof\source\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.deps.json
 C:\Users\kristof\source\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.runtimeconfig.json
@@ -141,7 +144,44 @@ C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-window
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopCatalogus.resources
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopHistoriek.resources
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
+D:\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.exe
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.deps.json
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.runtimeconfig.json
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.runtimeconfig.dev.json
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.dll
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\ref\Chocolade.dll
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\bin\Debug\net5.0-windows\Chocolade.pdb
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.csproj.AssemblyReference.cache
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmBestellingVerwerken.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensKlant.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensLeveranciers.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmMachines.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.Form1.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmOrderAanmaken.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockChocolade.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmStockGrondstof.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopCatalogus.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopHistoriek.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.csproj.GenerateResource.cache
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.AssemblyInfoInputs.cache
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.AssemblyInfo.cs
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.csproj.CoreCompileInputs.cache
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.dll
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\ref\Chocolade.dll
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.pdb
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.genruntimeconfig.cache
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensKlant.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
+<<<<<<< HEAD
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmPersoneel.resources
+=======
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmHome.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogin.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogout.resources
+C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.Properties.Resources.resources
+>>>>>>> master

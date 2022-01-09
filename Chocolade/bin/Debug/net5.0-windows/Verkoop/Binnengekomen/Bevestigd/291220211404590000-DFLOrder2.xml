@@ -1,0 +1,44 @@
+<Bestelling OrderNummer="291220211404590000">
+	<Info>
+		<AanmaakDatum>29/12/2021 14:04:59</AanmaakDatum>
+		<OpgesteldDoor>Default</OpgesteldDoor>
+		<BijhorendGebruikerID>0000</BijhorendGebruikerID>
+	</Info>
+	<BesteldeArtikels>
+		<Artikel ID="0303">
+			<Omschrijving>Wit crispearls</Omschrijving>
+			<PrijsPerKg>12</PrijsPerKg>
+			<AantalKgBesteld>6</AantalKgBesteld>
+		</Artikel>
+		<Artikel ID="0202">
+			<Omschrijving>Melk druppels</Omschrijving>
+			<PrijsPerKg>9</PrijsPerKg>
+			<AantalKgBesteld>8</AantalKgBesteld>
+		</Artikel>
+		<Artikel ID="0107">
+			<Omschrijving>Zwart 80% crispearls</Omschrijving>
+			<PrijsPerKg>12</PrijsPerKg>
+			<AantalKgBesteld>8</AantalKgBesteld>
+		</Artikel>
+		<Artikel ID="0203">
+			<Omschrijving>Melk crispearls</Omschrijving>
+			<PrijsPerKg>12</PrijsPerKg>
+			<AantalKgBesteld>16</AantalKgBesteld>
+		</Artikel>
+		<Artikel ID="0106">
+			<Omschrijving>Zwart 80% druppels</Omschrijving>
+			<PrijsPerKg>11</PrijsPerKg>
+			<AantalKgBesteld>8</AantalKgBesteld>
+		</Artikel>
+		<Artikel ID="0103">
+			<Omschrijving>Zwart 70% blok</Omschrijving>
+			<PrijsPerKg>10</PrijsPerKg>
+			<AantalKgBesteld>14</AantalKgBesteld>
+		</Artikel>
+		<Artikel ID="0301">
+			<Omschrijving>Wit blok</Omschrijving>
+			<PrijsPerKg>8</PrijsPerKg>
+			<AantalKgBesteld>8</AantalKgBesteld>
+		</Artikel>
+	</BesteldeArtikels>
+</Bestelling>
