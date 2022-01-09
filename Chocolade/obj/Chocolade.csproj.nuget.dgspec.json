@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tijsv\\Documents\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {}
+    "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tijsv\\Documents\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {
+    "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tijsv\\Documents\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+        "projectUniqueName": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
         "projectName": "Chocolade",
-        "projectPath": "C:\\Users\\tijsv\\Documents\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
-        "packagesPath": "C:\\Users\\tijsv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tijsv\\Documents\\Visual Studios Projects\\2e project C#\\chocolade\\chocoladefabriek\\Chocolade\\obj\\",
+        "projectPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\Chocolade.csproj",
+        "packagesPath": "C:\\Users\\kristof\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kristof\\source\\New\\chocoladefabriek\\Chocolade\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tijsv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kristof\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
