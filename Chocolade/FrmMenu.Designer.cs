@@ -620,6 +620,7 @@ namespace Chocolade
             this.btnGegevensKlant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGegevensKlant.UseVisualStyleBackColor = false;
             this.btnGegevensKlant.Visible = false;
+            this.btnGegevensKlant.Click += new System.EventHandler(this.btnGegevensKlant_Click);
             // 
             // btnVerkoop
             // 
@@ -655,7 +656,7 @@ namespace Chocolade
             // 
             // btnLogout
             // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

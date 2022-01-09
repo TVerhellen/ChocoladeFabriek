@@ -177,11 +177,8 @@ C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocola
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmAankoopArtikels.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmGegevensKlant.resources
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
-<<<<<<< HEAD
 C:\Users\kristof\source\New\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmPersoneel.resources
-=======
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmHome.resources
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogin.resources
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmLogout.resources
 C:\Users\tijsv\Documents\Visual Studios Projects\2e project C#\chocolade\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.Properties.Resources.resources
->>>>>>> master
