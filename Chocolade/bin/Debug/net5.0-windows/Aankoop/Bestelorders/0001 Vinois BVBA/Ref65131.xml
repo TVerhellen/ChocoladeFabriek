@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bestelorders Datumvandaag="15:13" Bestelreferentie="Ref65131">
+<Bestelorder>
+<artikkelnummer>0004</artikkelnummer>
+<Hoeveelheid>50,00</Hoeveelheid>
+<Gewensteleverdatum>31/12/2021</Gewensteleverdatum>
+</Bestelorder>
+<Bestelorder>
+<artikkelnummer>0004</artikkelnummer>
+<Hoeveelheid>30,00</Hoeveelheid>
+<Gewensteleverdatum>31/12/2021</Gewensteleverdatum>
+</Bestelorder>
+</Bestelorders>

@@ -45,7 +45,6 @@ namespace Chocolade
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +55,7 @@ namespace Chocolade
             this.lvwGrondstof.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvwGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvwGrondstof.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvwGrondstof.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -213,19 +212,8 @@ namespace Chocolade
             this.label5.TabIndex = 29;
             this.label5.Text = "Houdbaarheid:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(47, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 32);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Grondstoffen";
-            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label7);
@@ -277,7 +265,6 @@ namespace Chocolade
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
     }
 }

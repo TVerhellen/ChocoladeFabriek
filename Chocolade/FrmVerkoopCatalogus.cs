@@ -216,11 +216,6 @@ namespace Chocolade
             updateLvw();
         }
 
-        private void btnSluiten_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void updateLvw()
         {
             lvwOrder.Items.Clear();

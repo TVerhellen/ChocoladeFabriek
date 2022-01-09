@@ -36,7 +36,6 @@ namespace Chocolade
             this.btnToevoegen = new System.Windows.Forms.Button();
             this.btnAfwerken = new System.Windows.Forms.Button();
             this.btnAnnuleren = new System.Windows.Forms.Button();
-            this.btnSluiten = new System.Windows.Forms.Button();
             this.lvwCatalogus = new System.Windows.Forms.ListView();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
@@ -57,76 +56,88 @@ namespace Chocolade
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 124);
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(29, 165);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.Size = new System.Drawing.Size(61, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Artikels";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 331);
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(29, 441);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.Size = new System.Drawing.Size(50, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Order";
             // 
             // txtHoeveelheid
             // 
-            this.txtHoeveelheid.Location = new System.Drawing.Point(385, 317);
+            this.txtHoeveelheid.Location = new System.Drawing.Point(440, 423);
+            this.txtHoeveelheid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHoeveelheid.Name = "txtHoeveelheid";
-            this.txtHoeveelheid.Size = new System.Drawing.Size(186, 23);
+            this.txtHoeveelheid.Size = new System.Drawing.Size(212, 27);
             this.txtHoeveelheid.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 320);
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(329, 430);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 15);
+            this.label3.Size = new System.Drawing.Size(99, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "Hoeveelheid";
             // 
             // btnToevoegen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(577, 317);
+            this.btnToevoegen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(130)))));
+            this.btnToevoegen.FlatAppearance.BorderSize = 0;
+            this.btnToevoegen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToevoegen.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnToevoegen.ForeColor = System.Drawing.Color.White;
+            this.btnToevoegen.Location = new System.Drawing.Point(659, 423);
+            this.btnToevoegen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnToevoegen.Name = "btnToevoegen";
-            this.btnToevoegen.Size = new System.Drawing.Size(101, 23);
+            this.btnToevoegen.Size = new System.Drawing.Size(115, 31);
             this.btnToevoegen.TabIndex = 6;
             this.btnToevoegen.Text = "Toevoegen";
-            this.btnToevoegen.UseVisualStyleBackColor = true;
+            this.btnToevoegen.UseVisualStyleBackColor = false;
             this.btnToevoegen.Click += new System.EventHandler(this.btnToevoegen_Click);
             // 
             // btnAfwerken
             // 
-            this.btnAfwerken.Location = new System.Drawing.Point(577, 510);
+            this.btnAfwerken.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(130)))));
+            this.btnAfwerken.FlatAppearance.BorderSize = 0;
+            this.btnAfwerken.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAfwerken.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAfwerken.ForeColor = System.Drawing.Color.White;
+            this.btnAfwerken.Location = new System.Drawing.Point(659, 680);
+            this.btnAfwerken.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAfwerken.Name = "btnAfwerken";
-            this.btnAfwerken.Size = new System.Drawing.Size(101, 23);
+            this.btnAfwerken.Size = new System.Drawing.Size(115, 31);
             this.btnAfwerken.TabIndex = 7;
             this.btnAfwerken.Text = "Afwerken";
-            this.btnAfwerken.UseVisualStyleBackColor = true;
+            this.btnAfwerken.UseVisualStyleBackColor = false;
             this.btnAfwerken.Click += new System.EventHandler(this.btnAfwerken_Click);
             // 
             // btnAnnuleren
             // 
-            this.btnAnnuleren.Location = new System.Drawing.Point(470, 510);
+            this.btnAnnuleren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(80)))));
+            this.btnAnnuleren.FlatAppearance.BorderSize = 0;
+            this.btnAnnuleren.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnnuleren.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAnnuleren.ForeColor = System.Drawing.Color.White;
+            this.btnAnnuleren.Location = new System.Drawing.Point(537, 680);
+            this.btnAnnuleren.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAnnuleren.Name = "btnAnnuleren";
-            this.btnAnnuleren.Size = new System.Drawing.Size(101, 23);
+            this.btnAnnuleren.Size = new System.Drawing.Size(115, 31);
             this.btnAnnuleren.TabIndex = 8;
             this.btnAnnuleren.Text = "Annuleren";
-            this.btnAnnuleren.UseVisualStyleBackColor = true;
+            this.btnAnnuleren.UseVisualStyleBackColor = false;
             this.btnAnnuleren.Click += new System.EventHandler(this.btnAnnuleren_Click);
-            // 
-            // btnSluiten
-            // 
-            this.btnSluiten.Location = new System.Drawing.Point(577, 539);
-            this.btnSluiten.Name = "btnSluiten";
-            this.btnSluiten.Size = new System.Drawing.Size(101, 23);
-            this.btnSluiten.TabIndex = 9;
-            this.btnSluiten.Text = "Sluiten";
-            this.btnSluiten.UseVisualStyleBackColor = true;
-            this.btnSluiten.Click += new System.EventHandler(this.btnSluiten_Click);
             // 
             // lvwCatalogus
             // 
@@ -137,14 +148,14 @@ namespace Chocolade
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lvwCatalogus.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lvwCatalogus.FullRowSelect = true;
             this.lvwCatalogus.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwCatalogus.HideSelection = false;
             this.lvwCatalogus.LabelWrap = false;
-            this.lvwCatalogus.Location = new System.Drawing.Point(25, 144);
-            this.lvwCatalogus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwCatalogus.Location = new System.Drawing.Point(29, 192);
             this.lvwCatalogus.Name = "lvwCatalogus";
-            this.lvwCatalogus.Size = new System.Drawing.Size(653, 168);
+            this.lvwCatalogus.Size = new System.Drawing.Size(746, 223);
             this.lvwCatalogus.TabIndex = 10;
             this.lvwCatalogus.UseCompatibleStateImageBehavior = false;
             this.lvwCatalogus.View = System.Windows.Forms.View.Details;
@@ -177,14 +188,14 @@ namespace Chocolade
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
+            this.lvwOrder.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lvwOrder.FullRowSelect = true;
             this.lvwOrder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvwOrder.HideSelection = false;
             this.lvwOrder.LabelWrap = false;
-            this.lvwOrder.Location = new System.Drawing.Point(25, 357);
-            this.lvwOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvwOrder.Location = new System.Drawing.Point(29, 476);
             this.lvwOrder.Name = "lvwOrder";
-            this.lvwOrder.Size = new System.Drawing.Size(653, 148);
+            this.lvwOrder.Size = new System.Drawing.Size(746, 197);
             this.lvwOrder.TabIndex = 11;
             this.lvwOrder.UseCompatibleStateImageBehavior = false;
             this.lvwOrder.View = System.Windows.Forms.View.Details;
@@ -212,9 +223,12 @@ namespace Chocolade
             // 
             this.grbTypeBestelling.Controls.Add(this.radXml);
             this.grbTypeBestelling.Controls.Add(this.radManueel);
-            this.grbTypeBestelling.Location = new System.Drawing.Point(25, 12);
+            this.grbTypeBestelling.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.grbTypeBestelling.Location = new System.Drawing.Point(29, 16);
+            this.grbTypeBestelling.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbTypeBestelling.Name = "grbTypeBestelling";
-            this.grbTypeBestelling.Size = new System.Drawing.Size(200, 100);
+            this.grbTypeBestelling.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbTypeBestelling.Size = new System.Drawing.Size(229, 133);
             this.grbTypeBestelling.TabIndex = 12;
             this.grbTypeBestelling.TabStop = false;
             this.grbTypeBestelling.Text = "Type bestelling";
@@ -222,9 +236,11 @@ namespace Chocolade
             // radXml
             // 
             this.radXml.AutoSize = true;
-            this.radXml.Location = new System.Drawing.Point(20, 62);
+            this.radXml.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radXml.Location = new System.Drawing.Point(23, 83);
+            this.radXml.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radXml.Name = "radXml";
-            this.radXml.Size = new System.Drawing.Size(49, 19);
+            this.radXml.Size = new System.Drawing.Size(61, 22);
             this.radXml.TabIndex = 1;
             this.radXml.TabStop = true;
             this.radXml.Text = "XML";
@@ -234,9 +250,11 @@ namespace Chocolade
             // radManueel
             // 
             this.radManueel.AutoSize = true;
-            this.radManueel.Location = new System.Drawing.Point(20, 28);
+            this.radManueel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radManueel.Location = new System.Drawing.Point(23, 37);
+            this.radManueel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radManueel.Name = "radManueel";
-            this.radManueel.Size = new System.Drawing.Size(71, 19);
+            this.radManueel.Size = new System.Drawing.Size(90, 22);
             this.radManueel.TabIndex = 0;
             this.radManueel.TabStop = true;
             this.radManueel.Text = "Manueel";
@@ -245,24 +263,26 @@ namespace Chocolade
             // 
             // lbXmlOrders
             // 
+            this.lbXmlOrders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbXmlOrders.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbXmlOrders.FormattingEnabled = true;
-            this.lbXmlOrders.ItemHeight = 15;
-            this.lbXmlOrders.Location = new System.Drawing.Point(259, 12);
+            this.lbXmlOrders.ItemHeight = 17;
+            this.lbXmlOrders.Location = new System.Drawing.Point(296, 16);
+            this.lbXmlOrders.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbXmlOrders.Name = "lbXmlOrders";
-            this.lbXmlOrders.Size = new System.Drawing.Size(419, 94);
+            this.lbXmlOrders.Size = new System.Drawing.Size(478, 104);
             this.lbXmlOrders.TabIndex = 13;
             this.lbXmlOrders.SelectedIndexChanged += new System.EventHandler(this.lbXmlOrders_SelectedIndexChanged);
             // 
             // FrmVerkoopCatalogus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 640);
+            this.ClientSize = new System.Drawing.Size(1183, 853);
             this.Controls.Add(this.lbXmlOrders);
             this.Controls.Add(this.grbTypeBestelling);
             this.Controls.Add(this.lvwOrder);
             this.Controls.Add(this.lvwCatalogus);
-            this.Controls.Add(this.btnSluiten);
             this.Controls.Add(this.btnAnnuleren);
             this.Controls.Add(this.btnAfwerken);
             this.Controls.Add(this.btnToevoegen);
@@ -270,6 +290,7 @@ namespace Chocolade
             this.Controls.Add(this.txtHoeveelheid);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmVerkoopCatalogus";
             this.Text = "FrmVerkoopCatalogus";
             this.Load += new System.EventHandler(this.FrmVerkoopCatalogus_Load);
@@ -289,7 +310,6 @@ namespace Chocolade
         private System.Windows.Forms.Button btnToevoegen;
         private System.Windows.Forms.Button btnAfwerken;
         private System.Windows.Forms.Button btnAnnuleren;
-        private System.Windows.Forms.Button btnSluiten;
         private System.Windows.Forms.ListView lvwCatalogus;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;

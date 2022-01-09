@@ -29,13 +29,13 @@ namespace Chocolade
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtWachtwoord = new System.Windows.Forms.TextBox();
             this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cmbFunctie = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVoegToe = new System.Windows.Forms.Button();
@@ -45,19 +45,8 @@ namespace Chocolade
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.cmbFunctie = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(46, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(138, 32);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Personeel";
             // 
             // label5
             // 
@@ -113,6 +102,16 @@ namespace Chocolade
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 41);
             this.panel3.TabIndex = 47;
+            // 
+            // cmbFunctie
+            // 
+            this.cmbFunctie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFunctie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFunctie.FormattingEnabled = true;
+            this.cmbFunctie.Location = new System.Drawing.Point(3, 7);
+            this.cmbFunctie.Name = "cmbFunctie";
+            this.cmbFunctie.Size = new System.Drawing.Size(198, 28);
+            this.cmbFunctie.TabIndex = 0;
             // 
             // panel2
             // 
@@ -182,7 +181,7 @@ namespace Chocolade
             this.lvwPersoneel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lvwPersoneel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvwPersoneel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lvwPersoneel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -215,20 +214,11 @@ namespace Chocolade
             this.columnHeader3.Text = "Functie";
             this.columnHeader3.Width = 180;
             // 
-            // cmbFunctie
-            // 
-            this.cmbFunctie.FormattingEnabled = true;
-            this.cmbFunctie.Location = new System.Drawing.Point(3, 7);
-            this.cmbFunctie.Name = "cmbFunctie";
-            this.cmbFunctie.Size = new System.Drawing.Size(198, 28);
-            this.cmbFunctie.TabIndex = 0;
-            // 
             // FrmPersoneel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 573);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -251,8 +241,6 @@ namespace Chocolade
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

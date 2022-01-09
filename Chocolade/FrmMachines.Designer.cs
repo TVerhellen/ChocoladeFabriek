@@ -39,7 +39,6 @@ namespace Chocolade
             this.pnlAnimationBar1 = new System.Windows.Forms.Panel();
             this.lblStartDiagram = new System.Windows.Forms.Label();
             this.pnlNamesMachines = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlThisBatch = new System.Windows.Forms.Panel();
             this.lblBeschikbaar = new System.Windows.Forms.Label();
@@ -162,16 +161,6 @@ namespace Chocolade
             this.pnlNamesMachines.Size = new System.Drawing.Size(237, 262);
             this.pnlNamesMachines.TabIndex = 1;
             this.pnlNamesMachines.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNamesMachines_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(39, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 32);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Overzicht Machines";
             // 
             // label2
             // 
@@ -560,7 +549,6 @@ namespace Chocolade
             this.Controls.Add(this.btnVorigTijd);
             this.Controls.Add(this.pnlThisBatch);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlNamesMachines);
             this.Controls.Add(this.lblStartDiagram);
             this.Controls.Add(this.panel1);
@@ -581,7 +569,6 @@ namespace Chocolade
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblStartDiagram;
         private System.Windows.Forms.Panel pnlNamesMachines;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnlThisBatch;
         private System.Windows.Forms.Label label7;

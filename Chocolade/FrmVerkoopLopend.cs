@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Chocolade
 {
@@ -33,20 +33,20 @@ namespace Chocolade
                     while (!reader.EndOfStream)
                     {
                         string data = reader.ReadLine();
-                        batches.Add(data); 
+                        batches.Add(data);
                     }
                     VerkoopOrder order = new VerkoopOrder(id, batches);
                     orders.Add(order);
                 }
             }
-            
+
             lblOrderNummer.Text = "";
             lbOrders.DataSource = orders;
         }
 
         private void lbOrders_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lbOrders.SelectedIndex != -1)
+            if (lbOrders.SelectedIndex != -1)
             {
                 UpdateLvw();
             }
@@ -90,9 +90,5 @@ namespace Chocolade
             txtZoekterm.Clear();
         }
 
-        private void btnSluiten_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
