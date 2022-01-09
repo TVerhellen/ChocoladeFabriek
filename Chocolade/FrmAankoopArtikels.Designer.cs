@@ -35,8 +35,9 @@ namespace Chocolade
             this.chKwaliteit = new System.Windows.Forms.ColumnHeader();
             this.chSoort = new System.Windows.Forms.ColumnHeader();
             this.chPrijs = new System.Windows.Forms.ColumnHeader();
-            this.chRekeningnummer = new System.Windows.Forms.ColumnHeader();
             this.chHoofdleverancier = new System.Windows.Forms.ColumnHeader();
+            this.chArtikelnummerLeverancier = new System.Windows.Forms.ColumnHeader();
+            this.chRekeningnummer = new System.Windows.Forms.ColumnHeader();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,11 +59,10 @@ namespace Chocolade
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtArtikelNummerLev = new System.Windows.Forms.TextBox();
             this.cmbArtikelnummer = new System.Windows.Forms.ComboBox();
             this.cmbKwaliteit = new System.Windows.Forms.ComboBox();
             this.cmbSoort = new System.Windows.Forms.ComboBox();
-            this.chArtikelnummerLeverancier = new System.Windows.Forms.ColumnHeader();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,7 @@ namespace Chocolade
             this.chHoofdleverancier,
             this.chArtikelnummerLeverancier,
             this.chRekeningnummer});
+            this.lvArtikelOverzicht.FullRowSelect = true;
             this.lvArtikelOverzicht.HideSelection = false;
             this.lvArtikelOverzicht.Location = new System.Drawing.Point(48, 410);
             this.lvArtikelOverzicht.Name = "lvArtikelOverzicht";
@@ -84,6 +85,7 @@ namespace Chocolade
             this.lvArtikelOverzicht.TabIndex = 0;
             this.lvArtikelOverzicht.UseCompatibleStateImageBehavior = false;
             this.lvArtikelOverzicht.View = System.Windows.Forms.View.Details;
+            this.lvArtikelOverzicht.SelectedIndexChanged += new System.EventHandler(this.lvArtikelOverzicht_SelectedIndexChanged);
             // 
             // chArtikelnummer
             // 
@@ -110,15 +112,20 @@ namespace Chocolade
             this.chPrijs.Text = "Prijs/kg";
             this.chPrijs.Width = 65;
             // 
-            // chRekeningnummer
-            // 
-            this.chRekeningnummer.Text = "Rekeningnummer";
-            this.chRekeningnummer.Width = 80;
-            // 
             // chHoofdleverancier
             // 
             this.chHoofdleverancier.Text = "Hoofdleverancier";
             this.chHoofdleverancier.Width = 130;
+            // 
+            // chArtikelnummerLeverancier
+            // 
+            this.chArtikelnummerLeverancier.Text = "Art. nummer lev.";
+            this.chArtikelnummerLeverancier.Width = 70;
+            // 
+            // chRekeningnummer
+            // 
+            this.chRekeningnummer.Text = "Rekeningnummer";
+            this.chRekeningnummer.Width = 80;
             // 
             // label1
             // 
@@ -222,7 +229,7 @@ namespace Chocolade
             this.btnArtikelAanmaken.Name = "btnArtikelAanmaken";
             this.btnArtikelAanmaken.Size = new System.Drawing.Size(219, 47);
             this.btnArtikelAanmaken.TabIndex = 9;
-            this.btnArtikelAanmaken.Text = "Artikel aanmaken";
+            this.btnArtikelAanmaken.Text = "Aanmaken";
             this.btnArtikelAanmaken.UseVisualStyleBackColor = true;
             this.btnArtikelAanmaken.Click += new System.EventHandler(this.btnArtikelAanmaken_Click);
             // 
@@ -232,8 +239,9 @@ namespace Chocolade
             this.btnArtikelWijzigen.Name = "btnArtikelWijzigen";
             this.btnArtikelWijzigen.Size = new System.Drawing.Size(219, 47);
             this.btnArtikelWijzigen.TabIndex = 10;
-            this.btnArtikelWijzigen.Text = "Artikel wijzigen";
+            this.btnArtikelWijzigen.Text = "Wijzigen";
             this.btnArtikelWijzigen.UseVisualStyleBackColor = true;
+            this.btnArtikelWijzigen.Click += new System.EventHandler(this.btnArtikelWijzigen_Click);
             // 
             // btnHoofdMenu
             // 
@@ -243,6 +251,7 @@ namespace Chocolade
             this.btnHoofdMenu.TabIndex = 11;
             this.btnHoofdMenu.Text = "Hoofdmenu";
             this.btnHoofdMenu.UseVisualStyleBackColor = true;
+            this.btnHoofdMenu.Click += new System.EventHandler(this.btnHoofdMenu_Click);
             // 
             // txtArtikelnaam
             // 
@@ -308,12 +317,12 @@ namespace Chocolade
             this.label10.TabIndex = 23;
             this.label10.Text = "Artikelnummer\r\nhoofdLeverancier:";
             // 
-            // textBox1
+            // txtArtikelNummerLev
             // 
-            this.textBox1.Location = new System.Drawing.Point(611, 257);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 27);
-            this.textBox1.TabIndex = 24;
+            this.txtArtikelNummerLev.Location = new System.Drawing.Point(611, 257);
+            this.txtArtikelNummerLev.Name = "txtArtikelNummerLev";
+            this.txtArtikelNummerLev.Size = new System.Drawing.Size(102, 27);
+            this.txtArtikelNummerLev.TabIndex = 24;
             // 
             // cmbArtikelnummer
             // 
@@ -322,6 +331,7 @@ namespace Chocolade
             this.cmbArtikelnummer.Name = "cmbArtikelnummer";
             this.cmbArtikelnummer.Size = new System.Drawing.Size(192, 28);
             this.cmbArtikelnummer.TabIndex = 25;
+            this.cmbArtikelnummer.SelectedIndexChanged += new System.EventHandler(this.cmbArtikelnummer_SelectedIndexChanged);
             // 
             // cmbKwaliteit
             // 
@@ -351,11 +361,6 @@ namespace Chocolade
             this.cmbSoort.TabIndex = 27;
             this.cmbSoort.SelectedIndexChanged += new System.EventHandler(this.cmbSoort_SelectedIndexChanged);
             // 
-            // chArtikelnummerLeverancier
-            // 
-            this.chArtikelnummerLeverancier.Text = "Art. nummer lev.";
-            this.chArtikelnummerLeverancier.Width = 70;
-            // 
             // FrmAankoopArtikels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -364,7 +369,7 @@ namespace Chocolade
             this.Controls.Add(this.cmbSoort);
             this.Controls.Add(this.cmbKwaliteit);
             this.Controls.Add(this.cmbArtikelnummer);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtArtikelNummerLev);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -426,7 +431,7 @@ namespace Chocolade
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtArtikelNummerLev;
         private System.Windows.Forms.ComboBox cmbArtikelnummer;
         private System.Windows.Forms.ComboBox cmbKwaliteit;
         private System.Windows.Forms.ComboBox cmbSoort;

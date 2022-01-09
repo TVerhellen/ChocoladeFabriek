@@ -11,11 +11,11 @@ namespace Chocolade
         {
             InitializeComponent();
         }
+
         Leverancier LeverancierGegevens = new Leverancier();
         List<Leverancier> mijnLeveranciers = new List<Leverancier>();
         int leverancierNummer = 1;
         string tekstGeselecteerdeLeverancier = "";
-        string nieuweFoldernaamLeverancier = "";
 
         private void GegevensLeveranciers_Load(object sender, System.EventArgs e)
         {
@@ -37,16 +37,14 @@ namespace Chocolade
             if (cmbLeveranciers.SelectedIndex == 0)
             {
                 LeverancierGegeven();
-                InlezenBestand();
                 NieuweLeveranciersMap("Catalogus");
                 NieuweLeveranciersMap("Bestelorders");
+                NieuweLeveranciersMap("Leveringsbonnen");
             }
             else
             {
                 MessageBox.Show("Er mag geen leverancier geselecteerd zijn om een nieue leverancier toe te voegen.", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void btnWijzigen_Click(object sender, System.EventArgs e)
@@ -203,6 +201,8 @@ namespace Chocolade
                 if (Directory.Exists(@"Aankoop/Catalogus/" + LeverancierGegevens.LeverancierNummer + " " + tekstGeselecteerdeLeverancier))
                 {
                     Directory.Move(@"Aankoop/Catalogus/" + LeverancierGegevens.LeverancierNummer + " " + tekstGeselecteerdeLeverancier, @"Aankoop/Catalogus/" + LeverancierGegevens.LeverancierNummer + " " + LeverancierGegevens.Naam);
+                    Directory.Move(@"Aankoop/Bestelorders/" + LeverancierGegevens.LeverancierNummer + " " + tekstGeselecteerdeLeverancier, @"Aankoop/Bestelorders/" + LeverancierGegevens.LeverancierNummer + " " + LeverancierGegevens.Naam);
+                    Directory.Move(@"Aankoop/Leveringsbonnen/" + LeverancierGegevens.LeverancierNummer + " " + tekstGeselecteerdeLeverancier, @"Aankoop/Leveringsbonnen/" + LeverancierGegevens.LeverancierNummer + " " + LeverancierGegevens.Naam);
                 }
             }
 

@@ -92,5 +92,11 @@ namespace Chocolade
             nieuwGegevensKlant.Show();
 
         }
+
+        private void orderVerwerkenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmOrderVerwerken nieuwOrder = new FrmOrderVerwerken();
+            nieuwOrder.Show();
+        }
     }
 }

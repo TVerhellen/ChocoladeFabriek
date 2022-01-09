@@ -38,5 +38,8 @@
     <Compile Update="FrmVerkoopLopend.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmOrderVerwerken.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

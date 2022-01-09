@@ -1,0 +1,4 @@
+0001|BoonAribaBio|01|11|3,99| Vinois BVBA|0001|604000|6
+0002|BooncriolloGmo|02|12|14,99| Vinois BVBA|0002|604000|6
+0003|BoonTrinitarioSmaak|03|13|19,99| Vinois BVBA|0003|604000|6
+0004|BoonWildSmaak|04|14|49,99| Vinois BVBA|0004|604000|6

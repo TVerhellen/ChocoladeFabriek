@@ -117,3 +117,5 @@ C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-window
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopCatalogus.resources
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopHistoriek.resources
 C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmVerkoopLopend.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.OrderVerwerken.resources
+C:\Users\Student\source\repos\chocoladefabriek\Chocolade\obj\Debug\net5.0-windows\Chocolade.FrmOrderVerwerken.resources

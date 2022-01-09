@@ -49,8 +49,6 @@ namespace Chocolade
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnToevoegen = new System.Windows.Forms.Button();
             this.btnWijzigen = new System.Windows.Forms.Button();
-            this.btnTonen = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.btnHoofdMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -93,7 +91,7 @@ namespace Chocolade
             // lblGemeente
             // 
             this.lblGemeente.AutoSize = true;
-            this.lblGemeente.Location = new System.Drawing.Point(38, 208);
+            this.lblGemeente.Location = new System.Drawing.Point(354, 206);
             this.lblGemeente.Name = "lblGemeente";
             this.lblGemeente.Size = new System.Drawing.Size(80, 20);
             this.lblGemeente.TabIndex = 4;
@@ -102,7 +100,7 @@ namespace Chocolade
             // lblPostCode
             // 
             this.lblPostCode.AutoSize = true;
-            this.lblPostCode.Location = new System.Drawing.Point(416, 205);
+            this.lblPostCode.Location = new System.Drawing.Point(38, 206);
             this.lblPostCode.Name = "lblPostCode";
             this.lblPostCode.Size = new System.Drawing.Size(72, 20);
             this.lblPostCode.TabIndex = 5;
@@ -113,9 +111,9 @@ namespace Chocolade
             this.lblBtw.AutoSize = true;
             this.lblBtw.Location = new System.Drawing.Point(38, 262);
             this.lblBtw.Name = "lblBtw";
-            this.lblBtw.Size = new System.Drawing.Size(101, 20);
+            this.lblBtw.Size = new System.Drawing.Size(98, 20);
             this.lblBtw.TabIndex = 6;
-            this.lblBtw.Text = "BTW nummer:";
+            this.lblBtw.Text = "btw-nummer:";
             // 
             // lblTelefoon
             // 
@@ -167,17 +165,17 @@ namespace Chocolade
             // 
             // txtGemeente
             // 
-            this.txtGemeente.Location = new System.Drawing.Point(194, 205);
+            this.txtGemeente.Location = new System.Drawing.Point(466, 199);
             this.txtGemeente.Name = "txtGemeente";
-            this.txtGemeente.Size = new System.Drawing.Size(196, 27);
-            this.txtGemeente.TabIndex = 13;
+            this.txtGemeente.Size = new System.Drawing.Size(143, 27);
+            this.txtGemeente.TabIndex = 14;
             // 
             // txtPostCode
             // 
-            this.txtPostCode.Location = new System.Drawing.Point(553, 208);
+            this.txtPostCode.Location = new System.Drawing.Point(194, 203);
             this.txtPostCode.Name = "txtPostCode";
             this.txtPostCode.Size = new System.Drawing.Size(104, 27);
-            this.txtPostCode.TabIndex = 14;
+            this.txtPostCode.TabIndex = 13;
             // 
             // txtBtwNummer
             // 
@@ -202,7 +200,7 @@ namespace Chocolade
             // 
             // btnToevoegen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(752, 34);
+            this.btnToevoegen.Location = new System.Drawing.Point(752, 91);
             this.btnToevoegen.Name = "btnToevoegen";
             this.btnToevoegen.Size = new System.Drawing.Size(223, 55);
             this.btnToevoegen.TabIndex = 18;
@@ -212,37 +210,17 @@ namespace Chocolade
             // 
             // btnWijzigen
             // 
-            this.btnWijzigen.Location = new System.Drawing.Point(752, 118);
+            this.btnWijzigen.Location = new System.Drawing.Point(752, 171);
             this.btnWijzigen.Name = "btnWijzigen";
             this.btnWijzigen.Size = new System.Drawing.Size(223, 55);
             this.btnWijzigen.TabIndex = 19;
-            this.btnWijzigen.Text = "Geselecteerde leverancier wijzigen";
+            this.btnWijzigen.Text = "Wijzigen";
             this.btnWijzigen.UseVisualStyleBackColor = true;
             this.btnWijzigen.Click += new System.EventHandler(this.btnWijzigen_Click);
             // 
-            // btnTonen
-            // 
-            this.btnTonen.Location = new System.Drawing.Point(752, 198);
-            this.btnTonen.Name = "btnTonen";
-            this.btnTonen.Size = new System.Drawing.Size(223, 55);
-            this.btnTonen.TabIndex = 20;
-            this.btnTonen.Text = "Geselecteerde leverancier tonen";
-            this.btnTonen.UseVisualStyleBackColor = true;
-            this.btnTonen.Click += new System.EventHandler(this.btnTonen_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(752, 275);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(223, 55);
-            this.btnReset.TabIndex = 21;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // btnHoofdMenu
             // 
-            this.btnHoofdMenu.Location = new System.Drawing.Point(752, 353);
+            this.btnHoofdMenu.Location = new System.Drawing.Point(752, 248);
             this.btnHoofdMenu.Name = "btnHoofdMenu";
             this.btnHoofdMenu.Size = new System.Drawing.Size(223, 55);
             this.btnHoofdMenu.TabIndex = 22;
@@ -256,8 +234,6 @@ namespace Chocolade
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 450);
             this.Controls.Add(this.btnHoofdMenu);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnTonen);
             this.Controls.Add(this.btnWijzigen);
             this.Controls.Add(this.btnToevoegen);
             this.Controls.Add(this.txtEmail);
@@ -308,8 +284,6 @@ namespace Chocolade
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnToevoegen;
         private System.Windows.Forms.Button btnWijzigen;
-        private System.Windows.Forms.Button btnTonen;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnHoofdMenu;
     }
 }
