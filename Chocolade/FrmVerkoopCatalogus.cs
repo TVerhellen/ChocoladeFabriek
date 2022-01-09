@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
+using System.Collections.Generic;
 
 namespace Chocolade
 {
@@ -13,10 +14,78 @@ namespace Chocolade
         }
 
         VerkoopOrder order = new VerkoopOrder();
+        
 
         private void FrmVerkoopCatalogus_Load(object sender, EventArgs e)
         {
             VerkoopOrder.IDCounter = 0000;
+
+            var txtFiles = Directory.EnumerateFiles("Verkoop/Binnengekomen", "*.xml");
+            foreach (string currentFile in txtFiles)
+            {
+                using (XmlReader xmlIn = XmlReader.Create(currentFile))
+                {
+                    List<ChocoladeBatch> batches = new List<ChocoladeBatch>();
+                    int tracker = 0;
+                    string[] artikel = new string[4];
+                    int counter = 0;
+                    while (xmlIn.Read())
+                    {
+                        switch (xmlIn.NodeType)
+                        {
+                            case XmlNodeType.Element:
+                                if (xmlIn.GetAttribute("id") != null)
+                                {
+                                    artikel[0] = xmlIn.GetAttribute("id");
+                                }
+                                switch (xmlIn.Name)
+                                {
+                                    case "Omschrijving":
+                                        tracker = 1;
+                                        break;
+                                    case "PrijsPerKg":
+                                        tracker = 2;
+                                        break;
+                                    case "AantalKgBesteld":
+                                        tracker = 3;
+                                        break;
+                                    default:
+                                        tracker = 0;
+                                        break;
+                                }
+                                break;
+                            case XmlNodeType.Text:
+                                if (tracker != 0)
+                                {
+                                    artikel[tracker] = xmlIn.Value;
+                                }
+                                break;
+                            case XmlNodeType.EndElement:
+                                if (xmlIn.Name == "Artikel")
+                                {
+                                    ChocoladeBatch batch = new ChocoladeBatch(artikel[1], Convert.ToDouble(artikel[2]));
+                                    batch.Prijs = batch.Hoeveelheid * Convert.ToDouble(artikel[2]);
+                                    batch.ID = Convert.ToInt64(artikel[0]);
+                                    batches.Add(batch);
+                                }
+                                if (xmlIn.Name == "BesteldeArtikels")
+                                {
+                                    VerkoopOrder order = new VerkoopOrder();
+                                    order.ID += counter;
+                                    foreach(ChocoladeBatch batch in batches)
+                                    {
+                                        order.VoegToe(batch);
+                                    }
+                                    
+                                    lbXmlOrders.Items.Add(order);
+                                }
+                                break;
+                        }
+                        counter++;
+                    }
+                }
+            }
+
 
             using (XmlReader xmlIn = XmlReader.Create("Verkoop/Prijslijsten/prijslijst.xml"))
             {
@@ -64,7 +133,7 @@ namespace Chocolade
             }
 
             updateLvw();
-
+            radXml.Checked = true;
         }
 
         private void btnToevoegen_Click(object sender, EventArgs e)
@@ -103,6 +172,8 @@ namespace Chocolade
                 }
                 VerkoopOrder.IDCounter++;
             }
+            order = new VerkoopOrder();
+            updateLvw();
         }
 
         private void btnAnnuleren_Click(object sender, EventArgs e)
@@ -147,5 +218,39 @@ namespace Chocolade
             }
         }
 
+        private void radManueel_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radManueel.Checked)
+            {
+                lbXmlOrders.Enabled = false;
+                lvwCatalogus.Enabled = true;
+                txtHoeveelheid.Enabled = true;
+                btnToevoegen.Enabled = true;
+                lbXmlOrders.SelectedIndex = -1;
+                lvwOrder.Items.Clear();
+            }
+        }
+
+        private void radXml_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radXml.Checked)
+            {
+                lbXmlOrders.Enabled = true;
+                lvwCatalogus.Enabled = false;
+                txtHoeveelheid.Enabled = false;
+                btnToevoegen.Enabled = false;
+                lvwCatalogus.SelectedIndices.Clear();
+                lvwOrder.Items.Clear();
+            }
+        }
+
+        private void lbXmlOrders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbXmlOrders.SelectedIndex != -1)
+            {
+                order = (VerkoopOrder)(lbXmlOrders.SelectedItem);
+            }
+            updateLvw();
+        }
     }
 }

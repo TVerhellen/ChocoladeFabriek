@@ -6,6 +6,6 @@
 0005;dddd;dd;d;dddddd;ddddd;000000097;@;09
 0006;ddd;ddddddddddd;ddd;9900;dd;000000097;@;d
 0007;aaaaaaaaaaaaaaaaaaa;aa;a;aaaa;aaaaaaaaaa;000000097;@;09
-0008;Vinois BVBA;Noordhoutstraat;86;9031;Drongen;000000097;@;09
+0008;Vinois NV;Noordhoutstraat;86;9031;Drongen;000000097;@;09
 0009;aaaa;aaa;a;aa;aa;000000097;@;09
 0010;qqq;qq;qqqq;qqq;qq;000000097;@;09

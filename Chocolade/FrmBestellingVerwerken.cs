@@ -36,6 +36,7 @@ namespace Chocolade
             lbOrders.SelectedIndex = -1;
             lvwBatches.Items.Clear();
             lblOrderNummer.Text = "";
+
         }
 
         private void lbOrders_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,6 +149,7 @@ namespace Chocolade
 
             //lbOrders.Items.RemoveAt(lbOrders.SelectedIndex);
             lbOrders.SelectedIndex = -1;
+            lvwBatches.Items.Clear();
         }
 
         private void btnVerwijderen_Click(object sender, EventArgs e)
